@@ -1,0 +1,50 @@
+@prefix ex:   <http://example.org/br#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:comment "Blast Radius infrastructure ontology. Instances are typed with their most specific class only; no reasoner is run." .
+
+# ---- Classes -------------------------------------------------------------------------
+ex:Component a owl:Class ;
+    rdfs:comment "An infrastructure component: a Service, Database or Queue." .
+ex:Service a owl:Class ; rdfs:subClassOf ex:Component ;
+    rdfs:comment "A software service." .
+ex:CustomerFacingService a owl:Class ; rdfs:subClassOf ex:Service ;
+    rdfs:comment "A service exposed to customers." .
+ex:Database a owl:Class ; rdfs:subClassOf ex:Component .
+ex:Queue a owl:Class ; rdfs:subClassOf ex:Component .
+ex:Team a owl:Class .
+ex:Region a owl:Class .
+ex:SLA a owl:Class ; rdfs:comment "A service-level agreement." .
+
+ex:Component owl:disjointUnionOf ( ex:Service ex:Database ex:Queue ) .
+
+# ---- Object properties ---------------------------------------------------------------
+ex:dependsOn a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:domain ex:Component ; rdfs:range ex:Component ;
+    rdfs:comment "The subject needs the object to work. Transitive; only direct edges are asserted." .
+
+ex:ownedBy a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:domain ex:Component ; rdfs:range ex:Team .
+
+ex:deployedIn a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:domain ex:Component ; rdfs:range ex:Region .
+
+ex:hasSLA a owl:ObjectProperty ;
+    rdfs:domain ex:Service ; rdfs:range ex:SLA .
+
+ex:replicaOf a owl:ObjectProperty ;
+    rdfs:domain ex:Component ; rdfs:range ex:Component ;
+    rdfs:comment "X replicaOf Y: X is a replica of Y (Services and Databases only). The replica group is symmetric." .
+
+# ---- Datatype properties -------------------------------------------------------------
+ex:tier a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:domain ex:Service ; rdfs:range xsd:integer ;
+    rdfs:comment "Criticality 1-3; 1 is the most critical." .
+
+ex:availability a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:domain ex:SLA ; rdfs:range xsd:decimal ;
+    rdfs:comment "Availability target, in percent." .

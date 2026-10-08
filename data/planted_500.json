@@ -1,0 +1,52 @@
+{
+ "failure_region": "reg-1",
+ "violations": [
+  [
+   "svc-137",
+   "svc-301"
+  ],
+  [
+   "svc-167",
+   "svc-489"
+  ],
+  [
+   "svc-187",
+   "svc-534"
+  ],
+  [
+   "svc-333",
+   "svc-521"
+  ],
+  [
+   "svc-344",
+   "svc-462"
+  ],
+  [
+   "svc-556",
+   "svc-277"
+  ],
+  [
+   "svc-615",
+   "svc-247"
+  ],
+  [
+   "svc-895",
+   "svc-063"
+  ]
+ ],
+ "deep_chain": [
+  "svc-942",
+  "svc-949",
+  "svc-809",
+  "db-739"
+ ],
+ "remote_dependents_db": "db-353",
+ "safe_service": "svc-111",
+ "forced_replica_modes": {
+  "db-353": "none",
+  "db-739": "none",
+  "svc-111": "cross",
+  "svc-473": "same",
+  "svc-817": "none"
+ }
+}

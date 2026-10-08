@@ -1,0 +1,1181 @@
+[
+ {
+  "qid": "20-L1-00",
+  "size": 20,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which team owns svc-806?"
+ },
+ {
+  "qid": "20-L1-01",
+  "size": 20,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In which region is svc-785 deployed?"
+ },
+ {
+  "qid": "20-L1-02",
+  "size": 20,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In which region is svc-703 deployed?"
+ },
+ {
+  "qid": "20-L1-03",
+  "size": 20,
+  "level": "L1",
+  "kind": "tier",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the tier of svc-806?"
+ },
+ {
+  "qid": "20-L1-04",
+  "size": 20,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns db-290?"
+ },
+ {
+  "qid": "20-L1-05",
+  "size": 20,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns svc-785?"
+ },
+ {
+  "qid": "20-L1-06",
+  "size": 20,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is svc-902 deployed?"
+ },
+ {
+  "qid": "20-L1-07",
+  "size": 20,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns db-005?"
+ },
+ {
+  "qid": "20-L1-08",
+  "size": 20,
+  "level": "L1",
+  "kind": "tier",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the tier of svc-741?"
+ },
+ {
+  "qid": "20-L1-09",
+  "size": 20,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is svc-927 deployed?"
+ },
+ {
+  "qid": "20-L2-00",
+  "size": 20,
+  "level": "L2",
+  "kind": "depends_bool",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "Does svc-741 transitively depend on db-877?"
+ },
+ {
+  "qid": "20-L2-01",
+  "size": 20,
+  "level": "L2",
+  "kind": "cfs_dependents",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which customer-facing services transitively depend on q-001?"
+ },
+ {
+  "qid": "20-L2-02",
+  "size": 20,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which nodes transitively depend on db-290 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "20-L2-03",
+  "size": 20,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which nodes transitively depend on q-001 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "20-L2-04",
+  "size": 20,
+  "level": "L2",
+  "kind": "cfs_dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which customer-facing services transitively depend on db-290?"
+ },
+ {
+  "qid": "20-L2-05",
+  "size": 20,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "test",
+  "text": "What are all upstream dependencies of svc-741, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "20-L2-06",
+  "size": 20,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which nodes transitively depend on db-877 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "20-L2-07",
+  "size": 20,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "test",
+  "text": "What are all upstream dependencies of svc-785, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "20-L2-08",
+  "size": 20,
+  "level": "L2",
+  "kind": "depends_bool",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does svc-703 transitively depend on db-005?"
+ },
+ {
+  "qid": "20-L2-09",
+  "size": 20,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "test",
+  "text": "What are all upstream dependencies of svc-928, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "20-L3-00",
+  "size": 20,
+  "level": "L3",
+  "kind": "cfs_no_cross",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which customer-facing services have no replica deployed in a different region from their own? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L3-01",
+  "size": 20,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which tier-1 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "20-L3-02",
+  "size": 20,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many services of any kind (including replicas) are deployed in reg-2?"
+ },
+ {
+  "qid": "20-L3-03",
+  "size": 20,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-3 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "20-L3-04",
+  "size": 20,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases owned by team-01 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "20-L3-05",
+  "size": 20,
+  "level": "L3",
+  "kind": "unused_db",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases have no node directly depending on them? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "20-L3-06",
+  "size": 20,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many services of any kind (including replicas) are deployed in reg-1?"
+ },
+ {
+  "qid": "20-L3-07",
+  "size": 20,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-2 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "20-L4-00",
+  "size": 20,
+  "level": "L4",
+  "kind": "region_count_down",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "If region reg-2 fails, how many services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L4-01",
+  "size": 20,
+  "level": "L4",
+  "kind": "region_down",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "If region reg-2 fails, which services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L4-02",
+  "size": 20,
+  "level": "L4",
+  "kind": "violations",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which dependsOn edges violate the rule that tier-1 services must not depend directly on tier-3 services? Give each edge as 'SOURCE->TARGET'."
+ },
+ {
+  "qid": "20-L4-03",
+  "size": 20,
+  "level": "L4",
+  "kind": "region_survivors",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-1 fails, which customer-facing services deployed in reg-1 are NOT down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L4-04",
+  "size": 20,
+  "level": "L4",
+  "kind": "transitive_violations",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-1 services transitively depend on at least one tier-3 service?"
+ },
+ {
+  "qid": "20-L4-05",
+  "size": 20,
+  "level": "L4",
+  "kind": "region_count_down",
+  "answer_type": "number",
+  "split": "test",
+  "text": "If region reg-1 fails, how many services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L4-06",
+  "size": 20,
+  "level": "L4",
+  "kind": "region_down",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-1 fails, which services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L4-07",
+  "size": 20,
+  "level": "L4",
+  "kind": "region_survivors",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-2 fails, which customer-facing services deployed in reg-2 are NOT down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "20-L5-00",
+  "size": 20,
+  "level": "L5",
+  "kind": "shortest_path",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "What is the minimum number of dependsOn edges on a path from svc-703 to db-877?"
+ },
+ {
+  "qid": "20-L5-01",
+  "size": 20,
+  "level": "L5",
+  "kind": "longest_chain",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "How many dependsOn edges are on the longest dependency chain starting at svc-741?"
+ },
+ {
+  "qid": "20-L5-02",
+  "size": 20,
+  "level": "L5",
+  "kind": "longest_chain",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many dependsOn edges are on the longest dependency chain starting at svc-928?"
+ },
+ {
+  "qid": "20-L5-03",
+  "size": 20,
+  "level": "L5",
+  "kind": "shortest_path",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the minimum number of dependsOn edges on a path from svc-928 to db-877?"
+ },
+ {
+  "qid": "20-L5-04",
+  "size": 20,
+  "level": "L5",
+  "kind": "path_count",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many distinct dependsOn paths lead from svc-703 to svc-927?"
+ },
+ {
+  "qid": "100-L1-00",
+  "size": 100,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which team owns svc-236?"
+ },
+ {
+  "qid": "100-L1-01",
+  "size": 100,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In which region is svc-642 deployed?"
+ },
+ {
+  "qid": "100-L1-02",
+  "size": 100,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In which region is db-604 deployed?"
+ },
+ {
+  "qid": "100-L1-03",
+  "size": 100,
+  "level": "L1",
+  "kind": "tier",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the tier of svc-471?"
+ },
+ {
+  "qid": "100-L1-04",
+  "size": 100,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns svc-664?"
+ },
+ {
+  "qid": "100-L1-05",
+  "size": 100,
+  "level": "L1",
+  "kind": "tier",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the tier of svc-975?"
+ },
+ {
+  "qid": "100-L1-06",
+  "size": 100,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns svc-194?"
+ },
+ {
+  "qid": "100-L1-07",
+  "size": 100,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is db-704 deployed?"
+ },
+ {
+  "qid": "100-L1-08",
+  "size": 100,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is svc-150 deployed?"
+ },
+ {
+  "qid": "100-L1-09",
+  "size": 100,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns db-241?"
+ },
+ {
+  "qid": "100-L2-00",
+  "size": 100,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "What are all upstream dependencies of svc-520, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "100-L2-01",
+  "size": 100,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "What are all upstream dependencies of svc-675, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "100-L2-02",
+  "size": 100,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which nodes transitively depend on svc-915 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "100-L2-03",
+  "size": 100,
+  "level": "L2",
+  "kind": "cfs_dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which customer-facing services transitively depend on svc-379?"
+ },
+ {
+  "qid": "100-L2-04",
+  "size": 100,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which nodes transitively depend on q-002 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "100-L2-05",
+  "size": 100,
+  "level": "L2",
+  "kind": "cfs_dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which customer-facing services transitively depend on db-604?"
+ },
+ {
+  "qid": "100-L2-06",
+  "size": 100,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which nodes transitively depend on svc-956 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "100-L2-07",
+  "size": 100,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "test",
+  "text": "What are all upstream dependencies of svc-216, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "100-L2-08",
+  "size": 100,
+  "level": "L2",
+  "kind": "depends_bool",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does svc-113 transitively depend on db-021?"
+ },
+ {
+  "qid": "100-L2-09",
+  "size": 100,
+  "level": "L2",
+  "kind": "depends_bool",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does svc-855 transitively depend on db-021?"
+ },
+ {
+  "qid": "100-L3-00",
+  "size": 100,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "How many services of any kind (including replicas) are deployed in reg-1?"
+ },
+ {
+  "qid": "100-L3-01",
+  "size": 100,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which databases owned by team-02 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "100-L3-02",
+  "size": 100,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "How many services of any kind (including replicas) are deployed in reg-3?"
+ },
+ {
+  "qid": "100-L3-03",
+  "size": 100,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many services of any kind (including replicas) are deployed in reg-2?"
+ },
+ {
+  "qid": "100-L3-04",
+  "size": 100,
+  "level": "L3",
+  "kind": "unused_db",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases have no node directly depending on them? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "100-L3-05",
+  "size": 100,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases owned by team-01 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "100-L3-06",
+  "size": 100,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases owned by team-03 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "100-L3-07",
+  "size": 100,
+  "level": "L3",
+  "kind": "cfs_no_cross",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which customer-facing services have no replica deployed in a different region from their own? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L3-08",
+  "size": 100,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-2 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "100-L3-09",
+  "size": 100,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-3 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "100-L4-00",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_sla",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "If region reg-2 fails, which SLAs are breached? An SLA is breached if any service that has it is down. Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-01",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_survivors",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "If region reg-3 fails, which customer-facing services deployed in reg-3 are NOT down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-02",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_survivors",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "If region reg-2 fails, which customer-facing services deployed in reg-2 are NOT down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-03",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-1 fails, which SLAs are breached? An SLA is breached if any service that has it is down. Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-04",
+  "size": 100,
+  "level": "L4",
+  "kind": "violations",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which dependsOn edges violate the rule that tier-1 services must not depend directly on tier-3 services? Give each edge as 'SOURCE->TARGET'."
+ },
+ {
+  "qid": "100-L4-05",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_count_down",
+  "answer_type": "number",
+  "split": "test",
+  "text": "If region reg-2 fails, how many services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-06",
+  "size": 100,
+  "level": "L4",
+  "kind": "transitive_violations",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-1 services transitively depend on at least one tier-3 service?"
+ },
+ {
+  "qid": "100-L4-07",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_down",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-2 fails, which services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-08",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-3 fails, which SLAs are breached? An SLA is breached if any service that has it is down. Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L4-09",
+  "size": 100,
+  "level": "L4",
+  "kind": "region_down",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-1 fails, which services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "100-L5-00",
+  "size": 100,
+  "level": "L5",
+  "kind": "shortest_path",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "What is the minimum number of dependsOn edges on a path from svc-179 to svc-216?"
+ },
+ {
+  "qid": "100-L5-01",
+  "size": 100,
+  "level": "L5",
+  "kind": "shortest_path",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "What is the minimum number of dependsOn edges on a path from svc-790 to db-604?"
+ },
+ {
+  "qid": "100-L5-02",
+  "size": 100,
+  "level": "L5",
+  "kind": "path_count",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many distinct dependsOn paths lead from svc-466 to svc-379?"
+ },
+ {
+  "qid": "100-L5-03",
+  "size": 100,
+  "level": "L5",
+  "kind": "longest_chain",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many dependsOn edges are on the longest dependency chain starting at svc-975?"
+ },
+ {
+  "qid": "100-L5-04",
+  "size": 100,
+  "level": "L5",
+  "kind": "longest_chain",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many dependsOn edges are on the longest dependency chain starting at svc-855?"
+ },
+ {
+  "qid": "500-L1-00",
+  "size": 500,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which team owns svc-358?"
+ },
+ {
+  "qid": "500-L1-01",
+  "size": 500,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which team owns svc-525?"
+ },
+ {
+  "qid": "500-L1-02",
+  "size": 500,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In which region is svc-556 deployed?"
+ },
+ {
+  "qid": "500-L1-03",
+  "size": 500,
+  "level": "L1",
+  "kind": "tier",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the tier of svc-591?"
+ },
+ {
+  "qid": "500-L1-04",
+  "size": 500,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is q-017 deployed?"
+ },
+ {
+  "qid": "500-L1-05",
+  "size": 500,
+  "level": "L1",
+  "kind": "tier",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the tier of svc-002?"
+ },
+ {
+  "qid": "500-L1-06",
+  "size": 500,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is db-226 deployed?"
+ },
+ {
+  "qid": "500-L1-07",
+  "size": 500,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns svc-298?"
+ },
+ {
+  "qid": "500-L1-08",
+  "size": 500,
+  "level": "L1",
+  "kind": "owner",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which team owns db-359?"
+ },
+ {
+  "qid": "500-L1-09",
+  "size": 500,
+  "level": "L1",
+  "kind": "region",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In which region is svc-622 deployed?"
+ },
+ {
+  "qid": "500-L2-00",
+  "size": 500,
+  "level": "L2",
+  "kind": "depends_bool",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "Does svc-577 transitively depend on db-005?"
+ },
+ {
+  "qid": "500-L2-01",
+  "size": 500,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which nodes transitively depend on svc-998 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "500-L2-02",
+  "size": 500,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "What are all upstream dependencies of svc-488, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "500-L2-03",
+  "size": 500,
+  "level": "L2",
+  "kind": "cfs_dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which customer-facing services transitively depend on db-645?"
+ },
+ {
+  "qid": "500-L2-04",
+  "size": 500,
+  "level": "L2",
+  "kind": "cfs_dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which customer-facing services transitively depend on svc-036?"
+ },
+ {
+  "qid": "500-L2-05",
+  "size": 500,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which nodes transitively depend on svc-455 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "500-L2-06",
+  "size": 500,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "test",
+  "text": "What are all upstream dependencies of svc-293, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "500-L2-07",
+  "size": 500,
+  "level": "L2",
+  "kind": "dependencies",
+  "answer_type": "set",
+  "split": "test",
+  "text": "What are all upstream dependencies of svc-594, i.e. every node it transitively depends on?"
+ },
+ {
+  "qid": "500-L2-08",
+  "size": 500,
+  "level": "L2",
+  "kind": "depends_bool",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does svc-813 transitively depend on db-166?"
+ },
+ {
+  "qid": "500-L2-09",
+  "size": 500,
+  "level": "L2",
+  "kind": "dependents",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which nodes transitively depend on svc-056 (directly or through a chain of dependsOn)?"
+ },
+ {
+  "qid": "500-L3-00",
+  "size": 500,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which tier-1 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "500-L3-01",
+  "size": 500,
+  "level": "L3",
+  "kind": "cfs_no_cross",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which customer-facing services have no replica deployed in a different region from their own? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L3-02",
+  "size": 500,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "How many services of any kind (including replicas) are deployed in reg-5?"
+ },
+ {
+  "qid": "500-L3-03",
+  "size": 500,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many services of any kind (including replicas) are deployed in reg-3?"
+ },
+ {
+  "qid": "500-L3-04",
+  "size": 500,
+  "level": "L3",
+  "kind": "count_region",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many services of any kind (including replicas) are deployed in reg-1?"
+ },
+ {
+  "qid": "500-L3-05",
+  "size": 500,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases owned by team-15 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "500-L3-06",
+  "size": 500,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases owned by team-07 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "500-L3-07",
+  "size": 500,
+  "level": "L3",
+  "kind": "unused_db",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases have no node directly depending on them? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "500-L3-08",
+  "size": 500,
+  "level": "L3",
+  "kind": "team_db_unreplicated",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which databases owned by team-01 have no replica at all? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "500-L3-09",
+  "size": 500,
+  "level": "L3",
+  "kind": "tier_no_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which tier-2 services have no SLA? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node)"
+ },
+ {
+  "qid": "500-L4-00",
+  "size": 500,
+  "level": "L4",
+  "kind": "violations",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which dependsOn edges violate the rule that tier-1 services must not depend directly on tier-3 services? Give each edge as 'SOURCE->TARGET'."
+ },
+ {
+  "qid": "500-L4-01",
+  "size": 500,
+  "level": "L4",
+  "kind": "transitive_violations",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which tier-1 services transitively depend on at least one tier-3 service?"
+ },
+ {
+  "qid": "500-L4-02",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_sla",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "If region reg-4 fails, which SLAs are breached? An SLA is breached if any service that has it is down. Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-03",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_down",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-2 fails, which services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-04",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_down",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-1 fails, which services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-05",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_survivors",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-3 fails, which customer-facing services deployed in reg-3 are NOT down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-06",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-1 fails, which SLAs are breached? An SLA is breached if any service that has it is down. Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-07",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_count_down",
+  "answer_type": "number",
+  "split": "test",
+  "text": "If region reg-4 fails, how many services are down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-08",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_survivors",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-5 fails, which customer-facing services deployed in reg-5 are NOT down? (consider only primary nodes: a node X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node) Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L4-09",
+  "size": 500,
+  "level": "L4",
+  "kind": "region_sla",
+  "answer_type": "set",
+  "split": "test",
+  "text": "If region reg-5 fails, which SLAs are breached? An SLA is breached if any service that has it is down. Definitions: 'X replicaOf Y' means X is a replica of Y. A node's replica group is the node plus every node connected to it through replicaOf links in either direction, transitively. A node's footprint is the set of regions where members of its replica group are deployed. When region R fails, a node is lost if its footprint contains only R. A service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost."
+ },
+ {
+  "qid": "500-L5-00",
+  "size": 500,
+  "level": "L5",
+  "kind": "longest_chain",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "How many dependsOn edges are on the longest dependency chain starting at svc-679?"
+ },
+ {
+  "qid": "500-L5-01",
+  "size": 500,
+  "level": "L5",
+  "kind": "path_count",
+  "answer_type": "number",
+  "split": "dev",
+  "text": "How many distinct dependsOn paths lead from svc-489 to db-247?"
+ },
+ {
+  "qid": "500-L5-02",
+  "size": 500,
+  "level": "L5",
+  "kind": "shortest_path",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the minimum number of dependsOn edges on a path from svc-181 to svc-176?"
+ },
+ {
+  "qid": "500-L5-03",
+  "size": 500,
+  "level": "L5",
+  "kind": "longest_chain",
+  "answer_type": "number",
+  "split": "test",
+  "text": "How many dependsOn edges are on the longest dependency chain starting at svc-571?"
+ },
+ {
+  "qid": "500-L5-04",
+  "size": 500,
+  "level": "L5",
+  "kind": "shortest_path",
+  "answer_type": "number",
+  "split": "test",
+  "text": "What is the minimum number of dependsOn edges on a path from svc-487 to db-674?"
+ }
+]

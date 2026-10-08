@@ -1,0 +1,7 @@
+rdflib
+networkx
+pandas
+matplotlib
+scipy
+numpy
+anthropic

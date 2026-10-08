@@ -1,0 +1,2326 @@
+{
+ "nodes": [
+  {
+   "id": "db-021",
+   "type": "Database"
+  },
+  {
+   "id": "db-040",
+   "type": "Database"
+  },
+  {
+   "id": "db-185",
+   "type": "Database"
+  },
+  {
+   "id": "db-190",
+   "type": "Database"
+  },
+  {
+   "id": "db-241",
+   "type": "Database"
+  },
+  {
+   "id": "db-269",
+   "type": "Database"
+  },
+  {
+   "id": "db-275",
+   "type": "Database"
+  },
+  {
+   "id": "db-299",
+   "type": "Database"
+  },
+  {
+   "id": "db-302",
+   "type": "Database"
+  },
+  {
+   "id": "db-304",
+   "type": "Database"
+  },
+  {
+   "id": "db-323",
+   "type": "Database"
+  },
+  {
+   "id": "db-360",
+   "type": "Database"
+  },
+  {
+   "id": "db-400",
+   "type": "Database"
+  },
+  {
+   "id": "db-411",
+   "type": "Database"
+  },
+  {
+   "id": "db-499",
+   "type": "Database"
+  },
+  {
+   "id": "db-586",
+   "type": "Database"
+  },
+  {
+   "id": "db-604",
+   "type": "Database"
+  },
+  {
+   "id": "db-658",
+   "type": "Database"
+  },
+  {
+   "id": "db-703",
+   "type": "Database"
+  },
+  {
+   "id": "db-704",
+   "type": "Database"
+  },
+  {
+   "id": "db-705",
+   "type": "Database"
+  },
+  {
+   "id": "db-706",
+   "type": "Database"
+  },
+  {
+   "id": "db-774",
+   "type": "Database"
+  },
+  {
+   "id": "db-826",
+   "type": "Database"
+  },
+  {
+   "id": "db-837",
+   "type": "Database"
+  },
+  {
+   "id": "db-928",
+   "type": "Database"
+  },
+  {
+   "id": "db-985",
+   "type": "Database"
+  },
+  {
+   "id": "q-001",
+   "type": "Queue"
+  },
+  {
+   "id": "q-002",
+   "type": "Queue"
+  },
+  {
+   "id": "q-003",
+   "type": "Queue"
+  },
+  {
+   "id": "q-004",
+   "type": "Queue"
+  },
+  {
+   "id": "q-005",
+   "type": "Queue"
+  },
+  {
+   "id": "reg-1",
+   "type": "Region"
+  },
+  {
+   "id": "reg-2",
+   "type": "Region"
+  },
+  {
+   "id": "reg-3",
+   "type": "Region"
+  },
+  {
+   "id": "sla-05",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-06",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "sla-11",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-14",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-18",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "sla-24",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "sla-36",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-46",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "sla-59",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "sla-67",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "sla-68",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-70",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-72",
+   "type": "SLA",
+   "availability": 99.95
+  },
+  {
+   "id": "sla-83",
+   "type": "SLA",
+   "availability": 99.9
+  },
+  {
+   "id": "svc-006",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-050",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-083",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-113",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-125",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-128",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-145",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-150",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-152",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-165",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-179",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-183",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-185",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-194",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-209",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-210",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-216",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-236",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-270",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-283",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-317",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-344",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-356",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-359",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-379",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-385",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-403",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-406",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-413",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-420",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-444",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-466",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-467",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-471",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-473",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-520",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-546",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-569",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-580",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-618",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-642",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-654",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-664",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-665",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-675",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-723",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-750",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-755",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-787",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-790",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-793",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-812",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "svc-820",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-838",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-855",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-860",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-872",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-878",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-915",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-923",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-956",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-970",
+   "type": "Service",
+   "tier": 2
+  },
+  {
+   "id": "svc-975",
+   "type": "CustomerFacingService",
+   "tier": 2
+  },
+  {
+   "id": "team-01",
+   "type": "Team"
+  },
+  {
+   "id": "team-02",
+   "type": "Team"
+  },
+  {
+   "id": "team-03",
+   "type": "Team"
+  },
+  {
+   "id": "team-04",
+   "type": "Team"
+  },
+  {
+   "id": "team-05",
+   "type": "Team"
+  }
+ ],
+ "edges": [
+  [
+   "db-021",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-021",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "db-040",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-040",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "db-185",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-185",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "db-185",
+   "replicaOf",
+   "db-704"
+  ],
+  [
+   "db-190",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-190",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-241",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-241",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-269",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-269",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-269",
+   "replicaOf",
+   "db-275"
+  ],
+  [
+   "db-275",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-275",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-299",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "db-299",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-299",
+   "replicaOf",
+   "db-774"
+  ],
+  [
+   "db-302",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-302",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "db-302",
+   "replicaOf",
+   "db-703"
+  ],
+  [
+   "db-304",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-304",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "db-323",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-323",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-360",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-360",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "db-360",
+   "replicaOf",
+   "db-304"
+  ],
+  [
+   "db-400",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "db-400",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-411",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-411",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-411",
+   "replicaOf",
+   "db-323"
+  ],
+  [
+   "db-499",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-499",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-499",
+   "replicaOf",
+   "db-400"
+  ],
+  [
+   "db-586",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-586",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-586",
+   "replicaOf",
+   "db-604"
+  ],
+  [
+   "db-604",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "db-604",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-658",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-658",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "db-658",
+   "replicaOf",
+   "db-021"
+  ],
+  [
+   "db-703",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-703",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "db-704",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "db-704",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "db-705",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-705",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-705",
+   "replicaOf",
+   "db-985"
+  ],
+  [
+   "db-706",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-706",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-774",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-774",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-826",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "db-826",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-837",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-837",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "db-837",
+   "replicaOf",
+   "db-706"
+  ],
+  [
+   "db-928",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "db-928",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "db-928",
+   "replicaOf",
+   "db-040"
+  ],
+  [
+   "db-985",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-985",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "q-001",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "q-001",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "q-002",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "q-002",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "q-003",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "q-003",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "q-004",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "q-004",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "q-005",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "q-005",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-006",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-006",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-006",
+   "replicaOf",
+   "svc-379"
+  ],
+  [
+   "svc-050",
+   "dependsOn",
+   "db-040"
+  ],
+  [
+   "svc-050",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-050",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-050",
+   "hasSLA",
+   "sla-72"
+  ],
+  [
+   "svc-050",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-083",
+   "dependsOn",
+   "svc-145"
+  ],
+  [
+   "svc-083",
+   "dependsOn",
+   "svc-467"
+  ],
+  [
+   "svc-083",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-083",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-113",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-113",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-113",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-113",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-125",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-125",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-125",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-128",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-128",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-128",
+   "replicaOf",
+   "svc-787"
+  ],
+  [
+   "svc-145",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-145",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-145",
+   "dependsOn",
+   "svc-569"
+  ],
+  [
+   "svc-145",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-145",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-145",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-150",
+   "dependsOn",
+   "svc-420"
+  ],
+  [
+   "svc-150",
+   "dependsOn",
+   "svc-444"
+  ],
+  [
+   "svc-150",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-150",
+   "hasSLA",
+   "sla-11"
+  ],
+  [
+   "svc-150",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-152",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-152",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-152",
+   "replicaOf",
+   "svc-216"
+  ],
+  [
+   "svc-165",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-165",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-165",
+   "replicaOf",
+   "svc-113"
+  ],
+  [
+   "svc-179",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-179",
+   "dependsOn",
+   "svc-546"
+  ],
+  [
+   "svc-179",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-179",
+   "hasSLA",
+   "sla-05"
+  ],
+  [
+   "svc-179",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-183",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-183",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-183",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-183",
+   "dependsOn",
+   "svc-642"
+  ],
+  [
+   "svc-183",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-183",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-185",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-185",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-185",
+   "replicaOf",
+   "svc-183"
+  ],
+  [
+   "svc-194",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-194",
+   "dependsOn",
+   "svc-216"
+  ],
+  [
+   "svc-194",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-194",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-209",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-209",
+   "dependsOn",
+   "q-005"
+  ],
+  [
+   "svc-209",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-209",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-209",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-210",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-210",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-210",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-216",
+   "dependsOn",
+   "svc-473"
+  ],
+  [
+   "svc-216",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-216",
+   "hasSLA",
+   "sla-68"
+  ],
+  [
+   "svc-216",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-236",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-236",
+   "dependsOn",
+   "db-704"
+  ],
+  [
+   "svc-236",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-236",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-236",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-270",
+   "dependsOn",
+   "q-002"
+  ],
+  [
+   "svc-270",
+   "dependsOn",
+   "svc-209"
+  ],
+  [
+   "svc-270",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-270",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-270",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-270",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-283",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-283",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-283",
+   "replicaOf",
+   "svc-150"
+  ],
+  [
+   "svc-317",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-317",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-317",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-344",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-344",
+   "dependsOn",
+   "db-774"
+  ],
+  [
+   "svc-344",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-344",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-344",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-356",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-356",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-356",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-359",
+   "dependsOn",
+   "svc-642"
+  ],
+  [
+   "svc-359",
+   "dependsOn",
+   "svc-970"
+  ],
+  [
+   "svc-359",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-359",
+   "hasSLA",
+   "sla-67"
+  ],
+  [
+   "svc-359",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-379",
+   "dependsOn",
+   "db-021"
+  ],
+  [
+   "svc-379",
+   "dependsOn",
+   "q-001"
+  ],
+  [
+   "svc-379",
+   "dependsOn",
+   "svc-642"
+  ],
+  [
+   "svc-379",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-379",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-379",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-385",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-385",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-385",
+   "replicaOf",
+   "svc-359"
+  ],
+  [
+   "svc-403",
+   "dependsOn",
+   "db-400"
+  ],
+  [
+   "svc-403",
+   "dependsOn",
+   "svc-860"
+  ],
+  [
+   "svc-403",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-403",
+   "hasSLA",
+   "sla-14"
+  ],
+  [
+   "svc-403",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-406",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-406",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-406",
+   "replicaOf",
+   "svc-855"
+  ],
+  [
+   "svc-413",
+   "dependsOn",
+   "db-190"
+  ],
+  [
+   "svc-413",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-413",
+   "dependsOn",
+   "svc-569"
+  ],
+  [
+   "svc-413",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-413",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-420",
+   "dependsOn",
+   "db-323"
+  ],
+  [
+   "svc-420",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-420",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-444",
+   "dependsOn",
+   "db-040"
+  ],
+  [
+   "svc-444",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-444",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-444",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-444",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-466",
+   "dependsOn",
+   "svc-216"
+  ],
+  [
+   "svc-466",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-466",
+   "dependsOn",
+   "svc-467"
+  ],
+  [
+   "svc-466",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-466",
+   "hasSLA",
+   "sla-36"
+  ],
+  [
+   "svc-466",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-467",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-467",
+   "dependsOn",
+   "svc-787"
+  ],
+  [
+   "svc-467",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-467",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-471",
+   "dependsOn",
+   "db-400"
+  ],
+  [
+   "svc-471",
+   "dependsOn",
+   "svc-664"
+  ],
+  [
+   "svc-471",
+   "dependsOn",
+   "svc-956"
+  ],
+  [
+   "svc-471",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-471",
+   "hasSLA",
+   "sla-06"
+  ],
+  [
+   "svc-471",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-473",
+   "dependsOn",
+   "db-275"
+  ],
+  [
+   "svc-473",
+   "dependsOn",
+   "db-706"
+  ],
+  [
+   "svc-473",
+   "dependsOn",
+   "svc-569"
+  ],
+  [
+   "svc-473",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-473",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-520",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-520",
+   "dependsOn",
+   "svc-344"
+  ],
+  [
+   "svc-520",
+   "dependsOn",
+   "svc-569"
+  ],
+  [
+   "svc-520",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-520",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-546",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-546",
+   "dependsOn",
+   "svc-210"
+  ],
+  [
+   "svc-546",
+   "dependsOn",
+   "svc-675"
+  ],
+  [
+   "svc-546",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-546",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-569",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-569",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-569",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-580",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-580",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-580",
+   "replicaOf",
+   "svc-569"
+  ],
+  [
+   "svc-618",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-618",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-618",
+   "replicaOf",
+   "svc-642"
+  ],
+  [
+   "svc-642",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-642",
+   "dependsOn",
+   "db-706"
+  ],
+  [
+   "svc-642",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-642",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-654",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-654",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-654",
+   "replicaOf",
+   "svc-210"
+  ],
+  [
+   "svc-664",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-664",
+   "dependsOn",
+   "svc-194"
+  ],
+  [
+   "svc-664",
+   "dependsOn",
+   "svc-356"
+  ],
+  [
+   "svc-664",
+   "dependsOn",
+   "svc-915"
+  ],
+  [
+   "svc-664",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-664",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-665",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-665",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-665",
+   "replicaOf",
+   "svc-050"
+  ],
+  [
+   "svc-675",
+   "dependsOn",
+   "db-040"
+  ],
+  [
+   "svc-675",
+   "dependsOn",
+   "q-005"
+  ],
+  [
+   "svc-675",
+   "dependsOn",
+   "svc-145"
+  ],
+  [
+   "svc-675",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-675",
+   "dependsOn",
+   "svc-970"
+  ],
+  [
+   "svc-675",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-675",
+   "hasSLA",
+   "sla-18"
+  ],
+  [
+   "svc-675",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-723",
+   "dependsOn",
+   "db-241"
+  ],
+  [
+   "svc-723",
+   "dependsOn",
+   "svc-236"
+  ],
+  [
+   "svc-723",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-723",
+   "dependsOn",
+   "svc-956"
+  ],
+  [
+   "svc-723",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-723",
+   "hasSLA",
+   "sla-24"
+  ],
+  [
+   "svc-723",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-750",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-750",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-750",
+   "hasSLA",
+   "sla-83"
+  ],
+  [
+   "svc-750",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-755",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-755",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-755",
+   "dependsOn",
+   "svc-413"
+  ],
+  [
+   "svc-755",
+   "dependsOn",
+   "svc-787"
+  ],
+  [
+   "svc-755",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-755",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "db-021"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "svc-216"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "svc-420"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-787",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-787",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-790",
+   "dependsOn",
+   "svc-083"
+  ],
+  [
+   "svc-790",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-790",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-790",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-790",
+   "hasSLA",
+   "sla-59"
+  ],
+  [
+   "svc-790",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-793",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-793",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-793",
+   "replicaOf",
+   "svc-413"
+  ],
+  [
+   "svc-812",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-812",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-812",
+   "replicaOf",
+   "svc-790"
+  ],
+  [
+   "svc-820",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-820",
+   "dependsOn",
+   "q-004"
+  ],
+  [
+   "svc-820",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-820",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-838",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-838",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-838",
+   "replicaOf",
+   "svc-403"
+  ],
+  [
+   "svc-855",
+   "dependsOn",
+   "db-323"
+  ],
+  [
+   "svc-855",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-855",
+   "dependsOn",
+   "svc-216"
+  ],
+  [
+   "svc-855",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-855",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-860",
+   "dependsOn",
+   "svc-145"
+  ],
+  [
+   "svc-860",
+   "dependsOn",
+   "svc-356"
+  ],
+  [
+   "svc-860",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-860",
+   "dependsOn",
+   "svc-413"
+  ],
+  [
+   "svc-860",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-860",
+   "hasSLA",
+   "sla-68"
+  ],
+  [
+   "svc-860",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-872",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-872",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-872",
+   "replicaOf",
+   "svc-473"
+  ],
+  [
+   "svc-878",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-878",
+   "ownedBy",
+   "team-05"
+  ],
+  [
+   "svc-878",
+   "replicaOf",
+   "svc-546"
+  ],
+  [
+   "svc-915",
+   "dependsOn",
+   "db-604"
+  ],
+  [
+   "svc-915",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-915",
+   "dependsOn",
+   "svc-420"
+  ],
+  [
+   "svc-915",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-915",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-915",
+   "ownedBy",
+   "team-04"
+  ],
+  [
+   "svc-923",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-923",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-923",
+   "replicaOf",
+   "svc-466"
+  ],
+  [
+   "svc-956",
+   "dependsOn",
+   "svc-209"
+  ],
+  [
+   "svc-956",
+   "dependsOn",
+   "svc-473"
+  ],
+  [
+   "svc-956",
+   "dependsOn",
+   "svc-915"
+  ],
+  [
+   "svc-956",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-956",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-970",
+   "dependsOn",
+   "db-985"
+  ],
+  [
+   "svc-970",
+   "dependsOn",
+   "q-004"
+  ],
+  [
+   "svc-970",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-970",
+   "dependsOn",
+   "svc-473"
+  ],
+  [
+   "svc-970",
+   "dependsOn",
+   "svc-855"
+  ],
+  [
+   "svc-970",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-970",
+   "ownedBy",
+   "team-03"
+  ],
+  [
+   "svc-975",
+   "dependsOn",
+   "svc-379"
+  ],
+  [
+   "svc-975",
+   "deployedIn",
+   "reg-3"
+  ],
+  [
+   "svc-975",
+   "hasSLA",
+   "sla-46"
+  ],
+  [
+   "svc-975",
+   "ownedBy",
+   "team-02"
+  ]
+ ]
+}
