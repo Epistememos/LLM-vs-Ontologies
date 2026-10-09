@@ -18,7 +18,7 @@ The interval is narrow and centred on zero, so this reads as a tie rather than a
 
 ## Setup
 
-One synthetic infrastructure graph per size (fixed seeds), the same questions, and the same model for every condition: `claude-haiku-4-5-20251001`, temperature 0, `max_tokens` 8192.
+One synthetic infrastructure graph per size (fixed seeds), the same questions, and the same model for every condition: Anthropic's Haiku 4.5 (2025-10-01 snapshot; model ID set in `llm.py`), temperature 0, `max_tokens` 8192.
 
 | Condition | Model is given | Tools | Retries |
 |---|---|---|---|
@@ -111,7 +111,7 @@ For comparison, on the same 12 region-failure questions plain **B scores 1.00** 
 
 - **Synthetic data.** One generator with fixed seeds, three graphs. Real infrastructure graphs are messier (partial data, inconsistent naming, multiple regions per service).
 - **Circularity risk.** The generator, the question templates, the ground truth and the ontology were all written by the same author, so the ontology fits the questions by construction. Real ontologies rarely fit the questions this well, which if anything should favour C.
-- **One model.** Claude Haiku 4.5 only, one run at temperature 0, no variance across seeds or models. A stronger model may write the double-negation SPARQL reliably.
+- **One model.** Haiku 4.5 only, one run at temperature 0, no variance across seeds or models. A stronger model may write the double-negation SPARQL reliably.
 - **No reasoner enabled.** C ran plain SPARQL over asserted triples: subclass membership and transitivity were handled through property paths (`rdf:type/rdfs:subClassOf*`, `ex:dependsOn+`), not by an OWL/RDFS reasoner. A reasoner, or rules that materialise "lost" and "down", could change C's L4 results.
 - **Ontology construction cost not measured.** Writing `schema.ttl` and converting the data to RDF took effort that the benchmark does not count; B+ only needed the prose documentation.
 - **Best-effort sandbox.** The Python sandbox is a subprocess with a temp directory, a scrubbed environment, a timeout and in-process socket and subprocess blocking. It guards against accidents, not adversaries, and a program could still read files by absolute path.
