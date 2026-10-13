@@ -1,0 +1,32 @@
+{
+ "failure_region": "reg-1",
+ "violations": [
+  [
+   "svc-093",
+   "svc-273"
+  ],
+  [
+   "svc-093",
+   "svc-323"
+  ],
+  [
+   "svc-481",
+   "svc-381"
+  ]
+ ],
+ "deep_chain": [
+  "svc-473",
+  "svc-934",
+  "svc-389",
+  "db-865"
+ ],
+ "remote_dependents_db": "db-727",
+ "safe_service": "svc-481",
+ "forced_replica_modes": {
+  "db-727": "none",
+  "db-865": "none",
+  "svc-301": "same",
+  "svc-481": "cross",
+  "svc-783": "none"
+ }
+}

@@ -1,0 +1,349 @@
+@prefix ex: <http://example.org/br#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:comment """Blast Radius ontology, Experiment 2. Base classes and properties are asserted in the data.\r
+Derived classes and properties (marked 'derived') are materialized by the rules in rules.py, run to a\r
+fixpoint before any query, so they can be queried like asserted facts. rdf:type is closed under\r
+rdfs:subClassOf by the same rules.""" .
+
+ex:availability a owl:DatatypeProperty ;
+    rdfs:domain ex:SLA ;
+    rdfs:range xsd:decimal .
+
+ex:dependsOnTransitively a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Derived. Transitive dependency: X dependsOnTransitively Y if Y is reachable from X directly or through a chain of dependsOn links." ;
+    rdfs:subPropertyOf ex:dependsOn .
+
+ex:deployedIn a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Region .
+
+ex:hasFootprintRegion a owl:ObjectProperty ;
+    rdfs:comment "Derived. Footprint: the set of regions where members of a node's replica group are deployed; each such region is a hasFootprintRegion value." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Region .
+
+ex:hasSLA a owl:ObjectProperty ;
+    rdfs:domain ex:Service ;
+    rdfs:range ex:SLA .
+
+ex:inReplicaGroupWith a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Derived. Links every component to each member of its replica group, itself included. Replica group: a node plus every node connected to it through replicaOf links in either direction, transitively." .
+
+ex:ownedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Team .
+
+ex:replicaOf a owl:ObjectProperty ;
+    rdfs:comment "'X replicaOf Y' means X is a replica of Y." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:tier a owl:DatatypeProperty ;
+    rdfs:comment "Criticality 1-3; 1 is the most critical." ;
+    rdfs:domain ex:Service ;
+    rdfs:range xsd:integer .
+
+ex:violatesTierRule a owl:ObjectProperty ;
+    rdfs:comment "Derived. Tier rule: tier-1 services must not depend directly on tier-3 services; a dependsOn edge from a tier-1 service to a tier-3 service violates the tier rule." ;
+    rdfs:domain ex:Service ;
+    rdfs:range ex:Service .
+
+ex:FailedRegion a owl:Class ;
+    rdfs:comment "Asserted per failure scenario." ;
+    rdfs:subClassOf ex:Region .
+
+ex:Queue a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:TierRiskService a owl:Class ;
+    rdfs:comment "Derived. Tier risk: a tier-1 service is a tier risk if it transitively depends on at least one tier-3 service." ;
+    rdfs:subClassOf ex:Service .
+
+ex:dependsOn a owl:ObjectProperty ;
+    rdfs:comment "Direct dependency: the subject needs the object to work." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:sla-57 a ex:BreachedSLA,
+        ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-70 a ex:BreachedSLA,
+        ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-83 a ex:BreachedSLA,
+        ex:SLA ;
+    ex:availability 99.99 .
+
+ex:svc-999 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Down,
+        ex:Lost,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-687,
+        ex:svc-787 ;
+    ex:dependsOnTransitively ex:db-242,
+        ex:q-001,
+        ex:svc-687,
+        ex:svc-787 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:hasSLA ex:sla-70 ;
+    ex:inReplicaGroupWith ex:svc-999 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:db-921 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-060,
+        ex:db-921 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:db-060 .
+
+ex:svc-378 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-378,
+        ex:svc-687 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-687 ;
+    ex:tier 1 .
+
+ex:svc-454 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-454,
+        ex:svc-635 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-635 ;
+    ex:tier 1 .
+
+ex:svc-486 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-179,
+        ex:svc-486 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-179 ;
+    ex:tier 1 .
+
+ex:svc-957 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-473,
+        ex:svc-957 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-473 ;
+    ex:tier 3 .
+
+ex:BreachedSLA a owl:Class ;
+    rdfs:comment "Derived. Breached SLA: an SLA is breached if any service that has it is down." ;
+    rdfs:subClassOf ex:SLA .
+
+ex:Team a owl:Class .
+
+ex:db-060 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-060,
+        ex:db-921 ;
+    ex:ownedBy ex:team-01 .
+
+ex:db-688 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-688 ;
+    ex:ownedBy ex:team-01 .
+
+ex:svc-179 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Down,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-687,
+        ex:svc-787 ;
+    ex:dependsOnTransitively ex:db-242,
+        ex:q-001,
+        ex:svc-687,
+        ex:svc-787 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:hasSLA ex:sla-83 ;
+    ex:inReplicaGroupWith ex:svc-179,
+        ex:svc-486 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-473 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-242,
+        ex:db-688 ;
+    ex:dependsOnTransitively ex:db-242,
+        ex:db-688 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-473,
+        ex:svc-957 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:svc-635 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Down,
+        ex:Primary,
+        ex:Service,
+        ex:TierRiskService ;
+    ex:dependsOn ex:svc-687,
+        ex:svc-787,
+        ex:svc-969 ;
+    ex:dependsOnTransitively ex:db-242,
+        ex:q-001,
+        ex:svc-687,
+        ex:svc-787,
+        ex:svc-969 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:hasSLA ex:sla-57 ;
+    ex:inReplicaGroupWith ex:svc-454,
+        ex:svc-635 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 ;
+    ex:violatesTierRule ex:svc-969 .
+
+ex:Database a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:Lost a owl:Class ;
+    rdfs:comment "Derived. Lost: when a region fails, a node is lost if its footprint contains only the failed region." ;
+    rdfs:subClassOf ex:Component .
+
+ex:svc-969 a ex:Component,
+        ex:Down,
+        ex:Lost,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:q-001 ;
+    ex:dependsOnTransitively ex:q-001 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-969 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:team-02 a ex:Team .
+
+ex:CustomerFacingService a owl:Class ;
+    rdfs:subClassOf ex:Service .
+
+ex:Region a owl:Class .
+
+ex:Replica a owl:Class ;
+    rdfs:comment "Derived. A component that is a replica of another (has an outgoing replicaOf)." ;
+    rdfs:subClassOf ex:Component .
+
+ex:Down a owl:Class ;
+    rdfs:comment "Derived. Down: a service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost." ;
+    rdfs:subClassOf ex:Service .
+
+ex:SLA a owl:Class .
+
+ex:db-242 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-242 ;
+    ex:ownedBy ex:team-01 .
+
+ex:q-001 a ex:Component,
+        ex:Lost,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:q-001 ;
+    ex:ownedBy ex:team-01 .
+
+ex:svc-687 a ex:Component,
+        ex:Down,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-787 ;
+    ex:dependsOnTransitively ex:db-242,
+        ex:q-001,
+        ex:svc-787 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-378,
+        ex:svc-687 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:svc-787 a ex:Component,
+        ex:Down,
+        ex:Lost,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-242,
+        ex:q-001 ;
+    ex:dependsOnTransitively ex:db-242,
+        ex:q-001 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-787 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:Primary a owl:Class ;
+    rdfs:comment "Derived. Primary: a Service, Database or Queue X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node." ;
+    rdfs:subClassOf ex:Component .
+
+ex:team-01 a ex:Team .
+
+ex:reg-2 a ex:FailedRegion,
+        ex:Region .
+
+ex:Service a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:reg-1 a ex:Region .
+
+ex:Component a owl:Class ;
+    rdfs:comment "An infrastructure component: a Service, Database or Queue." .
+

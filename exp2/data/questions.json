@@ -1,0 +1,722 @@
+[
+ {
+  "qid": "e2-20-L4-00",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_tier_risk",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "Is svc-635 a tier risk?"
+ },
+ {
+  "qid": "e2-20-L4-01",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is svc-179 down?"
+ },
+ {
+  "qid": "e2-20-L4-02",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is db-242 lost?"
+ },
+ {
+  "qid": "e2-20-L4-03",
+  "size": 20,
+  "level": "L4",
+  "kind": "down_by_team",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which primary services owned by team-02 are down?"
+ },
+ {
+  "qid": "e2-20-L4-04",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is svc-969 down?"
+ },
+ {
+  "qid": "e2-20-L4-05",
+  "size": 20,
+  "level": "L4",
+  "kind": "down_cfs",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which primary customer-facing services are down?"
+ },
+ {
+  "qid": "e2-20-L4-06",
+  "size": 20,
+  "level": "L4",
+  "kind": "count_down",
+  "scenario": "reg-2",
+  "answer_type": "number",
+  "split": "test",
+  "text": "In this scenario, how many primary services are down?"
+ },
+ {
+  "qid": "e2-20-L4-07",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_tier_risk",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Is svc-179 a tier risk?"
+ },
+ {
+  "qid": "e2-20-L4-08",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-060 lost?"
+ },
+ {
+  "qid": "e2-20-L4-09",
+  "size": 20,
+  "level": "L4",
+  "kind": "violations",
+  "scenario": null,
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'."
+ },
+ {
+  "qid": "e2-20-L4-10",
+  "size": 20,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-70 breached?"
+ },
+ {
+  "qid": "e2-20-L4-11",
+  "size": 20,
+  "level": "L4",
+  "kind": "survivors",
+  "scenario": "reg-1",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary customer-facing services deployed in the failed region are not down?"
+ },
+ {
+  "qid": "e2-20-L4-12",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-473 down?"
+ },
+ {
+  "qid": "e2-20-L4-13",
+  "size": 20,
+  "level": "L4",
+  "kind": "breached_slas",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which SLAs are breached?"
+ },
+ {
+  "qid": "e2-20-L4-14",
+  "size": 20,
+  "level": "L4",
+  "kind": "lost_dbs",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary databases are lost?"
+ },
+ {
+  "qid": "e2-20-L4-15",
+  "size": 20,
+  "level": "L4",
+  "kind": "violates_edge",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does the dependsOn edge svc-179->svc-787 violate the tier rule?"
+ },
+ {
+  "qid": "e2-20-L4-16",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-688 lost?"
+ },
+ {
+  "qid": "e2-20-L4-17",
+  "size": 20,
+  "level": "L4",
+  "kind": "tier_risks",
+  "scenario": null,
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which services are tier risks?"
+ },
+ {
+  "qid": "e2-20-L4-18",
+  "size": 20,
+  "level": "L4",
+  "kind": "down_by_team",
+  "scenario": "reg-1",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary services owned by team-01 are down?"
+ },
+ {
+  "qid": "e2-20-L4-19",
+  "size": 20,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-83 breached?"
+ },
+ {
+  "qid": "e2-20-L4-20",
+  "size": 20,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-57 breached?"
+ },
+ {
+  "qid": "e2-20-L4-21",
+  "size": 20,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-635 down?"
+ },
+ {
+  "qid": "e2-20-L4-22",
+  "size": 20,
+  "level": "L4",
+  "kind": "violates_edge",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does the dependsOn edge svc-635->svc-969 violate the tier rule?"
+ },
+ {
+  "qid": "e2-20-check-00",
+  "size": 20,
+  "level": "check",
+  "kind": "failed_region",
+  "scenario": "reg-1",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which region has failed?"
+ },
+ {
+  "qid": "e2-100-L4-00",
+  "size": 100,
+  "level": "L4",
+  "kind": "survivors",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which primary customer-facing services deployed in the failed region are not down?"
+ },
+ {
+  "qid": "e2-100-L4-01",
+  "size": 100,
+  "level": "L4",
+  "kind": "lost_dbs",
+  "scenario": "reg-3",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which primary databases are lost?"
+ },
+ {
+  "qid": "e2-100-L4-02",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is svc-376 down?"
+ },
+ {
+  "qid": "e2-100-L4-03",
+  "size": 100,
+  "level": "L4",
+  "kind": "tier_risks",
+  "scenario": null,
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which services are tier risks?"
+ },
+ {
+  "qid": "e2-100-L4-04",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-3",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is db-959 lost?"
+ },
+ {
+  "qid": "e2-100-L4-05",
+  "size": 100,
+  "level": "L4",
+  "kind": "breached_slas",
+  "scenario": "reg-1",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which SLAs are breached?"
+ },
+ {
+  "qid": "e2-100-L4-06",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-3",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-114 down?"
+ },
+ {
+  "qid": "e2-100-L4-07",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-783 down?"
+ },
+ {
+  "qid": "e2-100-L4-08",
+  "size": 100,
+  "level": "L4",
+  "kind": "count_down",
+  "scenario": "reg-2",
+  "answer_type": "number",
+  "split": "test",
+  "text": "In this scenario, how many primary services are down?"
+ },
+ {
+  "qid": "e2-100-L4-09",
+  "size": 100,
+  "level": "L4",
+  "kind": "violates_edge",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does the dependsOn edge svc-093->svc-273 violate the tier rule?"
+ },
+ {
+  "qid": "e2-100-L4-10",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_tier_risk",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Is svc-752 a tier risk?"
+ },
+ {
+  "qid": "e2-100-L4-11",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-397 down?"
+ },
+ {
+  "qid": "e2-100-L4-12",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-754 lost?"
+ },
+ {
+  "qid": "e2-100-L4-13",
+  "size": 100,
+  "level": "L4",
+  "kind": "violates_edge",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does the dependsOn edge svc-093->svc-428 violate the tier rule?"
+ },
+ {
+  "qid": "e2-100-L4-14",
+  "size": 100,
+  "level": "L4",
+  "kind": "down_by_team",
+  "scenario": "reg-3",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary services owned by team-05 are down?"
+ },
+ {
+  "qid": "e2-100-L4-15",
+  "size": 100,
+  "level": "L4",
+  "kind": "down_cfs",
+  "scenario": "reg-3",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary customer-facing services are down?"
+ },
+ {
+  "qid": "e2-100-L4-16",
+  "size": 100,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-3",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-25 breached?"
+ },
+ {
+  "qid": "e2-100-L4-17",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-3",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-859 lost?"
+ },
+ {
+  "qid": "e2-100-L4-18",
+  "size": 100,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-89 breached?"
+ },
+ {
+  "qid": "e2-100-L4-19",
+  "size": 100,
+  "level": "L4",
+  "kind": "is_tier_risk",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Is svc-473 a tier risk?"
+ },
+ {
+  "qid": "e2-100-L4-20",
+  "size": 100,
+  "level": "L4",
+  "kind": "down_by_team",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary services owned by team-01 are down?"
+ },
+ {
+  "qid": "e2-100-L4-21",
+  "size": 100,
+  "level": "L4",
+  "kind": "violations",
+  "scenario": null,
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'."
+ },
+ {
+  "qid": "e2-100-L4-22",
+  "size": 100,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-3",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-81 breached?"
+ },
+ {
+  "qid": "e2-100-check-00",
+  "size": 100,
+  "level": "check",
+  "kind": "failed_region",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which region has failed?"
+ },
+ {
+  "qid": "e2-500-L4-00",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is svc-758 down?"
+ },
+ {
+  "qid": "e2-500-L4-01",
+  "size": 500,
+  "level": "L4",
+  "kind": "tier_risks",
+  "scenario": null,
+  "answer_type": "set",
+  "split": "dev",
+  "text": "Which services are tier risks?"
+ },
+ {
+  "qid": "e2-500-L4-02",
+  "size": 500,
+  "level": "L4",
+  "kind": "lost_dbs",
+  "scenario": "reg-3",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which primary databases are lost?"
+ },
+ {
+  "qid": "e2-500-L4-03",
+  "size": 500,
+  "level": "L4",
+  "kind": "breached_slas",
+  "scenario": "reg-4",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which SLAs are breached?"
+ },
+ {
+  "qid": "e2-500-L4-04",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-4",
+  "answer_type": "bool",
+  "split": "dev",
+  "text": "In this scenario, is svc-044 down?"
+ },
+ {
+  "qid": "e2-500-L4-05",
+  "size": 500,
+  "level": "L4",
+  "kind": "survivors",
+  "scenario": "reg-4",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which primary customer-facing services deployed in the failed region are not down?"
+ },
+ {
+  "qid": "e2-500-L4-06",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_tier_risk",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Is svc-842 a tier risk?"
+ },
+ {
+  "qid": "e2-500-L4-07",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_tier_risk",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Is svc-561 a tier risk?"
+ },
+ {
+  "qid": "e2-500-L4-08",
+  "size": 500,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-98 breached?"
+ },
+ {
+  "qid": "e2-500-L4-09",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-4",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-722 lost?"
+ },
+ {
+  "qid": "e2-500-L4-10",
+  "size": 500,
+  "level": "L4",
+  "kind": "down_by_team",
+  "scenario": "reg-3",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary services owned by team-10 are down?"
+ },
+ {
+  "qid": "e2-500-L4-11",
+  "size": 500,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-5",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-72 breached?"
+ },
+ {
+  "qid": "e2-500-L4-12",
+  "size": 500,
+  "level": "L4",
+  "kind": "violates_edge",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does the dependsOn edge svc-880->svc-815 violate the tier rule?"
+ },
+ {
+  "qid": "e2-500-L4-13",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-1",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-025 lost?"
+ },
+ {
+  "qid": "e2-500-L4-14",
+  "size": 500,
+  "level": "L4",
+  "kind": "count_down",
+  "scenario": "reg-2",
+  "answer_type": "number",
+  "split": "test",
+  "text": "In this scenario, how many primary services are down?"
+ },
+ {
+  "qid": "e2-500-L4-15",
+  "size": 500,
+  "level": "L4",
+  "kind": "sla_breached",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is sla-33 breached?"
+ },
+ {
+  "qid": "e2-500-L4-16",
+  "size": 500,
+  "level": "L4",
+  "kind": "violations",
+  "scenario": null,
+  "answer_type": "set",
+  "split": "test",
+  "text": "Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'."
+ },
+ {
+  "qid": "e2-500-L4-17",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-669 down?"
+ },
+ {
+  "qid": "e2-500-L4-18",
+  "size": 500,
+  "level": "L4",
+  "kind": "down_cfs",
+  "scenario": "reg-2",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary customer-facing services are down?"
+ },
+ {
+  "qid": "e2-500-L4-19",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_down",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is svc-238 down?"
+ },
+ {
+  "qid": "e2-500-L4-20",
+  "size": 500,
+  "level": "L4",
+  "kind": "is_lost",
+  "scenario": "reg-2",
+  "answer_type": "bool",
+  "split": "test",
+  "text": "In this scenario, is db-511 lost?"
+ },
+ {
+  "qid": "e2-500-L4-21",
+  "size": 500,
+  "level": "L4",
+  "kind": "down_by_team",
+  "scenario": "reg-5",
+  "answer_type": "set",
+  "split": "test",
+  "text": "In this scenario, which primary services owned by team-02 are down?"
+ },
+ {
+  "qid": "e2-500-L4-22",
+  "size": 500,
+  "level": "L4",
+  "kind": "violates_edge",
+  "scenario": null,
+  "answer_type": "bool",
+  "split": "test",
+  "text": "Does the dependsOn edge svc-905->svc-399 violate the tier rule?"
+ },
+ {
+  "qid": "e2-500-check-00",
+  "size": 500,
+  "level": "check",
+  "kind": "failed_region",
+  "scenario": "reg-5",
+  "answer_type": "set",
+  "split": "dev",
+  "text": "In this scenario, which region has failed?"
+ }
+]

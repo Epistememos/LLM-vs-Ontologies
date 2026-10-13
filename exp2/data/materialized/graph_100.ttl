@@ -1,0 +1,1717 @@
+@prefix ex: <http://example.org/br#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:comment """Blast Radius ontology, Experiment 2. Base classes and properties are asserted in the data.\r
+Derived classes and properties (marked 'derived') are materialized by the rules in rules.py, run to a\r
+fixpoint before any query, so they can be queried like asserted facts. rdf:type is closed under\r
+rdfs:subClassOf by the same rules.""" .
+
+ex:BreachedSLA a owl:Class ;
+    rdfs:comment "Derived. Breached SLA: an SLA is breached if any service that has it is down." ;
+    rdfs:subClassOf ex:SLA .
+
+ex:Down a owl:Class ;
+    rdfs:comment "Derived. Down: a service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost." ;
+    rdfs:subClassOf ex:Service .
+
+ex:FailedRegion a owl:Class ;
+    rdfs:comment "Asserted per failure scenario." ;
+    rdfs:subClassOf ex:Region .
+
+ex:Lost a owl:Class ;
+    rdfs:comment "Derived. Lost: when a region fails, a node is lost if its footprint contains only the failed region." ;
+    rdfs:subClassOf ex:Component .
+
+ex:availability a owl:DatatypeProperty ;
+    rdfs:domain ex:SLA ;
+    rdfs:range xsd:decimal .
+
+ex:dependsOnTransitively a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Derived. Transitive dependency: X dependsOnTransitively Y if Y is reachable from X directly or through a chain of dependsOn links." ;
+    rdfs:subPropertyOf ex:dependsOn .
+
+ex:deployedIn a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Region .
+
+ex:hasFootprintRegion a owl:ObjectProperty ;
+    rdfs:comment "Derived. Footprint: the set of regions where members of a node's replica group are deployed; each such region is a hasFootprintRegion value." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Region .
+
+ex:hasSLA a owl:ObjectProperty ;
+    rdfs:domain ex:Service ;
+    rdfs:range ex:SLA .
+
+ex:inReplicaGroupWith a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Derived. Links every component to each member of its replica group, itself included. Replica group: a node plus every node connected to it through replicaOf links in either direction, transitively." .
+
+ex:ownedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Team .
+
+ex:replicaOf a owl:ObjectProperty ;
+    rdfs:comment "'X replicaOf Y' means X is a replica of Y." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:sla-86 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:tier a owl:DatatypeProperty ;
+    rdfs:comment "Criticality 1-3; 1 is the most critical." ;
+    rdfs:domain ex:Service ;
+    rdfs:range xsd:integer .
+
+ex:violatesTierRule a owl:ObjectProperty ;
+    rdfs:comment "Derived. Tier rule: tier-1 services must not depend directly on tier-3 services; a dependsOn edge from a tier-1 service to a tier-3 service violates the tier rule." ;
+    rdfs:domain ex:Service ;
+    rdfs:range ex:Service .
+
+ex:db-718 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-718 ;
+    ex:ownedBy ex:team-02 .
+
+ex:dependsOn a owl:ObjectProperty ;
+    rdfs:comment "Direct dependency: the subject needs the object to work." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:q-004 a ex:Component,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:q-004 ;
+    ex:ownedBy ex:team-04 .
+
+ex:sla-25 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-33 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-34 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-57 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-61 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-79 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-80 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-81 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:sla-89 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-90 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:sla-96 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:svc-027 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-351,
+        ex:svc-507 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-351,
+        ex:svc-507,
+        ex:svc-683,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-027 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-093 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service,
+        ex:TierRiskService ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-273,
+        ex:svc-323,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-323,
+        ex:svc-428,
+        ex:svc-507,
+        ex:svc-741,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:hasSLA ex:sla-61 ;
+    ex:inReplicaGroupWith ex:svc-093 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 ;
+    ex:violatesTierRule ex:svc-273,
+        ex:svc-323 .
+
+ex:svc-114 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-566,
+        ex:svc-075,
+        ex:svc-370,
+        ex:svc-934 ;
+    ex:dependsOnTransitively ex:db-235,
+        ex:db-416,
+        ex:db-566,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:q-001,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-370,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-674,
+        ex:svc-741,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-114 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 3 .
+
+ex:svc-306 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-015,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-376,
+        ex:svc-428 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-235,
+        ex:db-416,
+        ex:db-597,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-370,
+        ex:svc-376,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-741,
+        ex:svc-803 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:hasSLA ex:sla-24 ;
+    ex:inReplicaGroupWith ex:svc-306 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 1 .
+
+ex:svc-397 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-999 ;
+    ex:dependsOnTransitively ex:db-999 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-397 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-421 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-101,
+        ex:svc-934 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-689,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:q-001,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-101,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-674,
+        ex:svc-741,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:hasSLA ex:sla-81 ;
+    ex:inReplicaGroupWith ex:svc-421 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-570 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service,
+        ex:TierRiskService ;
+    ex:dependsOn ex:db-754,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-715 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-416,
+        ex:db-754,
+        ex:db-825,
+        ex:db-859,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-005,
+        ex:svc-069,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-351,
+        ex:svc-428,
+        ex:svc-683,
+        ex:svc-715,
+        ex:svc-741,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:hasSLA ex:sla-34 ;
+    ex:inReplicaGroupWith ex:svc-570 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:svc-783 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-428,
+        ex:svc-741 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:hasSLA ex:sla-89 ;
+    ex:inReplicaGroupWith ex:svc-783 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-815 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-428,
+        ex:svc-719 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-683,
+        ex:svc-719,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:hasSLA ex:sla-90 ;
+    ex:inReplicaGroupWith ex:svc-815 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 2 .
+
+ex:svc-896 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:q-003,
+        ex:svc-741 ;
+    ex:dependsOnTransitively ex:db-825,
+        ex:db-959,
+        ex:q-003,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-896 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:db-131 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-131,
+        ex:db-416 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:db-416 .
+
+ex:db-187 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-187,
+        ex:db-235 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:db-235 .
+
+ex:db-265 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-265,
+        ex:db-859 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:db-859 .
+
+ex:db-425 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-425,
+        ex:db-999 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:db-999 .
+
+ex:db-539 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-539,
+        ex:db-754 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:db-754 .
+
+ex:db-574 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-015,
+        ex:db-574 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:db-015 .
+
+ex:db-679 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-514,
+        ex:db-679 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:db-514 .
+
+ex:db-770 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-770,
+        ex:db-825 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:db-825 .
+
+ex:db-784 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-784,
+        ex:db-959 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:db-959 .
+
+ex:db-831 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-689,
+        ex:db-831 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:db-689 .
+
+ex:db-914 a ex:Component,
+        ex:Database,
+        ex:Replica ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-597,
+        ex:db-914 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:db-597 .
+
+ex:sla-65 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:svc-067 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-067,
+        ex:svc-075 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-075 ;
+    ex:tier 1 .
+
+ex:svc-155 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-155,
+        ex:svc-752 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-752 ;
+    ex:tier 1 .
+
+ex:svc-204 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-204,
+        ex:svc-273 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-273 ;
+    ex:tier 3 .
+
+ex:svc-261 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-261,
+        ex:svc-428 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-428 ;
+    ex:tier 1 .
+
+ex:svc-291 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-055,
+        ex:svc-291 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-055 ;
+    ex:tier 2 .
+
+ex:svc-303 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-303,
+        ex:svc-715 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-715 ;
+    ex:tier 2 .
+
+ex:svc-304 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-301,
+        ex:svc-304 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-301 ;
+    ex:tier 2 .
+
+ex:svc-353 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-353,
+        ex:svc-803 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-803 ;
+    ex:tier 2 .
+
+ex:svc-441 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-441,
+        ex:svc-967 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-967 ;
+    ex:tier 1 .
+
+ex:svc-478 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-478,
+        ex:svc-961 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:svc-961 ;
+    ex:tier 1 .
+
+ex:svc-487 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-381,
+        ex:svc-487 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-381 ;
+    ex:tier 3 .
+
+ex:svc-489 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-489,
+        ex:svc-683 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-683 ;
+    ex:tier 3 .
+
+ex:svc-496 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-496,
+        ex:svc-674 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-674 ;
+    ex:tier 2 .
+
+ex:svc-497 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-323,
+        ex:svc-497 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-323 ;
+    ex:tier 3 .
+
+ex:svc-502 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-473,
+        ex:svc-502 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-473 ;
+    ex:tier 1 .
+
+ex:svc-530 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-530,
+        ex:svc-992 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-992 ;
+    ex:tier 2 .
+
+ex:svc-567 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-481,
+        ex:svc-567 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-481 ;
+    ex:tier 1 .
+
+ex:svc-595 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-595,
+        ex:svc-938 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-938 ;
+    ex:tier 2 .
+
+ex:svc-669 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-411,
+        ex:svc-669 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:svc-411 ;
+    ex:tier 1 .
+
+ex:svc-708 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-092,
+        ex:svc-708 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-092 ;
+    ex:tier 1 .
+
+ex:svc-714 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-714,
+        ex:svc-847 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-847 ;
+    ex:tier 1 .
+
+ex:svc-928 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-741,
+        ex:svc-928 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-741 ;
+    ex:tier 2 .
+
+ex:svc-958 a ex:Component,
+        ex:Replica,
+        ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-376,
+        ex:svc-958 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-376 ;
+    ex:tier 1 .
+
+ex:db-514 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-514,
+        ex:db-679 ;
+    ex:ownedBy ex:team-05 .
+
+ex:sla-24 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:svc-092 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-198,
+        ex:svc-428 ;
+    ex:dependsOnTransitively ex:db-235,
+        ex:db-416,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-198,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:hasSLA ex:sla-79 ;
+    ex:inReplicaGroupWith ex:svc-092,
+        ex:svc-708 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-101 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-689,
+        ex:q-005,
+        ex:svc-075 ;
+    ex:dependsOnTransitively ex:db-689,
+        ex:db-959,
+        ex:q-005,
+        ex:svc-075 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-101 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:svc-198 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-235,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-389 ;
+    ex:dependsOnTransitively ex:db-235,
+        ex:db-865,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-389 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-198 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 2 .
+
+ex:svc-301 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-428,
+        ex:svc-507,
+        ex:svc-916 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-416,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-428,
+        ex:svc-507,
+        ex:svc-741,
+        ex:svc-916,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:hasSLA ex:sla-96 ;
+    ex:inReplicaGroupWith ex:svc-301,
+        ex:svc-304 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-411 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-959,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-934 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:q-001,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-674,
+        ex:svc-741,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:hasSLA ex:sla-24 ;
+    ex:inReplicaGroupWith ex:svc-411,
+        ex:svc-669 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-473 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service,
+        ex:TierRiskService ;
+    ex:dependsOn ex:svc-055,
+        ex:svc-934 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-235,
+        ex:db-416,
+        ex:db-597,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:q-001,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-055,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-370,
+        ex:svc-376,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-507,
+        ex:svc-674,
+        ex:svc-741,
+        ex:svc-803,
+        ex:svc-848,
+        ex:svc-934,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:hasSLA ex:sla-25 ;
+    ex:inReplicaGroupWith ex:svc-473,
+        ex:svc-502 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:svc-481 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service,
+        ex:TierRiskService ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-381,
+        ex:svc-389 ;
+    ex:dependsOnTransitively ex:db-689,
+        ex:db-727,
+        ex:db-865,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-381,
+        ex:svc-389 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:hasSLA ex:sla-80 ;
+    ex:inReplicaGroupWith ex:svc-481,
+        ex:svc-567 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 ;
+    ex:violatesTierRule ex:svc-381 .
+
+ex:svc-649 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-566,
+        ex:db-959,
+        ex:svc-075 ;
+    ex:dependsOnTransitively ex:db-566,
+        ex:db-959,
+        ex:svc-075 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-649 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 2 .
+
+ex:svc-719 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-428,
+        ex:svc-683 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-683,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-719 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-752 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-999 ;
+    ex:dependsOnTransitively ex:db-999 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:hasSLA ex:sla-65 ;
+    ex:inReplicaGroupWith ex:svc-155,
+        ex:svc-752 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-847 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:q-002,
+        ex:q-005,
+        ex:svc-428 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:q-002,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:hasSLA ex:sla-65 ;
+    ex:inReplicaGroupWith ex:svc-714,
+        ex:svc-847 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 1 .
+
+ex:svc-916 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-865,
+        ex:svc-273 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-865,
+        ex:q-002,
+        ex:q-005,
+        ex:svc-273,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-916 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-938 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-428 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-595,
+        ex:svc-938 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-961 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-649 ;
+    ex:dependsOnTransitively ex:db-566,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-649 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-478,
+        ex:svc-961 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-967 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:svc-428,
+        ex:svc-803 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-741,
+        ex:svc-803 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:hasSLA ex:sla-57 ;
+    ex:inReplicaGroupWith ex:svc-441,
+        ex:svc-967 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:TierRiskService a owl:Class ;
+    rdfs:comment "Derived. Tier risk: a tier-1 service is a tier risk if it transitively depends on at least one tier-3 service." ;
+    rdfs:subClassOf ex:Service .
+
+ex:db-727 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-727 ;
+    ex:ownedBy ex:team-03 .
+
+ex:svc-069 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:svc-075 ;
+    ex:dependsOnTransitively ex:db-959,
+        ex:db-999,
+        ex:svc-075 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-069 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-848 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-015,
+        ex:svc-273,
+        ex:svc-507 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-273,
+        ex:svc-507,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-848 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 3 .
+
+ex:Queue a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:db-754 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-539,
+        ex:db-754 ;
+    ex:ownedBy ex:team-02 .
+
+ex:svc-055 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-376,
+        ex:svc-848 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-235,
+        ex:db-416,
+        ex:db-597,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-370,
+        ex:svc-376,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-507,
+        ex:svc-741,
+        ex:svc-803,
+        ex:svc-848,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-055,
+        ex:svc-291 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-715 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-859,
+        ex:svc-069,
+        ex:svc-351 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-859,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-005,
+        ex:svc-069,
+        ex:svc-075,
+        ex:svc-273,
+        ex:svc-351,
+        ex:svc-683,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-303,
+        ex:svc-715 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:Region a owl:Class .
+
+ex:Team a owl:Class .
+
+ex:db-566 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-566 ;
+    ex:ownedBy ex:team-01 .
+
+ex:db-859 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-265,
+        ex:db-859 ;
+    ex:ownedBy ex:team-01 .
+
+ex:svc-323 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-507,
+        ex:svc-741 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-825,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-273,
+        ex:svc-507,
+        ex:svc-741,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-323,
+        ex:svc-497 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 3 .
+
+ex:svc-351 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:svc-273,
+        ex:svc-683 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-959,
+        ex:db-999,
+        ex:q-002,
+        ex:q-005,
+        ex:svc-273,
+        ex:svc-683,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-351 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 3 .
+
+ex:svc-381 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-689,
+        ex:db-727 ;
+    ex:dependsOnTransitively ex:db-689,
+        ex:db-727 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-381,
+        ex:svc-487 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 3 .
+
+ex:q-001 a ex:Component,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:q-001 ;
+    ex:ownedBy ex:team-05 .
+
+ex:db-597 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-597,
+        ex:db-914 ;
+    ex:ownedBy ex:team-02 .
+
+ex:svc-370 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-235,
+        ex:svc-075,
+        ex:svc-741 ;
+    ex:dependsOnTransitively ex:db-235,
+        ex:db-825,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-370 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:svc-376 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-597,
+        ex:db-999,
+        ex:svc-370,
+        ex:svc-428,
+        ex:svc-803 ;
+    ex:dependsOnTransitively ex:db-235,
+        ex:db-416,
+        ex:db-597,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-370,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-741,
+        ex:svc-803 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:hasSLA ex:sla-24 ;
+    ex:inReplicaGroupWith ex:svc-376,
+        ex:svc-958 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 1 .
+
+ex:db-689 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-689,
+        ex:db-831 ;
+    ex:ownedBy ex:team-04 .
+
+ex:svc-674 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-959,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-428 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-496,
+        ex:svc-674 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-934 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:q-001,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-674 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:q-001,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-674,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-934 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-803 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-389,
+        ex:svc-428 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-865,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-353,
+        ex:svc-803 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-683 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-959 ;
+    ex:dependsOnTransitively ex:db-959 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-489,
+        ex:svc-683 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 3 .
+
+ex:q-003 a ex:Component,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:q-003 ;
+    ex:ownedBy ex:team-02 .
+
+ex:svc-507 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:q-003,
+        ex:svc-273,
+        ex:svc-992 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:db-999,
+        ex:q-002,
+        ex:q-003,
+        ex:q-005,
+        ex:svc-273,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:svc-507 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:db-235 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-187,
+        ex:db-235 ;
+    ex:ownedBy ex:team-05 .
+
+ex:CustomerFacingService a owl:Class ;
+    rdfs:subClassOf ex:Service .
+
+ex:team-03 a ex:Team .
+
+ex:SLA a owl:Class .
+
+ex:team-02 a ex:Team .
+
+ex:team-04 a ex:Team .
+
+ex:q-002 a ex:Component,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:q-002 ;
+    ex:ownedBy ex:team-03 .
+
+ex:svc-389 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-865 ;
+    ex:dependsOnTransitively ex:db-865 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-389 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 2 .
+
+ex:svc-992 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-015,
+        ex:q-002 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:q-002 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-530,
+        ex:svc-992 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 2 .
+
+ex:db-865 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:db-865 ;
+    ex:ownedBy ex:team-03 .
+
+ex:db-015 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-015,
+        ex:db-574 ;
+    ex:ownedBy ex:team-03 .
+
+ex:svc-273 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:q-005,
+        ex:svc-992 ;
+    ex:dependsOnTransitively ex:db-015,
+        ex:q-002,
+        ex:q-005,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:svc-204,
+        ex:svc-273 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:team-01 a ex:Team .
+
+ex:db-416 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-131,
+        ex:db-416 ;
+    ex:ownedBy ex:team-04 .
+
+ex:q-005 a ex:Component,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1 ;
+    ex:inReplicaGroupWith ex:q-005 ;
+    ex:ownedBy ex:team-01 .
+
+ex:Database a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:team-05 a ex:Team .
+
+ex:db-825 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-770,
+        ex:db-825 ;
+    ex:ownedBy ex:team-04 .
+
+ex:db-999 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:db-425,
+        ex:db-999 ;
+    ex:ownedBy ex:team-05 .
+
+ex:svc-741 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-825,
+        ex:db-959 ;
+    ex:dependsOnTransitively ex:db-825,
+        ex:db-959 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-741,
+        ex:svc-928 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:Replica a owl:Class ;
+    rdfs:comment "Derived. A component that is a replica of another (has an outgoing replicaOf)." ;
+    rdfs:subClassOf ex:Component .
+
+ex:svc-428 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-416,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-741 ;
+    ex:dependsOnTransitively ex:db-416,
+        ex:db-825,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasFootprintRegion ex:reg-2,
+        ex:reg-3 ;
+    ex:inReplicaGroupWith ex:svc-261,
+        ex:svc-428 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:db-959 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-2 ;
+    ex:inReplicaGroupWith ex:db-784,
+        ex:db-959 ;
+    ex:ownedBy ex:team-02 .
+
+ex:svc-075 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:db-959 ;
+    ex:dependsOnTransitively ex:db-959 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasFootprintRegion ex:reg-1,
+        ex:reg-3 ;
+    ex:hasSLA ex:sla-33 ;
+    ex:inReplicaGroupWith ex:svc-067,
+        ex:svc-075 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:Primary a owl:Class ;
+    rdfs:comment "Derived. Primary: a Service, Database or Queue X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node." ;
+    rdfs:subClassOf ex:Component .
+
+ex:Service a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:reg-3 a ex:Region .
+
+ex:reg-2 a ex:Region .
+
+ex:reg-1 a ex:Region .
+
+ex:Component a owl:Class ;
+    rdfs:comment "An infrastructure component: a Service, Database or Queue." .
+

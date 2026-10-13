@@ -1,0 +1,700 @@
+@prefix ex: <http://example.org/br#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:db-131 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:db-416 .
+
+ex:db-187 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:db-235 .
+
+ex:db-265 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:db-859 .
+
+ex:db-425 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:db-999 .
+
+ex:db-539 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:db-754 .
+
+ex:db-574 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:db-015 .
+
+ex:db-679 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:db-514 .
+
+ex:db-718 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-02 .
+
+ex:db-770 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:db-825 .
+
+ex:db-784 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:db-959 .
+
+ex:db-831 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:db-689 .
+
+ex:db-914 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:db-597 .
+
+ex:q-004 a ex:Queue ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-04 .
+
+ex:sla-86 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:svc-027 a ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-351,
+        ex:svc-507 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-067 a ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-075 ;
+    ex:tier 1 .
+
+ex:svc-093 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-273,
+        ex:svc-323,
+        ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasSLA ex:sla-61 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-114 a ex:Service ;
+    ex:dependsOn ex:db-566,
+        ex:svc-075,
+        ex:svc-370,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 3 .
+
+ex:svc-155 a ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-752 ;
+    ex:tier 1 .
+
+ex:svc-204 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-273 ;
+    ex:tier 3 .
+
+ex:svc-261 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-428 ;
+    ex:tier 1 .
+
+ex:svc-291 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-055 ;
+    ex:tier 2 .
+
+ex:svc-303 a ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-715 ;
+    ex:tier 2 .
+
+ex:svc-304 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-301 ;
+    ex:tier 2 .
+
+ex:svc-306 a ex:Service ;
+    ex:dependsOn ex:db-015,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-376,
+        ex:svc-428 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-24 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 1 .
+
+ex:svc-353 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-803 ;
+    ex:tier 2 .
+
+ex:svc-397 a ex:Service ;
+    ex:dependsOn ex:db-999 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-421 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-101,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-81 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-441 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-967 ;
+    ex:tier 1 .
+
+ex:svc-478 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:svc-961 ;
+    ex:tier 1 .
+
+ex:svc-487 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-381 ;
+    ex:tier 3 .
+
+ex:svc-489 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-683 ;
+    ex:tier 3 .
+
+ex:svc-496 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-674 ;
+    ex:tier 2 .
+
+ex:svc-497 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-323 ;
+    ex:tier 3 .
+
+ex:svc-502 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-473 ;
+    ex:tier 1 .
+
+ex:svc-530 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-992 ;
+    ex:tier 2 .
+
+ex:svc-567 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-481 ;
+    ex:tier 1 .
+
+ex:svc-570 a ex:CustomerFacingService ;
+    ex:dependsOn ex:db-754,
+        ex:svc-075,
+        ex:svc-428,
+        ex:svc-715 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-34 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:svc-595 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-938 ;
+    ex:tier 2 .
+
+ex:svc-669 a ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-04 ;
+    ex:replicaOf ex:svc-411 ;
+    ex:tier 1 .
+
+ex:svc-708 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-092 ;
+    ex:tier 1 .
+
+ex:svc-714 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-847 ;
+    ex:tier 1 .
+
+ex:svc-783 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-428,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasSLA ex:sla-89 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-815 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-428,
+        ex:svc-719 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-90 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 2 .
+
+ex:svc-896 a ex:Service ;
+    ex:dependsOn ex:q-003,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-928 a ex:Service ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:replicaOf ex:svc-741 ;
+    ex:tier 2 .
+
+ex:svc-958 a ex:Service ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-03 ;
+    ex:replicaOf ex:svc-376 ;
+    ex:tier 1 .
+
+ex:db-514 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 .
+
+ex:db-727 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-03 .
+
+ex:q-001 a ex:Queue ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 .
+
+ex:sla-25 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-33 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-34 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-57 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-61 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-79 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-80 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-81 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:sla-89 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-90 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:sla-96 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:svc-069 a ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:svc-075 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-092 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-198,
+        ex:svc-428 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasSLA ex:sla-79 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-101 a ex:Service ;
+    ex:dependsOn ex:db-689,
+        ex:q-005,
+        ex:svc-075 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:svc-198 a ex:Service ;
+    ex:dependsOn ex:db-235,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-389 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 2 .
+
+ex:svc-301 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-428,
+        ex:svc-507,
+        ex:svc-916 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasSLA ex:sla-96 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-411 a ex:Service ;
+    ex:dependsOn ex:db-959,
+        ex:db-999,
+        ex:svc-075,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:hasSLA ex:sla-24 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-473 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-055,
+        ex:svc-934 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasSLA ex:sla-25 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:svc-481 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-381,
+        ex:svc-389 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-80 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:svc-649 a ex:Service ;
+    ex:dependsOn ex:db-566,
+        ex:db-959,
+        ex:svc-075 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 2 .
+
+ex:svc-719 a ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-428,
+        ex:svc-683 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-752 a ex:Service ;
+    ex:dependsOn ex:db-999 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-65 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-847 a ex:Service ;
+    ex:dependsOn ex:q-002,
+        ex:q-005,
+        ex:svc-428 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasSLA ex:sla-65 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 1 .
+
+ex:svc-848 a ex:Service ;
+    ex:dependsOn ex:db-015,
+        ex:svc-273,
+        ex:svc-507 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 3 .
+
+ex:svc-916 a ex:Service ;
+    ex:dependsOn ex:db-865,
+        ex:svc-273 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-938 a ex:Service ;
+    ex:dependsOn ex:svc-428 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:svc-961 a ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-649 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-967 a ex:CustomerFacingService ;
+    ex:dependsOn ex:db-999,
+        ex:svc-428,
+        ex:svc-803 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-57 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:db-416 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-04 .
+
+ex:db-566 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 .
+
+ex:db-597 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 .
+
+ex:db-754 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-02 .
+
+ex:db-825 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-04 .
+
+ex:db-859 a ex:Database ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-01 .
+
+ex:db-865 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-03 .
+
+ex:q-002 a ex:Queue ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-03 .
+
+ex:q-003 a ex:Queue ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-02 .
+
+ex:sla-65 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:svc-055 a ex:Service ;
+    ex:dependsOn ex:svc-376,
+        ex:svc-848 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-323 a ex:Service ;
+    ex:dependsOn ex:svc-507,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 3 .
+
+ex:svc-351 a ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:svc-273,
+        ex:svc-683 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 3 .
+
+ex:svc-370 a ex:Service ;
+    ex:dependsOn ex:db-235,
+        ex:svc-075,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 1 .
+
+ex:svc-381 a ex:Service ;
+    ex:dependsOn ex:db-689,
+        ex:db-727 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 3 .
+
+ex:svc-674 a ex:Service ;
+    ex:dependsOn ex:db-959,
+        ex:q-005,
+        ex:svc-075,
+        ex:svc-428 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-715 a ex:Service ;
+    ex:dependsOn ex:db-859,
+        ex:svc-069,
+        ex:svc-351 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:db-235 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 .
+
+ex:db-689 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-04 .
+
+ex:sla-24 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:svc-376 a ex:Service ;
+    ex:dependsOn ex:db-597,
+        ex:db-999,
+        ex:svc-370,
+        ex:svc-428,
+        ex:svc-803 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasSLA ex:sla-24 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 1 .
+
+ex:svc-683 a ex:Service ;
+    ex:dependsOn ex:db-959 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 3 .
+
+ex:svc-803 a ex:Service ;
+    ex:dependsOn ex:svc-075,
+        ex:svc-389,
+        ex:svc-428 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 2 .
+
+ex:svc-992 a ex:Service ;
+    ex:dependsOn ex:db-015,
+        ex:q-002 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-03 ;
+    ex:tier 2 .
+
+ex:db-015 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-03 .
+
+ex:q-005 a ex:Queue ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 .
+
+ex:svc-389 a ex:Service ;
+    ex:dependsOn ex:db-865 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 2 .
+
+ex:svc-507 a ex:Service ;
+    ex:dependsOn ex:db-999,
+        ex:q-003,
+        ex:svc-273,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:svc-934 a ex:Service ;
+    ex:dependsOn ex:q-001,
+        ex:svc-389,
+        ex:svc-428,
+        ex:svc-674 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-04 ;
+    ex:tier 1 .
+
+ex:svc-273 a ex:Service ;
+    ex:dependsOn ex:q-005,
+        ex:svc-992 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 3 .
+
+ex:svc-741 a ex:Service ;
+    ex:dependsOn ex:db-825,
+        ex:db-959 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-05 ;
+    ex:tier 2 .
+
+ex:db-959 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 .
+
+ex:db-999 a ex:Database ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-05 .
+
+ex:svc-428 a ex:Service ;
+    ex:dependsOn ex:db-416,
+        ex:db-959,
+        ex:svc-075,
+        ex:svc-741 ;
+    ex:deployedIn ex:reg-3 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:team-03 a ex:Team .
+
+ex:team-02 a ex:Team .
+
+ex:team-04 a ex:Team .
+
+ex:svc-075 a ex:Service ;
+    ex:dependsOn ex:db-959 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-33 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:team-01 a ex:Team .
+
+ex:team-05 a ex:Team .
+
+ex:reg-3 a ex:Region .
+
+ex:reg-2 a ex:FailedRegion,
+        ex:Region .
+
+ex:reg-1 a ex:Region .
+

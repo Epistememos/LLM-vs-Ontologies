@@ -1,0 +1,117 @@
+@prefix ex: <http://example.org/br#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:db-921 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:db-060 .
+
+ex:svc-378 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-02 ;
+    ex:replicaOf ex:svc-687 ;
+    ex:tier 1 .
+
+ex:svc-454 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-635 ;
+    ex:tier 1 .
+
+ex:svc-486 a ex:CustomerFacingService ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-179 ;
+    ex:tier 1 .
+
+ex:svc-957 a ex:Service ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 ;
+    ex:replicaOf ex:svc-473 ;
+    ex:tier 3 .
+
+ex:svc-999 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-687,
+        ex:svc-787 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:hasSLA ex:sla-70 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:db-060 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 .
+
+ex:db-688 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 .
+
+ex:sla-57 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-70 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:sla-83 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:svc-179 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-687,
+        ex:svc-787 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-83 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-473 a ex:Service ;
+    ex:dependsOn ex:db-242,
+        ex:db-688 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:svc-635 a ex:CustomerFacingService ;
+    ex:dependsOn ex:svc-687,
+        ex:svc-787,
+        ex:svc-969 ;
+    ex:deployedIn ex:reg-1 ;
+    ex:hasSLA ex:sla-57 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 1 .
+
+ex:svc-969 a ex:Service ;
+    ex:dependsOn ex:q-001 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 ;
+    ex:tier 3 .
+
+ex:db-242 a ex:Database ;
+    ex:deployedIn ex:reg-1 ;
+    ex:ownedBy ex:team-01 .
+
+ex:q-001 a ex:Queue ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-01 .
+
+ex:svc-687 a ex:Service ;
+    ex:dependsOn ex:svc-787 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:svc-787 a ex:Service ;
+    ex:dependsOn ex:db-242,
+        ex:q-001 ;
+    ex:deployedIn ex:reg-2 ;
+    ex:ownedBy ex:team-02 ;
+    ex:tier 1 .
+
+ex:team-02 a ex:Team .
+
+ex:reg-2 a ex:Region .
+
+ex:reg-1 a ex:FailedRegion,
+        ex:Region .
+
+ex:team-01 a ex:Team .
+

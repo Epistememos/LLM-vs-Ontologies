@@ -1,0 +1,378 @@
+{
+ "nodes": [
+  {
+   "id": "db-060",
+   "type": "Database"
+  },
+  {
+   "id": "db-242",
+   "type": "Database"
+  },
+  {
+   "id": "db-688",
+   "type": "Database"
+  },
+  {
+   "id": "db-921",
+   "type": "Database"
+  },
+  {
+   "id": "q-001",
+   "type": "Queue"
+  },
+  {
+   "id": "reg-1",
+   "type": "Region",
+   "failed": true
+  },
+  {
+   "id": "reg-2",
+   "type": "Region"
+  },
+  {
+   "id": "sla-57",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-70",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "sla-83",
+   "type": "SLA",
+   "availability": 99.99
+  },
+  {
+   "id": "svc-179",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-378",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-454",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-473",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-486",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-635",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "svc-687",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-787",
+   "type": "Service",
+   "tier": 1
+  },
+  {
+   "id": "svc-957",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-969",
+   "type": "Service",
+   "tier": 3
+  },
+  {
+   "id": "svc-999",
+   "type": "CustomerFacingService",
+   "tier": 1
+  },
+  {
+   "id": "team-01",
+   "type": "Team"
+  },
+  {
+   "id": "team-02",
+   "type": "Team"
+  }
+ ],
+ "edges": [
+  [
+   "db-060",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-060",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-242",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-242",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-688",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-688",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-921",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "db-921",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "db-921",
+   "replicaOf",
+   "db-060"
+  ],
+  [
+   "q-001",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "q-001",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-179",
+   "dependsOn",
+   "svc-687"
+  ],
+  [
+   "svc-179",
+   "dependsOn",
+   "svc-787"
+  ],
+  [
+   "svc-179",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-179",
+   "hasSLA",
+   "sla-83"
+  ],
+  [
+   "svc-179",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-378",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-378",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-378",
+   "replicaOf",
+   "svc-687"
+  ],
+  [
+   "svc-454",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-454",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-454",
+   "replicaOf",
+   "svc-635"
+  ],
+  [
+   "svc-473",
+   "dependsOn",
+   "db-242"
+  ],
+  [
+   "svc-473",
+   "dependsOn",
+   "db-688"
+  ],
+  [
+   "svc-473",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-473",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-486",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-486",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-486",
+   "replicaOf",
+   "svc-179"
+  ],
+  [
+   "svc-635",
+   "dependsOn",
+   "svc-687"
+  ],
+  [
+   "svc-635",
+   "dependsOn",
+   "svc-787"
+  ],
+  [
+   "svc-635",
+   "dependsOn",
+   "svc-969"
+  ],
+  [
+   "svc-635",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-635",
+   "hasSLA",
+   "sla-57"
+  ],
+  [
+   "svc-635",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-687",
+   "dependsOn",
+   "svc-787"
+  ],
+  [
+   "svc-687",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-687",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "db-242"
+  ],
+  [
+   "svc-787",
+   "dependsOn",
+   "q-001"
+  ],
+  [
+   "svc-787",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-787",
+   "ownedBy",
+   "team-02"
+  ],
+  [
+   "svc-957",
+   "deployedIn",
+   "reg-1"
+  ],
+  [
+   "svc-957",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-957",
+   "replicaOf",
+   "svc-473"
+  ],
+  [
+   "svc-969",
+   "dependsOn",
+   "q-001"
+  ],
+  [
+   "svc-969",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-969",
+   "ownedBy",
+   "team-01"
+  ],
+  [
+   "svc-999",
+   "dependsOn",
+   "svc-687"
+  ],
+  [
+   "svc-999",
+   "dependsOn",
+   "svc-787"
+  ],
+  [
+   "svc-999",
+   "deployedIn",
+   "reg-2"
+  ],
+  [
+   "svc-999",
+   "hasSLA",
+   "sla-70"
+  ],
+  [
+   "svc-999",
+   "ownedBy",
+   "team-02"
+  ]
+ ]
+}

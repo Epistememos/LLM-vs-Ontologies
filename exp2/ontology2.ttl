@@ -1,0 +1,59 @@
+@prefix ex:   <http://example.org/br#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:comment """Blast Radius ontology, Experiment 2. Base classes and properties are asserted in the data.
+Derived classes and properties (marked 'derived') are materialized by the rules in rules.py, run to a
+fixpoint before any query, so they can be queried like asserted facts. rdf:type is closed under
+rdfs:subClassOf by the same rules.""" .
+
+# ---- Base classes (asserted) ---------------------------------------------------------
+ex:Component a owl:Class ; rdfs:comment "An infrastructure component: a Service, Database or Queue." .
+ex:Service a owl:Class ; rdfs:subClassOf ex:Component .
+ex:CustomerFacingService a owl:Class ; rdfs:subClassOf ex:Service .
+ex:Database a owl:Class ; rdfs:subClassOf ex:Component .
+ex:Queue a owl:Class ; rdfs:subClassOf ex:Component .
+ex:Team a owl:Class .
+ex:Region a owl:Class .
+ex:SLA a owl:Class .
+ex:FailedRegion a owl:Class ; rdfs:subClassOf ex:Region ;
+    rdfs:comment "Asserted per failure scenario." .
+
+# ---- Base properties (asserted) ------------------------------------------------------
+ex:dependsOn a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Component ;
+    rdfs:comment "Direct dependency: the subject needs the object to work." .
+ex:ownedBy a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:domain ex:Component ; rdfs:range ex:Team .
+ex:deployedIn a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:domain ex:Component ; rdfs:range ex:Region .
+ex:hasSLA a owl:ObjectProperty ; rdfs:domain ex:Service ; rdfs:range ex:SLA .
+ex:replicaOf a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Component ;
+    rdfs:comment "'X replicaOf Y' means X is a replica of Y." .
+ex:tier a owl:DatatypeProperty ; rdfs:domain ex:Service ; rdfs:range xsd:integer ;
+    rdfs:comment "Criticality 1-3; 1 is the most critical." .
+ex:availability a owl:DatatypeProperty ; rdfs:domain ex:SLA ; rdfs:range xsd:decimal .
+
+# ---- Derived properties (materialized by rules) --------------------------------------
+ex:dependsOnTransitively a owl:ObjectProperty, owl:TransitiveProperty ; rdfs:subPropertyOf ex:dependsOn ;
+    rdfs:comment "Derived. Transitive dependency: X dependsOnTransitively Y if Y is reachable from X directly or through a chain of dependsOn links." .
+ex:inReplicaGroupWith a owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty, owl:ReflexiveProperty ;
+    rdfs:comment "Derived. Links every component to each member of its replica group, itself included. Replica group: a node plus every node connected to it through replicaOf links in either direction, transitively." .
+ex:hasFootprintRegion a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Region ;
+    rdfs:comment "Derived. Footprint: the set of regions where members of a node's replica group are deployed; each such region is a hasFootprintRegion value." .
+ex:violatesTierRule a owl:ObjectProperty ; rdfs:domain ex:Service ; rdfs:range ex:Service ;
+    rdfs:comment "Derived. Tier rule: tier-1 services must not depend directly on tier-3 services; a dependsOn edge from a tier-1 service to a tier-3 service violates the tier rule." .
+
+# ---- Derived classes (materialized by rules) -----------------------------------------
+ex:Replica a owl:Class ; rdfs:subClassOf ex:Component ;
+    rdfs:comment "Derived. A component that is a replica of another (has an outgoing replicaOf)." .
+ex:Primary a owl:Class ; rdfs:subClassOf ex:Component ;
+    rdfs:comment "Derived. Primary: a Service, Database or Queue X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node." .
+ex:Lost a owl:Class ; rdfs:subClassOf ex:Component ;
+    rdfs:comment "Derived. Lost: when a region fails, a node is lost if its footprint contains only the failed region." .
+ex:Down a owl:Class ; rdfs:subClassOf ex:Service ;
+    rdfs:comment "Derived. Down: a service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost." .
+ex:BreachedSLA a owl:Class ; rdfs:subClassOf ex:SLA ;
+    rdfs:comment "Derived. Breached SLA: an SLA is breached if any service that has it is down." .
+ex:TierRiskService a owl:Class ; rdfs:subClassOf ex:Service ;
+    rdfs:comment "Derived. Tier risk: a tier-1 service is a tier risk if it transitively depends on at least one tier-3 service." .

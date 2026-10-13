@@ -1,0 +1,64 @@
+condition,qid,retries,timeouts,error,cached,tokens_in,tokens_out,latency_s,cost_usd,size,level,kind,answer_type,split,scenario,text,parsed,type_ok,precision,recall,f1,n_returned,n_halluc,sparql_valid,first_try_valid,failure_type
+Bplus,e2-100-L4-00,0,0,,False,1386,1309,10.405,0.007931,100,L4,survivors,set,dev,reg-2,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-01,0,0,,False,1377,884,7.454,0.005797,100,L4,lost_dbs,set,dev,reg-3,"In this scenario, which primary databases are lost?",True,True,1.0,0.0,0.0,0,0,,,
+Bplus,e2-100-L4-02,0,0,,False,1379,1015,8.25,0.006454,100,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-376 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-03,0,0,,False,1373,707,6.123,0.004908,100,L4,tier_risks,set,dev,,Which services are tier risks?,True,True,1.0,1.0,1.0,4,0,,,
+Bplus,e2-100-L4-04,0,0,,False,1378,821,7.222,0.005483,100,L4,is_lost,bool,dev,reg-3,"In this scenario, is db-959 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-05,0,0,,False,1379,1281,10.562,0.007784,100,L4,breached_slas,set,dev,reg-1,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,11,0,,,
+Bplus,e2-100-check-00,0,0,,False,1376,126,1.345,0.002006,100,check,failed_region,set,dev,reg-2,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,,,
+Bplus,e2-20-L4-00,0,0,,False,1364,714,6.441,0.004934,20,L4,is_tier_risk,bool,dev,,Is svc-635 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-01,0,0,,False,1366,1089,8.833,0.006811,20,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-179 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-02,0,0,,False,1365,787,6.718,0.0053,20,L4,is_lost,bool,dev,reg-1,"In this scenario, is db-242 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-03,0,0,,False,1370,1277,10.355,0.007755,20,L4,down_by_team,set,dev,reg-2,"In this scenario, which primary services owned by team-02 are down?",True,True,1.0,1.0,1.0,3,0,,,
+Bplus,e2-20-L4-04,0,0,,False,1366,1107,8.832,0.006901,20,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-969 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-05,0,0,,False,1367,1215,9.867,0.007442,20,L4,down_cfs,set,dev,reg-2,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,3,0,,,
+Bplus,e2-20-check-00,0,0,,False,1363,124,1.501,0.001983,20,check,failed_region,set,dev,reg-1,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,,,
+Bplus,e2-500-L4-00,0,0,,False,1378,1050,8.545,0.006628,500,L4,is_down,bool,dev,reg-2,"In this scenario, is svc-758 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-01,0,0,,False,1372,672,5.894,0.004732,500,L4,tier_risks,set,dev,,Which services are tier risks?,True,True,1.0,1.0,1.0,32,0,,,
+Bplus,e2-500-L4-02,0,0,,False,1376,822,2522.966,0.005486,500,L4,lost_dbs,set,dev,reg-3,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,7,0,,,
+Bplus,e2-500-L4-03,0,0,,False,1378,1225,9.787,0.007503,500,L4,breached_slas,set,dev,reg-4,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,27,0,,,
+Bplus,e2-500-L4-04,0,0,,False,1378,1071,8.658,0.006733,500,L4,is_down,bool,dev,reg-4,"In this scenario, is svc-044 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-05,0,0,,False,1385,1290,10.258,0.007835,500,L4,survivors,set,dev,reg-4,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,0.0,0.0,0.0,1,0,,,
+Bplus,e2-500-check-00,0,0,,False,1375,124,1.394,0.001995,500,check,failed_region,set,dev,reg-5,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,,,
+Bplusplus,e2-100-L4-00,0,0,,False,1721,425,3.714,0.003846,100,L4,survivors,set,dev,reg-2,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-01,0,0,,False,1712,191,1.921,0.002667,100,L4,lost_dbs,set,dev,reg-3,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,2,0,,,
+Bplusplus,e2-100-L4-02,0,0,,False,1714,89,1.055,0.002159,100,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-376 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-03,0,0,,False,1708,104,1.196,0.002228,100,L4,tier_risks,set,dev,,Which services are tier risks?,True,True,1.0,1.0,1.0,4,0,,,
+Bplusplus,e2-100-L4-04,0,0,,False,1713,87,1.013,0.002148,100,L4,is_lost,bool,dev,reg-3,"In this scenario, is db-959 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-05,0,0,,False,1714,116,1.345,0.002294,100,L4,breached_slas,set,dev,reg-1,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,11,0,,,
+Bplusplus,e2-100-check-00,0,0,,False,1711,145,1.526,0.002436,100,check,failed_region,set,dev,reg-2,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,,,
+Bplusplus,e2-20-L4-00,0,0,,False,1699,120,1.638,0.002299,20,L4,is_tier_risk,bool,dev,,Is svc-635 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-01,0,0,,False,1701,89,1.03,0.002146,20,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-179 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-02,0,0,,False,1700,87,1.012,0.002135,20,L4,is_lost,bool,dev,reg-1,"In this scenario, is db-242 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-03,0,0,,False,1705,165,1.751,0.00253,20,L4,down_by_team,set,dev,reg-2,"In this scenario, which primary services owned by team-02 are down?",True,True,1.0,1.0,1.0,3,0,,,
+Bplusplus,e2-20-L4-04,0,0,,False,1701,89,1.019,0.002146,20,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-969 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-05,0,0,,False,1702,191,2.06,0.002657,20,L4,down_cfs,set,dev,reg-2,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,3,0,,,
+Bplusplus,e2-20-check-00,0,0,,False,1698,145,1.671,0.002423,20,check,failed_region,set,dev,reg-1,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,,,
+Bplusplus,e2-500-L4-00,0,0,,False,1713,89,1.02,0.002158,500,L4,is_down,bool,dev,reg-2,"In this scenario, is svc-758 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-01,0,0,,False,1707,104,1.19,0.002227,500,L4,tier_risks,set,dev,,Which services are tier risks?,True,True,1.0,1.0,1.0,32,0,,,
+Bplusplus,e2-500-L4-02,0,0,,False,1711,191,1.954,0.002666,500,L4,lost_dbs,set,dev,reg-3,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,7,0,,,
+Bplusplus,e2-500-L4-03,0,0,,False,1713,116,1.339,0.002293,500,L4,breached_slas,set,dev,reg-4,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,27,0,,,
+Bplusplus,e2-500-L4-04,0,0,,False,1713,89,1.034,0.002158,500,L4,is_down,bool,dev,reg-4,"In this scenario, is svc-044 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-05,0,0,,False,1720,388,3.504,0.00366,500,L4,survivors,set,dev,reg-4,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,2,0,,,
+Bplusplus,e2-500-check-00,0,0,,False,1710,145,1.495,0.002435,500,check,failed_region,set,dev,reg-5,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,,,
+C2,e2-100-L4-00,0,0,,False,1774,338,3.215,0.003464,100,L4,survivors,set,dev,reg-2,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-01,0,0,,False,1765,231,2.464,0.00292,100,L4,lost_dbs,set,dev,reg-3,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,2,0,True,True,ok
+C2,e2-100-L4-02,0,0,,False,1767,241,2.609,0.002972,100,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-376 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-03,0,0,,False,1761,39,0.728,0.001956,100,L4,tier_risks,set,dev,,Which services are tier risks?,True,True,1.0,1.0,1.0,4,0,True,True,ok
+C2,e2-100-L4-04,0,0,,False,1766,300,3.231,0.003266,100,L4,is_lost,bool,dev,reg-3,"In this scenario, is db-959 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-05,0,0,,False,1767,203,2.252,0.002782,100,L4,breached_slas,set,dev,reg-1,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,11,0,True,True,ok
+C2,e2-100-check-00,0,0,,True,1764,39,1.037,0.001959,100,check,failed_region,set,dev,reg-2,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,True,True,ok
+C2,e2-20-L4-00,0,0,,False,1765,137,1.528,0.00245,20,L4,is_tier_risk,bool,dev,,Is svc-635 a tier risk?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-01,0,0,,False,1767,272,2.57,0.003127,20,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-179 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-02,0,0,,False,1766,265,3.133,0.003091,20,L4,is_lost,bool,dev,reg-1,"In this scenario, is db-242 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-03,0,0,,False,1771,210,2.378,0.002821,20,L4,down_by_team,set,dev,reg-2,"In this scenario, which primary services owned by team-02 are down?",True,True,1.0,1.0,1.0,3,0,True,True,ok
+C2,e2-20-L4-04,0,0,,False,1767,241,2.573,0.002972,20,L4,is_down,bool,dev,reg-1,"In this scenario, is svc-969 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-05,0,0,,False,1768,239,2.51,0.002963,20,L4,down_cfs,set,dev,reg-2,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,3,0,True,True,ok
+C2,e2-20-check-00,0,0,,False,1764,39,1.037,0.001959,20,check,failed_region,set,dev,reg-1,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,True,True,ok
+C2,e2-500-L4-00,0,0,,False,1767,243,2.608,0.002982,500,L4,is_down,bool,dev,reg-2,"In this scenario, is svc-758 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-01,0,0,,True,1761,39,0.728,0.001956,500,L4,tier_risks,set,dev,,Which services are tier risks?,True,True,1.0,1.0,1.0,32,0,True,True,ok
+C2,e2-500-L4-02,0,0,,True,1765,231,2.464,0.00292,500,L4,lost_dbs,set,dev,reg-3,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,7,0,True,True,ok
+C2,e2-500-L4-03,0,0,,True,1767,203,2.252,0.002782,500,L4,breached_slas,set,dev,reg-4,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,27,0,True,True,ok
+C2,e2-500-L4-04,0,0,,False,1767,161,1.893,0.002572,500,L4,is_down,bool,dev,reg-4,"In this scenario, is svc-044 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-05,0,0,,True,1774,338,3.215,0.003464,500,L4,survivors,set,dev,reg-4,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,2,0,True,True,ok
+C2,e2-500-check-00,0,0,,True,1764,39,1.037,0.001959,500,check,failed_region,set,dev,reg-5,"In this scenario, which region has failed?",True,True,1.0,1.0,1.0,1,0,True,True,ok
