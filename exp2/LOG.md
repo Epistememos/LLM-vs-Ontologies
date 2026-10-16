@@ -40,3 +40,11 @@ now live in its docs.
 | 2026-10-13 | `score2.py` | report median latency instead of mean | one hung call dominated the mean |
 
 Tuning rounds used in Experiment 2: 1 of 3 (B++ prompt v2). Prompt versions: B+ (exp2-docs) 1, B++ 2, C2 1.
+
+## Post-run entries (after the TEST run)
+
+| Date | Entry |
+|---|---|
+| 2026-10-16 | **TEST run.** B+ (exp2-docs), then B++, then C2, once each, sequentially, with the frozen code. All 51 TEST questions answered in every condition; no crash, no missing question, no rerun, no timeout. Spend $0.56. |
+| 2026-10-16 | **Hash check before the first call: line endings only.** Every frozen file on disk matched `PREREG_EXP2.md`. Reading the same files from Git gave 11 different hashes (`ontology2.ttl`, `docs.py`, `questions2.py`, `check_docs.py`, `data/questions.json`, `data/answers.json`, `data/graph_{20,100,500}.json`, and exp1's `truth.py` and `gen.py`). The cause is line endings: these files were last written by Python on Windows (CRLF on disk), and Git stores them with LF (`core.autocrlf=true`). After stripping carriage returns, each on-disk file hashes exactly to its committed blob, so the content is identical. The PREREG hashes are hashes of the CRLF working-tree bytes. |
+| 2026-10-16 | **B+ error classification override.** The flag-discovery vs logic split of wrong answers was exploratory and **not pre-registered**. The automatic rule labelled `e2-20-L4-18` (B+) a flag-discovery failure because its empty answer equals the no-failure answer. Reading the program shows it found the failed region correctly (`node.get('failed')`). Both B+ misses (`e2-20-L4-18`, `e2-100-L4-15`) are the same logic error: "primary" applied in the inverse direction (a node that *has* replicas treated as non-primary). Corrected counts: **0 flag-discovery failures in every condition**; logic errors B+ 2, B++ 0, C2 0. |

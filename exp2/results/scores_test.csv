@@ -1,0 +1,154 @@
+condition,qid,retries,timeouts,error,cached,tokens_in,tokens_out,latency_s,cost_usd,size,level,kind,answer_type,split,scenario,text,parsed,type_ok,precision,recall,f1,n_returned,n_halluc,sparql_valid,first_try_valid,failure_type
+Bplus,e2-100-L4-06,0,0,,False,1379,938,7.597,0.006069,100,L4,is_down,bool,test,reg-3,"In this scenario, is svc-114 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-07,0,0,,False,1379,1051,8.97,0.006634,100,L4,is_down,bool,test,reg-2,"In this scenario, is svc-783 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-08,0,0,,False,1378,1259,9.94,0.007673,100,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-09,0,0,,False,1389,522,4.764,0.003999,100,L4,violates_edge,bool,test,,Does the dependsOn edge svc-093->svc-273 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-10,0,0,,False,1377,617,5.41,0.004462,100,L4,is_tier_risk,bool,test,,Is svc-752 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-11,0,0,,False,1379,1115,8.933,0.006954,100,L4,is_down,bool,test,reg-1,"In this scenario, is svc-397 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-12,0,0,,False,1378,807,7.178,0.005413,100,L4,is_lost,bool,test,reg-1,"In this scenario, is db-754 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-13,0,0,,False,1389,521,4.683,0.003994,100,L4,violates_edge,bool,test,,Does the dependsOn edge svc-093->svc-428 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-14,0,0,,False,1383,1225,9.73,0.007508,100,L4,down_by_team,set,test,reg-3,"In this scenario, which primary services owned by team-05 are down?",True,True,1.0,1.0,1.0,4,0,,,
+Bplus,e2-100-L4-15,0,0,,False,1380,1240,10.012,0.00758,100,L4,down_cfs,set,test,reg-3,"In this scenario, which primary customer-facing services are down?",True,True,1.0,0.5,0.6666666666666666,4,0,,,
+Bplus,e2-100-L4-16,0,0,,False,1380,1202,9.655,0.00739,100,L4,sla_breached,bool,test,reg-3,"In this scenario, is sla-25 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-17,0,0,,False,1378,769,6.686,0.005223,100,L4,is_lost,bool,test,reg-3,"In this scenario, is db-859 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-18,0,0,,False,1380,1161,9.279,0.007185,100,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-89 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-19,0,0,,False,1377,706,6.276,0.004907,100,L4,is_tier_risk,bool,test,,Is svc-473 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-100-L4-20,0,0,,False,1383,1242,9.833,0.007593,100,L4,down_by_team,set,test,reg-2,"In this scenario, which primary services owned by team-01 are down?",True,True,1.0,1.0,1.0,5,0,,,
+Bplus,e2-100-L4-21,0,0,,False,1388,436,4.136,0.003568,100,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,6,0,,,
+Bplus,e2-100-L4-22,0,0,,False,1380,1159,9.365,0.007175,100,L4,sla_breached,bool,test,reg-3,"In this scenario, is sla-81 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-06,0,0,,False,1365,1203,9.779,0.00738,20,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-07,0,0,,False,1364,629,5.655,0.004509,20,L4,is_tier_risk,bool,test,,Is svc-179 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-08,0,0,,False,1365,675,5.952,0.00474,20,L4,is_lost,bool,test,reg-1,"In this scenario, is db-060 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-09,0,0,,False,1375,573,5.117,0.00424,20,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,2,0,,,
+Bplus,e2-20-L4-10,0,0,,False,1367,1151,9.426,0.007122,20,L4,sla_breached,bool,test,reg-1,"In this scenario, is sla-70 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-11,0,0,,False,1373,1224,10.051,0.007493,20,L4,survivors,set,test,reg-1,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-12,0,0,,False,1366,1120,9.267,0.006966,20,L4,is_down,bool,test,reg-1,"In this scenario, is svc-473 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-13,0,0,,False,1366,1239,10.105,0.007561,20,L4,breached_slas,set,test,reg-2,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,3,0,,,
+Bplus,e2-20-L4-14,0,0,,False,1364,1017,8.698,0.006449,20,L4,lost_dbs,set,test,reg-2,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-15,0,0,,False,1376,476,4.159,0.003756,20,L4,violates_edge,bool,test,,Does the dependsOn edge svc-179->svc-787 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-16,0,0,,False,1365,776,6.662,0.005245,20,L4,is_lost,bool,test,reg-1,"In this scenario, is db-688 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-17,0,0,,False,1360,707,6.181,0.004895,20,L4,tier_risks,set,test,,Which services are tier risks?,True,True,1.0,1.0,1.0,1,0,,,
+Bplus,e2-20-L4-18,0,0,,False,1370,1294,10.381,0.00784,20,L4,down_by_team,set,test,reg-1,"In this scenario, which primary services owned by team-01 are down?",True,True,1.0,0.0,0.0,0,0,,,
+Bplus,e2-20-L4-19,0,0,,False,1367,1188,9.646,0.007307,20,L4,sla_breached,bool,test,reg-1,"In this scenario, is sla-83 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-20,0,0,,False,1367,1181,9.608,0.007272,20,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-57 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-21,0,0,,False,1366,1067,9.007,0.006701,20,L4,is_down,bool,test,reg-1,"In this scenario, is svc-635 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-20-L4-22,0,0,,False,1376,522,4.683,0.003986,20,L4,violates_edge,bool,test,,Does the dependsOn edge svc-635->svc-969 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-06,0,0,,False,1376,728,6.156,0.005016,500,L4,is_tier_risk,bool,test,,Is svc-842 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-07,0,0,,False,1376,669,6.03,0.004721,500,L4,is_tier_risk,bool,test,,Is svc-561 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-08,0,0,,False,1379,1185,9.595,0.007304,500,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-98 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-09,0,0,,False,1377,771,6.633,0.005232,500,L4,is_lost,bool,test,reg-4,"In this scenario, is db-722 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-10,0,0,,False,1382,1284,10.554,0.007802,500,L4,down_by_team,set,test,reg-3,"In this scenario, which primary services owned by team-10 are down?",True,True,1.0,1.0,1.0,5,0,,,
+Bplus,e2-500-L4-11,0,0,,False,1379,1211,9.727,0.007434,500,L4,sla_breached,bool,test,reg-5,"In this scenario, is sla-72 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-12,0,0,,False,1388,499,4.716,0.003883,500,L4,violates_edge,bool,test,,Does the dependsOn edge svc-880->svc-815 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-13,0,0,,False,1377,795,7.012,0.005352,500,L4,is_lost,bool,test,reg-1,"In this scenario, is db-025 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-14,0,0,,False,1377,1248,10.054,0.007617,500,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-15,0,0,,False,1379,1187,9.586,0.007314,500,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-33 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-16,0,0,,False,1387,574,5.16,0.004257,500,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,16,0,,,
+Bplus,e2-500-L4-17,0,0,,False,1378,960,7.776,0.006178,500,L4,is_down,bool,test,reg-2,"In this scenario, is svc-669 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-18,0,0,,False,1379,1283,10.46,0.007794,500,L4,down_cfs,set,test,reg-2,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,13,0,,,
+Bplus,e2-500-L4-19,0,0,,False,1378,1009,8.316,0.006423,500,L4,is_down,bool,test,reg-2,"In this scenario, is svc-238 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-20,0,0,,False,1377,863,7.638,0.005692,500,L4,is_lost,bool,test,reg-2,"In this scenario, is db-511 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplus,e2-500-L4-21,0,0,,False,1382,1302,10.474,0.007892,500,L4,down_by_team,set,test,reg-5,"In this scenario, which primary services owned by team-02 are down?",True,True,1.0,1.0,1.0,9,0,,,
+Bplus,e2-500-L4-22,0,0,,False,1388,429,3.966,0.003533,500,L4,violates_edge,bool,test,,Does the dependsOn edge svc-905->svc-399 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-06,0,0,,False,1714,89,1.166,0.002159,100,L4,is_down,bool,test,reg-3,"In this scenario, is svc-114 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-07,0,0,,False,1714,89,1.2,0.002159,100,L4,is_down,bool,test,reg-2,"In this scenario, is svc-783 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-08,0,0,,False,1713,99,1.311,0.002208,100,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-09,0,0,,False,1724,386,3.514,0.003654,100,L4,violates_edge,bool,test,,Does the dependsOn edge svc-093->svc-273 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-10,0,0,,False,1712,120,1.384,0.002312,100,L4,is_tier_risk,bool,test,,Is svc-752 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-11,0,0,,False,1714,89,1.181,0.002159,100,L4,is_down,bool,test,reg-1,"In this scenario, is svc-397 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-12,0,0,,False,1713,87,1.093,0.002148,100,L4,is_lost,bool,test,reg-1,"In this scenario, is db-754 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-13,0,0,,False,1724,387,3.472,0.003659,100,L4,violates_edge,bool,test,,Does the dependsOn edge svc-093->svc-428 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-14,0,0,,False,1718,159,1.822,0.002513,100,L4,down_by_team,set,test,reg-3,"In this scenario, which primary services owned by team-05 are down?",True,True,1.0,1.0,1.0,4,0,,,
+Bplusplus,e2-100-L4-15,0,0,,False,1715,191,2.108,0.00267,100,L4,down_cfs,set,test,reg-3,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,8,0,,,
+Bplusplus,e2-100-L4-16,1,0,,False,3739,395,3.7,0.005714,100,L4,sla_breached,bool,test,reg-3,"In this scenario, is sla-25 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-17,0,0,,False,1713,87,1.088,0.002148,100,L4,is_lost,bool,test,reg-3,"In this scenario, is db-859 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-18,0,0,,False,1715,267,3.002,0.00305,100,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-89 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-19,0,0,,False,1712,120,1.397,0.002312,100,L4,is_tier_risk,bool,test,,Is svc-473 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-100-L4-20,0,0,,False,1718,221,2.314,0.002823,100,L4,down_by_team,set,test,reg-2,"In this scenario, which primary services owned by team-01 are down?",True,True,1.0,1.0,1.0,5,0,,,
+Bplusplus,e2-100-L4-21,0,0,,False,1723,206,2.077,0.002753,100,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,6,0,,,
+Bplusplus,e2-100-L4-22,0,0,,False,1715,256,2.405,0.002995,100,L4,sla_breached,bool,test,reg-3,"In this scenario, is sla-81 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-06,0,0,,False,1700,103,1.373,0.002215,20,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-07,0,0,,False,1699,120,1.326,0.002299,20,L4,is_tier_risk,bool,test,,Is svc-179 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-08,0,0,,False,1700,87,1.06,0.002135,20,L4,is_lost,bool,test,reg-1,"In this scenario, is db-060 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-09,0,0,,False,1710,206,2.167,0.00274,20,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,2,0,,,
+Bplusplus,e2-20-L4-10,1,0,,False,3733,433,4.191,0.0058980000000000005,20,L4,sla_breached,bool,test,reg-1,"In this scenario, is sla-70 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-11,0,0,,False,1708,388,3.665,0.003648,20,L4,survivors,set,test,reg-1,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-12,0,0,,False,1701,89,1.12,0.002146,20,L4,is_down,bool,test,reg-1,"In this scenario, is svc-473 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-13,0,0,,False,1701,116,1.418,0.002281,20,L4,breached_slas,set,test,reg-2,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,3,0,,,
+Bplusplus,e2-20-L4-14,0,0,,False,1699,166,1.868,0.002529,20,L4,lost_dbs,set,test,reg-2,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-15,0,0,,False,1711,255,2.58,0.002986,20,L4,violates_edge,bool,test,,Does the dependsOn edge svc-179->svc-787 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-16,0,0,,False,1700,87,1.145,0.002135,20,L4,is_lost,bool,test,reg-1,"In this scenario, is db-688 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-17,0,0,,False,1695,104,1.323,0.002215,20,L4,tier_risks,set,test,,Which services are tier risks?,True,True,1.0,1.0,1.0,1,0,,,
+Bplusplus,e2-20-L4-18,0,0,,False,1705,179,2.003,0.0026,20,L4,down_by_team,set,test,reg-1,"In this scenario, which primary services owned by team-01 are down?",True,True,1.0,1.0,1.0,3,0,,,
+Bplusplus,e2-20-L4-19,0,0,,False,1702,130,1.603,0.002352,20,L4,sla_breached,bool,test,reg-1,"In this scenario, is sla-83 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-20,0,0,,False,1702,108,1.389,0.002242,20,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-57 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-21,0,0,,False,1701,89,1.173,0.002146,20,L4,is_down,bool,test,reg-1,"In this scenario, is svc-635 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-20-L4-22,0,0,,False,1711,347,3.254,0.003446,20,L4,violates_edge,bool,test,,Does the dependsOn edge svc-635->svc-969 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-06,0,0,,False,1711,120,1.332,0.002311,500,L4,is_tier_risk,bool,test,,Is svc-842 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-07,0,0,,False,1711,120,1.547,0.002311,500,L4,is_tier_risk,bool,test,,Is svc-561 a tier risk?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-08,0,0,,False,1714,207,1.989,0.002749,500,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-98 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-09,0,0,,False,1712,87,1.135,0.002147,500,L4,is_lost,bool,test,reg-4,"In this scenario, is db-722 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-10,0,0,,False,1717,220,2.132,0.002817,500,L4,down_by_team,set,test,reg-3,"In this scenario, which primary services owned by team-10 are down?",True,True,1.0,1.0,1.0,5,0,,,
+Bplusplus,e2-500-L4-11,0,0,,False,1714,207,1.998,0.002749,500,L4,sla_breached,bool,test,reg-5,"In this scenario, is sla-72 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-12,0,0,,False,1723,215,2.293,0.002798,500,L4,violates_edge,bool,test,,Does the dependsOn edge svc-880->svc-815 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-13,0,0,,False,1712,87,1.176,0.002147,500,L4,is_lost,bool,test,reg-1,"In this scenario, is db-025 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-14,0,0,,False,1712,103,1.254,0.002227,500,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-15,0,0,,False,1714,151,1.768,0.002469,500,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-33 breached?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-16,0,0,,False,1722,206,2.061,0.002752,500,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,16,0,,,
+Bplusplus,e2-500-L4-17,0,0,,False,1713,89,1.2,0.002158,500,L4,is_down,bool,test,reg-2,"In this scenario, is svc-669 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-18,0,0,,False,1714,191,2.097,0.002669,500,L4,down_cfs,set,test,reg-2,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,13,0,,,
+Bplusplus,e2-500-L4-19,0,0,,False,1713,89,1.26,0.002158,500,L4,is_down,bool,test,reg-2,"In this scenario, is svc-238 down?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-20,0,0,,False,1712,87,1.089,0.002147,500,L4,is_lost,bool,test,reg-2,"In this scenario, is db-511 lost?",True,True,1.0,1.0,1.0,0,0,,,
+Bplusplus,e2-500-L4-21,0,0,,False,1717,173,1.965,0.002582,500,L4,down_by_team,set,test,reg-5,"In this scenario, which primary services owned by team-02 are down?",True,True,1.0,1.0,1.0,9,0,,,
+Bplusplus,e2-500-L4-22,0,0,,False,1723,308,2.905,0.003263,500,L4,violates_edge,bool,test,,Does the dependsOn edge svc-905->svc-399 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,,,
+C2,e2-100-L4-06,0,0,,False,1767,171,1.894,0.002622,100,L4,is_down,bool,test,reg-3,"In this scenario, is svc-114 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-07,0,0,,False,1767,211,2.137,0.002822,100,L4,is_down,bool,test,reg-2,"In this scenario, is svc-783 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-08,0,0,,True,1766,225,2.358,0.002891,100,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-09,0,0,,False,1777,209,2.033,0.002822,100,L4,violates_edge,bool,test,,Does the dependsOn edge svc-093->svc-273 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-10,0,0,,False,1765,141,1.59,0.00247,100,L4,is_tier_risk,bool,test,,Is svc-752 a tier risk?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-11,0,0,,False,1767,330,3.757,0.003417,100,L4,is_down,bool,test,reg-1,"In this scenario, is svc-397 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-12,0,0,,False,1766,282,3.037,0.003176,100,L4,is_lost,bool,test,reg-1,"In this scenario, is db-754 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-13,0,0,,False,1777,209,2.016,0.002822,100,L4,violates_edge,bool,test,,Does the dependsOn edge svc-093->svc-428 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-14,0,0,,False,1771,180,1.963,0.002671,100,L4,down_by_team,set,test,reg-3,"In this scenario, which primary services owned by team-05 are down?",True,True,1.0,1.0,1.0,4,0,True,True,ok
+C2,e2-100-L4-15,0,0,,True,1768,239,2.51,0.002963,100,L4,down_cfs,set,test,reg-3,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,8,0,True,True,ok
+C2,e2-100-L4-16,0,0,,False,1768,218,2.308,0.002858,100,L4,sla_breached,bool,test,reg-3,"In this scenario, is sla-25 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-17,0,0,,False,1766,290,3.063,0.003216,100,L4,is_lost,bool,test,reg-3,"In this scenario, is db-859 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-18,0,0,,False,1768,222,2.521,0.002878,100,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-89 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-19,0,0,,False,1765,140,1.51,0.002465,100,L4,is_tier_risk,bool,test,,Is svc-473 a tier risk?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-100-L4-20,0,0,,True,1771,123,1.494,0.002386,100,L4,down_by_team,set,test,reg-2,"In this scenario, which primary services owned by team-01 are down?",True,True,1.0,1.0,1.0,5,0,True,True,ok
+C2,e2-100-L4-21,0,0,,True,1776,167,1.969,0.002611,100,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,6,0,True,True,ok
+C2,e2-100-L4-22,0,0,,False,1768,222,2.644,0.002878,100,L4,sla_breached,bool,test,reg-3,"In this scenario, is sla-81 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-06,0,0,,False,1766,225,2.358,0.002891,20,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-07,0,0,,False,1765,140,1.583,0.002465,20,L4,is_tier_risk,bool,test,,Is svc-179 a tier risk?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-08,0,0,,False,1766,532,5.013,0.004426,20,L4,is_lost,bool,test,reg-1,"In this scenario, is db-060 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-09,0,0,,False,1776,167,1.969,0.002611,20,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,2,0,True,True,ok
+C2,e2-20-L4-10,0,0,,False,1768,144,1.654,0.002488,20,L4,sla_breached,bool,test,reg-1,"In this scenario, is sla-70 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-11,0,0,,True,1774,338,3.215,0.003464,20,L4,survivors,set,test,reg-1,"In this scenario, which primary customer-facing services deployed in the failed region are not down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-12,0,0,,False,1767,119,1.496,0.002362,20,L4,is_down,bool,test,reg-1,"In this scenario, is svc-473 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-13,0,0,,True,1767,203,2.252,0.002782,20,L4,breached_slas,set,test,reg-2,"In this scenario, which SLAs are breached?",True,True,1.0,1.0,1.0,3,0,True,True,ok
+C2,e2-20-L4-14,0,0,,True,1765,231,2.464,0.00292,20,L4,lost_dbs,set,test,reg-2,"In this scenario, which primary databases are lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-15,0,0,,False,1777,209,2.067,0.002822,20,L4,violates_edge,bool,test,,Does the dependsOn edge svc-179->svc-787 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-16,0,0,,False,1766,412,4.234,0.003826,20,L4,is_lost,bool,test,reg-1,"In this scenario, is db-688 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-17,0,0,,True,1761,39,0.728,0.001956,20,L4,tier_risks,set,test,,Which services are tier risks?,True,True,1.0,1.0,1.0,1,0,True,True,ok
+C2,e2-20-L4-18,0,0,,False,1771,123,1.494,0.002386,20,L4,down_by_team,set,test,reg-1,"In this scenario, which primary services owned by team-01 are down?",True,True,1.0,1.0,1.0,3,0,True,True,ok
+C2,e2-20-L4-19,0,0,,False,1768,218,2.27,0.002858,20,L4,sla_breached,bool,test,reg-1,"In this scenario, is sla-83 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-20,0,0,,False,1768,216,2.351,0.002848,20,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-57 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-21,0,0,,False,1767,119,1.458,0.002362,20,L4,is_down,bool,test,reg-1,"In this scenario, is svc-635 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-20-L4-22,0,0,,False,1777,209,2.084,0.002822,20,L4,violates_edge,bool,test,,Does the dependsOn edge svc-635->svc-969 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-06,0,0,,False,1765,140,1.598,0.002465,500,L4,is_tier_risk,bool,test,,Is svc-842 a tier risk?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-07,0,0,,False,1765,140,1.552,0.002465,500,L4,is_tier_risk,bool,test,,Is svc-561 a tier risk?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-08,0,0,,False,1768,218,2.361,0.002858,500,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-98 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-09,0,0,,False,1766,306,3.34,0.003296,500,L4,is_lost,bool,test,reg-4,"In this scenario, is db-722 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-10,0,0,,False,1771,237,2.456,0.002956,500,L4,down_by_team,set,test,reg-3,"In this scenario, which primary services owned by team-10 are down?",True,True,1.0,1.0,1.0,5,0,True,True,ok
+C2,e2-500-L4-11,0,0,,False,1768,241,2.597,0.002973,500,L4,sla_breached,bool,test,reg-5,"In this scenario, is sla-72 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-12,0,0,,False,1777,233,2.166,0.002942,500,L4,violates_edge,bool,test,,Does the dependsOn edge svc-880->svc-815 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-13,0,0,,False,1766,310,3.361,0.003316,500,L4,is_lost,bool,test,reg-1,"In this scenario, is db-025 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-14,0,0,,True,1766,225,2.358,0.002891,500,L4,count_down,number,test,reg-2,"In this scenario, how many primary services are down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-15,0,0,,False,1768,144,1.727,0.002488,500,L4,sla_breached,bool,test,reg-2,"In this scenario, is sla-33 breached?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-16,0,0,,True,1776,167,1.969,0.002611,500,L4,violations,set,test,,Which dependsOn edges violate the tier rule? Give each edge as 'SOURCE->TARGET'.,True,True,1.0,1.0,1.0,16,0,True,True,ok
+C2,e2-500-L4-17,0,0,,False,1767,171,1.923,0.002622,500,L4,is_down,bool,test,reg-2,"In this scenario, is svc-669 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-18,0,0,,True,1768,239,2.51,0.002963,500,L4,down_cfs,set,test,reg-2,"In this scenario, which primary customer-facing services are down?",True,True,1.0,1.0,1.0,13,0,True,True,ok
+C2,e2-500-L4-19,0,0,,False,1767,119,1.439,0.002362,500,L4,is_down,bool,test,reg-2,"In this scenario, is svc-238 down?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-20,0,0,,False,1766,524,4.998,0.004386,500,L4,is_lost,bool,test,reg-2,"In this scenario, is db-511 lost?",True,True,1.0,1.0,1.0,0,0,True,True,ok
+C2,e2-500-L4-21,0,0,,True,1771,210,2.378,0.002821,500,L4,down_by_team,set,test,reg-5,"In this scenario, which primary services owned by team-02 are down?",True,True,1.0,1.0,1.0,9,0,True,True,ok
+C2,e2-500-L4-22,0,0,,False,1777,209,2.156,0.002822,500,L4,violates_edge,bool,test,,Does the dependsOn edge svc-905->svc-399 violate the tier rule?,True,True,1.0,1.0,1.0,0,0,True,True,ok
