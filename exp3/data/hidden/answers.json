@@ -1,0 +1,796 @@
+{
+ "e3-20-00": {
+  "answer": true,
+  "region": "reg-2",
+  "entity": "svc-124",
+  "traps": []
+ },
+ "e3-20-01": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-271",
+  "traps": []
+ },
+ "e3-20-02": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "sla-39",
+  "traps": []
+ },
+ "e3-20-03": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "svc-271",
+  "traps": []
+ },
+ "e3-20-04": {
+  "answer": [
+   "CI-29783",
+   "CI-54909",
+   "CI-64574"
+  ],
+  "region": "reg-1",
+  "entity": "team-01",
+  "traps": [
+   "cmdb_only",
+   "wrong_authority"
+  ]
+ },
+ "e3-20-05": {
+  "answer": [
+   "team-platform"
+  ],
+  "region": null,
+  "entity": "svc-622",
+  "traps": []
+ },
+ "e3-20-06": {
+  "answer": [
+   "CI-54909"
+  ],
+  "region": null,
+  "entity": "svc-271",
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-20-07": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-124",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-20-08": {
+  "answer": [
+   "CI-28634",
+   "CI-40432",
+   "CI-72312",
+   "CI-82259"
+  ],
+  "region": "reg-1",
+  "entity": "team-02",
+  "traps": [
+   "cmdb_only",
+   "keep_stale",
+   "wrong_authority"
+  ]
+ },
+ "e3-20-09": {
+  "answer": [
+   "SLA-BRONZE-03"
+  ],
+  "region": "reg-2",
+  "entity": null,
+  "traps": []
+ },
+ "e3-20-10": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "sla-19",
+  "traps": []
+ },
+ "e3-20-11": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "svc-669",
+  "traps": []
+ },
+ "e3-20-12": {
+  "answer": [
+   "team-identity"
+  ],
+  "region": null,
+  "entity": "svc-924",
+  "traps": []
+ },
+ "e3-20-13": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "svc-924",
+  "traps": []
+ },
+ "e3-20-14": {
+  "answer": [
+   "SLA-BRONZE-02",
+   "SLA-BRONZE-03",
+   "SLA-PLATINUM-01"
+  ],
+  "region": "reg-1",
+  "entity": null,
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-20-15": {
+  "answer": 3,
+  "region": "reg-2",
+  "entity": null,
+  "traps": []
+ },
+ "e3-20-16": {
+  "answer": [
+   "CI-40432",
+   "CI-72312"
+  ],
+  "region": "reg-2",
+  "entity": "team-02",
+  "traps": [
+   "wrong_authority"
+  ]
+ },
+ "e3-20-17": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-669",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-20-18": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "svc-622",
+  "traps": []
+ },
+ "e3-20-19": {
+  "answer": [
+   "CI-29783"
+  ],
+  "region": "reg-2",
+  "entity": "team-01",
+  "traps": [
+   "wrong_authority"
+  ]
+ },
+ "e3-20-20": {
+  "answer": true,
+  "region": "reg-2",
+  "entity": "sla-52",
+  "traps": []
+ },
+ "e3-20-21": {
+  "answer": 7,
+  "region": "reg-1",
+  "entity": null,
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-20-22": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "sla-39",
+  "traps": []
+ },
+ "e3-20-23": {
+  "answer": [
+   "CI-54909"
+  ],
+  "region": null,
+  "entity": "svc-003",
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-100-00": {
+  "answer": [
+   "CI-01921",
+   "CI-58668",
+   "CI-58824",
+   "CI-71758"
+  ],
+  "region": "reg-2",
+  "entity": "team-05",
+  "traps": []
+ },
+ "e3-100-01": {
+  "answer": [
+   "CI-10957",
+   "CI-24138",
+   "CI-27517",
+   "CI-31868",
+   "CI-33276",
+   "CI-58824",
+   "CI-67473",
+   "CI-76898",
+   "CI-79391",
+   "CI-85513",
+   "CI-98214"
+  ],
+  "region": null,
+  "entity": "svc-777",
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-100-02": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-531",
+  "traps": []
+ },
+ "e3-100-03": {
+  "answer": [
+   "CI-09832",
+   "CI-11062",
+   "CI-77122",
+   "CI-85513"
+  ],
+  "region": "reg-2",
+  "entity": "team-03",
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-100-04": {
+  "answer": [
+   "CI-13105",
+   "CI-24138",
+   "CI-26366",
+   "CI-28436",
+   "CI-29266",
+   "CI-58763",
+   "CI-99853"
+  ],
+  "region": "reg-1",
+  "entity": "team-04",
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-100-05": {
+  "answer": 19,
+  "region": "reg-2",
+  "entity": null,
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
+ },
+ "e3-100-06": {
+  "answer": true,
+  "region": "reg-3",
+  "entity": "sla-34",
+  "traps": []
+ },
+ "e3-100-07": {
+  "answer": true,
+  "region": "reg-3",
+  "entity": "svc-559",
+  "traps": []
+ },
+ "e3-100-08": {
+  "answer": [
+   "CI-27517",
+   "CI-31868",
+   "CI-98214"
+  ],
+  "region": null,
+  "entity": "svc-424",
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-100-09": {
+  "answer": false,
+  "region": "reg-1",
+  "entity": "sla-62",
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-100-10": {
+  "answer": false,
+  "region": "reg-3",
+  "entity": "svc-911",
+  "traps": []
+ },
+ "e3-100-11": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "svc-554",
+  "traps": []
+ },
+ "e3-100-12": {
+  "answer": true,
+  "region": "reg-3",
+  "entity": "sla-17",
+  "traps": []
+ },
+ "e3-100-13": {
+  "answer": [
+   "SLA-GOLD-06",
+   "SLA-GOLD-08",
+   "SLA-PLATINUM-02",
+   "SLA-PLATINUM-13",
+   "SLA-SILVER-01",
+   "SLA-SILVER-05",
+   "SLA-SILVER-07"
+  ],
+  "region": "reg-2",
+  "entity": null,
+  "traps": [
+   "keep_stale"
+  ]
+ },
+ "e3-100-14": {
+  "answer": false,
+  "region": "reg-2",
+  "entity": "svc-655",
+  "traps": [
+   "wrong_authority"
+  ]
+ },
+ "e3-100-15": {
+  "answer": [
+   "SLA-BRONZE-12",
+   "SLA-GOLD-06",
+   "SLA-GOLD-08",
+   "SLA-GOLD-09",
+   "SLA-PLATINUM-02",
+   "SLA-PLATINUM-13",
+   "SLA-SILVER-01",
+   "SLA-SILVER-05",
+   "SLA-SILVER-07"
+  ],
+  "region": "reg-3",
+  "entity": null,
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-100-16": {
+  "answer": [
+   "CI-01921",
+   "CI-10957",
+   "CI-25809",
+   "CI-58668"
+  ],
+  "region": "reg-1",
+  "entity": "team-05",
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-100-17": {
+  "answer": false,
+  "region": "reg-3",
+  "entity": "svc-625",
+  "traps": []
+ },
+ "e3-100-18": {
+  "answer": [
+   "team-infra"
+  ],
+  "region": null,
+  "entity": "svc-512",
+  "traps": []
+ },
+ "e3-100-19": {
+  "answer": [
+   "SLA-BRONZE-12",
+   "SLA-GOLD-03",
+   "SLA-GOLD-04",
+   "SLA-GOLD-06",
+   "SLA-GOLD-08",
+   "SLA-GOLD-09",
+   "SLA-SILVER-01",
+   "SLA-SILVER-05",
+   "SLA-SILVER-07"
+  ],
+  "region": "reg-1",
+  "entity": null,
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-100-20": {
+  "answer": false,
+  "region": "reg-3",
+  "entity": "sla-18",
+  "traps": []
+ },
+ "e3-100-21": {
+  "answer": true,
+  "region": "reg-2",
+  "entity": "svc-911",
+  "traps": []
+ },
+ "e3-100-22": {
+  "answer": [
+   "team-growth"
+  ],
+  "region": null,
+  "entity": "svc-840",
+  "traps": []
+ },
+ "e3-100-23": {
+  "answer": [
+   "CI-46096",
+   "CI-47631",
+   "CI-47810",
+   "CI-83795"
+  ],
+  "region": "reg-3",
+  "entity": "team-02",
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-100-24": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-777",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-100-25": {
+  "answer": 26,
+  "region": "reg-3",
+  "entity": null,
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-500-00": {
+  "answer": 105,
+  "region": "reg-3",
+  "entity": null,
+  "traps": [
+   "cmdb_only",
+   "wrong_authority"
+  ]
+ },
+ "e3-500-01": {
+  "answer": false,
+  "region": "reg-3",
+  "entity": "svc-452",
+  "traps": []
+ },
+ "e3-500-02": {
+  "answer": [
+   "CI-02140",
+   "CI-02590",
+   "CI-03283",
+   "CI-44674",
+   "CI-48222",
+   "CI-56239",
+   "CI-79597",
+   "CI-79613"
+  ],
+  "region": "reg-5",
+  "entity": "team-05",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-03": {
+  "answer": true,
+  "region": "reg-2",
+  "entity": "svc-037",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-04": {
+  "answer": [
+   "CI-21976",
+   "CI-45622",
+   "CI-61832",
+   "CI-90737"
+  ],
+  "region": "reg-3",
+  "entity": "team-10",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-05": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-938",
+  "traps": []
+ },
+ "e3-500-06": {
+  "answer": [
+   "CI-02388",
+   "CI-26037"
+  ],
+  "region": "reg-1",
+  "entity": "team-08",
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-500-07": {
+  "answer": true,
+  "region": "reg-1",
+  "entity": "svc-099",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-08": {
+  "answer": [
+   "SLA-BRONZE-03",
+   "SLA-BRONZE-12",
+   "SLA-BRONZE-23",
+   "SLA-BRONZE-31",
+   "SLA-BRONZE-32",
+   "SLA-BRONZE-37",
+   "SLA-BRONZE-48",
+   "SLA-BRONZE-53",
+   "SLA-BRONZE-54",
+   "SLA-GOLD-06",
+   "SLA-GOLD-09",
+   "SLA-GOLD-10",
+   "SLA-GOLD-11",
+   "SLA-GOLD-14",
+   "SLA-GOLD-16",
+   "SLA-GOLD-17",
+   "SLA-GOLD-19",
+   "SLA-GOLD-24",
+   "SLA-GOLD-33",
+   "SLA-GOLD-41",
+   "SLA-GOLD-45",
+   "SLA-GOLD-47",
+   "SLA-PLATINUM-15",
+   "SLA-PLATINUM-29",
+   "SLA-PLATINUM-30",
+   "SLA-PLATINUM-34",
+   "SLA-PLATINUM-35",
+   "SLA-PLATINUM-36",
+   "SLA-PLATINUM-46",
+   "SLA-PLATINUM-52",
+   "SLA-SILVER-26",
+   "SLA-SILVER-28",
+   "SLA-SILVER-39",
+   "SLA-SILVER-40",
+   "SLA-SILVER-43",
+   "SLA-SILVER-44",
+   "SLA-SILVER-50"
+  ],
+  "region": "reg-5",
+  "entity": null,
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-09": {
+  "answer": [
+   "team-core"
+  ],
+  "region": null,
+  "entity": "svc-706",
+  "traps": []
+ },
+ "e3-500-10": {
+  "answer": false,
+  "region": "reg-3",
+  "entity": "svc-174",
+  "traps": []
+ },
+ "e3-500-11": {
+  "answer": [
+   "SLA-BRONZE-12",
+   "SLA-BRONZE-32",
+   "SLA-BRONZE-37",
+   "SLA-BRONZE-48",
+   "SLA-BRONZE-53",
+   "SLA-BRONZE-54",
+   "SLA-GOLD-02",
+   "SLA-GOLD-05",
+   "SLA-GOLD-10",
+   "SLA-GOLD-14",
+   "SLA-GOLD-17",
+   "SLA-GOLD-19",
+   "SLA-GOLD-41",
+   "SLA-GOLD-42",
+   "SLA-GOLD-49",
+   "SLA-PLATINUM-15",
+   "SLA-PLATINUM-29",
+   "SLA-PLATINUM-35",
+   "SLA-SILVER-04",
+   "SLA-SILVER-26",
+   "SLA-SILVER-28",
+   "SLA-SILVER-44"
+  ],
+  "region": "reg-4",
+  "entity": null,
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-12": {
+  "answer": [
+   "CI-01683",
+   "CI-02730",
+   "CI-02976",
+   "CI-19010",
+   "CI-25060",
+   "CI-28537",
+   "CI-38733",
+   "CI-81600",
+   "CI-84524"
+  ],
+  "region": null,
+  "entity": "svc-250",
+  "traps": []
+ },
+ "e3-500-13": {
+  "answer": false,
+  "region": "reg-5",
+  "entity": "sla-48",
+  "traps": []
+ },
+ "e3-500-14": {
+  "answer": [
+   "SLA-BRONZE-03",
+   "SLA-BRONZE-12",
+   "SLA-BRONZE-23",
+   "SLA-BRONZE-31",
+   "SLA-BRONZE-32",
+   "SLA-BRONZE-37",
+   "SLA-BRONZE-48",
+   "SLA-BRONZE-53",
+   "SLA-BRONZE-54",
+   "SLA-GOLD-06",
+   "SLA-GOLD-09",
+   "SLA-GOLD-10",
+   "SLA-GOLD-14",
+   "SLA-GOLD-16",
+   "SLA-GOLD-17",
+   "SLA-GOLD-19",
+   "SLA-GOLD-22",
+   "SLA-GOLD-27",
+   "SLA-GOLD-33",
+   "SLA-GOLD-41",
+   "SLA-GOLD-42",
+   "SLA-PLATINUM-13",
+   "SLA-PLATINUM-34",
+   "SLA-PLATINUM-35",
+   "SLA-SILVER-04",
+   "SLA-SILVER-26",
+   "SLA-SILVER-39",
+   "SLA-SILVER-44",
+   "SLA-SILVER-51"
+  ],
+  "region": "reg-1",
+  "entity": null,
+  "traps": [
+   "cmdb_only",
+   "keep_stale"
+  ]
+ },
+ "e3-500-15": {
+  "answer": [
+   "CI-04051",
+   "CI-11151",
+   "CI-12447",
+   "CI-32462",
+   "CI-36242",
+   "CI-54812",
+   "CI-62044",
+   "CI-73687",
+   "CI-80192",
+   "CI-95952"
+  ],
+  "region": "reg-5",
+  "entity": "team-14",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-16": {
+  "answer": true,
+  "region": "reg-5",
+  "entity": "svc-694",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-17": {
+  "answer": [
+   "team-web"
+  ],
+  "region": null,
+  "entity": "svc-227",
+  "traps": []
+ },
+ "e3-500-18": {
+  "answer": false,
+  "region": "reg-4",
+  "entity": "svc-931",
+  "traps": []
+ },
+ "e3-500-19": {
+  "answer": true,
+  "region": "reg-2",
+  "entity": "sla-54",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-20": {
+  "answer": [
+   "CI-06062",
+   "CI-21930",
+   "CI-40490",
+   "CI-63552",
+   "CI-87289",
+   "CI-89088",
+   "CI-94427"
+  ],
+  "region": "reg-2",
+  "entity": "team-06",
+  "traps": [
+   "cmdb_only"
+  ]
+ },
+ "e3-500-21": {
+  "answer": [
+   "CI-02730"
+  ],
+  "region": null,
+  "entity": "svc-095",
+  "traps": []
+ },
+ "e3-500-22": {
+  "answer": 131,
+  "region": "reg-2",
+  "entity": null,
+  "traps": [
+   "cmdb_only",
+   "keep_stale",
+   "wrong_authority"
+  ]
+ },
+ "e3-500-23": {
+  "answer": false,
+  "region": "reg-3",
+  "entity": "sla-06",
+  "traps": []
+ },
+ "e3-500-24": {
+  "answer": false,
+  "region": "reg-4",
+  "entity": "svc-635",
+  "traps": []
+ },
+ "e3-500-25": {
+  "answer": true,
+  "region": "reg-3",
+  "entity": "sla-29",
+  "traps": []
+ }
+}

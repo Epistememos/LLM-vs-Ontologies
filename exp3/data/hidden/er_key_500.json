@@ -1,0 +1,5134 @@
+{
+ "entities": {
+  "db-001": {
+   "cmdb": "CI-07170",
+   "cmdb_name": "pricing_warehouse_db",
+   "monitoring": "mon:pricing-warehouse",
+   "display": "Pricing Warehouse DB",
+   "aliases": [
+    "pri-war-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-008": {
+   "cmdb": "CI-37383",
+   "cmdb_name": "pricing_auth_db",
+   "monitoring": "mon:pricing-auth",
+   "display": "Pricing Auth DB",
+   "aliases": [
+    "pri-aut-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-012": {
+   "cmdb": "CI-15838",
+   "cmdb_name": "routing_identity_replica_1_db",
+   "monitoring": "mon:routing-identity-replica-1",
+   "display": "Routing Identity Replica 1 DB",
+   "aliases": [
+    "rou-ide-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-015": {
+   "cmdb": "CI-15807",
+   "cmdb_name": "session_reporting_replica_1_db",
+   "monitoring": "mon:session-reporting-replica-1",
+   "display": "Session Reporting Replica 1 DB",
+   "aliases": [
+    "ses-rep-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-023": {
+   "cmdb": "CI-22510",
+   "cmdb_name": "reviews_checkout_replica_1_db",
+   "monitoring": "mon:reviews-checkout-replica-1",
+   "display": "Reviews Checkout Replica 1 DB",
+   "aliases": [
+    "rev-che-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-024": {
+   "cmdb": "CI-69411",
+   "cmdb_name": "export_coupons_replica_1_db",
+   "monitoring": "mon:export-coupons-replica-1",
+   "display": "Export Coupons Replica 1 DB",
+   "aliases": [
+    "exp-cou-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-035": {
+   "cmdb": "CI-63568",
+   "cmdb_name": "catalog_tax_replica_1_db",
+   "monitoring": "mon:catalog-tax-replica-1",
+   "display": "Catalog Tax Replica 1 DB",
+   "aliases": [
+    "cat-tax-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-050": {
+   "cmdb": "CI-60123",
+   "cmdb_name": "gateway_payments_db",
+   "monitoring": "mon:gateway-payments",
+   "display": "Gateway Payments DB",
+   "aliases": [
+    "gat-pay-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-052": {
+   "cmdb": "CI-33042",
+   "cmdb_name": "catalog_warehouse_db",
+   "monitoring": "mon:catalog-warehouse",
+   "display": "Catalog Warehouse DB",
+   "aliases": [
+    "cat-war-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-080": {
+   "cmdb": "CI-61576",
+   "cmdb_name": "tax_invoices_db",
+   "monitoring": "mon:tax-invoices",
+   "display": "Tax Invoices DB",
+   "aliases": [
+    "tax-inv-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-083": {
+   "cmdb": "CI-22353",
+   "cmdb_name": "feeds_media_db",
+   "monitoring": "mon:feeds-media",
+   "display": "Feeds Media DB",
+   "aliases": [
+    "fee-med-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-090": {
+   "cmdb": "CI-90982",
+   "cmdb_name": "media_auth_replica_1_db",
+   "monitoring": "mon:media-auth-replica-1",
+   "display": "Media Auth Replica 1 DB",
+   "aliases": [
+    "med-aut-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-103": {
+   "cmdb": "CI-87845",
+   "cmdb_name": "reviews_orders_db",
+   "monitoring": "mon:reviews-orders",
+   "display": "Reviews Orders DB",
+   "aliases": [
+    "rev-ord-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-107": {
+   "cmdb": "CI-34510",
+   "cmdb_name": "audit_coupons_db",
+   "monitoring": "mon:audit-coupons",
+   "display": "Audit Coupons DB",
+   "aliases": [
+    "aud-cou-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-115": {
+   "cmdb": "CI-83207",
+   "cmdb_name": "payments_session_replica_1_db",
+   "monitoring": "mon:payments-session-replica-1",
+   "display": "Payments Session Replica 1 DB",
+   "aliases": [
+    "pay-ses-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-116": {
+   "cmdb": "CI-82692",
+   "cmdb_name": "reviews_billing_db",
+   "monitoring": "mon:reviews-billing",
+   "display": "Reviews Billing DB",
+   "aliases": [
+    "rev-bil-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-121": {
+   "cmdb": "CI-46690",
+   "cmdb_name": "media_auth_db",
+   "monitoring": "mon:media-auth",
+   "display": "Media Auth DB",
+   "aliases": [
+    "med-aut-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-131": {
+   "cmdb": "CI-74955",
+   "cmdb_name": "ratings_notify_replica_1_db",
+   "monitoring": "mon:ratings-notify-replica-1",
+   "display": "Ratings Notify Replica 1 DB",
+   "aliases": [
+    "rat-not-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-133": {
+   "cmdb": "CI-08725",
+   "cmdb_name": "tax_invoices_replica_1_db",
+   "monitoring": "mon:tax-invoices-replica-1",
+   "display": "Tax Invoices Replica 1 DB",
+   "aliases": [
+    "tax-inv-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-152": {
+   "cmdb": "CI-18821",
+   "cmdb_name": "ingest_warehouse_replica_1_db",
+   "monitoring": "mon:ingest-warehouse-replica-1",
+   "display": "Ingest Warehouse Replica 1 DB",
+   "aliases": [
+    "ing-war-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-154": {
+   "cmdb": "CI-24569",
+   "cmdb_name": "cart_shipping_db",
+   "monitoring": "mon:cart-shipping",
+   "display": "Cart Shipping DB",
+   "aliases": [
+    "car-shi-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-163": {
+   "cmdb": "CI-09422",
+   "cmdb_name": "ledger_billing_db",
+   "monitoring": "mon:ledger-billing",
+   "display": "Ledger Billing DB",
+   "aliases": [
+    "led-bil-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-169": {
+   "cmdb": "CI-16810",
+   "cmdb_name": "tax_orders_replica_1_db",
+   "monitoring": "mon:tax-orders-replica-1",
+   "display": "Tax Orders Replica 1 DB",
+   "aliases": [
+    "tax-ord-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-235": {
+   "cmdb": "CI-71105",
+   "cmdb_name": "warehouse_loyalty_db",
+   "monitoring": "mon:warehouse-loyalty",
+   "display": "Warehouse Loyalty DB",
+   "aliases": [
+    "war-loy-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-237": {
+   "cmdb": "CI-09376",
+   "cmdb_name": "reporting_identity_db",
+   "monitoring": "mon:reporting-identity",
+   "display": "Reporting Identity DB",
+   "aliases": [
+    "rep-ide-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-248": {
+   "cmdb": "CI-56137",
+   "cmdb_name": "invoices_gateway_db",
+   "monitoring": "mon:invoices-gateway",
+   "display": "Invoices Gateway DB",
+   "aliases": [
+    "inv-gat-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-256": {
+   "cmdb": "CI-05627",
+   "cmdb_name": "orders_tax_replica_1_db",
+   "monitoring": "mon:orders-tax-replica-1",
+   "display": "Orders Tax Replica 1 DB",
+   "aliases": [
+    "ord-tax-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-264": {
+   "cmdb": "CI-04942",
+   "cmdb_name": "search_profile_db",
+   "monitoring": "mon:search-profile",
+   "display": "Search Profile DB",
+   "aliases": [
+    "sea-pro-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-270": {
+   "cmdb": "CI-39915",
+   "cmdb_name": "ratings_inventory_db",
+   "monitoring": "mon:ratings-inventory",
+   "display": "Ratings Inventory DB",
+   "aliases": [
+    "rat-inv-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-272": {
+   "cmdb": "CI-60725",
+   "cmdb_name": "loyalty_media_replica_1_db",
+   "monitoring": "mon:loyalty-media-replica-1",
+   "display": "Loyalty Media Replica 1 DB",
+   "aliases": [
+    "loy-med-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-274": {
+   "cmdb": "CI-96510",
+   "cmdb_name": "payments_profile_db",
+   "monitoring": "mon:payments-profile",
+   "display": "Payments Profile DB",
+   "aliases": [
+    "pay-pro-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-277": {
+   "cmdb": "CI-39158",
+   "cmdb_name": "payments_session_db",
+   "monitoring": "mon:payments-session",
+   "display": "Payments Session DB",
+   "aliases": [
+    "pay-ses-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-290": {
+   "cmdb": "CI-87800",
+   "cmdb_name": "cart_shipping_replica_1_db",
+   "monitoring": "mon:cart-shipping-replica-1",
+   "display": "Cart Shipping Replica 1 DB",
+   "aliases": [
+    "car-shi-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-296": {
+   "cmdb": "CI-57728",
+   "cmdb_name": "shipping_identity_db",
+   "monitoring": "mon:shipping-identity",
+   "display": "Shipping Identity DB",
+   "aliases": [
+    "shi-ide-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-297": {
+   "cmdb": "CI-42689",
+   "cmdb_name": "refunds_tax_replica_1_db",
+   "monitoring": "mon:refunds-tax-replica-1",
+   "display": "Refunds Tax Replica 1 DB",
+   "aliases": [
+    "ref-tax-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-299": {
+   "cmdb": "CI-50959",
+   "cmdb_name": "gateway_auth_db",
+   "monitoring": "mon:gateway-auth",
+   "display": "Gateway Auth DB",
+   "aliases": [
+    "gat-aut-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-307": {
+   "cmdb": "CI-57868",
+   "cmdb_name": "catalog_address_db",
+   "monitoring": "mon:catalog-address",
+   "display": "Catalog Address DB",
+   "aliases": [
+    "cat-add-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-308": {
+   "cmdb": "CI-41065",
+   "cmdb_name": "shipping_identity_replica_1_db",
+   "monitoring": "mon:shipping-identity-replica-1",
+   "display": "Shipping Identity Replica 1 DB",
+   "aliases": [
+    "shi-ide-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-309": {
+   "cmdb": "CI-59949",
+   "cmdb_name": "identity_checkout_db",
+   "monitoring": "mon:identity-checkout",
+   "display": "Identity Checkout DB",
+   "aliases": [
+    "ide-che-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-317": {
+   "cmdb": "CI-63268",
+   "cmdb_name": "media_reviews_replica_1_db",
+   "monitoring": "mon:media-reviews-replica-1",
+   "display": "Media Reviews Replica 1 DB",
+   "aliases": [
+    "med-rev-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-332": {
+   "cmdb": "CI-39243",
+   "cmdb_name": "session_reporting_db",
+   "monitoring": "mon:session-reporting",
+   "display": "Session Reporting DB",
+   "aliases": [
+    "ses-rep-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-336": {
+   "cmdb": "CI-48302",
+   "cmdb_name": "quotes_payments_db",
+   "monitoring": "mon:quotes-payments",
+   "display": "Quotes Payments DB",
+   "aliases": [
+    "quo-pay-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-338": {
+   "cmdb": "CI-62096",
+   "cmdb_name": "coupons_gateway_replica_1_db",
+   "monitoring": "mon:coupons-gateway-replica-1",
+   "display": "Coupons Gateway Replica 1 DB",
+   "aliases": [
+    "cou-gat-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-339": {
+   "cmdb": "CI-73669",
+   "cmdb_name": "audit_warehouse_db",
+   "monitoring": "mon:audit-warehouse",
+   "display": "Audit Warehouse DB",
+   "aliases": [
+    "aud-war-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-344": {
+   "cmdb": "CI-22627",
+   "cmdb_name": "quotes_media_db",
+   "monitoring": "mon:quotes-media",
+   "display": "Quotes Media DB",
+   "aliases": [
+    "quo-med-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-353": {
+   "cmdb": "CI-69173",
+   "cmdb_name": "routing_profile_replica_1_db",
+   "monitoring": "mon:routing-profile-replica-1",
+   "display": "Routing Profile Replica 1 DB",
+   "aliases": [
+    "rou-pro-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-372": {
+   "cmdb": "CI-36531",
+   "cmdb_name": "media_metrics_replica_1_db",
+   "monitoring": "mon:media-metrics-replica-1",
+   "display": "Media Metrics Replica 1 DB",
+   "aliases": [
+    "med-met-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-390": {
+   "cmdb": "CI-32978",
+   "cmdb_name": "orders_tax_db",
+   "monitoring": "mon:orders-tax",
+   "display": "Orders Tax DB",
+   "aliases": [
+    "ord-tax-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-393": {
+   "cmdb": "CI-03270",
+   "cmdb_name": "pricing_warehouse_replica_1_db",
+   "monitoring": "mon:pricing-warehouse-replica-1",
+   "display": "Pricing Warehouse Replica 1 DB",
+   "aliases": [
+    "pri-war-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-425": {
+   "cmdb": "CI-08368",
+   "cmdb_name": "shipping_payments_db",
+   "monitoring": "mon:shipping-payments",
+   "display": "Shipping Payments DB",
+   "aliases": [
+    "shi-pay-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-428": {
+   "cmdb": "CI-23489",
+   "cmdb_name": "loyalty_media_db",
+   "monitoring": "mon:loyalty-media",
+   "display": "Loyalty Media DB",
+   "aliases": [
+    "loy-med-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-441": {
+   "cmdb": "CI-08673",
+   "cmdb_name": "export_ledger_db",
+   "monitoring": "mon:export-ledger",
+   "display": "Export Ledger DB",
+   "aliases": [
+    "exp-led-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-442": {
+   "cmdb": "CI-68418",
+   "cmdb_name": "ingest_warehouse_db",
+   "monitoring": "mon:ingest-warehouse",
+   "display": "Ingest Warehouse DB",
+   "aliases": [
+    "ing-war-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-444": {
+   "cmdb": "CI-10474",
+   "cmdb_name": "loyalty_coupons_replica_1_db",
+   "monitoring": "mon:loyalty-coupons-replica-1",
+   "display": "Loyalty Coupons Replica 1 DB",
+   "aliases": [
+    "loy-cou-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-455": {
+   "cmdb": "CI-93552",
+   "cmdb_name": "auth_fraud_db",
+   "monitoring": "mon:auth-fraud",
+   "display": "Auth Fraud DB",
+   "aliases": [
+    "aut-fra-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-465": {
+   "cmdb": "CI-61649",
+   "cmdb_name": "export_gateway_replica_1_db",
+   "monitoring": "mon:export-gateway-replica-1",
+   "display": "Export Gateway Replica 1 DB",
+   "aliases": [
+    "exp-gat-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-469": {
+   "cmdb": "CI-16722",
+   "cmdb_name": "auth_returns_replica_1_db",
+   "monitoring": "mon:auth-returns-replica-1",
+   "display": "Auth Returns Replica 1 DB",
+   "aliases": [
+    "aut-ret-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-471": {
+   "cmdb": "CI-25449",
+   "cmdb_name": "coupons_gateway_db",
+   "monitoring": "mon:coupons-gateway",
+   "display": "Coupons Gateway DB",
+   "aliases": [
+    "cou-gat-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-483": {
+   "cmdb": "CI-08699",
+   "cmdb_name": "export_gateway_db",
+   "monitoring": "mon:export-gateway",
+   "display": "Export Gateway DB",
+   "aliases": [
+    "exp-gat-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-484": {
+   "cmdb": "CI-18170",
+   "cmdb_name": "routing_profile_db",
+   "monitoring": "mon:routing-profile",
+   "display": "Routing Profile DB",
+   "aliases": [
+    "rou-pro-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-493": {
+   "cmdb": "CI-44019",
+   "cmdb_name": "coupons_refunds_db",
+   "monitoring": "mon:coupons-refunds",
+   "display": "Coupons Refunds DB",
+   "aliases": [
+    "cou-ref-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-496": {
+   "cmdb": "CI-41461",
+   "cmdb_name": "ratings_inventory_replica_1_db",
+   "monitoring": "mon:ratings-inventory-replica-1",
+   "display": "Ratings Inventory Replica 1 DB",
+   "aliases": [
+    "rat-inv-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-497": {
+   "cmdb": "CI-75174",
+   "cmdb_name": "orders_loyalty_db",
+   "monitoring": "mon:orders-loyalty",
+   "display": "Orders Loyalty DB",
+   "aliases": [
+    "ord-loy-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-508": {
+   "cmdb": "CI-58018",
+   "cmdb_name": "fraud_payments_db",
+   "monitoring": "mon:fraud-payments",
+   "display": "Fraud Payments DB",
+   "aliases": [
+    "fra-pay-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-510": {
+   "cmdb": "CI-55805",
+   "cmdb_name": "ledger_address_replica_1_db",
+   "monitoring": "mon:ledger-address-replica-1",
+   "display": "Ledger Address Replica 1 DB",
+   "aliases": [
+    "led-add-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-511": {
+   "cmdb": "CI-74735",
+   "cmdb_name": "shipping_fraud_db",
+   "monitoring": "mon:shipping-fraud",
+   "display": "Shipping Fraud DB",
+   "aliases": [
+    "shi-fra-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-512": {
+   "cmdb": "CI-86084",
+   "cmdb_name": "reviews_billing_replica_1_db",
+   "monitoring": "mon:reviews-billing-replica-1",
+   "display": "Reviews Billing Replica 1 DB",
+   "aliases": [
+    "rev-bil-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-517": {
+   "cmdb": "CI-03115",
+   "cmdb_name": "ledger_address_db",
+   "monitoring": "mon:ledger-address",
+   "display": "Ledger Address DB",
+   "aliases": [
+    "led-add-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-535": {
+   "cmdb": "CI-53678",
+   "cmdb_name": "identity_invoices_replica_1_db",
+   "monitoring": "mon:identity-invoices-replica-1",
+   "display": "Identity Invoices Replica 1 DB",
+   "aliases": [
+    "ide-inv-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-554": {
+   "cmdb": "CI-39060",
+   "cmdb_name": "media_ledger_db",
+   "monitoring": "mon:media-ledger",
+   "display": "Media Ledger DB",
+   "aliases": [
+    "med-led-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-567": {
+   "cmdb": "CI-89779",
+   "cmdb_name": "loyalty_coupons_db",
+   "monitoring": "mon:loyalty-coupons",
+   "display": "Loyalty Coupons DB",
+   "aliases": [
+    "loy-cou-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-568": {
+   "cmdb": "CI-44306",
+   "cmdb_name": "payments_profile_replica_1_db",
+   "monitoring": "mon:payments-profile-replica-1",
+   "display": "Payments Profile Replica 1 DB",
+   "aliases": [
+    "pay-pro-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-572": {
+   "cmdb": "CI-34735",
+   "cmdb_name": "identity_cart_db",
+   "monitoring": "mon:identity-cart",
+   "display": "Identity Cart DB",
+   "aliases": [
+    "ide-car-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-576": {
+   "cmdb": "CI-54457",
+   "cmdb_name": "shipping_session_db",
+   "monitoring": "mon:shipping-session",
+   "display": "Shipping Session DB",
+   "aliases": [
+    "shi-ses-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-583": {
+   "cmdb": "CI-59358",
+   "cmdb_name": "ratings_notify_db",
+   "monitoring": "mon:ratings-notify",
+   "display": "Ratings Notify DB",
+   "aliases": [
+    "rat-not-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-595": {
+   "cmdb": "CI-08940",
+   "cmdb_name": "invoices_gateway_replica_1_db",
+   "monitoring": "mon:invoices-gateway-replica-1",
+   "display": "Invoices Gateway Replica 1 DB",
+   "aliases": [
+    "inv-gat-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-637": {
+   "cmdb": "CI-60399",
+   "cmdb_name": "fraud_inventory_replica_1_db",
+   "monitoring": "mon:fraud-inventory-replica-1",
+   "display": "Fraud Inventory Replica 1 DB",
+   "aliases": [
+    "fra-inv-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-654": {
+   "cmdb": "CI-91958",
+   "cmdb_name": "auth_returns_db",
+   "monitoring": "mon:auth-returns",
+   "display": "Auth Returns DB",
+   "aliases": [
+    "aut-ret-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-661": {
+   "cmdb": "CI-92000",
+   "cmdb_name": "identity_cart_replica_1_db",
+   "monitoring": "mon:identity-cart-replica-1",
+   "display": "Identity Cart Replica 1 DB",
+   "aliases": [
+    "ide-car-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-677": {
+   "cmdb": "CI-89153",
+   "cmdb_name": "identity_invoices_db",
+   "monitoring": "mon:identity-invoices",
+   "display": "Identity Invoices DB",
+   "aliases": [
+    "ide-inv-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-679": {
+   "cmdb": "CI-38020",
+   "cmdb_name": "tax_orders_db",
+   "monitoring": "mon:tax-orders",
+   "display": "Tax Orders DB",
+   "aliases": [
+    "tax-ord-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-688": {
+   "cmdb": "CI-53045",
+   "cmdb_name": "billing_routing_db",
+   "monitoring": "mon:billing-routing",
+   "display": "Billing Routing DB",
+   "aliases": [
+    "bil-rou-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-693": {
+   "cmdb": "CI-18857",
+   "cmdb_name": "tax_session_replica_1_db",
+   "monitoring": "mon:tax-session-replica-1",
+   "display": "Tax Session Replica 1 DB",
+   "aliases": [
+    "tax-ses-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-695": {
+   "cmdb": "CI-94841",
+   "cmdb_name": "shipping_auth_db",
+   "monitoring": "mon:shipping-auth",
+   "display": "Shipping Auth DB",
+   "aliases": [
+    "shi-aut-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-720": {
+   "cmdb": "CI-89661",
+   "cmdb_name": "audit_inventory_db",
+   "monitoring": "mon:audit-inventory",
+   "display": "Audit Inventory DB",
+   "aliases": [
+    "aud-inv-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-730": {
+   "cmdb": "CI-01328",
+   "cmdb_name": "shipping_billing_db",
+   "monitoring": "mon:shipping-billing",
+   "display": "Shipping Billing DB",
+   "aliases": [
+    "shi-bil-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-741": {
+   "cmdb": "CI-35002",
+   "cmdb_name": "audit_coupons_replica_1_db",
+   "monitoring": "mon:audit-coupons-replica-1",
+   "display": "Audit Coupons Replica 1 DB",
+   "aliases": [
+    "aud-cou-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-751": {
+   "cmdb": "CI-66712",
+   "cmdb_name": "reporting_identity_replica_1_db",
+   "monitoring": "mon:reporting-identity-replica-1",
+   "display": "Reporting Identity Replica 1 DB",
+   "aliases": [
+    "rep-ide-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-752": {
+   "cmdb": "CI-81507",
+   "cmdb_name": "media_reviews_db",
+   "monitoring": "mon:media-reviews",
+   "display": "Media Reviews DB",
+   "aliases": [
+    "med-rev-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-758": {
+   "cmdb": "CI-52960",
+   "cmdb_name": "catalog_session_replica_1_db",
+   "monitoring": "mon:catalog-session-replica-1",
+   "display": "Catalog Session Replica 1 DB",
+   "aliases": [
+    "cat-ses-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-766": {
+   "cmdb": "CI-54047",
+   "cmdb_name": "shipping_auth_replica_1_db",
+   "monitoring": "mon:shipping-auth-replica-1",
+   "display": "Shipping Auth Replica 1 DB",
+   "aliases": [
+    "shi-aut-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-768": {
+   "cmdb": "CI-31022",
+   "cmdb_name": "identity_checkout_replica_1_db",
+   "monitoring": "mon:identity-checkout-replica-1",
+   "display": "Identity Checkout Replica 1 DB",
+   "aliases": [
+    "ide-che-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-773": {
+   "cmdb": "CI-09725",
+   "cmdb_name": "quotes_payments_replica_1_db",
+   "monitoring": "mon:quotes-payments-replica-1",
+   "display": "Quotes Payments Replica 1 DB",
+   "aliases": [
+    "quo-pay-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-785": {
+   "cmdb": "CI-21778",
+   "cmdb_name": "reviews_checkout_db",
+   "monitoring": "mon:reviews-checkout",
+   "display": "Reviews Checkout DB",
+   "aliases": [
+    "rev-che-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-812": {
+   "cmdb": "CI-65005",
+   "cmdb_name": "audit_warehouse_replica_1_db",
+   "monitoring": "mon:audit-warehouse-replica-1",
+   "display": "Audit Warehouse Replica 1 DB",
+   "aliases": [
+    "aud-war-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-817": {
+   "cmdb": "CI-04579",
+   "cmdb_name": "auth_fraud_replica_1_db",
+   "monitoring": "mon:auth-fraud-replica-1",
+   "display": "Auth Fraud Replica 1 DB",
+   "aliases": [
+    "aut-fra-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-823": {
+   "cmdb": "CI-73742",
+   "cmdb_name": "routing_identity_db",
+   "monitoring": "mon:routing-identity",
+   "display": "Routing Identity DB",
+   "aliases": [
+    "rou-ide-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-838": {
+   "cmdb": "CI-44837",
+   "cmdb_name": "export_coupons_db",
+   "monitoring": "mon:export-coupons",
+   "display": "Export Coupons DB",
+   "aliases": [
+    "exp-cou-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-859": {
+   "cmdb": "CI-43820",
+   "cmdb_name": "catalog_session_db",
+   "monitoring": "mon:catalog-session",
+   "display": "Catalog Session DB",
+   "aliases": [
+    "cat-ses-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-865": {
+   "cmdb": "CI-85782",
+   "cmdb_name": "catalog_tax_db",
+   "monitoring": "mon:catalog-tax",
+   "display": "Catalog Tax DB",
+   "aliases": [
+    "cat-tax-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-871": {
+   "cmdb": "CI-36464",
+   "cmdb_name": "fraud_inventory_db",
+   "monitoring": "mon:fraud-inventory",
+   "display": "Fraud Inventory DB",
+   "aliases": [
+    "fra-inv-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-872": {
+   "cmdb": "CI-46833",
+   "cmdb_name": "address_billing_replica_1_db",
+   "monitoring": "mon:address-billing-replica-1",
+   "display": "Address Billing Replica 1 DB",
+   "aliases": [
+    "add-bil-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-877": {
+   "cmdb": "CI-08709",
+   "cmdb_name": "shipping_session_replica_1_db",
+   "monitoring": "mon:shipping-session-replica-1",
+   "display": "Shipping Session Replica 1 DB",
+   "aliases": [
+    "shi-ses-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-886": {
+   "cmdb": "CI-43873",
+   "cmdb_name": "fraud_payments_replica_1_db",
+   "monitoring": "mon:fraud-payments-replica-1",
+   "display": "Fraud Payments Replica 1 DB",
+   "aliases": [
+    "fra-pay-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-892": {
+   "cmdb": "CI-60248",
+   "cmdb_name": "media_metrics_db",
+   "monitoring": "mon:media-metrics",
+   "display": "Media Metrics DB",
+   "aliases": [
+    "med-met-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-901": {
+   "cmdb": "CI-71712",
+   "cmdb_name": "checkout_search_db",
+   "monitoring": "mon:checkout-search",
+   "display": "Checkout Search DB",
+   "aliases": [
+    "che-sea-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-907": {
+   "cmdb": "CI-80975",
+   "cmdb_name": "export_ledger_replica_1_db",
+   "monitoring": "mon:export-ledger-replica-1",
+   "display": "Export Ledger Replica 1 DB",
+   "aliases": [
+    "exp-led-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-909": {
+   "cmdb": "CI-39889",
+   "cmdb_name": "checkout_search_replica_1_db",
+   "monitoring": "mon:checkout-search-replica-1",
+   "display": "Checkout Search Replica 1 DB",
+   "aliases": [
+    "che-sea-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-926": {
+   "cmdb": "CI-20060",
+   "cmdb_name": "inventory_checkout_db",
+   "monitoring": "mon:inventory-checkout",
+   "display": "Inventory Checkout DB",
+   "aliases": [
+    "inv-che-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-927": {
+   "cmdb": "CI-93694",
+   "cmdb_name": "checkout_metrics_db",
+   "monitoring": "mon:checkout-metrics",
+   "display": "Checkout Metrics DB",
+   "aliases": [
+    "che-met-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-932": {
+   "cmdb": "CI-20151",
+   "cmdb_name": "tax_session_db",
+   "monitoring": "mon:tax-session",
+   "display": "Tax Session DB",
+   "aliases": [
+    "tax-ses-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-936": {
+   "cmdb": "CI-38139",
+   "cmdb_name": "shipping_fraud_replica_1_db",
+   "monitoring": "mon:shipping-fraud-replica-1",
+   "display": "Shipping Fraud Replica 1 DB",
+   "aliases": [
+    "shi-fra-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-939": {
+   "cmdb": "CI-33116",
+   "cmdb_name": "media_ledger_replica_1_db",
+   "monitoring": "mon:media-ledger-replica-1",
+   "display": "Media Ledger Replica 1 DB",
+   "aliases": [
+    "med-led-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-943": {
+   "cmdb": "CI-57634",
+   "cmdb_name": "quotes_identity_db",
+   "monitoring": "mon:quotes-identity",
+   "display": "Quotes Identity DB",
+   "aliases": [
+    "quo-ide-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-950": {
+   "cmdb": "CI-13580",
+   "cmdb_name": "wishlist_ratings_db",
+   "monitoring": "mon:wishlist-ratings",
+   "display": "Wishlist Ratings DB",
+   "aliases": [
+    "wis-rat-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-953": {
+   "cmdb": "CI-01329",
+   "cmdb_name": "gateway_payments_replica_1_db",
+   "monitoring": "mon:gateway-payments-replica-1",
+   "display": "Gateway Payments Replica 1 DB",
+   "aliases": [
+    "gat-pay-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-965": {
+   "cmdb": "CI-29011",
+   "cmdb_name": "refunds_tax_db",
+   "monitoring": "mon:refunds-tax",
+   "display": "Refunds Tax DB",
+   "aliases": [
+    "ref-tax-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-967": {
+   "cmdb": "CI-47108",
+   "cmdb_name": "quotes_search_db",
+   "monitoring": "mon:quotes-search",
+   "display": "Quotes Search DB",
+   "aliases": [
+    "quo-sea-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-972": {
+   "cmdb": "CI-18988",
+   "cmdb_name": "catalog_warehouse_replica_1_db",
+   "monitoring": "mon:catalog-warehouse-replica-1",
+   "display": "Catalog Warehouse Replica 1 DB",
+   "aliases": [
+    "cat-war-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-974": {
+   "cmdb": "CI-61350",
+   "cmdb_name": "gateway_auth_replica_1_db",
+   "monitoring": "mon:gateway-auth-replica-1",
+   "display": "Gateway Auth Replica 1 DB",
+   "aliases": [
+    "gat-aut-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-986": {
+   "cmdb": "CI-77162",
+   "cmdb_name": "quotes_media_replica_1_db",
+   "monitoring": "mon:quotes-media-replica-1",
+   "display": "Quotes Media Replica 1 DB",
+   "aliases": [
+    "quo-med-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-995": {
+   "cmdb": "CI-06536",
+   "cmdb_name": "address_billing_db",
+   "monitoring": "mon:address-billing",
+   "display": "Address Billing DB",
+   "aliases": [
+    "add-bil-db-v2"
+   ],
+   "class": "database"
+  },
+  "q-001": {
+   "cmdb": "CI-56268",
+   "cmdb_name": "audit_orders_q",
+   "monitoring": "mon:audit-orders",
+   "display": "Audit Orders Queue",
+   "aliases": [
+    "aud-ord-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-002": {
+   "cmdb": "CI-17406",
+   "cmdb_name": "reporting_coupons_q",
+   "monitoring": "mon:reporting-coupons",
+   "display": "Reporting Coupons Queue",
+   "aliases": [
+    "rep-cou-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-003": {
+   "cmdb": "CI-72158",
+   "cmdb_name": "routing_session_q",
+   "monitoring": "mon:routing-session",
+   "display": "Routing Session Queue",
+   "aliases": [
+    "rou-ses-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-004": {
+   "cmdb": "CI-94477",
+   "cmdb_name": "ledger_ingest_q",
+   "monitoring": "mon:ledger-ingest",
+   "display": "Ledger Ingest Queue",
+   "aliases": [
+    "led-ing-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-005": {
+   "cmdb": "CI-04124",
+   "cmdb_name": "wishlist_feeds_q",
+   "monitoring": "mon:wishlist-feeds",
+   "display": "Wishlist Feeds Queue",
+   "aliases": [
+    "wis-fee-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-006": {
+   "cmdb": "CI-71127",
+   "cmdb_name": "invoices_warehouse_q",
+   "monitoring": "mon:invoices-warehouse",
+   "display": "Invoices Warehouse Queue",
+   "aliases": [
+    "inv-war-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-007": {
+   "cmdb": "CI-73782",
+   "cmdb_name": "fraud_checkout_q",
+   "monitoring": "mon:fraud-checkout",
+   "display": "Fraud Checkout Queue",
+   "aliases": [
+    "fra-che-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-008": {
+   "cmdb": "CI-18273",
+   "cmdb_name": "shipping_inventory_q",
+   "monitoring": "mon:shipping-inventory",
+   "display": "Shipping Inventory Queue",
+   "aliases": [
+    "shi-inv-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-009": {
+   "cmdb": "CI-64163",
+   "cmdb_name": "consent_session_q",
+   "monitoring": "mon:consent-session",
+   "display": "Consent Session Queue",
+   "aliases": [
+    "con-ses-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-010": {
+   "cmdb": "CI-56921",
+   "cmdb_name": "gateway_refunds_q",
+   "monitoring": "mon:gateway-refunds",
+   "display": "Gateway Refunds Queue",
+   "aliases": [
+    "gat-ref-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-011": {
+   "cmdb": "CI-83224",
+   "cmdb_name": "invoices_reviews_q",
+   "monitoring": "mon:invoices-reviews",
+   "display": "Invoices Reviews Queue",
+   "aliases": [
+    "inv-rev-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-012": {
+   "cmdb": "CI-57725",
+   "cmdb_name": "payments_media_q",
+   "monitoring": "mon:payments-media",
+   "display": "Payments Media Queue",
+   "aliases": [
+    "pay-med-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-013": {
+   "cmdb": "CI-47607",
+   "cmdb_name": "ratings_export_q",
+   "monitoring": "mon:ratings-export",
+   "display": "Ratings Export Queue",
+   "aliases": [
+    "rat-exp-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-014": {
+   "cmdb": "CI-13897",
+   "cmdb_name": "auth_session_q",
+   "monitoring": "mon:auth-session",
+   "display": "Auth Session Queue",
+   "aliases": [
+    "aut-ses-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-015": {
+   "cmdb": "CI-22862",
+   "cmdb_name": "consent_refunds_q",
+   "monitoring": "mon:consent-refunds",
+   "display": "Consent Refunds Queue",
+   "aliases": [
+    "con-ref-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-016": {
+   "cmdb": "CI-36408",
+   "cmdb_name": "payments_shipping_q",
+   "monitoring": "mon:payments-shipping",
+   "display": "Payments Shipping Queue",
+   "aliases": [
+    "pay-shi-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-017": {
+   "cmdb": "CI-30348",
+   "cmdb_name": "consent_routing_q",
+   "monitoring": "mon:consent-routing",
+   "display": "Consent Routing Queue",
+   "aliases": [
+    "con-rou-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-018": {
+   "cmdb": "CI-12703",
+   "cmdb_name": "session_fraud_q",
+   "monitoring": "mon:session-fraud",
+   "display": "Session Fraud Queue",
+   "aliases": [
+    "ses-fra-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-019": {
+   "cmdb": "CI-83955",
+   "cmdb_name": "reporting_ingest_q",
+   "monitoring": "mon:reporting-ingest",
+   "display": "Reporting Ingest Queue",
+   "aliases": [
+    "rep-ing-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-020": {
+   "cmdb": "CI-61658",
+   "cmdb_name": "gateway_identity_q",
+   "monitoring": "mon:gateway-identity",
+   "display": "Gateway Identity Queue",
+   "aliases": [
+    "gat-ide-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-021": {
+   "cmdb": "CI-05634",
+   "cmdb_name": "identity_fraud_q",
+   "monitoring": "mon:identity-fraud",
+   "display": "Identity Fraud Queue",
+   "aliases": [
+    "ide-fra-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-022": {
+   "cmdb": "CI-41232",
+   "cmdb_name": "reporting_reviews_q",
+   "monitoring": "mon:reporting-reviews",
+   "display": "Reporting Reviews Queue",
+   "aliases": [
+    "rep-rev-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-023": {
+   "cmdb": "CI-46005",
+   "cmdb_name": "warehouse_routing_q",
+   "monitoring": "mon:warehouse-routing",
+   "display": "Warehouse Routing Queue",
+   "aliases": [
+    "war-rou-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-024": {
+   "cmdb": "CI-18228",
+   "cmdb_name": "payments_auth_q",
+   "monitoring": "mon:payments-auth",
+   "display": "Payments Auth Queue",
+   "aliases": [
+    "pay-aut-q-v2"
+   ],
+   "class": "queue"
+  },
+  "q-025": {
+   "cmdb": "CI-37457",
+   "cmdb_name": "inventory_identity_q",
+   "monitoring": "mon:inventory-identity",
+   "display": "Inventory Identity Queue",
+   "aliases": [
+    "inv-ide-q-v2"
+   ],
+   "class": "queue"
+  },
+  "svc-005": {
+   "cmdb": "CI-76848",
+   "cmdb_name": "quotes_inventory_replica_1_svc",
+   "monitoring": "mon:quotes-inventory-replica-1",
+   "display": "Quotes Inventory Replica 1 Service",
+   "aliases": [
+    "quo-inv-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-010": {
+   "cmdb": "CI-63552",
+   "cmdb_name": "shipping_reviews_svc",
+   "monitoring": "mon:shipping-reviews",
+   "display": "Shipping Reviews Service",
+   "aliases": [
+    "shi-rev-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-015": {
+   "cmdb": "CI-10346",
+   "cmdb_name": "wishlist_tax_svc",
+   "monitoring": "mon:wishlist-tax",
+   "display": "Wishlist Tax Service",
+   "aliases": [
+    "wis-tax-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-020": {
+   "cmdb": "CI-01208",
+   "cmdb_name": "catalog_export_svc",
+   "monitoring": "mon:catalog-export",
+   "display": "Catalog Export Service",
+   "aliases": [
+    "cat-exp-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-029": {
+   "cmdb": "CI-56239",
+   "cmdb_name": "export_address_svc",
+   "monitoring": "mon:export-address",
+   "display": "Export Address Service",
+   "aliases": [
+    "exp-add-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-031": {
+   "cmdb": "CI-86341",
+   "cmdb_name": "catalog_invoices_replica_1_svc",
+   "monitoring": "mon:catalog-invoices-replica-1",
+   "display": "Catalog Invoices Replica 1 Service",
+   "aliases": [
+    "cat-inv-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-032": {
+   "cmdb": "CI-78141",
+   "cmdb_name": "consent_cart_svc",
+   "monitoring": "mon:consent-cart",
+   "display": "Consent Cart Service",
+   "aliases": [
+    "con-car-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-033": {
+   "cmdb": "CI-42886",
+   "cmdb_name": "invoices_profile_svc",
+   "monitoring": "mon:invoices-profile",
+   "display": "Invoices Profile Service",
+   "aliases": [
+    "inv-pro-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-035": {
+   "cmdb": "CI-72702",
+   "cmdb_name": "reviews_warehouse_svc",
+   "monitoring": "mon:reviews-warehouse",
+   "display": "Reviews Warehouse Service",
+   "aliases": [
+    "rev-war-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-037": {
+   "cmdb": "CI-62426",
+   "cmdb_name": "audit_catalog_svc",
+   "monitoring": "mon:audit-catalog",
+   "display": "Audit Catalog Service",
+   "aliases": [
+    "aud-cat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-039": {
+   "cmdb": "CI-78472",
+   "cmdb_name": "ratings_session_replica_1_svc",
+   "monitoring": "mon:ratings-session-replica-1",
+   "display": "Ratings Session Replica 1 Service",
+   "aliases": [
+    "rat-ses-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-045": {
+   "cmdb": "CI-87967",
+   "cmdb_name": "ledger_pricing_svc",
+   "monitoring": "mon:ledger-pricing",
+   "display": "Ledger Pricing Service",
+   "aliases": [
+    "led-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-047": {
+   "cmdb": "CI-97618",
+   "cmdb_name": "orders_ingest_svc",
+   "monitoring": "mon:orders-ingest",
+   "display": "Orders Ingest Service",
+   "aliases": [
+    "ord-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-048": {
+   "cmdb": "CI-77071",
+   "cmdb_name": "session_quotes_svc",
+   "monitoring": "mon:session-quotes",
+   "display": "Session Quotes Service",
+   "aliases": [
+    "ses-quo-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-049": {
+   "cmdb": "CI-02976",
+   "cmdb_name": "feeds_metrics_svc",
+   "monitoring": "mon:feeds-metrics",
+   "display": "Feeds Metrics Service",
+   "aliases": [
+    "fee-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-050": {
+   "cmdb": "CI-92198",
+   "cmdb_name": "coupons_invoices_svc",
+   "monitoring": "mon:coupons-invoices",
+   "display": "Coupons Invoices Service",
+   "aliases": [
+    "cou-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-054": {
+   "cmdb": "CI-58447",
+   "cmdb_name": "orders_consent_svc",
+   "monitoring": "mon:orders-consent",
+   "display": "Orders Consent Service",
+   "aliases": [
+    "ord-con-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-055": {
+   "cmdb": "CI-87673",
+   "cmdb_name": "reporting_shipping_replica_1_svc",
+   "monitoring": "mon:reporting-shipping-replica-1",
+   "display": "Reporting Shipping Replica 1 Service",
+   "aliases": [
+    "rep-shi-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-056": {
+   "cmdb": "CI-46803",
+   "cmdb_name": "cart_session_svc",
+   "monitoring": "mon:cart-session",
+   "display": "Cart Session Service",
+   "aliases": [
+    "car-ses-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-063": {
+   "cmdb": "CI-77586",
+   "cmdb_name": "catalog_ingest_replica_1_svc",
+   "monitoring": "mon:catalog-ingest-replica-1",
+   "display": "Catalog Ingest Replica 1 Service",
+   "aliases": [
+    "cat-ing-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-065": {
+   "cmdb": "CI-40488",
+   "cmdb_name": "ingest_export_svc",
+   "monitoring": "mon:ingest-export",
+   "display": "Ingest Export Service",
+   "aliases": [
+    "ing-exp-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-068": {
+   "cmdb": "CI-77766",
+   "cmdb_name": "payments_coupons_replica_1_svc",
+   "monitoring": "mon:payments-coupons-replica-1",
+   "display": "Payments Coupons Replica 1 Service",
+   "aliases": [
+    "pay-cou-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-069": {
+   "cmdb": "CI-83509",
+   "cmdb_name": "pricing_ingest_svc",
+   "monitoring": "mon:pricing-ingest",
+   "display": "Pricing Ingest Service",
+   "aliases": [
+    "pri-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-073": {
+   "cmdb": "CI-99285",
+   "cmdb_name": "metrics_returns_svc",
+   "monitoring": "mon:metrics-returns",
+   "display": "Metrics Returns Service",
+   "aliases": [
+    "met-ret-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-077": {
+   "cmdb": "CI-99774",
+   "cmdb_name": "ratings_pricing_replica_1_svc",
+   "monitoring": "mon:ratings-pricing-replica-1",
+   "display": "Ratings Pricing Replica 1 Service",
+   "aliases": [
+    "rat-pri-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-080": {
+   "cmdb": "CI-26159",
+   "cmdb_name": "ledger_session_svc",
+   "monitoring": "mon:ledger-session",
+   "display": "Ledger Session Service",
+   "aliases": [
+    "led-ses-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-084": {
+   "cmdb": "CI-36829",
+   "cmdb_name": "orders_session_svc",
+   "monitoring": "mon:orders-session",
+   "display": "Orders Session Service",
+   "aliases": [
+    "ord-ses-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-085": {
+   "cmdb": "CI-01948",
+   "cmdb_name": "identity_address_replica_1_svc",
+   "monitoring": "mon:identity-address-replica-1",
+   "display": "Identity Address Replica 1 Service",
+   "aliases": [
+    "ide-add-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-086": {
+   "cmdb": "CI-04051",
+   "cmdb_name": "search_reviews_svc",
+   "monitoring": "mon:search-reviews",
+   "display": "Search Reviews Service",
+   "aliases": [
+    "sea-rev-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-087": {
+   "cmdb": "CI-32088",
+   "cmdb_name": "shipping_refunds_svc",
+   "monitoring": "mon:shipping-refunds",
+   "display": "Shipping Refunds Service",
+   "aliases": [
+    "shi-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-089": {
+   "cmdb": "CI-01683",
+   "cmdb_name": "quotes_cart_svc",
+   "monitoring": "mon:quotes-cart",
+   "display": "Quotes Cart Service",
+   "aliases": [
+    "quo-car-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-092": {
+   "cmdb": "CI-07715",
+   "cmdb_name": "profile_media_replica_1_svc",
+   "monitoring": "mon:profile-media-replica-1",
+   "display": "Profile Media Replica 1 Service",
+   "aliases": [
+    "pro-med-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-093": {
+   "cmdb": "CI-13513",
+   "cmdb_name": "address_cart_svc",
+   "monitoring": "mon:address-cart",
+   "display": "Address Cart Service",
+   "aliases": [
+    "add-car-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-094": {
+   "cmdb": "CI-31215",
+   "cmdb_name": "payments_routing_replica_1_svc",
+   "monitoring": "mon:payments-routing-replica-1",
+   "display": "Payments Routing Replica 1 Service",
+   "aliases": [
+    "pay-rou-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-095": {
+   "cmdb": "CI-43690",
+   "cmdb_name": "notify_ingest_svc",
+   "monitoring": "mon:notify-ingest",
+   "display": "Notify Ingest Service",
+   "aliases": [
+    "not-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-096": {
+   "cmdb": "CI-55021",
+   "cmdb_name": "ledger_gateway_replica_1_svc",
+   "monitoring": "mon:ledger-gateway-replica-1",
+   "display": "Ledger Gateway Replica 1 Service",
+   "aliases": [
+    "led-gat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-097": {
+   "cmdb": "CI-98329",
+   "cmdb_name": "ratings_session_svc",
+   "monitoring": "mon:ratings-session",
+   "display": "Ratings Session Service",
+   "aliases": [
+    "rat-ses-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-099": {
+   "cmdb": "CI-48043",
+   "cmdb_name": "orders_checkout_svc",
+   "monitoring": "mon:orders-checkout",
+   "display": "Orders Checkout Service",
+   "aliases": [
+    "ord-che-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-103": {
+   "cmdb": "CI-11719",
+   "cmdb_name": "invoices_inventory_svc",
+   "monitoring": "mon:invoices-inventory",
+   "display": "Invoices Inventory Service",
+   "aliases": [
+    "inv-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-105": {
+   "cmdb": "CI-78797",
+   "cmdb_name": "payments_coupons_svc",
+   "monitoring": "mon:payments-coupons",
+   "display": "Payments Coupons Service",
+   "aliases": [
+    "pay-cou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-106": {
+   "cmdb": "CI-84482",
+   "cmdb_name": "coupons_checkout_svc",
+   "monitoring": "mon:coupons-checkout",
+   "display": "Coupons Checkout Service",
+   "aliases": [
+    "cou-che-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-111": {
+   "cmdb": "CI-48222",
+   "cmdb_name": "returns_orders_svc",
+   "monitoring": "mon:returns-orders",
+   "display": "Returns Orders Service",
+   "aliases": [
+    "ret-ord-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-127": {
+   "cmdb": "CI-89088",
+   "cmdb_name": "orders_export_svc",
+   "monitoring": "mon:orders-export",
+   "display": "Orders Export Service",
+   "aliases": [
+    "ord-exp-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-128": {
+   "cmdb": "CI-97877",
+   "cmdb_name": "fraud_reviews_replica_1_svc",
+   "monitoring": "mon:fraud-reviews-replica-1",
+   "display": "Fraud Reviews Replica 1 Service",
+   "aliases": [
+    "fra-rev-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-129": {
+   "cmdb": "CI-47825",
+   "cmdb_name": "identity_metrics_svc",
+   "monitoring": "mon:identity-metrics",
+   "display": "Identity Metrics Service",
+   "aliases": [
+    "ide-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-132": {
+   "cmdb": "CI-71376",
+   "cmdb_name": "cart_coupons_replica_1_svc",
+   "monitoring": "mon:cart-coupons-replica-1",
+   "display": "Cart Coupons Replica 1 Service",
+   "aliases": [
+    "car-cou-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-137": {
+   "cmdb": "CI-75423",
+   "cmdb_name": "checkout_pricing_svc",
+   "monitoring": "mon:checkout-pricing",
+   "display": "Checkout Pricing Service",
+   "aliases": [
+    "che-pri-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-139": {
+   "cmdb": "CI-74538",
+   "cmdb_name": "cart_returns_svc",
+   "monitoring": "mon:cart-returns",
+   "display": "Cart Returns Service",
+   "aliases": [
+    "car-ret-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-145": {
+   "cmdb": "CI-69400",
+   "cmdb_name": "catalog_ledger_svc",
+   "monitoring": "mon:catalog-ledger",
+   "display": "Catalog Ledger Service",
+   "aliases": [
+    "cat-led-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-146": {
+   "cmdb": "CI-06705",
+   "cmdb_name": "shipping_export_svc",
+   "monitoring": "mon:shipping-export",
+   "display": "Shipping Export Service",
+   "aliases": [
+    "shi-exp-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-148": {
+   "cmdb": "CI-34246",
+   "cmdb_name": "coupons_checkout_replica_1_svc",
+   "monitoring": "mon:coupons-checkout-replica-1",
+   "display": "Coupons Checkout Replica 1 Service",
+   "aliases": [
+    "cou-che-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-152": {
+   "cmdb": "CI-74460",
+   "cmdb_name": "reviews_metrics_svc",
+   "monitoring": "mon:reviews-metrics",
+   "display": "Reviews Metrics Service",
+   "aliases": [
+    "rev-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-153": {
+   "cmdb": "CI-09120",
+   "cmdb_name": "export_refunds_replica_1_svc",
+   "monitoring": "mon:export-refunds-replica-1",
+   "display": "Export Refunds Replica 1 Service",
+   "aliases": [
+    "exp-ref-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-155": {
+   "cmdb": "CI-88623",
+   "cmdb_name": "reviews_metrics_replica_1_svc",
+   "monitoring": "mon:reviews-metrics-replica-1",
+   "display": "Reviews Metrics Replica 1 Service",
+   "aliases": [
+    "rev-met-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-160": {
+   "cmdb": "CI-04985",
+   "cmdb_name": "orders_ratings_replica_1_svc",
+   "monitoring": "mon:orders-ratings-replica-1",
+   "display": "Orders Ratings Replica 1 Service",
+   "aliases": [
+    "ord-rat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-163": {
+   "cmdb": "CI-19266",
+   "cmdb_name": "warehouse_reviews_replica_1_svc",
+   "monitoring": "mon:warehouse-reviews-replica-1",
+   "display": "Warehouse Reviews Replica 1 Service",
+   "aliases": [
+    "war-rev-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-170": {
+   "cmdb": "CI-57123",
+   "cmdb_name": "payments_quotes_replica_1_svc",
+   "monitoring": "mon:payments-quotes-replica-1",
+   "display": "Payments Quotes Replica 1 Service",
+   "aliases": [
+    "pay-quo-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-173": {
+   "cmdb": "CI-26037",
+   "cmdb_name": "invoices_ratings_svc",
+   "monitoring": "mon:invoices-ratings",
+   "display": "Invoices Ratings Service",
+   "aliases": [
+    "inv-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-174": {
+   "cmdb": "CI-43705",
+   "cmdb_name": "billing_gateway_svc",
+   "monitoring": "mon:billing-gateway",
+   "display": "Billing Gateway Service",
+   "aliases": [
+    "bil-gat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-175": {
+   "cmdb": "CI-28116",
+   "cmdb_name": "pricing_catalog_svc",
+   "monitoring": "mon:pricing-catalog",
+   "display": "Pricing Catalog Service",
+   "aliases": [
+    "pri-cat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-179": {
+   "cmdb": "CI-48106",
+   "cmdb_name": "payments_quotes_svc",
+   "monitoring": "mon:payments-quotes",
+   "display": "Payments Quotes Service",
+   "aliases": [
+    "pay-quo-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-181": {
+   "cmdb": "CI-39272",
+   "cmdb_name": "metrics_auth_svc",
+   "monitoring": "mon:metrics-auth",
+   "display": "Metrics Auth Service",
+   "aliases": [
+    "met-aut-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-183": {
+   "cmdb": "CI-87782",
+   "cmdb_name": "consent_loyalty_svc",
+   "monitoring": "mon:consent-loyalty",
+   "display": "Consent Loyalty Service",
+   "aliases": [
+    "con-loy-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-184": {
+   "cmdb": "CI-23614",
+   "cmdb_name": "inventory_media_svc",
+   "monitoring": "mon:inventory-media",
+   "display": "Inventory Media Service",
+   "aliases": [
+    "inv-med-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-185": {
+   "cmdb": "CI-06062",
+   "cmdb_name": "warehouse_checkout_svc",
+   "monitoring": "mon:warehouse-checkout",
+   "display": "Warehouse Checkout Service",
+   "aliases": [
+    "war-che-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-189": {
+   "cmdb": "CI-85405",
+   "cmdb_name": "fraud_orders_replica_1_svc",
+   "monitoring": "mon:fraud-orders-replica-1",
+   "display": "Fraud Orders Replica 1 Service",
+   "aliases": [
+    "fra-ord-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-190": {
+   "cmdb": "CI-29884",
+   "cmdb_name": "cart_invoices_svc",
+   "monitoring": "mon:cart-invoices",
+   "display": "Cart Invoices Service",
+   "aliases": [
+    "car-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-193": {
+   "cmdb": "CI-53355",
+   "cmdb_name": "cart_metrics_replica_1_svc",
+   "monitoring": "mon:cart-metrics-replica-1",
+   "display": "Cart Metrics Replica 1 Service",
+   "aliases": [
+    "car-met-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-200": {
+   "cmdb": "CI-75115",
+   "cmdb_name": "pricing_coupons_replica_1_svc",
+   "monitoring": "mon:pricing-coupons-replica-1",
+   "display": "Pricing Coupons Replica 1 Service",
+   "aliases": [
+    "pri-cou-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-202": {
+   "cmdb": "CI-40502",
+   "cmdb_name": "ratings_quotes_svc",
+   "monitoring": "mon:ratings-quotes",
+   "display": "Ratings Quotes Service",
+   "aliases": [
+    "rat-quo-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-203": {
+   "cmdb": "CI-79152",
+   "cmdb_name": "feeds_session_svc",
+   "monitoring": "mon:feeds-session",
+   "display": "Feeds Session Service",
+   "aliases": [
+    "fee-ses-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-206": {
+   "cmdb": "CI-33659",
+   "cmdb_name": "metrics_auth_replica_1_svc",
+   "monitoring": "mon:metrics-auth-replica-1",
+   "display": "Metrics Auth Replica 1 Service",
+   "aliases": [
+    "met-aut-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-213": {
+   "cmdb": "CI-79597",
+   "cmdb_name": "cart_identity_svc",
+   "monitoring": "mon:cart-identity",
+   "display": "Cart Identity Service",
+   "aliases": [
+    "car-ide-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-215": {
+   "cmdb": "CI-90737",
+   "cmdb_name": "shipping_gateway_svc",
+   "monitoring": "mon:shipping-gateway",
+   "display": "Shipping Gateway Service",
+   "aliases": [
+    "shi-gat-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-217": {
+   "cmdb": "CI-22372",
+   "cmdb_name": "cart_returns_replica_1_svc",
+   "monitoring": "mon:cart-returns-replica-1",
+   "display": "Cart Returns Replica 1 Service",
+   "aliases": [
+    "car-ret-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-226": {
+   "cmdb": "CI-82061",
+   "cmdb_name": "consent_loyalty_replica_1_svc",
+   "monitoring": "mon:consent-loyalty-replica-1",
+   "display": "Consent Loyalty Replica 1 Service",
+   "aliases": [
+    "con-loy-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-227": {
+   "cmdb": "CI-21930",
+   "cmdb_name": "refunds_pricing_svc",
+   "monitoring": "mon:refunds-pricing",
+   "display": "Refunds Pricing Service",
+   "aliases": [
+    "ref-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-231": {
+   "cmdb": "CI-51542",
+   "cmdb_name": "media_reporting_replica_1_svc",
+   "monitoring": "mon:media-reporting-replica-1",
+   "display": "Media Reporting Replica 1 Service",
+   "aliases": [
+    "med-rep-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-241": {
+   "cmdb": "CI-54255",
+   "cmdb_name": "warehouse_metrics_svc",
+   "monitoring": "mon:warehouse-metrics",
+   "display": "Warehouse Metrics Service",
+   "aliases": [
+    "war-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-242": {
+   "cmdb": "CI-32831",
+   "cmdb_name": "ratings_payments_svc",
+   "monitoring": "mon:ratings-payments",
+   "display": "Ratings Payments Service",
+   "aliases": [
+    "rat-pay-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-244": {
+   "cmdb": "CI-15843",
+   "cmdb_name": "ingest_feeds_replica_1_svc",
+   "monitoring": "mon:ingest-feeds-replica-1",
+   "display": "Ingest Feeds Replica 1 Service",
+   "aliases": [
+    "ing-fee-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-246": {
+   "cmdb": "CI-21420",
+   "cmdb_name": "checkout_catalog_replica_1_svc",
+   "monitoring": "mon:checkout-catalog-replica-1",
+   "display": "Checkout Catalog Replica 1 Service",
+   "aliases": [
+    "che-cat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-250": {
+   "cmdb": "CI-30296",
+   "cmdb_name": "loyalty_refunds_svc",
+   "monitoring": "mon:loyalty-refunds",
+   "display": "Loyalty Refunds Service",
+   "aliases": [
+    "loy-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-252": {
+   "cmdb": "CI-96412",
+   "cmdb_name": "audit_notify_svc",
+   "monitoring": "mon:audit-notify",
+   "display": "Audit Notify Service",
+   "aliases": [
+    "aud-not-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-256": {
+   "cmdb": "CI-21976",
+   "cmdb_name": "ratings_reviews_svc",
+   "monitoring": "mon:ratings-reviews",
+   "display": "Ratings Reviews Service",
+   "aliases": [
+    "rat-rev-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-263": {
+   "cmdb": "CI-46668",
+   "cmdb_name": "search_warehouse_svc",
+   "monitoring": "mon:search-warehouse",
+   "display": "Search Warehouse Service",
+   "aliases": [
+    "sea-war-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-264": {
+   "cmdb": "CI-30486",
+   "cmdb_name": "orders_profile_replica_1_svc",
+   "monitoring": "mon:orders-profile-replica-1",
+   "display": "Orders Profile Replica 1 Service",
+   "aliases": [
+    "ord-pro-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-265": {
+   "cmdb": "CI-50754",
+   "cmdb_name": "refunds_invoices_replica_1_svc",
+   "monitoring": "mon:refunds-invoices-replica-1",
+   "display": "Refunds Invoices Replica 1 Service",
+   "aliases": [
+    "ref-inv-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-269": {
+   "cmdb": "CI-91057",
+   "cmdb_name": "feeds_ratings_replica_1_svc",
+   "monitoring": "mon:feeds-ratings-replica-1",
+   "display": "Feeds Ratings Replica 1 Service",
+   "aliases": [
+    "fee-rat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-271": {
+   "cmdb": "CI-63170",
+   "cmdb_name": "checkout_catalog_svc",
+   "monitoring": "mon:checkout-catalog",
+   "display": "Checkout Catalog Service",
+   "aliases": [
+    "che-cat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-276": {
+   "cmdb": "CI-79755",
+   "cmdb_name": "fraud_orders_svc",
+   "monitoring": "mon:fraud-orders",
+   "display": "Fraud Orders Service",
+   "aliases": [
+    "fra-ord-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-279": {
+   "cmdb": "CI-63761",
+   "cmdb_name": "wishlist_routing_replica_1_svc",
+   "monitoring": "mon:wishlist-routing-replica-1",
+   "display": "Wishlist Routing Replica 1 Service",
+   "aliases": [
+    "wis-rou-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-283": {
+   "cmdb": "CI-06200",
+   "cmdb_name": "pricing_shipping_svc",
+   "monitoring": "mon:pricing-shipping",
+   "display": "Pricing Shipping Service",
+   "aliases": [
+    "pri-shi-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-284": {
+   "cmdb": "CI-68943",
+   "cmdb_name": "ingest_profile_svc",
+   "monitoring": "mon:ingest-profile",
+   "display": "Ingest Profile Service",
+   "aliases": [
+    "ing-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-289": {
+   "cmdb": "CI-45486",
+   "cmdb_name": "warehouse_reviews_svc",
+   "monitoring": "mon:warehouse-reviews",
+   "display": "Warehouse Reviews Service",
+   "aliases": [
+    "war-rev-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-292": {
+   "cmdb": "CI-37481",
+   "cmdb_name": "address_checkout_svc",
+   "monitoring": "mon:address-checkout",
+   "display": "Address Checkout Service",
+   "aliases": [
+    "add-che-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-296": {
+   "cmdb": "CI-63073",
+   "cmdb_name": "address_invoices_svc",
+   "monitoring": "mon:address-invoices",
+   "display": "Address Invoices Service",
+   "aliases": [
+    "add-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-298": {
+   "cmdb": "CI-16192",
+   "cmdb_name": "fraud_audit_svc",
+   "monitoring": "mon:fraud-audit",
+   "display": "Fraud Audit Service",
+   "aliases": [
+    "fra-aud-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-299": {
+   "cmdb": "CI-32256",
+   "cmdb_name": "refunds_loyalty_svc",
+   "monitoring": "mon:refunds-loyalty",
+   "display": "Refunds Loyalty Service",
+   "aliases": [
+    "ref-loy-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-301": {
+   "cmdb": "CI-21587",
+   "cmdb_name": "inventory_coupons_svc",
+   "monitoring": "mon:inventory-coupons",
+   "display": "Inventory Coupons Service",
+   "aliases": [
+    "inv-cou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-302": {
+   "cmdb": "CI-98182",
+   "cmdb_name": "coupons_reporting_svc",
+   "monitoring": "mon:coupons-reporting",
+   "display": "Coupons Reporting Service",
+   "aliases": [
+    "cou-rep-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-305": {
+   "cmdb": "CI-76410",
+   "cmdb_name": "wishlist_coupons_replica_1_svc",
+   "monitoring": "mon:wishlist-coupons-replica-1",
+   "display": "Wishlist Coupons Replica 1 Service",
+   "aliases": [
+    "wis-cou-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-308": {
+   "cmdb": "CI-70394",
+   "cmdb_name": "consent_feeds_svc",
+   "monitoring": "mon:consent-feeds",
+   "display": "Consent Feeds Service",
+   "aliases": [
+    "con-fee-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-309": {
+   "cmdb": "CI-97855",
+   "cmdb_name": "payments_address_replica_1_svc",
+   "monitoring": "mon:payments-address-replica-1",
+   "display": "Payments Address Replica 1 Service",
+   "aliases": [
+    "pay-add-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-310": {
+   "cmdb": "CI-87931",
+   "cmdb_name": "wishlist_coupons_svc",
+   "monitoring": "mon:wishlist-coupons",
+   "display": "Wishlist Coupons Service",
+   "aliases": [
+    "wis-cou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-311": {
+   "cmdb": "CI-93408",
+   "cmdb_name": "search_address_svc",
+   "monitoring": "mon:search-address",
+   "display": "Search Address Service",
+   "aliases": [
+    "sea-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-313": {
+   "cmdb": "CI-99980",
+   "cmdb_name": "export_auth_svc",
+   "monitoring": "mon:export-auth",
+   "display": "Export Auth Service",
+   "aliases": [
+    "exp-aut-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-316": {
+   "cmdb": "CI-58249",
+   "cmdb_name": "session_loyalty_svc",
+   "monitoring": "mon:session-loyalty",
+   "display": "Session Loyalty Service",
+   "aliases": [
+    "ses-loy-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-317": {
+   "cmdb": "CI-85645",
+   "cmdb_name": "metrics_identity_svc",
+   "monitoring": "mon:metrics-identity",
+   "display": "Metrics Identity Service",
+   "aliases": [
+    "met-ide-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-322": {
+   "cmdb": "CI-10578",
+   "cmdb_name": "auth_wishlist_replica_1_svc",
+   "monitoring": "mon:auth-wishlist-replica-1",
+   "display": "Auth Wishlist Replica 1 Service",
+   "aliases": [
+    "aut-wis-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-324": {
+   "cmdb": "CI-50457",
+   "cmdb_name": "inventory_export_svc",
+   "monitoring": "mon:inventory-export",
+   "display": "Inventory Export Service",
+   "aliases": [
+    "inv-exp-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-328": {
+   "cmdb": "CI-05090",
+   "cmdb_name": "refunds_metrics_svc",
+   "monitoring": "mon:refunds-metrics",
+   "display": "Refunds Metrics Service",
+   "aliases": [
+    "ref-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-329": {
+   "cmdb": "CI-59645",
+   "cmdb_name": "address_profile_svc",
+   "monitoring": "mon:address-profile",
+   "display": "Address Profile Service",
+   "aliases": [
+    "add-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-334": {
+   "cmdb": "CI-19010",
+   "cmdb_name": "session_identity_svc",
+   "monitoring": "mon:session-identity",
+   "display": "Session Identity Service",
+   "aliases": [
+    "ses-ide-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-335": {
+   "cmdb": "CI-28234",
+   "cmdb_name": "invoices_ledger_replica_1_svc",
+   "monitoring": "mon:invoices-ledger-replica-1",
+   "display": "Invoices Ledger Replica 1 Service",
+   "aliases": [
+    "inv-led-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-337": {
+   "cmdb": "CI-02174",
+   "cmdb_name": "refunds_feeds_svc",
+   "monitoring": "mon:refunds-feeds",
+   "display": "Refunds Feeds Service",
+   "aliases": [
+    "ref-fee-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-344": {
+   "cmdb": "CI-34016",
+   "cmdb_name": "profile_media_svc",
+   "monitoring": "mon:profile-media",
+   "display": "Profile Media Service",
+   "aliases": [
+    "pro-med-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-345": {
+   "cmdb": "CI-10342",
+   "cmdb_name": "coupons_wishlist_svc",
+   "monitoring": "mon:coupons-wishlist",
+   "display": "Coupons Wishlist Service",
+   "aliases": [
+    "cou-wis-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-346": {
+   "cmdb": "CI-08735",
+   "cmdb_name": "orders_warehouse_replica_1_svc",
+   "monitoring": "mon:orders-warehouse-replica-1",
+   "display": "Orders Warehouse Replica 1 Service",
+   "aliases": [
+    "ord-war-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-350": {
+   "cmdb": "CI-43790",
+   "cmdb_name": "wishlist_tax_replica_1_svc",
+   "monitoring": "mon:wishlist-tax-replica-1",
+   "display": "Wishlist Tax Replica 1 Service",
+   "aliases": [
+    "wis-tax-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-353": {
+   "cmdb": "CI-39091",
+   "cmdb_name": "payments_feeds_svc",
+   "monitoring": "mon:payments-feeds",
+   "display": "Payments Feeds Service",
+   "aliases": [
+    "pay-fee-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-355": {
+   "cmdb": "CI-95032",
+   "cmdb_name": "warehouse_tax_svc",
+   "monitoring": "mon:warehouse-tax",
+   "display": "Warehouse Tax Service",
+   "aliases": [
+    "war-tax-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-362": {
+   "cmdb": "CI-72363",
+   "cmdb_name": "catalog_search_svc",
+   "monitoring": "mon:catalog-search",
+   "display": "Catalog Search Service",
+   "aliases": [
+    "cat-sea-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-365": {
+   "cmdb": "CI-69514",
+   "cmdb_name": "payments_invoices_svc",
+   "monitoring": "mon:payments-invoices",
+   "display": "Payments Invoices Service",
+   "aliases": [
+    "pay-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-370": {
+   "cmdb": "CI-36159",
+   "cmdb_name": "identity_refunds_svc",
+   "monitoring": "mon:identity-refunds",
+   "display": "Identity Refunds Service",
+   "aliases": [
+    "ide-ref-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-374": {
+   "cmdb": "CI-33731",
+   "cmdb_name": "feeds_ledger_svc",
+   "monitoring": "mon:feeds-ledger",
+   "display": "Feeds Ledger Service",
+   "aliases": [
+    "fee-led-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-378": {
+   "cmdb": "CI-01317",
+   "cmdb_name": "inventory_metrics_replica_1_svc",
+   "monitoring": "mon:inventory-metrics-replica-1",
+   "display": "Inventory Metrics Replica 1 Service",
+   "aliases": [
+    "inv-met-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-379": {
+   "cmdb": "CI-76655",
+   "cmdb_name": "fraud_reviews_svc",
+   "monitoring": "mon:fraud-reviews",
+   "display": "Fraud Reviews Service",
+   "aliases": [
+    "fra-rev-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-380": {
+   "cmdb": "CI-11151",
+   "cmdb_name": "metrics_export_svc",
+   "monitoring": "mon:metrics-export",
+   "display": "Metrics Export Service",
+   "aliases": [
+    "met-exp-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-382": {
+   "cmdb": "CI-98118",
+   "cmdb_name": "ledger_search_svc",
+   "monitoring": "mon:ledger-search",
+   "display": "Ledger Search Service",
+   "aliases": [
+    "led-sea-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-383": {
+   "cmdb": "CI-92013",
+   "cmdb_name": "warehouse_billing_replica_1_svc",
+   "monitoring": "mon:warehouse-billing-replica-1",
+   "display": "Warehouse Billing Replica 1 Service",
+   "aliases": [
+    "war-bil-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-385": {
+   "cmdb": "CI-52636",
+   "cmdb_name": "reviews_reporting_svc",
+   "monitoring": "mon:reviews-reporting",
+   "display": "Reviews Reporting Service",
+   "aliases": [
+    "rev-rep-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-389": {
+   "cmdb": "CI-42584",
+   "cmdb_name": "orders_session_replica_1_svc",
+   "monitoring": "mon:orders-session-replica-1",
+   "display": "Orders Session Replica 1 Service",
+   "aliases": [
+    "ord-ses-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-392": {
+   "cmdb": "CI-95952",
+   "cmdb_name": "metrics_address_svc",
+   "monitoring": "mon:metrics-address",
+   "display": "Metrics Address Service",
+   "aliases": [
+    "met-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-399": {
+   "cmdb": "CI-22993",
+   "cmdb_name": "metrics_catalog_replica_1_svc",
+   "monitoring": "mon:metrics-catalog-replica-1",
+   "display": "Metrics Catalog Replica 1 Service",
+   "aliases": [
+    "met-cat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-400": {
+   "cmdb": "CI-06238",
+   "cmdb_name": "inventory_search_svc",
+   "monitoring": "mon:inventory-search",
+   "display": "Inventory Search Service",
+   "aliases": [
+    "inv-sea-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-402": {
+   "cmdb": "CI-97177",
+   "cmdb_name": "orders_search_replica_1_svc",
+   "monitoring": "mon:orders-search-replica-1",
+   "display": "Orders Search Replica 1 Service",
+   "aliases": [
+    "ord-sea-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-407": {
+   "cmdb": "CI-72369",
+   "cmdb_name": "session_invoices_svc",
+   "monitoring": "mon:session-invoices",
+   "display": "Session Invoices Service",
+   "aliases": [
+    "ses-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-411": {
+   "cmdb": "CI-85041",
+   "cmdb_name": "cart_ledger_replica_1_svc",
+   "monitoring": "mon:cart-ledger-replica-1",
+   "display": "Cart Ledger Replica 1 Service",
+   "aliases": [
+    "car-led-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-413": {
+   "cmdb": "CI-62824",
+   "cmdb_name": "orders_reviews_svc",
+   "monitoring": "mon:orders-reviews",
+   "display": "Orders Reviews Service",
+   "aliases": [
+    "ord-rev-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-416": {
+   "cmdb": "CI-82483",
+   "cmdb_name": "session_invoices_replica_1_svc",
+   "monitoring": "mon:session-invoices-replica-1",
+   "display": "Session Invoices Replica 1 Service",
+   "aliases": [
+    "ses-inv-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-422": {
+   "cmdb": "CI-58128",
+   "cmdb_name": "catalog_wishlist_svc",
+   "monitoring": "mon:catalog-wishlist",
+   "display": "Catalog Wishlist Service",
+   "aliases": [
+    "cat-wis-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-424": {
+   "cmdb": "CI-27183",
+   "cmdb_name": "billing_profile_svc",
+   "monitoring": "mon:billing-profile",
+   "display": "Billing Profile Service",
+   "aliases": [
+    "bil-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-426": {
+   "cmdb": "CI-46318",
+   "cmdb_name": "tax_refunds_svc",
+   "monitoring": "mon:tax-refunds",
+   "display": "Tax Refunds Service",
+   "aliases": [
+    "tax-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-435": {
+   "cmdb": "CI-77769",
+   "cmdb_name": "wishlist_profile_svc",
+   "monitoring": "mon:wishlist-profile",
+   "display": "Wishlist Profile Service",
+   "aliases": [
+    "wis-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-448": {
+   "cmdb": "CI-53733",
+   "cmdb_name": "fraud_ratings_svc",
+   "monitoring": "mon:fraud-ratings",
+   "display": "Fraud Ratings Service",
+   "aliases": [
+    "fra-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-450": {
+   "cmdb": "CI-35440",
+   "cmdb_name": "refunds_profile_svc",
+   "monitoring": "mon:refunds-profile",
+   "display": "Refunds Profile Service",
+   "aliases": [
+    "ref-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-452": {
+   "cmdb": "CI-83430",
+   "cmdb_name": "ledger_gateway_svc",
+   "monitoring": "mon:ledger-gateway",
+   "display": "Ledger Gateway Service",
+   "aliases": [
+    "led-gat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-461": {
+   "cmdb": "CI-81600",
+   "cmdb_name": "export_refunds_svc",
+   "monitoring": "mon:export-refunds",
+   "display": "Export Refunds Service",
+   "aliases": [
+    "exp-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-464": {
+   "cmdb": "CI-19114",
+   "cmdb_name": "ledger_media_svc",
+   "monitoring": "mon:ledger-media",
+   "display": "Ledger Media Service",
+   "aliases": [
+    "led-med-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-465": {
+   "cmdb": "CI-87808",
+   "cmdb_name": "shipping_refunds_replica_1_svc",
+   "monitoring": "mon:shipping-refunds-replica-1",
+   "display": "Shipping Refunds Replica 1 Service",
+   "aliases": [
+    "shi-ref-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-467": {
+   "cmdb": "CI-87013",
+   "cmdb_name": "cart_metrics_svc",
+   "monitoring": "mon:cart-metrics",
+   "display": "Cart Metrics Service",
+   "aliases": [
+    "car-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-471": {
+   "cmdb": "CI-02140",
+   "cmdb_name": "refunds_invoices_svc",
+   "monitoring": "mon:refunds-invoices",
+   "display": "Refunds Invoices Service",
+   "aliases": [
+    "ref-inv-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-472": {
+   "cmdb": "CI-46748",
+   "cmdb_name": "session_media_svc",
+   "monitoring": "mon:session-media",
+   "display": "Session Media Service",
+   "aliases": [
+    "ses-med-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-476": {
+   "cmdb": "CI-16549",
+   "cmdb_name": "returns_refunds_svc",
+   "monitoring": "mon:returns-refunds",
+   "display": "Returns Refunds Service",
+   "aliases": [
+    "ret-ref-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-479": {
+   "cmdb": "CI-80452",
+   "cmdb_name": "gateway_ingest_replica_1_svc",
+   "monitoring": "mon:gateway-ingest-replica-1",
+   "display": "Gateway Ingest Replica 1 Service",
+   "aliases": [
+    "gat-ing-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-481": {
+   "cmdb": "CI-65623",
+   "cmdb_name": "orders_ratings_svc",
+   "monitoring": "mon:orders-ratings",
+   "display": "Orders Ratings Service",
+   "aliases": [
+    "ord-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-484": {
+   "cmdb": "CI-26458",
+   "cmdb_name": "quotes_pricing_replica_1_svc",
+   "monitoring": "mon:quotes-pricing-replica-1",
+   "display": "Quotes Pricing Replica 1 Service",
+   "aliases": [
+    "quo-pri-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-487": {
+   "cmdb": "CI-45263",
+   "cmdb_name": "quotes_cart_replica_1_svc",
+   "monitoring": "mon:quotes-cart-replica-1",
+   "display": "Quotes Cart Replica 1 Service",
+   "aliases": [
+    "quo-car-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-489": {
+   "cmdb": "CI-75529",
+   "cmdb_name": "identity_session_svc",
+   "monitoring": "mon:identity-session",
+   "display": "Identity Session Service",
+   "aliases": [
+    "ide-ses-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-493": {
+   "cmdb": "CI-02233",
+   "cmdb_name": "reporting_audit_svc",
+   "monitoring": "mon:reporting-audit",
+   "display": "Reporting Audit Service",
+   "aliases": [
+    "rep-aud-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-495": {
+   "cmdb": "CI-02590",
+   "cmdb_name": "cart_coupons_svc",
+   "monitoring": "mon:cart-coupons",
+   "display": "Cart Coupons Service",
+   "aliases": [
+    "car-cou-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-496": {
+   "cmdb": "CI-11275",
+   "cmdb_name": "inventory_tax_svc",
+   "monitoring": "mon:inventory-tax",
+   "display": "Inventory Tax Service",
+   "aliases": [
+    "inv-tax-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-498": {
+   "cmdb": "CI-59763",
+   "cmdb_name": "warehouse_payments_svc",
+   "monitoring": "mon:warehouse-payments",
+   "display": "Warehouse Payments Service",
+   "aliases": [
+    "war-pay-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-500": {
+   "cmdb": "CI-36242",
+   "cmdb_name": "feeds_ratings_svc",
+   "monitoring": "mon:feeds-ratings",
+   "display": "Feeds Ratings Service",
+   "aliases": [
+    "fee-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-501": {
+   "cmdb": "CI-76284",
+   "cmdb_name": "refunds_catalog_replica_1_svc",
+   "monitoring": "mon:refunds-catalog-replica-1",
+   "display": "Refunds Catalog Replica 1 Service",
+   "aliases": [
+    "ref-cat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-502": {
+   "cmdb": "CI-54812",
+   "cmdb_name": "pricing_profile_svc",
+   "monitoring": "mon:pricing-profile",
+   "display": "Pricing Profile Service",
+   "aliases": [
+    "pri-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-503": {
+   "cmdb": "CI-64402",
+   "cmdb_name": "search_loyalty_svc",
+   "monitoring": "mon:search-loyalty",
+   "display": "Search Loyalty Service",
+   "aliases": [
+    "sea-loy-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-505": {
+   "cmdb": "CI-46936",
+   "cmdb_name": "wishlist_search_svc",
+   "monitoring": "mon:wishlist-search",
+   "display": "Wishlist Search Service",
+   "aliases": [
+    "wis-sea-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-506": {
+   "cmdb": "CI-11104",
+   "cmdb_name": "inventory_reporting_svc",
+   "monitoring": "mon:inventory-reporting",
+   "display": "Inventory Reporting Service",
+   "aliases": [
+    "inv-rep-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-508": {
+   "cmdb": "CI-10136",
+   "cmdb_name": "feeds_export_replica_1_svc",
+   "monitoring": "mon:feeds-export-replica-1",
+   "display": "Feeds Export Replica 1 Service",
+   "aliases": [
+    "fee-exp-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-509": {
+   "cmdb": "CI-95396",
+   "cmdb_name": "auth_routing_svc",
+   "monitoring": "mon:auth-routing",
+   "display": "Auth Routing Service",
+   "aliases": [
+    "aut-rou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-510": {
+   "cmdb": "CI-34338",
+   "cmdb_name": "coupons_wishlist_replica_1_svc",
+   "monitoring": "mon:coupons-wishlist-replica-1",
+   "display": "Coupons Wishlist Replica 1 Service",
+   "aliases": [
+    "cou-wis-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-511": {
+   "cmdb": "CI-26529",
+   "cmdb_name": "returns_auth_svc",
+   "monitoring": "mon:returns-auth",
+   "display": "Returns Auth Service",
+   "aliases": [
+    "ret-aut-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-515": {
+   "cmdb": "CI-28494",
+   "cmdb_name": "returns_refunds_replica_1_svc",
+   "monitoring": "mon:returns-refunds-replica-1",
+   "display": "Returns Refunds Replica 1 Service",
+   "aliases": [
+    "ret-ref-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-516": {
+   "cmdb": "CI-13014",
+   "cmdb_name": "inventory_coupons_replica_1_svc",
+   "monitoring": "mon:inventory-coupons-replica-1",
+   "display": "Inventory Coupons Replica 1 Service",
+   "aliases": [
+    "inv-cou-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-518": {
+   "cmdb": "CI-79765",
+   "cmdb_name": "invoices_ratings_replica_1_svc",
+   "monitoring": "mon:invoices-ratings-replica-1",
+   "display": "Invoices Ratings Replica 1 Service",
+   "aliases": [
+    "inv-rat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-519": {
+   "cmdb": "CI-04098",
+   "cmdb_name": "ingest_auth_svc",
+   "monitoring": "mon:ingest-auth",
+   "display": "Ingest Auth Service",
+   "aliases": [
+    "ing-aut-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-522": {
+   "cmdb": "CI-92347",
+   "cmdb_name": "reviews_payments_replica_1_svc",
+   "monitoring": "mon:reviews-payments-replica-1",
+   "display": "Reviews Payments Replica 1 Service",
+   "aliases": [
+    "rev-pay-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-525": {
+   "cmdb": "CI-81369",
+   "cmdb_name": "shipping_export_replica_1_svc",
+   "monitoring": "mon:shipping-export-replica-1",
+   "display": "Shipping Export Replica 1 Service",
+   "aliases": [
+    "shi-exp-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-526": {
+   "cmdb": "CI-19981",
+   "cmdb_name": "auth_reporting_svc",
+   "monitoring": "mon:auth-reporting",
+   "display": "Auth Reporting Service",
+   "aliases": [
+    "aut-rep-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-529": {
+   "cmdb": "CI-36059",
+   "cmdb_name": "catalog_checkout_svc",
+   "monitoring": "mon:catalog-checkout",
+   "display": "Catalog Checkout Service",
+   "aliases": [
+    "cat-che-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-530": {
+   "cmdb": "CI-09208",
+   "cmdb_name": "routing_reviews_replica_1_svc",
+   "monitoring": "mon:routing-reviews-replica-1",
+   "display": "Routing Reviews Replica 1 Service",
+   "aliases": [
+    "rou-rev-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-533": {
+   "cmdb": "CI-02689",
+   "cmdb_name": "consent_pricing_svc",
+   "monitoring": "mon:consent-pricing",
+   "display": "Consent Pricing Service",
+   "aliases": [
+    "con-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-536": {
+   "cmdb": "CI-27069",
+   "cmdb_name": "checkout_invoices_svc",
+   "monitoring": "mon:checkout-invoices",
+   "display": "Checkout Invoices Service",
+   "aliases": [
+    "che-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-540": {
+   "cmdb": "CI-54071",
+   "cmdb_name": "quotes_consent_svc",
+   "monitoring": "mon:quotes-consent",
+   "display": "Quotes Consent Service",
+   "aliases": [
+    "quo-con-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-541": {
+   "cmdb": "CI-75735",
+   "cmdb_name": "identity_ratings_svc",
+   "monitoring": "mon:identity-ratings",
+   "display": "Identity Ratings Service",
+   "aliases": [
+    "ide-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-546": {
+   "cmdb": "CI-72712",
+   "cmdb_name": "loyalty_reporting_svc",
+   "monitoring": "mon:loyalty-reporting",
+   "display": "Loyalty Reporting Service",
+   "aliases": [
+    "loy-rep-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-547": {
+   "cmdb": "CI-44740",
+   "cmdb_name": "notify_refunds_svc",
+   "monitoring": "mon:notify-refunds",
+   "display": "Notify Refunds Service",
+   "aliases": [
+    "not-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-550": {
+   "cmdb": "CI-58040",
+   "cmdb_name": "media_reporting_svc",
+   "monitoring": "mon:media-reporting",
+   "display": "Media Reporting Service",
+   "aliases": [
+    "med-rep-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-552": {
+   "cmdb": "CI-65214",
+   "cmdb_name": "refunds_catalog_svc",
+   "monitoring": "mon:refunds-catalog",
+   "display": "Refunds Catalog Service",
+   "aliases": [
+    "ref-cat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-554": {
+   "cmdb": "CI-35231",
+   "cmdb_name": "warehouse_consent_replica_1_svc",
+   "monitoring": "mon:warehouse-consent-replica-1",
+   "display": "Warehouse Consent Replica 1 Service",
+   "aliases": [
+    "war-con-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-556": {
+   "cmdb": "CI-95486",
+   "cmdb_name": "auth_consent_svc",
+   "monitoring": "mon:auth-consent",
+   "display": "Auth Consent Service",
+   "aliases": [
+    "aut-con-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-557": {
+   "cmdb": "CI-60484",
+   "cmdb_name": "refunds_auth_replica_1_svc",
+   "monitoring": "mon:refunds-auth-replica-1",
+   "display": "Refunds Auth Replica 1 Service",
+   "aliases": [
+    "ref-aut-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-560": {
+   "cmdb": "CI-11480",
+   "cmdb_name": "cart_ledger_svc",
+   "monitoring": "mon:cart-ledger",
+   "display": "Cart Ledger Service",
+   "aliases": [
+    "car-led-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-561": {
+   "cmdb": "CI-74313",
+   "cmdb_name": "warehouse_tax_replica_1_svc",
+   "monitoring": "mon:warehouse-tax-replica-1",
+   "display": "Warehouse Tax Replica 1 Service",
+   "aliases": [
+    "war-tax-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-563": {
+   "cmdb": "CI-17746",
+   "cmdb_name": "media_feeds_svc",
+   "monitoring": "mon:media-feeds",
+   "display": "Media Feeds Service",
+   "aliases": [
+    "med-fee-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-567": {
+   "cmdb": "CI-41180",
+   "cmdb_name": "reporting_address_replica_1_svc",
+   "monitoring": "mon:reporting-address-replica-1",
+   "display": "Reporting Address Replica 1 Service",
+   "aliases": [
+    "rep-add-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-571": {
+   "cmdb": "CI-84524",
+   "cmdb_name": "reviews_payments_svc",
+   "monitoring": "mon:reviews-payments",
+   "display": "Reviews Payments Service",
+   "aliases": [
+    "rev-pay-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-573": {
+   "cmdb": "CI-64141",
+   "cmdb_name": "wishlist_auth_replica_1_svc",
+   "monitoring": "mon:wishlist-auth-replica-1",
+   "display": "Wishlist Auth Replica 1 Service",
+   "aliases": [
+    "wis-aut-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-574": {
+   "cmdb": "CI-46157",
+   "cmdb_name": "reporting_returns_replica_1_svc",
+   "monitoring": "mon:reporting-returns-replica-1",
+   "display": "Reporting Returns Replica 1 Service",
+   "aliases": [
+    "rep-ret-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-575": {
+   "cmdb": "CI-26725",
+   "cmdb_name": "wishlist_auth_svc",
+   "monitoring": "mon:wishlist-auth",
+   "display": "Wishlist Auth Service",
+   "aliases": [
+    "wis-aut-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-579": {
+   "cmdb": "CI-87406",
+   "cmdb_name": "metrics_search_svc",
+   "monitoring": "mon:metrics-search",
+   "display": "Metrics Search Service",
+   "aliases": [
+    "met-sea-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-586": {
+   "cmdb": "CI-51782",
+   "cmdb_name": "routing_address_svc",
+   "monitoring": "mon:routing-address",
+   "display": "Routing Address Service",
+   "aliases": [
+    "rou-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-587": {
+   "cmdb": "CI-40452",
+   "cmdb_name": "pricing_billing_svc",
+   "monitoring": "mon:pricing-billing",
+   "display": "Pricing Billing Service",
+   "aliases": [
+    "pri-bil-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-589": {
+   "cmdb": "CI-02730",
+   "cmdb_name": "reporting_returns_svc",
+   "monitoring": "mon:reporting-returns",
+   "display": "Reporting Returns Service",
+   "aliases": [
+    "rep-ret-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-594": {
+   "cmdb": "CI-27369",
+   "cmdb_name": "refunds_pricing_replica_1_svc",
+   "monitoring": "mon:refunds-pricing-replica-1",
+   "display": "Refunds Pricing Replica 1 Service",
+   "aliases": [
+    "ref-pri-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-596": {
+   "cmdb": "CI-95426",
+   "cmdb_name": "address_auth_replica_1_svc",
+   "monitoring": "mon:address-auth-replica-1",
+   "display": "Address Auth Replica 1 Service",
+   "aliases": [
+    "add-aut-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-599": {
+   "cmdb": "CI-38733",
+   "cmdb_name": "catalog_ingest_svc",
+   "monitoring": "mon:catalog-ingest",
+   "display": "Catalog Ingest Service",
+   "aliases": [
+    "cat-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-606": {
+   "cmdb": "CI-70469",
+   "cmdb_name": "gateway_audit_svc",
+   "monitoring": "mon:gateway-audit",
+   "display": "Gateway Audit Service",
+   "aliases": [
+    "gat-aud-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-608": {
+   "cmdb": "CI-74212",
+   "cmdb_name": "search_address_replica_1_svc",
+   "monitoring": "mon:search-address-replica-1",
+   "display": "Search Address Replica 1 Service",
+   "aliases": [
+    "sea-add-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-616": {
+   "cmdb": "CI-73636",
+   "cmdb_name": "cart_ingest_svc",
+   "monitoring": "mon:cart-ingest",
+   "display": "Cart Ingest Service",
+   "aliases": [
+    "car-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-618": {
+   "cmdb": "CI-54767",
+   "cmdb_name": "profile_wishlist_svc",
+   "monitoring": "mon:profile-wishlist",
+   "display": "Profile Wishlist Service",
+   "aliases": [
+    "pro-wis-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-620": {
+   "cmdb": "CI-83612",
+   "cmdb_name": "coupons_session_svc",
+   "monitoring": "mon:coupons-session",
+   "display": "Coupons Session Service",
+   "aliases": [
+    "cou-ses-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-624": {
+   "cmdb": "CI-51975",
+   "cmdb_name": "wishlist_routing_svc",
+   "monitoring": "mon:wishlist-routing",
+   "display": "Wishlist Routing Service",
+   "aliases": [
+    "wis-rou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-630": {
+   "cmdb": "CI-83529",
+   "cmdb_name": "reporting_address_svc",
+   "monitoring": "mon:reporting-address",
+   "display": "Reporting Address Service",
+   "aliases": [
+    "rep-add-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-634": {
+   "cmdb": "CI-42831",
+   "cmdb_name": "catalog_search_replica_1_svc",
+   "monitoring": "mon:catalog-search-replica-1",
+   "display": "Catalog Search Replica 1 Service",
+   "aliases": [
+    "cat-sea-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-635": {
+   "cmdb": "CI-10082",
+   "cmdb_name": "export_audit_svc",
+   "monitoring": "mon:export-audit",
+   "display": "Export Audit Service",
+   "aliases": [
+    "exp-aud-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-637": {
+   "cmdb": "CI-32602",
+   "cmdb_name": "session_media_replica_1_svc",
+   "monitoring": "mon:session-media-replica-1",
+   "display": "Session Media Replica 1 Service",
+   "aliases": [
+    "ses-med-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-638": {
+   "cmdb": "CI-14425",
+   "cmdb_name": "reviews_invoices_svc",
+   "monitoring": "mon:reviews-invoices",
+   "display": "Reviews Invoices Service",
+   "aliases": [
+    "rev-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-639": {
+   "cmdb": "CI-94427",
+   "cmdb_name": "ingest_feeds_svc",
+   "monitoring": "mon:ingest-feeds",
+   "display": "Ingest Feeds Service",
+   "aliases": [
+    "ing-fee-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-647": {
+   "cmdb": "CI-66027",
+   "cmdb_name": "checkout_cart_replica_1_svc",
+   "monitoring": "mon:checkout-cart-replica-1",
+   "display": "Checkout Cart Replica 1 Service",
+   "aliases": [
+    "che-car-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-650": {
+   "cmdb": "CI-45957",
+   "cmdb_name": "returns_shipping_svc",
+   "monitoring": "mon:returns-shipping",
+   "display": "Returns Shipping Service",
+   "aliases": [
+    "ret-shi-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-653": {
+   "cmdb": "CI-82186",
+   "cmdb_name": "warehouse_identity_svc",
+   "monitoring": "mon:warehouse-identity",
+   "display": "Warehouse Identity Service",
+   "aliases": [
+    "war-ide-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-654": {
+   "cmdb": "CI-50300",
+   "cmdb_name": "quotes_inventory_svc",
+   "monitoring": "mon:quotes-inventory",
+   "display": "Quotes Inventory Service",
+   "aliases": [
+    "quo-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-655": {
+   "cmdb": "CI-93336",
+   "cmdb_name": "consent_ingest_svc",
+   "monitoring": "mon:consent-ingest",
+   "display": "Consent Ingest Service",
+   "aliases": [
+    "con-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-659": {
+   "cmdb": "CI-35020",
+   "cmdb_name": "orders_profile_svc",
+   "monitoring": "mon:orders-profile",
+   "display": "Orders Profile Service",
+   "aliases": [
+    "ord-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-662": {
+   "cmdb": "CI-15503",
+   "cmdb_name": "ratings_pricing_svc",
+   "monitoring": "mon:ratings-pricing",
+   "display": "Ratings Pricing Service",
+   "aliases": [
+    "rat-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-667": {
+   "cmdb": "CI-41262",
+   "cmdb_name": "pricing_profile_replica_1_svc",
+   "monitoring": "mon:pricing-profile-replica-1",
+   "display": "Pricing Profile Replica 1 Service",
+   "aliases": [
+    "pri-pro-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-668": {
+   "cmdb": "CI-28537",
+   "cmdb_name": "feeds_export_svc",
+   "monitoring": "mon:feeds-export",
+   "display": "Feeds Export Service",
+   "aliases": [
+    "fee-exp-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-669": {
+   "cmdb": "CI-33011",
+   "cmdb_name": "profile_shipping_replica_1_svc",
+   "monitoring": "mon:profile-shipping-replica-1",
+   "display": "Profile Shipping Replica 1 Service",
+   "aliases": [
+    "pro-shi-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-671": {
+   "cmdb": "CI-93933",
+   "cmdb_name": "notify_coupons_replica_1_svc",
+   "monitoring": "mon:notify-coupons-replica-1",
+   "display": "Notify Coupons Replica 1 Service",
+   "aliases": [
+    "not-cou-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-674": {
+   "cmdb": "CI-70472",
+   "cmdb_name": "returns_orders_replica_1_svc",
+   "monitoring": "mon:returns-orders-replica-1",
+   "display": "Returns Orders Replica 1 Service",
+   "aliases": [
+    "ret-ord-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-676": {
+   "cmdb": "CI-30268",
+   "cmdb_name": "ingest_export_replica_1_svc",
+   "monitoring": "mon:ingest-export-replica-1",
+   "display": "Ingest Export Replica 1 Service",
+   "aliases": [
+    "ing-exp-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-678": {
+   "cmdb": "CI-77414",
+   "cmdb_name": "coupons_auth_svc",
+   "monitoring": "mon:coupons-auth",
+   "display": "Coupons Auth Service",
+   "aliases": [
+    "cou-aut-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-680": {
+   "cmdb": "CI-28784",
+   "cmdb_name": "ingest_media_svc",
+   "monitoring": "mon:ingest-media",
+   "display": "Ingest Media Service",
+   "aliases": [
+    "ing-med-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-682": {
+   "cmdb": "CI-52910",
+   "cmdb_name": "profile_shipping_svc",
+   "monitoring": "mon:profile-shipping",
+   "display": "Profile Shipping Service",
+   "aliases": [
+    "pro-shi-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-688": {
+   "cmdb": "CI-14879",
+   "cmdb_name": "payments_address_svc",
+   "monitoring": "mon:payments-address",
+   "display": "Payments Address Service",
+   "aliases": [
+    "pay-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-692": {
+   "cmdb": "CI-73855",
+   "cmdb_name": "address_cart_replica_1_svc",
+   "monitoring": "mon:address-cart-replica-1",
+   "display": "Address Cart Replica 1 Service",
+   "aliases": [
+    "add-car-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-694": {
+   "cmdb": "CI-47128",
+   "cmdb_name": "ingest_coupons_svc",
+   "monitoring": "mon:ingest-coupons",
+   "display": "Ingest Coupons Service",
+   "aliases": [
+    "ing-cou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-696": {
+   "cmdb": "CI-24439",
+   "cmdb_name": "auth_cart_svc",
+   "monitoring": "mon:auth-cart",
+   "display": "Auth Cart Service",
+   "aliases": [
+    "aut-car-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-699": {
+   "cmdb": "CI-21570",
+   "cmdb_name": "ingest_auth_replica_1_svc",
+   "monitoring": "mon:ingest-auth-replica-1",
+   "display": "Ingest Auth Replica 1 Service",
+   "aliases": [
+    "ing-aut-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-702": {
+   "cmdb": "CI-47642",
+   "cmdb_name": "loyalty_shipping_svc",
+   "monitoring": "mon:loyalty-shipping",
+   "display": "Loyalty Shipping Service",
+   "aliases": [
+    "loy-shi-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-703": {
+   "cmdb": "CI-82179",
+   "cmdb_name": "metrics_export_replica_1_svc",
+   "monitoring": "mon:metrics-export-replica-1",
+   "display": "Metrics Export Replica 1 Service",
+   "aliases": [
+    "met-exp-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-706": {
+   "cmdb": "CI-34981",
+   "cmdb_name": "routing_reviews_svc",
+   "monitoring": "mon:routing-reviews",
+   "display": "Routing Reviews Service",
+   "aliases": [
+    "rou-rev-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-707": {
+   "cmdb": "CI-42028",
+   "cmdb_name": "wishlist_consent_replica_1_svc",
+   "monitoring": "mon:wishlist-consent-replica-1",
+   "display": "Wishlist Consent Replica 1 Service",
+   "aliases": [
+    "wis-con-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-708": {
+   "cmdb": "CI-05127",
+   "cmdb_name": "inventory_reporting_replica_1_svc",
+   "monitoring": "mon:inventory-reporting-replica-1",
+   "display": "Inventory Reporting Replica 1 Service",
+   "aliases": [
+    "inv-rep-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-710": {
+   "cmdb": "CI-81421",
+   "cmdb_name": "ingest_media_replica_1_svc",
+   "monitoring": "mon:ingest-media-replica-1",
+   "display": "Ingest Media Replica 1 Service",
+   "aliases": [
+    "ing-med-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-713": {
+   "cmdb": "CI-12447",
+   "cmdb_name": "auth_identity_svc",
+   "monitoring": "mon:auth-identity",
+   "display": "Auth Identity Service",
+   "aliases": [
+    "aut-ide-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-714": {
+   "cmdb": "CI-71764",
+   "cmdb_name": "address_fraud_svc",
+   "monitoring": "mon:address-fraud",
+   "display": "Address Fraud Service",
+   "aliases": [
+    "add-fra-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-715": {
+   "cmdb": "CI-69460",
+   "cmdb_name": "feeds_identity_replica_1_svc",
+   "monitoring": "mon:feeds-identity-replica-1",
+   "display": "Feeds Identity Replica 1 Service",
+   "aliases": [
+    "fee-ide-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-716": {
+   "cmdb": "CI-38435",
+   "cmdb_name": "cart_ingest_replica_1_svc",
+   "monitoring": "mon:cart-ingest-replica-1",
+   "display": "Cart Ingest Replica 1 Service",
+   "aliases": [
+    "car-ing-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-718": {
+   "cmdb": "CI-50518",
+   "cmdb_name": "audit_consent_svc",
+   "monitoring": "mon:audit-consent",
+   "display": "Audit Consent Service",
+   "aliases": [
+    "aud-con-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-726": {
+   "cmdb": "CI-55333",
+   "cmdb_name": "ratings_reviews_replica_1_svc",
+   "monitoring": "mon:ratings-reviews-replica-1",
+   "display": "Ratings Reviews Replica 1 Service",
+   "aliases": [
+    "rat-rev-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-727": {
+   "cmdb": "CI-91024",
+   "cmdb_name": "metrics_catalog_svc",
+   "monitoring": "mon:metrics-catalog",
+   "display": "Metrics Catalog Service",
+   "aliases": [
+    "met-cat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-729": {
+   "cmdb": "CI-11077",
+   "cmdb_name": "gateway_ingest_svc",
+   "monitoring": "mon:gateway-ingest",
+   "display": "Gateway Ingest Service",
+   "aliases": [
+    "gat-ing-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-732": {
+   "cmdb": "CI-03283",
+   "cmdb_name": "feeds_identity_svc",
+   "monitoring": "mon:feeds-identity",
+   "display": "Feeds Identity Service",
+   "aliases": [
+    "fee-ide-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-733": {
+   "cmdb": "CI-14661",
+   "cmdb_name": "wishlist_consent_svc",
+   "monitoring": "mon:wishlist-consent",
+   "display": "Wishlist Consent Service",
+   "aliases": [
+    "wis-con-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-738": {
+   "cmdb": "CI-18102",
+   "cmdb_name": "address_pricing_svc",
+   "monitoring": "mon:address-pricing",
+   "display": "Address Pricing Service",
+   "aliases": [
+    "add-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-739": {
+   "cmdb": "CI-71668",
+   "cmdb_name": "auth_consent_replica_1_svc",
+   "monitoring": "mon:auth-consent-replica-1",
+   "display": "Auth Consent Replica 1 Service",
+   "aliases": [
+    "aut-con-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-741": {
+   "cmdb": "CI-57992",
+   "cmdb_name": "auth_wishlist_svc",
+   "monitoring": "mon:auth-wishlist",
+   "display": "Auth Wishlist Service",
+   "aliases": [
+    "aut-wis-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-746": {
+   "cmdb": "CI-62044",
+   "cmdb_name": "auth_billing_svc",
+   "monitoring": "mon:auth-billing",
+   "display": "Auth Billing Service",
+   "aliases": [
+    "aut-bil-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-748": {
+   "cmdb": "CI-21499",
+   "cmdb_name": "auth_routing_replica_1_svc",
+   "monitoring": "mon:auth-routing-replica-1",
+   "display": "Auth Routing Replica 1 Service",
+   "aliases": [
+    "aut-rou-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-757": {
+   "cmdb": "CI-75318",
+   "cmdb_name": "orders_notify_svc",
+   "monitoring": "mon:orders-notify",
+   "display": "Orders Notify Service",
+   "aliases": [
+    "ord-not-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-768": {
+   "cmdb": "CI-66428",
+   "cmdb_name": "notify_gateway_svc",
+   "monitoring": "mon:notify-gateway",
+   "display": "Notify Gateway Service",
+   "aliases": [
+    "not-gat-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-770": {
+   "cmdb": "CI-99507",
+   "cmdb_name": "invoices_ledger_svc",
+   "monitoring": "mon:invoices-ledger",
+   "display": "Invoices Ledger Service",
+   "aliases": [
+    "inv-led-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-773": {
+   "cmdb": "CI-99812",
+   "cmdb_name": "billing_invoices_svc",
+   "monitoring": "mon:billing-invoices",
+   "display": "Billing Invoices Service",
+   "aliases": [
+    "bil-inv-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-776": {
+   "cmdb": "CI-63898",
+   "cmdb_name": "ratings_quotes_replica_1_svc",
+   "monitoring": "mon:ratings-quotes-replica-1",
+   "display": "Ratings Quotes Replica 1 Service",
+   "aliases": [
+    "rat-quo-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-780": {
+   "cmdb": "CI-91751",
+   "cmdb_name": "invoices_catalog_svc",
+   "monitoring": "mon:invoices-catalog",
+   "display": "Invoices Catalog Service",
+   "aliases": [
+    "inv-cat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-782": {
+   "cmdb": "CI-40490",
+   "cmdb_name": "orders_catalog_svc",
+   "monitoring": "mon:orders-catalog",
+   "display": "Orders Catalog Service",
+   "aliases": [
+    "ord-cat-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-788": {
+   "cmdb": "CI-85367",
+   "cmdb_name": "notify_coupons_svc",
+   "monitoring": "mon:notify-coupons",
+   "display": "Notify Coupons Service",
+   "aliases": [
+    "not-cou-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-796": {
+   "cmdb": "CI-24282",
+   "cmdb_name": "address_fraud_replica_1_svc",
+   "monitoring": "mon:address-fraud-replica-1",
+   "display": "Address Fraud Replica 1 Service",
+   "aliases": [
+    "add-fra-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-798": {
+   "cmdb": "CI-45191",
+   "cmdb_name": "address_invoices_replica_1_svc",
+   "monitoring": "mon:address-invoices-replica-1",
+   "display": "Address Invoices Replica 1 Service",
+   "aliases": [
+    "add-inv-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-804": {
+   "cmdb": "CI-49299",
+   "cmdb_name": "profile_invoices_svc",
+   "monitoring": "mon:profile-invoices",
+   "display": "Profile Invoices Service",
+   "aliases": [
+    "pro-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-805": {
+   "cmdb": "CI-44657",
+   "cmdb_name": "gateway_wishlist_replica_1_svc",
+   "monitoring": "mon:gateway-wishlist-replica-1",
+   "display": "Gateway Wishlist Replica 1 Service",
+   "aliases": [
+    "gat-wis-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-806": {
+   "cmdb": "CI-83148",
+   "cmdb_name": "catalog_metrics_svc",
+   "monitoring": "mon:catalog-metrics",
+   "display": "Catalog Metrics Service",
+   "aliases": [
+    "cat-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-807": {
+   "cmdb": "CI-45622",
+   "cmdb_name": "payments_routing_svc",
+   "monitoring": "mon:payments-routing",
+   "display": "Payments Routing Service",
+   "aliases": [
+    "pay-rou-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-810": {
+   "cmdb": "CI-09241",
+   "cmdb_name": "ledger_refunds_svc",
+   "monitoring": "mon:ledger-refunds",
+   "display": "Ledger Refunds Service",
+   "aliases": [
+    "led-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-814": {
+   "cmdb": "CI-73687",
+   "cmdb_name": "reporting_shipping_svc",
+   "monitoring": "mon:reporting-shipping",
+   "display": "Reporting Shipping Service",
+   "aliases": [
+    "rep-shi-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-815": {
+   "cmdb": "CI-15607",
+   "cmdb_name": "checkout_profile_svc",
+   "monitoring": "mon:checkout-profile",
+   "display": "Checkout Profile Service",
+   "aliases": [
+    "che-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-817": {
+   "cmdb": "CI-35118",
+   "cmdb_name": "identity_notify_svc",
+   "monitoring": "mon:identity-notify",
+   "display": "Identity Notify Service",
+   "aliases": [
+    "ide-not-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-822": {
+   "cmdb": "CI-66784",
+   "cmdb_name": "pricing_coupons_svc",
+   "monitoring": "mon:pricing-coupons",
+   "display": "Pricing Coupons Service",
+   "aliases": [
+    "pri-cou-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-824": {
+   "cmdb": "CI-58270",
+   "cmdb_name": "address_checkout_replica_1_svc",
+   "monitoring": "mon:address-checkout-replica-1",
+   "display": "Address Checkout Replica 1 Service",
+   "aliases": [
+    "add-che-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-831": {
+   "cmdb": "CI-14955",
+   "cmdb_name": "reviews_ratings_replica_1_svc",
+   "monitoring": "mon:reviews-ratings-replica-1",
+   "display": "Reviews Ratings Replica 1 Service",
+   "aliases": [
+    "rev-rat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-833": {
+   "cmdb": "CI-05318",
+   "cmdb_name": "reporting_metrics_svc",
+   "monitoring": "mon:reporting-metrics",
+   "display": "Reporting Metrics Service",
+   "aliases": [
+    "rep-met-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-834": {
+   "cmdb": "CI-79613",
+   "cmdb_name": "address_auth_svc",
+   "monitoring": "mon:address-auth",
+   "display": "Address Auth Service",
+   "aliases": [
+    "add-aut-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-836": {
+   "cmdb": "CI-89455",
+   "cmdb_name": "ingest_audit_replica_1_svc",
+   "monitoring": "mon:ingest-audit-replica-1",
+   "display": "Ingest Audit Replica 1 Service",
+   "aliases": [
+    "ing-aud-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-839": {
+   "cmdb": "CI-26467",
+   "cmdb_name": "refunds_auth_svc",
+   "monitoring": "mon:refunds-auth",
+   "display": "Refunds Auth Service",
+   "aliases": [
+    "ref-aut-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-842": {
+   "cmdb": "CI-81045",
+   "cmdb_name": "inventory_search_replica_1_svc",
+   "monitoring": "mon:inventory-search-replica-1",
+   "display": "Inventory Search Replica 1 Service",
+   "aliases": [
+    "inv-sea-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-849": {
+   "cmdb": "CI-44674",
+   "cmdb_name": "returns_address_svc",
+   "monitoring": "mon:returns-address",
+   "display": "Returns Address Service",
+   "aliases": [
+    "ret-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-852": {
+   "cmdb": "CI-30946",
+   "cmdb_name": "identity_media_svc",
+   "monitoring": "mon:identity-media",
+   "display": "Identity Media Service",
+   "aliases": [
+    "ide-med-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-855": {
+   "cmdb": "CI-41921",
+   "cmdb_name": "inventory_pricing_svc",
+   "monitoring": "mon:inventory-pricing",
+   "display": "Inventory Pricing Service",
+   "aliases": [
+    "inv-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-856": {
+   "cmdb": "CI-80192",
+   "cmdb_name": "feeds_inventory_svc",
+   "monitoring": "mon:feeds-inventory",
+   "display": "Feeds Inventory Service",
+   "aliases": [
+    "fee-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-865": {
+   "cmdb": "CI-97828",
+   "cmdb_name": "catalog_invoices_svc",
+   "monitoring": "mon:catalog-invoices",
+   "display": "Catalog Invoices Service",
+   "aliases": [
+    "cat-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-868": {
+   "cmdb": "CI-86790",
+   "cmdb_name": "checkout_pricing_replica_1_svc",
+   "monitoring": "mon:checkout-pricing-replica-1",
+   "display": "Checkout Pricing Replica 1 Service",
+   "aliases": [
+    "che-pri-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-872": {
+   "cmdb": "CI-78227",
+   "cmdb_name": "ratings_payments_replica_1_svc",
+   "monitoring": "mon:ratings-payments-replica-1",
+   "display": "Ratings Payments Replica 1 Service",
+   "aliases": [
+    "rat-pay-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-874": {
+   "cmdb": "CI-61832",
+   "cmdb_name": "export_warehouse_svc",
+   "monitoring": "mon:export-warehouse",
+   "display": "Export Warehouse Service",
+   "aliases": [
+    "exp-war-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-875": {
+   "cmdb": "CI-02388",
+   "cmdb_name": "returns_reviews_svc",
+   "monitoring": "mon:returns-reviews",
+   "display": "Returns Reviews Service",
+   "aliases": [
+    "ret-rev-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-881": {
+   "cmdb": "CI-89370",
+   "cmdb_name": "reporting_audit_replica_1_svc",
+   "monitoring": "mon:reporting-audit-replica-1",
+   "display": "Reporting Audit Replica 1 Service",
+   "aliases": [
+    "rep-aud-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-884": {
+   "cmdb": "CI-11938",
+   "cmdb_name": "tax_refunds_replica_1_svc",
+   "monitoring": "mon:tax-refunds-replica-1",
+   "display": "Tax Refunds Replica 1 Service",
+   "aliases": [
+    "tax-ref-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-887": {
+   "cmdb": "CI-44560",
+   "cmdb_name": "payments_refunds_replica_1_svc",
+   "monitoring": "mon:payments-refunds-replica-1",
+   "display": "Payments Refunds Replica 1 Service",
+   "aliases": [
+    "pay-ref-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-891": {
+   "cmdb": "CI-93919",
+   "cmdb_name": "quotes_ingest_replica_1_svc",
+   "monitoring": "mon:quotes-ingest-replica-1",
+   "display": "Quotes Ingest Replica 1 Service",
+   "aliases": [
+    "quo-ing-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-892": {
+   "cmdb": "CI-99262",
+   "cmdb_name": "auth_gateway_svc",
+   "monitoring": "mon:auth-gateway",
+   "display": "Auth Gateway Service",
+   "aliases": [
+    "aut-gat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-894": {
+   "cmdb": "CI-96232",
+   "cmdb_name": "media_shipping_replica_1_svc",
+   "monitoring": "mon:media-shipping-replica-1",
+   "display": "Media Shipping Replica 1 Service",
+   "aliases": [
+    "med-shi-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-896": {
+   "cmdb": "CI-77705",
+   "cmdb_name": "warehouse_billing_svc",
+   "monitoring": "mon:warehouse-billing",
+   "display": "Warehouse Billing Service",
+   "aliases": [
+    "war-bil-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-897": {
+   "cmdb": "CI-90501",
+   "cmdb_name": "metrics_returns_replica_1_svc",
+   "monitoring": "mon:metrics-returns-replica-1",
+   "display": "Metrics Returns Replica 1 Service",
+   "aliases": [
+    "met-ret-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-898": {
+   "cmdb": "CI-10670",
+   "cmdb_name": "quotes_pricing_svc",
+   "monitoring": "mon:quotes-pricing",
+   "display": "Quotes Pricing Service",
+   "aliases": [
+    "quo-pri-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-900": {
+   "cmdb": "CI-84932",
+   "cmdb_name": "feeds_metrics_replica_1_svc",
+   "monitoring": "mon:feeds-metrics-replica-1",
+   "display": "Feeds Metrics Replica 1 Service",
+   "aliases": [
+    "fee-met-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-904": {
+   "cmdb": "CI-96346",
+   "cmdb_name": "loyalty_profile_svc",
+   "monitoring": "mon:loyalty-profile",
+   "display": "Loyalty Profile Service",
+   "aliases": [
+    "loy-pro-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-913": {
+   "cmdb": "CI-87610",
+   "cmdb_name": "export_audit_replica_1_svc",
+   "monitoring": "mon:export-audit-replica-1",
+   "display": "Export Audit Replica 1 Service",
+   "aliases": [
+    "exp-aud-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-921": {
+   "cmdb": "CI-94165",
+   "cmdb_name": "payments_audit_svc",
+   "monitoring": "mon:payments-audit",
+   "display": "Payments Audit Service",
+   "aliases": [
+    "pay-aud-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-922": {
+   "cmdb": "CI-74867",
+   "cmdb_name": "payments_refunds_svc",
+   "monitoring": "mon:payments-refunds",
+   "display": "Payments Refunds Service",
+   "aliases": [
+    "pay-ref-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-925": {
+   "cmdb": "CI-89395",
+   "cmdb_name": "session_identity_replica_1_svc",
+   "monitoring": "mon:session-identity-replica-1",
+   "display": "Session Identity Replica 1 Service",
+   "aliases": [
+    "ses-ide-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-926": {
+   "cmdb": "CI-73788",
+   "cmdb_name": "warehouse_consent_svc",
+   "monitoring": "mon:warehouse-consent",
+   "display": "Warehouse Consent Service",
+   "aliases": [
+    "war-con-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-927": {
+   "cmdb": "CI-13714",
+   "cmdb_name": "wishlist_address_svc",
+   "monitoring": "mon:wishlist-address",
+   "display": "Wishlist Address Service",
+   "aliases": [
+    "wis-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-929": {
+   "cmdb": "CI-82278",
+   "cmdb_name": "inventory_metrics_svc",
+   "monitoring": "mon:inventory-metrics",
+   "display": "Inventory Metrics Service",
+   "aliases": [
+    "inv-met-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-931": {
+   "cmdb": "CI-88158",
+   "cmdb_name": "reviews_ratings_svc",
+   "monitoring": "mon:reviews-ratings",
+   "display": "Reviews Ratings Service",
+   "aliases": [
+    "rev-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-932": {
+   "cmdb": "CI-56201",
+   "cmdb_name": "auth_billing_replica_1_svc",
+   "monitoring": "mon:auth-billing-replica-1",
+   "display": "Auth Billing Replica 1 Service",
+   "aliases": [
+    "aut-bil-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-936": {
+   "cmdb": "CI-83071",
+   "cmdb_name": "orders_catalog_replica_1_svc",
+   "monitoring": "mon:orders-catalog-replica-1",
+   "display": "Orders Catalog Replica 1 Service",
+   "aliases": [
+    "ord-cat-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-938": {
+   "cmdb": "CI-01726",
+   "cmdb_name": "catalog_ratings_svc",
+   "monitoring": "mon:catalog-ratings",
+   "display": "Catalog Ratings Service",
+   "aliases": [
+    "cat-rat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-940": {
+   "cmdb": "CI-51750",
+   "cmdb_name": "media_shipping_svc",
+   "monitoring": "mon:media-shipping",
+   "display": "Media Shipping Service",
+   "aliases": [
+    "med-shi-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-946": {
+   "cmdb": "CI-57691",
+   "cmdb_name": "gateway_invoices_svc",
+   "monitoring": "mon:gateway-invoices",
+   "display": "Gateway Invoices Service",
+   "aliases": [
+    "gat-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-951": {
+   "cmdb": "CI-09452",
+   "cmdb_name": "orders_auth_replica_1_svc",
+   "monitoring": "mon:orders-auth-replica-1",
+   "display": "Orders Auth Replica 1 Service",
+   "aliases": [
+    "ord-aut-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-952": {
+   "cmdb": "CI-62763",
+   "cmdb_name": "gateway_invoices_replica_1_svc",
+   "monitoring": "mon:gateway-invoices-replica-1",
+   "display": "Gateway Invoices Replica 1 Service",
+   "aliases": [
+    "gat-inv-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-953": {
+   "cmdb": "CI-25060",
+   "cmdb_name": "gateway_wishlist_svc",
+   "monitoring": "mon:gateway-wishlist",
+   "display": "Gateway Wishlist Service",
+   "aliases": [
+    "gat-wis-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-955": {
+   "cmdb": "CI-04757",
+   "cmdb_name": "billing_invoices_replica_1_svc",
+   "monitoring": "mon:billing-invoices-replica-1",
+   "display": "Billing Invoices Replica 1 Service",
+   "aliases": [
+    "bil-inv-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-956": {
+   "cmdb": "CI-12160",
+   "cmdb_name": "ingest_profile_replica_1_svc",
+   "monitoring": "mon:ingest-profile-replica-1",
+   "display": "Ingest Profile Replica 1 Service",
+   "aliases": [
+    "ing-pro-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-960": {
+   "cmdb": "CI-76973",
+   "cmdb_name": "orders_search_svc",
+   "monitoring": "mon:orders-search",
+   "display": "Orders Search Service",
+   "aliases": [
+    "ord-sea-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-966": {
+   "cmdb": "CI-25636",
+   "cmdb_name": "ingest_orders_svc",
+   "monitoring": "mon:ingest-orders",
+   "display": "Ingest Orders Service",
+   "aliases": [
+    "ing-ord-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-968": {
+   "cmdb": "CI-37147",
+   "cmdb_name": "reporting_metrics_replica_1_svc",
+   "monitoring": "mon:reporting-metrics-replica-1",
+   "display": "Reporting Metrics Replica 1 Service",
+   "aliases": [
+    "rep-met-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-971": {
+   "cmdb": "CI-86762",
+   "cmdb_name": "billing_cart_svc",
+   "monitoring": "mon:billing-cart",
+   "display": "Billing Cart Service",
+   "aliases": [
+    "bil-car-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-972": {
+   "cmdb": "CI-46106",
+   "cmdb_name": "coupons_tax_svc",
+   "monitoring": "mon:coupons-tax",
+   "display": "Coupons Tax Service",
+   "aliases": [
+    "cou-tax-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-973": {
+   "cmdb": "CI-17730",
+   "cmdb_name": "session_loyalty_replica_1_svc",
+   "monitoring": "mon:session-loyalty-replica-1",
+   "display": "Session Loyalty Replica 1 Service",
+   "aliases": [
+    "ses-loy-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-975": {
+   "cmdb": "CI-32462",
+   "cmdb_name": "ingest_audit_svc",
+   "monitoring": "mon:ingest-audit",
+   "display": "Ingest Audit Service",
+   "aliases": [
+    "ing-aud-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-978": {
+   "cmdb": "CI-89135",
+   "cmdb_name": "identity_ratings_replica_1_svc",
+   "monitoring": "mon:identity-ratings-replica-1",
+   "display": "Identity Ratings Replica 1 Service",
+   "aliases": [
+    "ide-rat-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-980": {
+   "cmdb": "CI-63215",
+   "cmdb_name": "session_returns_svc",
+   "monitoring": "mon:session-returns",
+   "display": "Session Returns Service",
+   "aliases": [
+    "ses-ret-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-983": {
+   "cmdb": "CI-78394",
+   "cmdb_name": "orders_auth_svc",
+   "monitoring": "mon:orders-auth",
+   "display": "Orders Auth Service",
+   "aliases": [
+    "ord-aut-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-984": {
+   "cmdb": "CI-52947",
+   "cmdb_name": "quotes_ingest_svc",
+   "monitoring": "mon:quotes-ingest",
+   "display": "Quotes Ingest Service",
+   "aliases": [
+    "quo-ing-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-987": {
+   "cmdb": "CI-20449",
+   "cmdb_name": "identity_notify_replica_1_svc",
+   "monitoring": "mon:identity-notify-replica-1",
+   "display": "Identity Notify Replica 1 Service",
+   "aliases": [
+    "ide-not-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-989": {
+   "cmdb": "CI-41284",
+   "cmdb_name": "billing_session_svc",
+   "monitoring": "mon:billing-session",
+   "display": "Billing Session Service",
+   "aliases": [
+    "bil-ses-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-991": {
+   "cmdb": "CI-90330",
+   "cmdb_name": "checkout_cart_svc",
+   "monitoring": "mon:checkout-cart",
+   "display": "Checkout Cart Service",
+   "aliases": [
+    "che-car-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-992": {
+   "cmdb": "CI-29286",
+   "cmdb_name": "address_payments_svc",
+   "monitoring": "mon:address-payments",
+   "display": "Address Payments Service",
+   "aliases": [
+    "add-pay-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-993": {
+   "cmdb": "CI-19629",
+   "cmdb_name": "identity_address_svc",
+   "monitoring": "mon:identity-address",
+   "display": "Identity Address Service",
+   "aliases": [
+    "ide-add-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-994": {
+   "cmdb": "CI-32717",
+   "cmdb_name": "reviews_export_svc",
+   "monitoring": "mon:reviews-export",
+   "display": "Reviews Export Service",
+   "aliases": [
+    "rev-exp-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-995": {
+   "cmdb": "CI-87289",
+   "cmdb_name": "orders_warehouse_svc",
+   "monitoring": "mon:orders-warehouse",
+   "display": "Orders Warehouse Service",
+   "aliases": [
+    "ord-war-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  }
+ },
+ "teams": {
+  "team-01": {
+   "cmdb": "OG-11",
+   "monitoring": "team-mobile"
+  },
+  "team-02": {
+   "cmdb": "OG-12",
+   "monitoring": "team-platform"
+  },
+  "team-03": {
+   "cmdb": "OG-13",
+   "monitoring": "team-core"
+  },
+  "team-04": {
+   "cmdb": "OG-14",
+   "monitoring": "team-ops"
+  },
+  "team-05": {
+   "cmdb": "OG-15",
+   "monitoring": "team-finance"
+  },
+  "team-06": {
+   "cmdb": "OG-16",
+   "monitoring": "team-web"
+  },
+  "team-07": {
+   "cmdb": "OG-17",
+   "monitoring": "team-content"
+  },
+  "team-08": {
+   "cmdb": "OG-18",
+   "monitoring": "team-partner"
+  },
+  "team-09": {
+   "cmdb": "OG-19",
+   "monitoring": "team-search"
+  },
+  "team-10": {
+   "cmdb": "OG-20",
+   "monitoring": "team-risk"
+  },
+  "team-11": {
+   "cmdb": "OG-21",
+   "monitoring": "team-fulfil"
+  },
+  "team-12": {
+   "cmdb": "OG-22",
+   "monitoring": "team-insights"
+  },
+  "team-13": {
+   "cmdb": "OG-23",
+   "monitoring": "team-commerce"
+  },
+  "team-14": {
+   "cmdb": "OG-24",
+   "monitoring": "team-trust"
+  },
+  "team-15": {
+   "cmdb": "OG-25",
+   "monitoring": "team-infra"
+  }
+ },
+ "regions": {
+  "reg-1": {
+   "cmdb": "dc-fra",
+   "monitoring": "eu-central-1"
+  },
+  "reg-2": {
+   "cmdb": "dc-iad",
+   "monitoring": "us-east-1"
+  },
+  "reg-3": {
+   "cmdb": "dc-sin",
+   "monitoring": "ap-southeast-1"
+  },
+  "reg-4": {
+   "cmdb": "dc-sfo",
+   "monitoring": "us-west-2"
+  },
+  "reg-5": {
+   "cmdb": "dc-ams",
+   "monitoring": "eu-west-1"
+  }
+ },
+ "slas": {
+  "sla-02": "SLA-BRONZE-01",
+  "sla-05": "SLA-GOLD-02",
+  "sla-06": "SLA-BRONZE-03",
+  "sla-08": "SLA-SILVER-04",
+  "sla-09": "SLA-GOLD-05",
+  "sla-15": "SLA-GOLD-06",
+  "sla-16": "SLA-PLATINUM-07",
+  "sla-17": "SLA-BRONZE-08",
+  "sla-18": "SLA-GOLD-09",
+  "sla-19": "SLA-GOLD-10",
+  "sla-20": "SLA-GOLD-11",
+  "sla-21": "SLA-BRONZE-12",
+  "sla-23": "SLA-PLATINUM-13",
+  "sla-25": "SLA-GOLD-14",
+  "sla-27": "SLA-PLATINUM-15",
+  "sla-28": "SLA-GOLD-16",
+  "sla-29": "SLA-GOLD-17",
+  "sla-30": "SLA-BRONZE-18",
+  "sla-31": "SLA-GOLD-19",
+  "sla-33": "SLA-BRONZE-20",
+  "sla-34": "SLA-SILVER-21",
+  "sla-38": "SLA-GOLD-22",
+  "sla-40": "SLA-BRONZE-23",
+  "sla-41": "SLA-GOLD-24",
+  "sla-44": "SLA-GOLD-25",
+  "sla-45": "SLA-SILVER-26",
+  "sla-48": "SLA-GOLD-27",
+  "sla-49": "SLA-SILVER-28",
+  "sla-51": "SLA-PLATINUM-29",
+  "sla-53": "SLA-PLATINUM-30",
+  "sla-54": "SLA-BRONZE-31",
+  "sla-57": "SLA-BRONZE-32",
+  "sla-60": "SLA-GOLD-33",
+  "sla-61": "SLA-PLATINUM-34",
+  "sla-64": "SLA-PLATINUM-35",
+  "sla-65": "SLA-PLATINUM-36",
+  "sla-67": "SLA-BRONZE-37",
+  "sla-68": "SLA-PLATINUM-38",
+  "sla-71": "SLA-SILVER-39",
+  "sla-74": "SLA-SILVER-40",
+  "sla-75": "SLA-GOLD-41",
+  "sla-76": "SLA-GOLD-42",
+  "sla-79": "SLA-SILVER-43",
+  "sla-80": "SLA-SILVER-44",
+  "sla-81": "SLA-GOLD-45",
+  "sla-83": "SLA-PLATINUM-46",
+  "sla-87": "SLA-GOLD-47",
+  "sla-88": "SLA-BRONZE-48",
+  "sla-90": "SLA-GOLD-49",
+  "sla-91": "SLA-SILVER-50",
+  "sla-92": "SLA-SILVER-51",
+  "sla-94": "SLA-PLATINUM-52",
+  "sla-95": "SLA-BRONZE-53",
+  "sla-97": "SLA-BRONZE-54",
+  "sla-98": "SLA-PLATINUM-55"
+ },
+ "stale": [
+  {
+   "cmdb": "CI-33985",
+   "monitoring": "mon:legacy-quotes-1",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-27183",
+    "CI-80192"
+   ]
+  },
+  {
+   "cmdb": "CI-02257",
+   "monitoring": "mon:legacy-metrics-2",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-32256",
+    "CI-34981"
+   ]
+  },
+  {
+   "cmdb": "CI-71285",
+   "monitoring": "mon:legacy-gateway-3",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-29286",
+    "CI-87289"
+   ]
+  },
+  {
+   "cmdb": "CI-70033",
+   "monitoring": "mon:legacy-ingest-4",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-74538",
+    "CI-83430"
+   ]
+  },
+  {
+   "cmdb": "CI-65859",
+   "monitoring": "mon:legacy-pricing-5",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-19629",
+    "CI-79755"
+   ]
+  }
+ ],
+ "planted": {
+  "region_conflicts": [
+   "svc-106",
+   "svc-265",
+   "svc-400",
+   "svc-402",
+   "svc-416",
+   "svc-616",
+   "svc-782",
+   "svc-921"
+  ],
+  "team_conflicts": [
+   "db-256",
+   "db-637",
+   "db-654",
+   "db-677",
+   "q-012",
+   "q-015",
+   "svc-378",
+   "svc-938"
+  ]
+ }
+}

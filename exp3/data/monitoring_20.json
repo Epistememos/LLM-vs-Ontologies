@@ -1,0 +1,244 @@
+{
+ "export": "monitoring",
+ "records": [
+  {
+   "component": "mon:billing-notify-replica-1",
+   "display_name": "Billing Notify Replica 1 Service",
+   "aliases": [
+    "bil-not-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-returns",
+   "display_name": "Shipping Returns Service",
+   "aliases": [
+    "shi-ret-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-reporting",
+   "display_name": "Catalog Reporting DB",
+   "aliases": [
+    "cat-rep-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-reporting-replica-1",
+   "display_name": "Catalog Reporting Replica 1 DB",
+   "aliases": [
+    "cat-rep-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:loyalty-search",
+   "display_name": "Loyalty Search Queue",
+   "aliases": [
+    "loy-sea-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-pricing",
+   "display_name": "Address Pricing DB",
+   "aliases": [
+    "add-pri-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-profile",
+   "display_name": "Shipping Profile DB",
+   "aliases": [
+    "shi-pro-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-quotes",
+   "display_name": "Ledger Quotes Service",
+   "aliases": [
+    "led-quo-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "us-east-1",
+   "sla": "SLA-BRONZE-03",
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-notify",
+   "display_name": "Billing Notify Service",
+   "aliases": [
+    "bil-not-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Address Pricing DB",
+    "mon:shipping-profile"
+   ]
+  },
+  {
+   "component": "mon:loyalty-fraud-replica-1",
+   "display_name": "Loyalty Fraud Replica 1 Service",
+   "aliases": [
+    "loy-fra-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-gateway",
+   "display_name": "Coupons Gateway Service",
+   "aliases": [
+    "cou-gat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Shipping Profile DB",
+    "loy-sea-q-v2"
+   ]
+  },
+  {
+   "component": "mon:legacy-metrics-1",
+   "display_name": "Legacy Metrics 1 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "retired",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-feeds-replica-1",
+   "display_name": "Warehouse Feeds Replica 1 Service",
+   "aliases": [
+    "war-fee-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-feeds",
+   "display_name": "Warehouse Feeds Service",
+   "aliases": [
+    "war-fee-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": "SLA-BRONZE-02",
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-invoices",
+   "display_name": "Reviews Invoices Service",
+   "aliases": [
+    "rev-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:shipping-profile"
+   ]
+  },
+  {
+   "component": "mon:loyalty-fraud",
+   "display_name": "Loyalty Fraud Service",
+   "aliases": [
+    "loy-fra-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": "SLA-PLATINUM-01",
+   "upstream": []
+  },
+  {
+   "component": "mon:legacy-reviews-2",
+   "display_name": "Legacy Reviews 2 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "active",
+   "team": "team-identity",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  }
+ ],
+ "slas": [
+  {
+   "sla_id": "SLA-PLATINUM-01",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-02",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-03",
+   "availability": 99.99
+  }
+ ]
+}

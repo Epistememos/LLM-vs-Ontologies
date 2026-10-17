@@ -1,0 +1,7066 @@
+{
+ "export": "monitoring",
+ "records": [
+  {
+   "component": "mon:warehouse-reviews",
+   "display_name": "Warehouse Reviews Service",
+   "aliases": [
+    "war-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:legacy-metrics-2",
+   "display_name": "Legacy Metrics 2 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-billing-replica-1",
+   "display_name": "Address Billing Replica 1 DB",
+   "aliases": [
+    "add-bil-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-returns",
+   "display_name": "Metrics Returns Service",
+   "aliases": [
+    "met-ret-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:reviews-billing"
+   ]
+  },
+  {
+   "component": "mon:wishlist-routing",
+   "display_name": "Wishlist Routing Service",
+   "aliases": [
+    "wis-rou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:reporting-reviews"
+   ]
+  },
+  {
+   "component": "mon:payments-session-replica-1",
+   "display_name": "Payments Session Replica 1 DB",
+   "aliases": [
+    "pay-ses-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-tax",
+   "display_name": "Inventory Tax Service",
+   "aliases": [
+    "inv-tax-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Billing Routing DB"
+   ]
+  },
+  {
+   "component": "mon:reporting-coupons",
+   "display_name": "Reporting Coupons Queue",
+   "aliases": [
+    "rep-cou-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-refunds",
+   "display_name": "Payments Refunds Service",
+   "aliases": [
+    "pay-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": "SLA-PLATINUM-15",
+   "upstream": []
+  },
+  {
+   "component": "mon:fraud-reviews",
+   "display_name": "Fraud Reviews Service",
+   "aliases": [
+    "fra-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "inv-gat-db-v2"
+   ]
+  },
+  {
+   "component": "mon:feeds-ratings",
+   "display_name": "Feeds Ratings Service",
+   "aliases": [
+    "fee-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:catalog-address",
+    "Checkout Search DB"
+   ]
+  },
+  {
+   "component": "mon:audit-notify",
+   "display_name": "Audit Notify Service",
+   "aliases": [
+    "aud-not-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Invoices Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:notify-refunds",
+   "display_name": "Notify Refunds Service",
+   "aliases": [
+    "not-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Invoices Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:audit-warehouse",
+   "display_name": "Audit Warehouse DB",
+   "aliases": [
+    "aud-war-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:audit-coupons",
+   "display_name": "Audit Coupons DB",
+   "aliases": [
+    "aud-cou-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-ingest",
+   "display_name": "Catalog Ingest Service",
+   "aliases": [
+    "cat-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-PLATINUM-30",
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-search",
+   "display_name": "Orders Search Service",
+   "aliases": [
+    "ord-sea-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "med-rev-db-v2"
+   ]
+  },
+  {
+   "component": "mon:media-reviews-replica-1",
+   "display_name": "Media Reviews Replica 1 DB",
+   "aliases": [
+    "med-rev-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-loyalty",
+   "display_name": "Orders Loyalty DB",
+   "aliases": [
+    "ord-loy-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-auth-replica-1",
+   "display_name": "Refunds Auth Replica 1 Service",
+   "aliases": [
+    "ref-aut-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-checkout-replica-1",
+   "display_name": "Address Checkout Replica 1 Service",
+   "aliases": [
+    "add-che-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-session",
+   "display_name": "Ratings Session Service",
+   "aliases": [
+    "rat-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:invoices-gateway",
+    "mon:export-gateway"
+   ]
+  },
+  {
+   "component": "mon:quotes-inventory",
+   "display_name": "Quotes Inventory Service",
+   "aliases": [
+    "quo-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:reviews-billing"
+   ]
+  },
+  {
+   "component": "mon:reporting-returns-replica-1",
+   "display_name": "Reporting Returns Replica 1 Service",
+   "aliases": [
+    "rep-ret-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:loyalty-shipping",
+   "display_name": "Loyalty Shipping Service",
+   "aliases": [
+    "loy-shi-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:media-ledger"
+   ]
+  },
+  {
+   "component": "mon:inventory-coupons-replica-1",
+   "display_name": "Inventory Coupons Replica 1 Service",
+   "aliases": [
+    "inv-cou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-gateway",
+   "display_name": "Export Gateway DB",
+   "aliases": [
+    "exp-gat-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-metrics",
+   "display_name": "Refunds Metrics Service",
+   "aliases": [
+    "ref-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Routing Profile DB"
+   ]
+  },
+  {
+   "component": "mon:payments-quotes",
+   "display_name": "Payments Quotes Service",
+   "aliases": [
+    "pay-quo-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:gateway-refunds"
+   ]
+  },
+  {
+   "component": "mon:fraud-orders-replica-1",
+   "display_name": "Fraud Orders Replica 1 Service",
+   "aliases": [
+    "fra-ord-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:consent-loyalty",
+   "display_name": "Consent Loyalty Service",
+   "aliases": [
+    "con-loy-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": "SLA-BRONZE-54",
+   "upstream": [
+    "mon:export-ledger"
+   ]
+  },
+  {
+   "component": "mon:loyalty-profile",
+   "display_name": "Loyalty Profile Service",
+   "aliases": [
+    "loy-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": "SLA-SILVER-39",
+   "upstream": [
+    "mon:reviews-billing",
+    "led-add-db-v2"
+   ]
+  },
+  {
+   "component": "mon:profile-shipping",
+   "display_name": "Profile Shipping Service",
+   "aliases": [
+    "pro-shi-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-notify",
+    "Checkout Search DB"
+   ]
+  },
+  {
+   "component": "mon:ratings-reviews-replica-1",
+   "display_name": "Ratings Reviews Replica 1 Service",
+   "aliases": [
+    "rat-rev-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-quotes",
+   "display_name": "Session Quotes Service",
+   "aliases": [
+    "ses-quo-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:reviews-billing",
+    "mon:invoices-gateway"
+   ]
+  },
+  {
+   "component": "mon:payments-media",
+   "display_name": "Payments Media Queue",
+   "aliases": [
+    "pay-med-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-payments-replica-1",
+   "display_name": "Gateway Payments Replica 1 DB",
+   "aliases": [
+    "gat-pay-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-consent",
+   "display_name": "Auth Consent Service",
+   "aliases": [
+    "aut-con-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-SILVER-21",
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-ingest-replica-1",
+   "display_name": "Catalog Ingest Replica 1 Service",
+   "aliases": [
+    "cat-ing-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-warehouse-replica-1",
+   "display_name": "Catalog Warehouse Replica 1 DB",
+   "aliases": [
+    "cat-war-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-coupons",
+   "display_name": "Ingest Coupons Service",
+   "aliases": [
+    "ing-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:checkout-cart-replica-1",
+   "display_name": "Checkout Cart Replica 1 Service",
+   "aliases": [
+    "che-car-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-quotes",
+   "display_name": "Ratings Quotes Service",
+   "aliases": [
+    "rat-quo-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "mon:refunds-tax"
+   ]
+  },
+  {
+   "component": "mon:orders-search-replica-1",
+   "display_name": "Orders Search Replica 1 Service",
+   "aliases": [
+    "ord-sea-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-warehouse-replica-1",
+   "display_name": "Orders Warehouse Replica 1 Service",
+   "aliases": [
+    "ord-war-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-shipping-replica-1",
+   "display_name": "Media Shipping Replica 1 Service",
+   "aliases": [
+    "med-shi-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-metrics",
+   "display_name": "Identity Metrics Service",
+   "aliases": [
+    "ide-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:checkout-search",
+    "mon:ledger-ingest"
+   ]
+  },
+  {
+   "component": "mon:cart-metrics-replica-1",
+   "display_name": "Cart Metrics Replica 1 Service",
+   "aliases": [
+    "car-met-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:legacy-quotes-1",
+   "display_name": "Legacy Quotes 1 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "retired",
+   "team": "team-content",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-address",
+   "display_name": "Identity Address Service",
+   "aliases": [
+    "ide-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Reviews Billing DB",
+    "mon:invoices-gateway"
+   ]
+  },
+  {
+   "component": "mon:reviews-warehouse",
+   "display_name": "Reviews Warehouse Service",
+   "aliases": [
+    "rev-war-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Identity Checkout DB",
+    "Ratings Notify DB"
+   ]
+  },
+  {
+   "component": "mon:catalog-search",
+   "display_name": "Catalog Search Service",
+   "aliases": [
+    "cat-sea-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Quotes Payments DB"
+   ]
+  },
+  {
+   "component": "mon:search-profile",
+   "display_name": "Search Profile DB",
+   "aliases": [
+    "sea-pro-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-gateway",
+   "display_name": "Billing Gateway Service",
+   "aliases": [
+    "bil-gat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-ledger",
+   "display_name": "Export Ledger DB",
+   "aliases": [
+    "exp-led-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-pricing-replica-1",
+   "display_name": "Quotes Pricing Replica 1 Service",
+   "aliases": [
+    "quo-pri-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:tax-orders",
+   "display_name": "Tax Orders DB",
+   "aliases": [
+    "tax-ord-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-routing",
+   "display_name": "Auth Routing Service",
+   "aliases": [
+    "aut-rou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": "SLA-GOLD-42",
+   "upstream": [
+    "mon:ratings-notify",
+    "fra-che-q-v2"
+   ]
+  },
+  {
+   "component": "mon:loyalty-coupons-replica-1",
+   "display_name": "Loyalty Coupons Replica 1 DB",
+   "aliases": [
+    "loy-cou-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:fraud-inventory",
+   "display_name": "Fraud Inventory DB",
+   "aliases": [
+    "fra-inv-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-payments",
+   "display_name": "Gateway Payments DB",
+   "aliases": [
+    "gat-pay-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-gateway",
+   "display_name": "Auth Gateway Service",
+   "aliases": [
+    "aut-gat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "fra-inv-db-v2"
+   ]
+  },
+  {
+   "component": "mon:ledger-gateway",
+   "display_name": "Ledger Gateway Service",
+   "aliases": [
+    "led-gat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Reviews Billing DB",
+    "mon:identity-checkout"
+   ]
+  },
+  {
+   "component": "mon:catalog-invoices-replica-1",
+   "display_name": "Catalog Invoices Replica 1 Service",
+   "aliases": [
+    "cat-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-session-replica-1",
+   "display_name": "Shipping Session Replica 1 DB",
+   "aliases": [
+    "shi-ses-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-identity",
+   "display_name": "Warehouse Identity Service",
+   "aliases": [
+    "war-ide-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": "SLA-PLATINUM-34",
+   "upstream": [
+    "Identity Checkout DB"
+   ]
+  },
+  {
+   "component": "mon:ratings-export",
+   "display_name": "Ratings Export Queue",
+   "aliases": [
+    "rat-exp-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-pricing",
+   "display_name": "Refunds Pricing Service",
+   "aliases": [
+    "ref-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:media-metrics",
+    "mon:warehouse-routing"
+   ]
+  },
+  {
+   "component": "mon:reviews-orders",
+   "display_name": "Reviews Orders DB",
+   "aliases": [
+    "rev-ord-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-auth",
+   "display_name": "Metrics Auth Service",
+   "aliases": [
+    "met-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:quotes-identity"
+   ]
+  },
+  {
+   "component": "mon:shipping-fraud",
+   "display_name": "Shipping Fraud DB",
+   "aliases": [
+    "shi-fra-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-billing",
+   "display_name": "Auth Billing Service",
+   "aliases": [
+    "aut-bil-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "rev-che-db-v2"
+   ]
+  },
+  {
+   "component": "mon:inventory-metrics",
+   "display_name": "Inventory Metrics Service",
+   "aliases": [
+    "inv-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:checkout-search"
+   ]
+  },
+  {
+   "component": "mon:consent-loyalty-replica-1",
+   "display_name": "Consent Loyalty Replica 1 Service",
+   "aliases": [
+    "con-loy-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-invoices",
+   "display_name": "Address Invoices Service",
+   "aliases": [
+    "add-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:loyalty-coupons",
+   "display_name": "Loyalty Coupons DB",
+   "aliases": [
+    "loy-cou-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-refunds",
+   "display_name": "Export Refunds Service",
+   "aliases": [
+    "exp-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Orders Tax DB"
+   ]
+  },
+  {
+   "component": "mon:address-fraud-replica-1",
+   "display_name": "Address Fraud Replica 1 Service",
+   "aliases": [
+    "add-fra-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:feeds-inventory",
+   "display_name": "Feeds Inventory Service",
+   "aliases": [
+    "fee-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:invoices-gateway",
+    "mon:refunds-tax"
+   ]
+  },
+  {
+   "component": "mon:audit-consent",
+   "display_name": "Audit Consent Service",
+   "aliases": [
+    "aud-con-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "aut-ret-db-v2"
+   ]
+  },
+  {
+   "component": "mon:tax-session-replica-1",
+   "display_name": "Tax Session Replica 1 DB",
+   "aliases": [
+    "tax-ses-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-audit",
+   "display_name": "Export Audit Service",
+   "aliases": [
+    "exp-aud-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": "SLA-PLATINUM-46",
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-auth",
+   "display_name": "Gateway Auth DB",
+   "aliases": [
+    "gat-aut-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-catalog",
+   "display_name": "Metrics Catalog Service",
+   "aliases": [
+    "met-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:gateway-auth",
+    "con-ses-q-v2"
+   ]
+  },
+  {
+   "component": "mon:catalog-invoices",
+   "display_name": "Catalog Invoices Service",
+   "aliases": [
+    "cat-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:reviews-billing",
+    "mon:routing-profile"
+   ]
+  },
+  {
+   "component": "mon:reviews-payments",
+   "display_name": "Reviews Payments Service",
+   "aliases": [
+    "rev-pay-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "Reporting Coupons Queue"
+   ]
+  },
+  {
+   "component": "mon:cart-identity",
+   "display_name": "Cart Identity Service",
+   "aliases": [
+    "car-ide-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-checkout",
+   "display_name": "Coupons Checkout Service",
+   "aliases": [
+    "cou-che-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "sea-pro-db-v2",
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:export-gateway-replica-1",
+   "display_name": "Export Gateway Replica 1 DB",
+   "aliases": [
+    "exp-gat-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-search-replica-1",
+   "display_name": "Catalog Search Replica 1 Service",
+   "aliases": [
+    "cat-sea-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:profile-invoices",
+   "display_name": "Profile Invoices Service",
+   "aliases": [
+    "pro-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-routing-replica-1",
+   "display_name": "Payments Routing Replica 1 Service",
+   "aliases": [
+    "pay-rou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-refunds-replica-1",
+   "display_name": "Export Refunds Replica 1 Service",
+   "aliases": [
+    "exp-ref-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-feeds",
+   "display_name": "Refunds Feeds Service",
+   "aliases": [
+    "ref-fee-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:invoices-gateway"
+   ]
+  },
+  {
+   "component": "mon:orders-export",
+   "display_name": "Orders Export Service",
+   "aliases": [
+    "ord-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "exp-gat-db-v2"
+   ]
+  },
+  {
+   "component": "mon:audit-catalog",
+   "display_name": "Audit Catalog Service",
+   "aliases": [
+    "aud-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-37",
+   "upstream": [
+    "shi-aut-db-v2"
+   ]
+  },
+  {
+   "component": "mon:wishlist-ratings",
+   "display_name": "Wishlist Ratings DB",
+   "aliases": [
+    "wis-rat-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-refunds",
+   "display_name": "Shipping Refunds Service",
+   "aliases": [
+    "shi-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-central-1",
+   "sla": "SLA-BRONZE-37",
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-audit",
+   "display_name": "Payments Audit Service",
+   "aliases": [
+    "pay-aud-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-profile",
+   "display_name": "Billing Profile Service",
+   "aliases": [
+    "bil-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:wishlist-feeds"
+   ]
+  },
+  {
+   "component": "mon:quotes-identity",
+   "display_name": "Quotes Identity DB",
+   "aliases": [
+    "quo-ide-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-export-replica-1",
+   "display_name": "Ingest Export Replica 1 Service",
+   "aliases": [
+    "ing-exp-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-auth",
+   "display_name": "Ingest Auth Service",
+   "aliases": [
+    "ing-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-central-1",
+   "sla": "SLA-SILVER-51",
+   "upstream": [
+    "che-met-db-v2"
+   ]
+  },
+  {
+   "component": "mon:address-payments",
+   "display_name": "Address Payments Service",
+   "aliases": [
+    "add-pay-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:tax-invoices"
+   ]
+  },
+  {
+   "component": "mon:reporting-identity-replica-1",
+   "display_name": "Reporting Identity Replica 1 DB",
+   "aliases": [
+    "rep-ide-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-ratings",
+   "display_name": "Identity Ratings Service",
+   "aliases": [
+    "ide-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:wishlist-coupons",
+   "display_name": "Wishlist Coupons Service",
+   "aliases": [
+    "wis-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "rev-bil-db-v2",
+    "mon:media-auth"
+   ]
+  },
+  {
+   "component": "mon:feeds-export",
+   "display_name": "Feeds Export Service",
+   "aliases": [
+    "fee-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "rev-bil-db-v2",
+    "tax-ses-db-v2"
+   ]
+  },
+  {
+   "component": "mon:inventory-export",
+   "display_name": "Inventory Export Service",
+   "aliases": [
+    "inv-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-ingest-replica-1",
+   "display_name": "Gateway Ingest Replica 1 Service",
+   "aliases": [
+    "gat-ing-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-consent",
+   "display_name": "Orders Consent Service",
+   "aliases": [
+    "ord-con-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "Export Ledger DB"
+   ]
+  },
+  {
+   "component": "mon:loyalty-refunds",
+   "display_name": "Loyalty Refunds Service",
+   "aliases": [
+    "loy-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "pri-aut-db-v2",
+    "mon:routing-profile"
+   ]
+  },
+  {
+   "component": "mon:quotes-media",
+   "display_name": "Quotes Media DB",
+   "aliases": [
+    "quo-med-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:feeds-ratings-replica-1",
+   "display_name": "Feeds Ratings Replica 1 Service",
+   "aliases": [
+    "fee-rat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-tax-replica-1",
+   "display_name": "Refunds Tax Replica 1 DB",
+   "aliases": [
+    "ref-tax-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-ledger-replica-1",
+   "display_name": "Export Ledger Replica 1 DB",
+   "aliases": [
+    "exp-led-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-cart",
+   "display_name": "Billing Cart Service",
+   "aliases": [
+    "bil-car-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": "SLA-GOLD-22",
+   "upstream": [
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:wishlist-coupons-replica-1",
+   "display_name": "Wishlist Coupons Replica 1 Service",
+   "aliases": [
+    "wis-cou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-address",
+   "display_name": "Metrics Address Service",
+   "aliases": [
+    "met-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Reviews Checkout DB"
+   ]
+  },
+  {
+   "component": "mon:catalog-ratings",
+   "display_name": "Catalog Ratings Service",
+   "aliases": [
+    "cat-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "inv-gat-db-v2"
+   ]
+  },
+  {
+   "component": "mon:coupons-invoices",
+   "display_name": "Coupons Invoices Service",
+   "aliases": [
+    "cou-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:consent-ingest",
+   "display_name": "Consent Ingest Service",
+   "aliases": [
+    "con-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Pricing Warehouse DB",
+    "Invoices Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:address-auth-replica-1",
+   "display_name": "Address Auth Replica 1 Service",
+   "aliases": [
+    "add-aut-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-search",
+   "display_name": "Metrics Search Service",
+   "aliases": [
+    "met-sea-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-west-2",
+   "sla": "SLA-PLATINUM-15",
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-billing-replica-1",
+   "display_name": "Warehouse Billing Replica 1 Service",
+   "aliases": [
+    "war-bil-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:returns-refunds-replica-1",
+   "display_name": "Returns Refunds Replica 1 Service",
+   "aliases": [
+    "ret-ref-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-ingest-replica-1",
+   "display_name": "Cart Ingest Replica 1 Service",
+   "aliases": [
+    "car-ing-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-export",
+   "display_name": "Catalog Export Service",
+   "aliases": [
+    "cat-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-media",
+   "display_name": "Ingest Media Service",
+   "aliases": [
+    "ing-med-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:fraud-ratings",
+   "display_name": "Fraud Ratings Service",
+   "aliases": [
+    "fra-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": "SLA-SILVER-44",
+   "upstream": [
+    "mon:checkout-search"
+   ]
+  },
+  {
+   "component": "mon:feeds-metrics",
+   "display_name": "Feeds Metrics Service",
+   "aliases": [
+    "fee-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:legacy-pricing-5",
+   "display_name": "Legacy Pricing 5 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "retired",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-catalog",
+   "display_name": "Checkout Catalog Service",
+   "aliases": [
+    "che-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "shi-ide-db-v2"
+   ]
+  },
+  {
+   "component": "mon:wishlist-tax",
+   "display_name": "Wishlist Tax Service",
+   "aliases": [
+    "wis-tax-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-notify",
+    "con-ses-q-v2"
+   ]
+  },
+  {
+   "component": "mon:auth-wishlist-replica-1",
+   "display_name": "Auth Wishlist Replica 1 Service",
+   "aliases": [
+    "aut-wis-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-identity-replica-1",
+   "display_name": "Session Identity Replica 1 Service",
+   "aliases": [
+    "ses-ide-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:notify-coupons-replica-1",
+   "display_name": "Notify Coupons Replica 1 Service",
+   "aliases": [
+    "not-cou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-invoices",
+   "display_name": "Gateway Invoices Service",
+   "aliases": [
+    "gat-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-pricing",
+   "display_name": "Ledger Pricing Service",
+   "aliases": [
+    "led-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-auth-replica-1",
+   "display_name": "Gateway Auth Replica 1 DB",
+   "aliases": [
+    "gat-aut-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-pricing",
+   "display_name": "Checkout Pricing Service",
+   "aliases": [
+    "che-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-east-1",
+   "sla": "SLA-GOLD-27",
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-session-replica-1",
+   "display_name": "Orders Session Replica 1 Service",
+   "aliases": [
+    "ord-ses-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-address-replica-1",
+   "display_name": "Ledger Address Replica 1 DB",
+   "aliases": [
+    "led-add-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-cart",
+   "display_name": "Auth Cart Service",
+   "aliases": [
+    "aut-car-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "led-add-db-v2"
+   ]
+  },
+  {
+   "component": "mon:ingest-orders",
+   "display_name": "Ingest Orders Service",
+   "aliases": [
+    "ing-ord-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "Identity Checkout DB"
+   ]
+  },
+  {
+   "component": "mon:returns-shipping",
+   "display_name": "Returns Shipping Service",
+   "aliases": [
+    "ret-shi-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:refunds-tax",
+    "gat-ref-q-v2"
+   ]
+  },
+  {
+   "component": "mon:orders-ratings-replica-1",
+   "display_name": "Orders Ratings Replica 1 Service",
+   "aliases": [
+    "ord-rat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-coupons",
+   "display_name": "Payments Coupons Service",
+   "aliases": [
+    "pay-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "led-add-db-v2",
+    "mon:quotes-search"
+   ]
+  },
+  {
+   "component": "mon:auth-returns-replica-1",
+   "display_name": "Auth Returns Replica 1 DB",
+   "aliases": [
+    "aut-ret-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-core",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-catalog-replica-1",
+   "display_name": "Metrics Catalog Replica 1 Service",
+   "aliases": [
+    "met-cat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:routing-reviews",
+   "display_name": "Routing Reviews Service",
+   "aliases": [
+    "rou-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "che-sea-db-v2",
+    "rat-exp-q-v2"
+   ]
+  },
+  {
+   "component": "mon:reviews-checkout-replica-1",
+   "display_name": "Reviews Checkout Replica 1 DB",
+   "aliases": [
+    "rev-che-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-coupons",
+   "display_name": "Export Coupons DB",
+   "aliases": [
+    "exp-cou-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-reporting-replica-1",
+   "display_name": "Inventory Reporting Replica 1 Service",
+   "aliases": [
+    "inv-rep-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-catalog",
+   "display_name": "Refunds Catalog Service",
+   "aliases": [
+    "ref-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:invoices-gateway",
+    "mon:reviews-checkout"
+   ]
+  },
+  {
+   "component": "mon:profile-wishlist",
+   "display_name": "Profile Wishlist Service",
+   "aliases": [
+    "pro-wis-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:coupons-gateway"
+   ]
+  },
+  {
+   "component": "mon:wishlist-auth",
+   "display_name": "Wishlist Auth Service",
+   "aliases": [
+    "wis-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-address",
+   "display_name": "Ledger Address DB",
+   "aliases": [
+    "led-add-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-gateway",
+   "display_name": "Shipping Gateway Service",
+   "aliases": [
+    "shi-gat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-east-1",
+   "sla": "SLA-PLATINUM-35",
+   "upstream": []
+  },
+  {
+   "component": "mon:feeds-metrics-replica-1",
+   "display_name": "Feeds Metrics Replica 1 Service",
+   "aliases": [
+    "fee-met-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-reporting",
+   "display_name": "Media Reporting Service",
+   "aliases": [
+    "med-rep-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:routing-profile"
+   ]
+  },
+  {
+   "component": "mon:returns-address",
+   "display_name": "Returns Address Service",
+   "aliases": [
+    "ret-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "pay-aut-q-v2"
+   ]
+  },
+  {
+   "component": "mon:ingest-profile",
+   "display_name": "Ingest Profile Service",
+   "aliases": [
+    "ing-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": "SLA-SILVER-44",
+   "upstream": [
+    "Routing Profile DB"
+   ]
+  },
+  {
+   "component": "mon:reviews-export",
+   "display_name": "Reviews Export Service",
+   "aliases": [
+    "rev-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-GOLD-45",
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-ingest-replica-1",
+   "display_name": "Quotes Ingest Replica 1 Service",
+   "aliases": [
+    "quo-ing-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-refunds-replica-1",
+   "display_name": "Shipping Refunds Replica 1 Service",
+   "aliases": [
+    "shi-ref-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-billing",
+   "display_name": "Pricing Billing Service",
+   "aliases": [
+    "pri-bil-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "Identity Checkout DB",
+    "mon:shipping-inventory"
+   ]
+  },
+  {
+   "component": "mon:ratings-notify-replica-1",
+   "display_name": "Ratings Notify Replica 1 DB",
+   "aliases": [
+    "rat-not-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-pricing",
+   "display_name": "Quotes Pricing Service",
+   "aliases": [
+    "quo-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-31",
+   "upstream": [
+    "rev-ord-db-v2"
+   ]
+  },
+  {
+   "component": "mon:invoices-ratings-replica-1",
+   "display_name": "Invoices Ratings Replica 1 Service",
+   "aliases": [
+    "inv-rat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:feeds-session",
+   "display_name": "Feeds Session Service",
+   "aliases": [
+    "fee-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:search-address-replica-1",
+   "display_name": "Search Address Replica 1 Service",
+   "aliases": [
+    "sea-add-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-quotes-replica-1",
+   "display_name": "Payments Quotes Replica 1 Service",
+   "aliases": [
+    "pay-quo-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:tax-refunds",
+   "display_name": "Tax Refunds Service",
+   "aliases": [
+    "tax-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-SILVER-44",
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-inventory",
+   "display_name": "Shipping Inventory Queue",
+   "aliases": [
+    "shi-inv-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-catalog-replica-1",
+   "display_name": "Checkout Catalog Replica 1 Service",
+   "aliases": [
+    "che-cat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-loyalty-replica-1",
+   "display_name": "Session Loyalty Replica 1 Service",
+   "aliases": [
+    "ses-loy-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-payments",
+   "display_name": "Quotes Payments DB",
+   "aliases": [
+    "quo-pay-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:fraud-reviews-replica-1",
+   "display_name": "Fraud Reviews Replica 1 Service",
+   "aliases": [
+    "fra-rev-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-returns",
+   "display_name": "Reporting Returns Service",
+   "aliases": [
+    "rep-ret-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Gateway Payments DB",
+    "mon:fraud-inventory"
+   ]
+  },
+  {
+   "component": "mon:pricing-profile-replica-1",
+   "display_name": "Pricing Profile Replica 1 Service",
+   "aliases": [
+    "pri-pro-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:search-loyalty",
+   "display_name": "Search Loyalty Service",
+   "aliases": [
+    "sea-loy-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:notify-ingest",
+   "display_name": "Notify Ingest Service",
+   "aliases": [
+    "not-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:reviews-billing",
+    "mon:catalog-address"
+   ]
+  },
+  {
+   "component": "mon:pricing-profile",
+   "display_name": "Pricing Profile Service",
+   "aliases": [
+    "pri-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Ledger Address DB"
+   ]
+  },
+  {
+   "component": "mon:inventory-coupons",
+   "display_name": "Inventory Coupons Service",
+   "aliases": [
+    "inv-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "rat-exp-q-v2"
+   ]
+  },
+  {
+   "component": "mon:reviews-billing",
+   "display_name": "Reviews Billing DB",
+   "aliases": [
+    "rev-bil-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-web",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-ledger",
+   "display_name": "Catalog Ledger Service",
+   "aliases": [
+    "cat-led-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-west-1",
+   "sla": "SLA-GOLD-14",
+   "upstream": [
+    "mon:routing-profile"
+   ]
+  },
+  {
+   "component": "mon:cart-returns",
+   "display_name": "Cart Returns Service",
+   "aliases": [
+    "car-ret-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": "SLA-GOLD-09",
+   "upstream": [
+    "ide-che-db-v2",
+    "mon:address-billing"
+   ]
+  },
+  {
+   "component": "mon:session-reporting",
+   "display_name": "Session Reporting DB",
+   "aliases": [
+    "ses-rep-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-ledger",
+   "display_name": "Media Ledger DB",
+   "aliases": [
+    "med-led-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-notify",
+   "display_name": "Ratings Notify DB",
+   "aliases": [
+    "rat-not-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:returns-orders",
+   "display_name": "Returns Orders Service",
+   "aliases": [
+    "ret-ord-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "ide-che-db-v2"
+   ]
+  },
+  {
+   "component": "mon:wishlist-search",
+   "display_name": "Wishlist Search Service",
+   "aliases": [
+    "wis-sea-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-reviews",
+   "display_name": "Orders Reviews Service",
+   "aliases": [
+    "ord-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-PLATINUM-07",
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-feeds-replica-1",
+   "display_name": "Ingest Feeds Replica 1 Service",
+   "aliases": [
+    "ing-fee-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-cart",
+   "display_name": "Address Cart Service",
+   "aliases": [
+    "add-car-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:routing-profile"
+   ]
+  },
+  {
+   "component": "mon:metrics-export",
+   "display_name": "Metrics Export Service",
+   "aliases": [
+    "met-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:session-reporting",
+    "ide-inv-db-v2"
+   ]
+  },
+  {
+   "component": "mon:ingest-audit-replica-1",
+   "display_name": "Ingest Audit Replica 1 Service",
+   "aliases": [
+    "ing-aud-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:consent-pricing",
+   "display_name": "Consent Pricing Service",
+   "aliases": [
+    "con-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "shi-bil-db-v2"
+   ]
+  },
+  {
+   "component": "mon:auth-routing-replica-1",
+   "display_name": "Auth Routing Replica 1 Service",
+   "aliases": [
+    "aut-rou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-address",
+   "display_name": "Export Address Service",
+   "aliases": [
+    "exp-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-23",
+   "upstream": []
+  },
+  {
+   "component": "mon:address-cart-replica-1",
+   "display_name": "Address Cart Replica 1 Service",
+   "aliases": [
+    "add-car-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-ingest",
+   "display_name": "Ledger Ingest Queue",
+   "aliases": [
+    "led-ing-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:tax-invoices",
+   "display_name": "Tax Invoices DB",
+   "aliases": [
+    "tax-inv-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:loyalty-reporting",
+   "display_name": "Loyalty Reporting Service",
+   "aliases": [
+    "loy-rep-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Pricing Warehouse DB",
+    "mon:shipping-inventory"
+   ]
+  },
+  {
+   "component": "mon:quotes-search",
+   "display_name": "Quotes Search DB",
+   "aliases": [
+    "quo-sea-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-ledger-replica-1",
+   "display_name": "Media Ledger Replica 1 DB",
+   "aliases": [
+    "med-led-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:returns-orders-replica-1",
+   "display_name": "Returns Orders Replica 1 Service",
+   "aliases": [
+    "ret-ord-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-gateway",
+   "display_name": "Coupons Gateway DB",
+   "aliases": [
+    "cou-gat-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-address",
+   "display_name": "Catalog Address DB",
+   "aliases": [
+    "cat-add-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-profile-replica-1",
+   "display_name": "Ingest Profile Replica 1 Service",
+   "aliases": [
+    "ing-pro-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-tax",
+   "display_name": "Coupons Tax Service",
+   "aliases": [
+    "cou-tax-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "led-add-db-v2",
+    "Routing Identity DB"
+   ]
+  },
+  {
+   "component": "mon:auth-billing-replica-1",
+   "display_name": "Auth Billing Replica 1 Service",
+   "aliases": [
+    "aut-bil-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-inventory",
+   "display_name": "Invoices Inventory Service",
+   "aliases": [
+    "inv-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:orders-loyalty"
+   ]
+  },
+  {
+   "component": "mon:wishlist-auth-replica-1",
+   "display_name": "Wishlist Auth Replica 1 Service",
+   "aliases": [
+    "wis-aut-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-tax-replica-1",
+   "display_name": "Orders Tax Replica 1 DB",
+   "aliases": [
+    "ord-tax-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:returns-reviews",
+   "display_name": "Returns Reviews Service",
+   "aliases": [
+    "ret-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-west-2",
+   "sla": "SLA-GOLD-19",
+   "upstream": [
+    "mon:checkout-metrics"
+   ]
+  },
+  {
+   "component": "mon:refunds-tax",
+   "display_name": "Refunds Tax DB",
+   "aliases": [
+    "ref-tax-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-reporting",
+   "display_name": "Inventory Reporting Service",
+   "aliases": [
+    "inv-rep-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Invoices Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:feeds-identity-replica-1",
+   "display_name": "Feeds Identity Replica 1 Service",
+   "aliases": [
+    "fee-ide-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-auth",
+   "display_name": "Orders Auth Service",
+   "aliases": [
+    "ord-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Audit Coupons DB",
+    "Auth Session Queue"
+   ]
+  },
+  {
+   "component": "mon:orders-warehouse",
+   "display_name": "Orders Warehouse Service",
+   "aliases": [
+    "ord-war-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-GOLD-06",
+   "upstream": []
+  },
+  {
+   "component": "mon:export-warehouse",
+   "display_name": "Export Warehouse Service",
+   "aliases": [
+    "exp-war-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-checkout",
+   "display_name": "Reviews Checkout DB",
+   "aliases": [
+    "rev-che-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-refunds",
+   "display_name": "Ledger Refunds Service",
+   "aliases": [
+    "led-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Catalog Session DB"
+   ]
+  },
+  {
+   "component": "mon:address-pricing",
+   "display_name": "Address Pricing Service",
+   "aliases": [
+    "add-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-cart",
+   "display_name": "Identity Cart DB",
+   "aliases": [
+    "ide-car-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:audit-orders",
+   "display_name": "Audit Orders Queue",
+   "aliases": [
+    "aud-ord-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-refunds",
+   "display_name": "Coupons Refunds DB",
+   "aliases": [
+    "cou-ref-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-core",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-ingest",
+   "display_name": "Pricing Ingest Service",
+   "aliases": [
+    "pri-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:routing-profile",
+    "Payments Media Queue"
+   ]
+  },
+  {
+   "component": "mon:reporting-reviews",
+   "display_name": "Reporting Reviews Queue",
+   "aliases": [
+    "rep-rev-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-export-replica-1",
+   "display_name": "Shipping Export Replica 1 Service",
+   "aliases": [
+    "shi-exp-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-inventory",
+   "display_name": "Ratings Inventory DB",
+   "aliases": [
+    "rat-inv-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-metrics-replica-1",
+   "display_name": "Reviews Metrics Replica 1 Service",
+   "aliases": [
+    "rev-met-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-routing",
+   "display_name": "Warehouse Routing Queue",
+   "aliases": [
+    "war-rou-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-session",
+   "display_name": "Billing Session Service",
+   "aliases": [
+    "bil-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-invoices-replica-1",
+   "display_name": "Identity Invoices Replica 1 DB",
+   "aliases": [
+    "ide-inv-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-audit",
+   "display_name": "Ingest Audit Service",
+   "aliases": [
+    "ing-aud-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": "SLA-BRONZE-12",
+   "upstream": [
+    "mon:reviews-orders",
+    "mon:invoices-gateway"
+   ]
+  },
+  {
+   "component": "mon:wishlist-consent-replica-1",
+   "display_name": "Wishlist Consent Replica 1 Service",
+   "aliases": [
+    "wis-con-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-coupons-replica-1",
+   "display_name": "Export Coupons Replica 1 DB",
+   "aliases": [
+    "exp-cou-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:fraud-audit",
+   "display_name": "Fraud Audit Service",
+   "aliases": [
+    "fra-aud-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "pay-pro-db-v2"
+   ]
+  },
+  {
+   "component": "mon:invoices-gateway",
+   "display_name": "Invoices Gateway DB",
+   "aliases": [
+    "inv-gat-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-auth",
+   "display_name": "Refunds Auth Service",
+   "aliases": [
+    "ref-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-SILVER-26",
+   "upstream": [
+    "mon:shipping-auth"
+   ]
+  },
+  {
+   "component": "mon:orders-profile-replica-1",
+   "display_name": "Orders Profile Replica 1 Service",
+   "aliases": [
+    "ord-pro-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-search-replica-1",
+   "display_name": "Checkout Search Replica 1 DB",
+   "aliases": [
+    "che-sea-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:routing-profile-replica-1",
+   "display_name": "Routing Profile Replica 1 DB",
+   "aliases": [
+    "rou-pro-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-auth",
+   "display_name": "Coupons Auth Service",
+   "aliases": [
+    "cou-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:loyalty-coupons"
+   ]
+  },
+  {
+   "component": "mon:orders-catalog",
+   "display_name": "Orders Catalog Service",
+   "aliases": [
+    "ord-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-east-1",
+   "sla": "SLA-PLATINUM-29",
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-fraud-replica-1",
+   "display_name": "Auth Fraud Replica 1 DB",
+   "aliases": [
+    "aut-fra-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:routing-reviews-replica-1",
+   "display_name": "Routing Reviews Replica 1 Service",
+   "aliases": [
+    "rou-rev-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-wishlist",
+   "display_name": "Gateway Wishlist Service",
+   "aliases": [
+    "gat-wis-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:loyalty-media"
+   ]
+  },
+  {
+   "component": "mon:ratings-pricing-replica-1",
+   "display_name": "Ratings Pricing Replica 1 Service",
+   "aliases": [
+    "rat-pri-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-auth-replica-1",
+   "display_name": "Media Auth Replica 1 DB",
+   "aliases": [
+    "med-aut-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-invoices",
+   "display_name": "Reviews Invoices Service",
+   "aliases": [
+    "rev-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "ing-war-db-v2",
+    "mon:fraud-checkout"
+   ]
+  },
+  {
+   "component": "mon:inventory-checkout",
+   "display_name": "Inventory Checkout DB",
+   "aliases": [
+    "inv-che-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-invoices",
+   "display_name": "Cart Invoices Service",
+   "aliases": [
+    "car-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:orders-loyalty",
+    "mon:catalog-tax"
+   ]
+  },
+  {
+   "component": "mon:ledger-gateway-replica-1",
+   "display_name": "Ledger Gateway Replica 1 Service",
+   "aliases": [
+    "led-gat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-gateway-replica-1",
+   "display_name": "Invoices Gateway Replica 1 DB",
+   "aliases": [
+    "inv-gat-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-billing",
+   "display_name": "Warehouse Billing Service",
+   "aliases": [
+    "war-bil-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:ingest-warehouse"
+   ]
+  },
+  {
+   "component": "mon:payments-auth",
+   "display_name": "Payments Auth Queue",
+   "aliases": [
+    "pay-aut-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:legacy-ingest-4",
+   "display_name": "Legacy Ingest 4 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-checkout",
+   "display_name": "Catalog Checkout Service",
+   "aliases": [
+    "cat-che-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": "SLA-SILVER-39",
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-media",
+   "display_name": "Inventory Media Service",
+   "aliases": [
+    "inv-med-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "loy-med-db-v2"
+   ]
+  },
+  {
+   "component": "mon:media-feeds",
+   "display_name": "Media Feeds Service",
+   "aliases": [
+    "med-fee-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:invoices-gateway",
+    "Identity Invoices DB"
+   ]
+  },
+  {
+   "component": "mon:identity-notify-replica-1",
+   "display_name": "Identity Notify Replica 1 Service",
+   "aliases": [
+    "ide-not-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-search",
+   "display_name": "Checkout Search DB",
+   "aliases": [
+    "che-sea-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-reporting-replica-1",
+   "display_name": "Session Reporting Replica 1 DB",
+   "aliases": [
+    "ses-rep-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-address-replica-1",
+   "display_name": "Identity Address Replica 1 Service",
+   "aliases": [
+    "ide-add-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-ratings-replica-1",
+   "display_name": "Identity Ratings Replica 1 Service",
+   "aliases": [
+    "ide-rat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-pricing",
+   "display_name": "Inventory Pricing Service",
+   "aliases": [
+    "inv-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:shipping-fraud"
+   ]
+  },
+  {
+   "component": "mon:search-warehouse",
+   "display_name": "Search Warehouse Service",
+   "aliases": [
+    "sea-war-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:media-auth",
+    "mon:gateway-identity"
+   ]
+  },
+  {
+   "component": "mon:quotes-inventory-replica-1",
+   "display_name": "Quotes Inventory Replica 1 Service",
+   "aliases": [
+    "quo-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-inventory-replica-1",
+   "display_name": "Ratings Inventory Replica 1 DB",
+   "aliases": [
+    "rat-inv-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-cart",
+   "display_name": "Checkout Cart Service",
+   "aliases": [
+    "che-car-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:identity-checkout",
+    "mon:fraud-payments"
+   ]
+  },
+  {
+   "component": "mon:auth-fraud",
+   "display_name": "Auth Fraud DB",
+   "aliases": [
+    "aut-fra-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:wishlist-address",
+   "display_name": "Wishlist Address Service",
+   "aliases": [
+    "wis-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:payments-shipping"
+   ]
+  },
+  {
+   "component": "mon:shipping-identity",
+   "display_name": "Shipping Identity DB",
+   "aliases": [
+    "shi-ide-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-metrics",
+   "display_name": "Reviews Metrics Service",
+   "aliases": [
+    "rev-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": "SLA-BRONZE-31",
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-media-replica-1",
+   "display_name": "Quotes Media Replica 1 DB",
+   "aliases": [
+    "quo-med-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-shipping",
+   "display_name": "Pricing Shipping Service",
+   "aliases": [
+    "pri-shi-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:identity-checkout"
+   ]
+  },
+  {
+   "component": "mon:routing-session",
+   "display_name": "Routing Session Queue",
+   "aliases": [
+    "rou-ses-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-auth-replica-1",
+   "display_name": "Ingest Auth Replica 1 Service",
+   "aliases": [
+    "ing-aut-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-billing",
+   "display_name": "Address Billing DB",
+   "aliases": [
+    "add-bil-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-invoices",
+   "display_name": "Refunds Invoices Service",
+   "aliases": [
+    "ref-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-west-1",
+   "sla": "SLA-SILVER-43",
+   "upstream": [
+    "mon:identity-checkout"
+   ]
+  },
+  {
+   "component": "mon:ingest-warehouse",
+   "display_name": "Ingest Warehouse DB",
+   "aliases": [
+    "ing-war-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-profile",
+   "display_name": "Checkout Profile Service",
+   "aliases": [
+    "che-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:shipping-fraud",
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:feeds-media",
+   "display_name": "Feeds Media DB",
+   "aliases": [
+    "fee-med-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-metrics",
+   "display_name": "Media Metrics DB",
+   "aliases": [
+    "med-met-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-wishlist-replica-1",
+   "display_name": "Coupons Wishlist Replica 1 Service",
+   "aliases": [
+    "cou-wis-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-wishlist",
+   "display_name": "Auth Wishlist Service",
+   "aliases": [
+    "aut-wis-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:gateway-payments",
+    "mon:reporting-identity"
+   ]
+  },
+  {
+   "component": "mon:identity-invoices",
+   "display_name": "Identity Invoices DB",
+   "aliases": [
+    "ide-inv-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:checkout-metrics",
+   "display_name": "Checkout Metrics DB",
+   "aliases": [
+    "che-met-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-catalog-replica-1",
+   "display_name": "Orders Catalog Replica 1 Service",
+   "aliases": [
+    "ord-cat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-shipping",
+   "display_name": "Reporting Shipping Service",
+   "aliases": [
+    "rep-shi-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Invoices Gateway DB",
+    "Checkout Search DB"
+   ]
+  },
+  {
+   "component": "mon:catalog-session-replica-1",
+   "display_name": "Catalog Session Replica 1 DB",
+   "aliases": [
+    "cat-ses-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:routing-address",
+   "display_name": "Routing Address Service",
+   "aliases": [
+    "rou-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": "SLA-GOLD-17",
+   "upstream": [
+    "mon:orders-tax",
+    "Media Reviews DB"
+   ]
+  },
+  {
+   "component": "mon:fraud-orders",
+   "display_name": "Fraud Orders Service",
+   "aliases": [
+    "fra-ord-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "rev-ord-db-v2"
+   ]
+  },
+  {
+   "component": "mon:ratings-payments",
+   "display_name": "Ratings Payments Service",
+   "aliases": [
+    "rat-pay-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-ratings-replica-1",
+   "display_name": "Reviews Ratings Replica 1 Service",
+   "aliases": [
+    "rev-rat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-pricing-replica-1",
+   "display_name": "Refunds Pricing Replica 1 Service",
+   "aliases": [
+    "ref-pri-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-warehouse",
+   "display_name": "Catalog Warehouse DB",
+   "aliases": [
+    "cat-war-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-coupons-replica-1",
+   "display_name": "Cart Coupons Replica 1 Service",
+   "aliases": [
+    "car-cou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-checkout",
+   "display_name": "Orders Checkout Service",
+   "aliases": [
+    "ord-che-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": "SLA-BRONZE-37",
+   "upstream": [
+    "rat-not-db-v2",
+    "cat-ses-db-v2"
+   ]
+  },
+  {
+   "component": "mon:tax-refunds-replica-1",
+   "display_name": "Tax Refunds Replica 1 Service",
+   "aliases": [
+    "tax-ref-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-identity",
+   "display_name": "Reporting Identity DB",
+   "aliases": [
+    "rep-ide-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-invoices-replica-1",
+   "display_name": "Session Invoices Replica 1 Service",
+   "aliases": [
+    "ses-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-coupons-replica-1",
+   "display_name": "Payments Coupons Replica 1 Service",
+   "aliases": [
+    "pay-cou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-invoices-replica-1",
+   "display_name": "Billing Invoices Replica 1 Service",
+   "aliases": [
+    "bil-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-coupons",
+   "display_name": "Cart Coupons Service",
+   "aliases": [
+    "car-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-west-1",
+   "sla": "SLA-PLATINUM-52",
+   "upstream": []
+  },
+  {
+   "component": "mon:profile-shipping-replica-1",
+   "display_name": "Profile Shipping Replica 1 Service",
+   "aliases": [
+    "pro-shi-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-cart",
+   "display_name": "Quotes Cart Service",
+   "aliases": [
+    "quo-car-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "inv-gat-db-v2",
+    "Fraud Checkout Queue"
+   ]
+  },
+  {
+   "component": "mon:checkout-pricing-replica-1",
+   "display_name": "Checkout Pricing Replica 1 Service",
+   "aliases": [
+    "che-pri-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-fraud",
+   "display_name": "Session Fraud Queue",
+   "aliases": [
+    "ses-fra-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-pricing",
+   "display_name": "Ratings Pricing Service",
+   "aliases": [
+    "rat-pri-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:gateway-auth",
+    "Identity Fraud Queue"
+   ]
+  },
+  {
+   "component": "mon:warehouse-loyalty",
+   "display_name": "Warehouse Loyalty DB",
+   "aliases": [
+    "war-loy-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-catalog-replica-1",
+   "display_name": "Refunds Catalog Replica 1 Service",
+   "aliases": [
+    "ref-cat-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:wishlist-consent",
+   "display_name": "Wishlist Consent Service",
+   "aliases": [
+    "wis-con-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Export Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:payments-address-replica-1",
+   "display_name": "Payments Address Replica 1 Service",
+   "aliases": [
+    "pay-add-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-profile",
+   "display_name": "Refunds Profile Service",
+   "aliases": [
+    "ref-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "Session Reporting DB",
+    "mon:shipping-fraud"
+   ]
+  },
+  {
+   "component": "mon:fraud-checkout",
+   "display_name": "Fraud Checkout Queue",
+   "aliases": [
+    "fra-che-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-session",
+   "display_name": "Identity Session Service",
+   "aliases": [
+    "ide-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-east-1",
+   "sla": "SLA-BRONZE-32",
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-profile",
+   "display_name": "Invoices Profile Service",
+   "aliases": [
+    "inv-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-west-1",
+   "sla": "SLA-GOLD-16",
+   "upstream": []
+  },
+  {
+   "component": "mon:consent-feeds",
+   "display_name": "Consent Feeds Service",
+   "aliases": [
+    "con-fee-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Ratings Notify DB",
+    "Reporting Reviews Queue"
+   ]
+  },
+  {
+   "component": "mon:inventory-search",
+   "display_name": "Inventory Search Service",
+   "aliases": [
+    "inv-sea-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": "SLA-GOLD-24",
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-loyalty",
+   "display_name": "Refunds Loyalty Service",
+   "aliases": [
+    "ref-loy-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:audit-inventory"
+   ]
+  },
+  {
+   "component": "mon:catalog-tax",
+   "display_name": "Catalog Tax DB",
+   "aliases": [
+    "cat-tax-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-loyalty",
+   "display_name": "Session Loyalty Service",
+   "aliases": [
+    "ses-loy-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": "SLA-GOLD-42",
+   "upstream": [
+    "mon:reviews-checkout",
+    "mon:address-billing"
+   ]
+  },
+  {
+   "component": "mon:orders-tax",
+   "display_name": "Orders Tax DB",
+   "aliases": [
+    "ord-tax-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-catalog",
+   "display_name": "Invoices Catalog Service",
+   "aliases": [
+    "inv-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-auth",
+   "display_name": "Shipping Auth DB",
+   "aliases": [
+    "shi-aut-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:fraud-payments-replica-1",
+   "display_name": "Fraud Payments Replica 1 DB",
+   "aliases": [
+    "fra-pay-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-reporting",
+   "display_name": "Auth Reporting Service",
+   "aliases": [
+    "aut-rep-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-cart-replica-1",
+   "display_name": "Identity Cart Replica 1 DB",
+   "aliases": [
+    "ide-car-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-address",
+   "display_name": "Payments Address Service",
+   "aliases": [
+    "pay-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Identity Checkout DB"
+   ]
+  },
+  {
+   "component": "mon:payments-routing",
+   "display_name": "Payments Routing Service",
+   "aliases": [
+    "pay-rou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-GOLD-10",
+   "upstream": [
+    "mon:search-profile"
+   ]
+  },
+  {
+   "component": "mon:payments-feeds",
+   "display_name": "Payments Feeds Service",
+   "aliases": [
+    "pay-fee-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:consent-cart",
+   "display_name": "Consent Cart Service",
+   "aliases": [
+    "con-car-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": "SLA-GOLD-05",
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-profile",
+   "display_name": "Orders Profile Service",
+   "aliases": [
+    "ord-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Ledger Address DB"
+   ]
+  },
+  {
+   "component": "mon:orders-ratings",
+   "display_name": "Orders Ratings Service",
+   "aliases": [
+    "ord-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Refunds Tax DB"
+   ]
+  },
+  {
+   "component": "mon:pricing-warehouse-replica-1",
+   "display_name": "Pricing Warehouse Replica 1 DB",
+   "aliases": [
+    "pri-war-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:notify-coupons",
+   "display_name": "Notify Coupons Service",
+   "aliases": [
+    "not-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": "SLA-PLATINUM-36",
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-session",
+   "display_name": "Catalog Session DB",
+   "aliases": [
+    "cat-ses-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-wishlist-replica-1",
+   "display_name": "Gateway Wishlist Replica 1 Service",
+   "aliases": [
+    "gat-wis-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-identity",
+   "display_name": "Inventory Identity Queue",
+   "aliases": [
+    "inv-ide-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-payments",
+   "display_name": "Warehouse Payments Service",
+   "aliases": [
+    "war-pay-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "rev-bil-db-v2"
+   ]
+  },
+  {
+   "component": "mon:catalog-tax-replica-1",
+   "display_name": "Catalog Tax Replica 1 DB",
+   "aliases": [
+    "cat-tax-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-shipping",
+   "display_name": "Payments Shipping Queue",
+   "aliases": [
+    "pay-shi-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-export-replica-1",
+   "display_name": "Metrics Export Replica 1 Service",
+   "aliases": [
+    "met-exp-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:profile-media",
+   "display_name": "Profile Media Service",
+   "aliases": [
+    "pro-med-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Identity Checkout DB"
+   ]
+  },
+  {
+   "component": "mon:coupons-reporting",
+   "display_name": "Coupons Reporting Service",
+   "aliases": [
+    "cou-rep-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:auth-fraud"
+   ]
+  },
+  {
+   "component": "mon:fraud-payments",
+   "display_name": "Fraud Payments DB",
+   "aliases": [
+    "fra-pay-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-metrics",
+   "display_name": "Cart Metrics Service",
+   "aliases": [
+    "car-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": "SLA-SILVER-39",
+   "upstream": [
+    "Audit Warehouse DB",
+    "mon:shipping-auth"
+   ]
+  },
+  {
+   "component": "mon:audit-coupons-replica-1",
+   "display_name": "Audit Coupons Replica 1 DB",
+   "aliases": [
+    "aud-cou-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-consent-replica-1",
+   "display_name": "Warehouse Consent Replica 1 Service",
+   "aliases": [
+    "war-con-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:wishlist-feeds",
+   "display_name": "Wishlist Feeds Queue",
+   "aliases": [
+    "wis-fee-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-returns",
+   "display_name": "Session Returns Service",
+   "aliases": [
+    "ses-ret-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "med-led-db-v2",
+    "cat-tax-db-v2"
+   ]
+  },
+  {
+   "component": "mon:warehouse-consent",
+   "display_name": "Warehouse Consent Service",
+   "aliases": [
+    "war-con-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-west-1",
+   "sla": "SLA-SILVER-40",
+   "upstream": [
+    "mon:identity-cart"
+   ]
+  },
+  {
+   "component": "mon:shipping-payments",
+   "display_name": "Shipping Payments DB",
+   "aliases": [
+    "shi-pay-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-session",
+   "display_name": "Shipping Session DB",
+   "aliases": [
+    "shi-ses-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-billing",
+   "display_name": "Ledger Billing DB",
+   "aliases": [
+    "led-bil-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-metrics",
+   "display_name": "Warehouse Metrics Service",
+   "aliases": [
+    "war-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-fraud",
+   "display_name": "Address Fraud Service",
+   "aliases": [
+    "add-fra-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:invoices-gateway",
+    "mon:gateway-identity"
+   ]
+  },
+  {
+   "component": "mon:gateway-refunds",
+   "display_name": "Gateway Refunds Queue",
+   "aliases": [
+    "gat-ref-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-session",
+   "display_name": "Auth Session Queue",
+   "aliases": [
+    "aut-ses-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-audit-replica-1",
+   "display_name": "Reporting Audit Replica 1 Service",
+   "aliases": [
+    "rep-aud-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:returns-refunds",
+   "display_name": "Returns Refunds Service",
+   "aliases": [
+    "ret-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-east-1",
+   "sla": "SLA-GOLD-47",
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-audit",
+   "display_name": "Gateway Audit Service",
+   "aliases": [
+    "gat-aud-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-reviews",
+   "display_name": "Shipping Reviews Service",
+   "aliases": [
+    "shi-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:reviews-billing"
+   ]
+  },
+  {
+   "component": "mon:reviews-payments-replica-1",
+   "display_name": "Reviews Payments Replica 1 Service",
+   "aliases": [
+    "rev-pay-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-reviews",
+   "display_name": "Invoices Reviews Queue",
+   "aliases": [
+    "inv-rev-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:routing-profile",
+   "display_name": "Routing Profile DB",
+   "aliases": [
+    "rou-pro-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:consent-session",
+   "display_name": "Consent Session Queue",
+   "aliases": [
+    "con-ses-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-address-replica-1",
+   "display_name": "Reporting Address Replica 1 Service",
+   "aliases": [
+    "rep-add-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-returns",
+   "display_name": "Auth Returns DB",
+   "aliases": [
+    "aut-ret-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-core",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:refunds-invoices-replica-1",
+   "display_name": "Refunds Invoices Replica 1 Service",
+   "aliases": [
+    "ref-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-reviews-replica-1",
+   "display_name": "Warehouse Reviews Replica 1 Service",
+   "aliases": [
+    "war-rev-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-auth-replica-1",
+   "display_name": "Shipping Auth Replica 1 DB",
+   "aliases": [
+    "shi-aut-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-consent",
+   "display_name": "Quotes Consent Service",
+   "aliases": [
+    "quo-con-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-53",
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-notify",
+   "display_name": "Identity Notify Service",
+   "aliases": [
+    "ide-not-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Invoices Gateway DB",
+    "Routing Profile DB"
+   ]
+  },
+  {
+   "component": "mon:auth-identity",
+   "display_name": "Auth Identity Service",
+   "aliases": [
+    "aut-ide-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-media",
+   "display_name": "Identity Media Service",
+   "aliases": [
+    "ide-med-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": "SLA-BRONZE-08",
+   "upstream": [
+    "mon:consent-routing"
+   ]
+  },
+  {
+   "component": "mon:session-invoices",
+   "display_name": "Session Invoices Service",
+   "aliases": [
+    "ses-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:loyalty-media",
+   "display_name": "Loyalty Media DB",
+   "aliases": [
+    "loy-med-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-media",
+   "display_name": "Session Media Service",
+   "aliases": [
+    "ses-med-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": "SLA-GOLD-33",
+   "upstream": []
+  },
+  {
+   "component": "mon:auth-consent-replica-1",
+   "display_name": "Auth Consent Replica 1 Service",
+   "aliases": [
+    "aut-con-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-ingest",
+   "display_name": "Cart Ingest Service",
+   "aliases": [
+    "car-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "exp-led-db-v2",
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:identity-checkout",
+   "display_name": "Identity Checkout DB",
+   "aliases": [
+    "ide-che-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-audit-replica-1",
+   "display_name": "Export Audit Replica 1 Service",
+   "aliases": [
+    "exp-aud-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-session",
+   "display_name": "Ledger Session Service",
+   "aliases": [
+    "led-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-GOLD-17",
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-identity-replica-1",
+   "display_name": "Shipping Identity Replica 1 DB",
+   "aliases": [
+    "shi-ide-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-quotes-replica-1",
+   "display_name": "Ratings Quotes Replica 1 Service",
+   "aliases": [
+    "rat-quo-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:profile-media-replica-1",
+   "display_name": "Profile Media Replica 1 Service",
+   "aliases": [
+    "pro-med-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-payments-replica-1",
+   "display_name": "Ratings Payments Replica 1 Service",
+   "aliases": [
+    "rat-pay-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:feeds-ledger",
+   "display_name": "Feeds Ledger Service",
+   "aliases": [
+    "fee-led-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Reviews Billing DB",
+    "mon:inventory-checkout"
+   ]
+  },
+  {
+   "component": "mon:session-identity",
+   "display_name": "Session Identity Service",
+   "aliases": [
+    "ses-ide-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-inventory",
+    "mon:gateway-refunds"
+   ]
+  },
+  {
+   "component": "mon:fraud-inventory-replica-1",
+   "display_name": "Fraud Inventory Replica 1 DB",
+   "aliases": [
+    "fra-inv-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-refunds-replica-1",
+   "display_name": "Payments Refunds Replica 1 Service",
+   "aliases": [
+    "pay-ref-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:session-media-replica-1",
+   "display_name": "Session Media Replica 1 Service",
+   "aliases": [
+    "ses-med-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-ratings",
+   "display_name": "Invoices Ratings Service",
+   "aliases": [
+    "inv-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "ide-che-db-v2",
+    "Checkout Search DB"
+   ]
+  },
+  {
+   "component": "mon:warehouse-tax",
+   "display_name": "Warehouse Tax Service",
+   "aliases": [
+    "war-tax-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-gateway-replica-1",
+   "display_name": "Coupons Gateway Replica 1 DB",
+   "aliases": [
+    "cou-gat-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:export-auth",
+   "display_name": "Export Auth Service",
+   "aliases": [
+    "exp-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:identity-invoices",
+    "mon:invoices-reviews"
+   ]
+  },
+  {
+   "component": "mon:shipping-export",
+   "display_name": "Shipping Export Service",
+   "aliases": [
+    "shi-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-central-1",
+   "sla": "SLA-GOLD-49",
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-checkout",
+   "display_name": "Warehouse Checkout Service",
+   "aliases": [
+    "war-che-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "rat-not-db-v2"
+   ]
+  },
+  {
+   "component": "mon:wishlist-routing-replica-1",
+   "display_name": "Wishlist Routing Replica 1 Service",
+   "aliases": [
+    "wis-rou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-media",
+   "display_name": "Ledger Media Service",
+   "aliases": [
+    "led-med-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": "SLA-GOLD-17",
+   "upstream": [
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:quotes-cart-replica-1",
+   "display_name": "Quotes Cart Replica 1 Service",
+   "aliases": [
+    "quo-car-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-shipping",
+   "display_name": "Media Shipping Service",
+   "aliases": [
+    "med-shi-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-west-2",
+   "sla": "SLA-SILVER-28",
+   "upstream": []
+  },
+  {
+   "component": "mon:feeds-export-replica-1",
+   "display_name": "Feeds Export Replica 1 Service",
+   "aliases": [
+    "fee-exp-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-ingest",
+   "display_name": "Reporting Ingest Queue",
+   "aliases": [
+    "rep-ing-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-catalog",
+   "display_name": "Pricing Catalog Service",
+   "aliases": [
+    "pri-cat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Media Auth DB"
+   ]
+  },
+  {
+   "component": "mon:address-auth",
+   "display_name": "Address Auth Service",
+   "aliases": [
+    "add-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "Gateway Auth DB"
+   ]
+  },
+  {
+   "component": "mon:payments-invoices",
+   "display_name": "Payments Invoices Service",
+   "aliases": [
+    "pay-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "mon:warehouse-loyalty",
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:invoices-warehouse",
+   "display_name": "Invoices Warehouse Queue",
+   "aliases": [
+    "inv-war-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-ledger-replica-1",
+   "display_name": "Cart Ledger Replica 1 Service",
+   "aliases": [
+    "car-led-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-reporting-replica-1",
+   "display_name": "Media Reporting Replica 1 Service",
+   "aliases": [
+    "med-rep-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:notify-gateway",
+   "display_name": "Notify Gateway Service",
+   "aliases": [
+    "not-gat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-east-1",
+   "sla": "SLA-SILVER-50",
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-profile",
+   "display_name": "Payments Profile DB",
+   "aliases": [
+    "pay-pro-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-metrics-replica-1",
+   "display_name": "Reporting Metrics Replica 1 Service",
+   "aliases": [
+    "rep-met-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:loyalty-media-replica-1",
+   "display_name": "Loyalty Media Replica 1 DB",
+   "aliases": [
+    "loy-med-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-identity",
+   "display_name": "Gateway Identity Queue",
+   "aliases": [
+    "gat-ide-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:invoices-ledger",
+   "display_name": "Invoices Ledger Service",
+   "aliases": [
+    "inv-led-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "mon:routing-profile",
+    "mon:fraud-payments"
+   ]
+  },
+  {
+   "component": "mon:quotes-payments-replica-1",
+   "display_name": "Quotes Payments Replica 1 DB",
+   "aliases": [
+    "quo-pay-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:tax-invoices-replica-1",
+   "display_name": "Tax Invoices Replica 1 DB",
+   "aliases": [
+    "tax-inv-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-ratings",
+   "display_name": "Reviews Ratings Service",
+   "aliases": [
+    "rev-rat-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-inventory"
+   ]
+  },
+  {
+   "component": "mon:orders-auth-replica-1",
+   "display_name": "Orders Auth Replica 1 Service",
+   "aliases": [
+    "ord-aut-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-warehouse-replica-1",
+   "display_name": "Ingest Warehouse Replica 1 DB",
+   "aliases": [
+    "ing-war-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-auth-replica-1",
+   "display_name": "Metrics Auth Replica 1 Service",
+   "aliases": [
+    "met-aut-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:payments-session",
+   "display_name": "Payments Session DB",
+   "aliases": [
+    "pay-ses-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:search-address",
+   "display_name": "Search Address Service",
+   "aliases": [
+    "sea-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "rev-bil-db-v2",
+    "Tax Session DB"
+   ]
+  },
+  {
+   "component": "mon:reporting-audit",
+   "display_name": "Reporting Audit Service",
+   "aliases": [
+    "rep-aud-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:checkout-search"
+   ]
+  },
+  {
+   "component": "mon:media-auth",
+   "display_name": "Media Auth DB",
+   "aliases": [
+    "med-aut-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-metrics",
+   "display_name": "Reporting Metrics Service",
+   "aliases": [
+    "rep-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": "SLA-GOLD-41",
+   "upstream": []
+  },
+  {
+   "component": "mon:address-invoices-replica-1",
+   "display_name": "Address Invoices Replica 1 Service",
+   "aliases": [
+    "add-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-session",
+   "display_name": "Coupons Session Service",
+   "aliases": [
+    "cou-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-refunds",
+   "display_name": "Identity Refunds Service",
+   "aliases": [
+    "ide-ref-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-GOLD-25",
+   "upstream": [
+    "Reviews Billing DB"
+   ]
+  },
+  {
+   "component": "mon:metrics-returns-replica-1",
+   "display_name": "Metrics Returns Replica 1 Service",
+   "aliases": [
+    "met-ret-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-reviews",
+   "display_name": "Media Reviews DB",
+   "aliases": [
+    "med-rev-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-session-replica-1",
+   "display_name": "Ratings Session Replica 1 Service",
+   "aliases": [
+    "rat-ses-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-metrics-replica-1",
+   "display_name": "Inventory Metrics Replica 1 Service",
+   "aliases": [
+    "inv-met-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-session",
+   "display_name": "Orders Session Service",
+   "aliases": [
+    "ord-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": "SLA-GOLD-11",
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-shipping-replica-1",
+   "display_name": "Reporting Shipping Replica 1 Service",
+   "aliases": [
+    "rep-shi-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-feeds",
+   "display_name": "Ingest Feeds Service",
+   "aliases": [
+    "ing-fee-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-SILVER-44",
+   "upstream": [
+    "quo-med-db-v2",
+    "mon:identity-fraud"
+   ]
+  },
+  {
+   "component": "mon:cart-shipping",
+   "display_name": "Cart Shipping DB",
+   "aliases": [
+    "car-shi-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:coupons-wishlist",
+   "display_name": "Coupons Wishlist Service",
+   "aliases": [
+    "cou-wis-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:inventory-search-replica-1",
+   "display_name": "Inventory Search Replica 1 Service",
+   "aliases": [
+    "inv-sea-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:wishlist-tax-replica-1",
+   "display_name": "Wishlist Tax Replica 1 Service",
+   "aliases": [
+    "wis-tax-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-coupons-replica-1",
+   "display_name": "Pricing Coupons Replica 1 Service",
+   "aliases": [
+    "pri-cou-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-routing",
+   "display_name": "Billing Routing DB",
+   "aliases": [
+    "bil-rou-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-fraud",
+   "display_name": "Identity Fraud Queue",
+   "aliases": [
+    "ide-fra-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:media-metrics-replica-1",
+   "display_name": "Media Metrics Replica 1 DB",
+   "aliases": [
+    "med-met-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:quotes-ingest",
+   "display_name": "Quotes Ingest Service",
+   "aliases": [
+    "quo-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-coupons",
+   "display_name": "Pricing Coupons Service",
+   "aliases": [
+    "pri-cou-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-mobile",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:metrics-identity",
+   "display_name": "Metrics Identity Service",
+   "aliases": [
+    "met-ide-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "eu-west-1",
+   "sla": "SLA-BRONZE-03",
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-wishlist",
+   "display_name": "Catalog Wishlist Service",
+   "aliases": [
+    "cat-wis-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": [
+    "Coupons Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:coupons-checkout-replica-1",
+   "display_name": "Coupons Checkout Replica 1 Service",
+   "aliases": [
+    "cou-che-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-auth",
+   "display_name": "Pricing Auth DB",
+   "aliases": [
+    "pri-aut-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-profile",
+   "display_name": "Address Profile Service",
+   "aliases": [
+    "add-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-core",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Export Gateway DB"
+   ]
+  },
+  {
+   "component": "mon:checkout-invoices",
+   "display_name": "Checkout Invoices Service",
+   "aliases": [
+    "che-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "Ledger Billing DB",
+    "mon:shipping-session"
+   ]
+  },
+  {
+   "component": "mon:gateway-invoices-replica-1",
+   "display_name": "Gateway Invoices Replica 1 Service",
+   "aliases": [
+    "gat-inv-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:shipping-fraud-replica-1",
+   "display_name": "Shipping Fraud Replica 1 DB",
+   "aliases": [
+    "shi-fra-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-content",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-media-replica-1",
+   "display_name": "Ingest Media Replica 1 Service",
+   "aliases": [
+    "ing-med-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-ops",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:address-checkout",
+   "display_name": "Address Checkout Service",
+   "aliases": [
+    "add-che-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:consent-refunds"
+   ]
+  },
+  {
+   "component": "mon:consent-routing",
+   "display_name": "Consent Routing Queue",
+   "aliases": [
+    "con-rou-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reporting-address",
+   "display_name": "Reporting Address Service",
+   "aliases": [
+    "rep-add-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": "SLA-GOLD-02",
+   "upstream": []
+  },
+  {
+   "component": "mon:billing-invoices",
+   "display_name": "Billing Invoices Service",
+   "aliases": [
+    "bil-inv-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-west-2",
+   "sla": "SLA-BRONZE-48",
+   "upstream": [
+    "led-add-db-v2"
+   ]
+  },
+  {
+   "component": "mon:consent-refunds",
+   "display_name": "Consent Refunds Queue",
+   "aliases": [
+    "con-ref-q-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-reporting",
+   "display_name": "Reviews Reporting Service",
+   "aliases": [
+    "rev-rep-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-web",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-08",
+   "upstream": [
+    "Quotes Payments DB",
+    "mon:ratings-notify"
+   ]
+  },
+  {
+   "component": "mon:payments-profile-replica-1",
+   "display_name": "Payments Profile Replica 1 DB",
+   "aliases": [
+    "pay-pro-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-commerce",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:tax-session",
+   "display_name": "Tax Session DB",
+   "aliases": [
+    "tax-ses-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ingest-export",
+   "display_name": "Ingest Export Service",
+   "aliases": [
+    "ing-exp-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "Audit Coupons DB"
+   ]
+  },
+  {
+   "component": "mon:audit-inventory",
+   "display_name": "Audit Inventory DB",
+   "aliases": [
+    "aud-inv-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-partner",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:search-reviews",
+   "display_name": "Search Reviews Service",
+   "aliases": [
+    "sea-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:warehouse-tax-replica-1",
+   "display_name": "Warehouse Tax Replica 1 Service",
+   "aliases": [
+    "war-tax-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ratings-reviews",
+   "display_name": "Ratings Reviews Service",
+   "aliases": [
+    "rat-rev-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-central-1",
+   "sla": "SLA-BRONZE-20",
+   "upstream": [
+    "Audit Inventory DB"
+   ]
+  },
+  {
+   "component": "mon:returns-auth",
+   "display_name": "Returns Auth Service",
+   "aliases": [
+    "ret-aut-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-PLATINUM-13",
+   "upstream": []
+  },
+  {
+   "component": "mon:orders-notify",
+   "display_name": "Orders Notify Service",
+   "aliases": [
+    "ord-not-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-PLATINUM-55",
+   "upstream": [
+    "Routing Identity DB"
+   ]
+  },
+  {
+   "component": "mon:shipping-billing",
+   "display_name": "Shipping Billing DB",
+   "aliases": [
+    "shi-bil-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:gateway-ingest",
+   "display_name": "Gateway Ingest Service",
+   "aliases": [
+    "gat-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-infra",
+   "zone": "ap-southeast-1",
+   "sla": "SLA-BRONZE-01",
+   "upstream": []
+  },
+  {
+   "component": "mon:identity-checkout-replica-1",
+   "display_name": "Identity Checkout Replica 1 DB",
+   "aliases": [
+    "ide-che-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:routing-identity-replica-1",
+   "display_name": "Routing Identity Replica 1 DB",
+   "aliases": [
+    "rou-ide-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:audit-warehouse-replica-1",
+   "display_name": "Audit Warehouse Replica 1 DB",
+   "aliases": [
+    "aud-war-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:pricing-warehouse",
+   "display_name": "Pricing Warehouse DB",
+   "aliases": [
+    "pri-war-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:wishlist-profile",
+   "display_name": "Wishlist Profile Service",
+   "aliases": [
+    "wis-pro-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": [
+    "mon:media-auth"
+   ]
+  },
+  {
+   "component": "mon:tax-orders-replica-1",
+   "display_name": "Tax Orders Replica 1 DB",
+   "aliases": [
+    "tax-ord-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:ledger-search",
+   "display_name": "Ledger Search Service",
+   "aliases": [
+    "led-sea-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "us-west-2",
+   "sla": "SLA-GOLD-42",
+   "upstream": [
+    "mon:auth-fraud",
+    "Payments Media Queue"
+   ]
+  },
+  {
+   "component": "mon:feeds-identity",
+   "display_name": "Feeds Identity Service",
+   "aliases": [
+    "fee-ide-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-finance",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": [
+    "mon:ratings-inventory"
+   ]
+  },
+  {
+   "component": "mon:cart-returns-replica-1",
+   "display_name": "Cart Returns Replica 1 Service",
+   "aliases": [
+    "car-ret-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-content",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-shipping-replica-1",
+   "display_name": "Cart Shipping Replica 1 DB",
+   "aliases": [
+    "car-shi-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-trust",
+   "zone": "us-west-2",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:cart-session",
+   "display_name": "Cart Session Service",
+   "aliases": [
+    "car-ses-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "us-west-2",
+   "sla": "SLA-SILVER-04",
+   "upstream": [
+    "mon:checkout-metrics"
+   ]
+  },
+  {
+   "component": "mon:routing-identity",
+   "display_name": "Routing Identity DB",
+   "aliases": [
+    "rou-ide-db-v2"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-fulfil",
+   "zone": "ap-southeast-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:legacy-gateway-3",
+   "display_name": "Legacy Gateway 3 Service",
+   "aliases": [],
+   "kind": "service",
+   "status": "retired",
+   "team": "team-platform",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:catalog-metrics",
+   "display_name": "Catalog Metrics Service",
+   "aliases": [
+    "cat-met-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-insights",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": [
+    "mon:routing-profile"
+   ]
+  },
+  {
+   "component": "mon:orders-ingest",
+   "display_name": "Orders Ingest Service",
+   "aliases": [
+    "ord-ing-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-risk",
+   "zone": "eu-west-1",
+   "sla": "SLA-SILVER-44",
+   "upstream": [
+    "ide-che-db-v2"
+   ]
+  },
+  {
+   "component": "mon:cart-ledger",
+   "display_name": "Cart Ledger Service",
+   "aliases": [
+    "car-led-svc-v2"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-search",
+   "zone": "eu-west-1",
+   "sla": null,
+   "upstream": [
+    "shi-ide-db-v2",
+    "mon:auth-fraud"
+   ]
+  },
+  {
+   "component": "mon:invoices-ledger-replica-1",
+   "display_name": "Invoices Ledger Replica 1 Service",
+   "aliases": [
+    "inv-led-svc-v2-r1"
+   ],
+   "kind": "service",
+   "status": "active",
+   "team": "team-platform",
+   "zone": "us-east-1",
+   "sla": null,
+   "upstream": []
+  },
+  {
+   "component": "mon:reviews-billing-replica-1",
+   "display_name": "Reviews Billing Replica 1 DB",
+   "aliases": [
+    "rev-bil-db-v2-r1"
+   ],
+   "kind": "datastore",
+   "status": "active",
+   "team": "team-web",
+   "zone": "eu-central-1",
+   "sla": null,
+   "upstream": []
+  }
+ ],
+ "slas": [
+  {
+   "sla_id": "SLA-BRONZE-01",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-02",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-BRONZE-03",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-SILVER-04",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-05",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-06",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-PLATINUM-07",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-08",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-09",
+   "availability": 99.95
+  },
+  {
+   "sla_id": "SLA-GOLD-10",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-11",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-12",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-PLATINUM-13",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-14",
+   "availability": 99.95
+  },
+  {
+   "sla_id": "SLA-PLATINUM-15",
+   "availability": 99.95
+  },
+  {
+   "sla_id": "SLA-GOLD-16",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-17",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-BRONZE-18",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-19",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-20",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-SILVER-21",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-22",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-23",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-24",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-25",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-SILVER-26",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-27",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-SILVER-28",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-PLATINUM-29",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-PLATINUM-30",
+   "availability": 99.95
+  },
+  {
+   "sla_id": "SLA-BRONZE-31",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-BRONZE-32",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-33",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-PLATINUM-34",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-PLATINUM-35",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-PLATINUM-36",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-BRONZE-37",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-PLATINUM-38",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-SILVER-39",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-SILVER-40",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-41",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-42",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-SILVER-43",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-SILVER-44",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-45",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-PLATINUM-46",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-GOLD-47",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-48",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-GOLD-49",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-SILVER-50",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-SILVER-51",
+   "availability": 99.9
+  },
+  {
+   "sla_id": "SLA-PLATINUM-52",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-53",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-BRONZE-54",
+   "availability": 99.99
+  },
+  {
+   "sla_id": "SLA-PLATINUM-55",
+   "availability": 99.9
+  }
+ ]
+}

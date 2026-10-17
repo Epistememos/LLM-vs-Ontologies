@@ -1,0 +1,6023 @@
+{
+ "export": "cmdb",
+ "records": [
+  {
+   "ci_id": "CI-50300",
+   "ci_name": "quotes_inventory_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-76973",
+   "ci_name": "orders_search_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-54071",
+   "ci_name": "quotes_consent_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-23614",
+    "CI-40502",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-33985",
+   "ci_name": "legacy_quotes_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-14955",
+   "ci_name": "reviews_ratings_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-88158",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-92347",
+   "ci_name": "reviews_payments_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-84524",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-61576",
+   "ci_name": "tax_invoices_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-89088",
+   "ci_name": "orders_export_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-02730",
+    "CI-15503"
+   ]
+  },
+  {
+   "ci_id": "CI-95032",
+   "ci_name": "warehouse_tax_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-01683",
+    "CI-81600",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-65214",
+   "ci_name": "refunds_catalog_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-10670"
+   ]
+  },
+  {
+   "ci_id": "CI-16810",
+   "ci_name": "tax_orders_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-38020",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93919",
+   "ci_name": "quotes_ingest_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-52947",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-11104",
+   "ci_name": "inventory_reporting_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-48043",
+   "ci_name": "orders_checkout_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730",
+    "CI-52910",
+    "CI-49299"
+   ]
+  },
+  {
+   "ci_id": "CI-21976",
+   "ci_name": "ratings_reviews_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-73687",
+   "ci_name": "reporting_shipping_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-48043",
+    "CI-74460"
+   ]
+  },
+  {
+   "ci_id": "CI-63073",
+   "ci_name": "address_invoices_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-71764"
+   ]
+  },
+  {
+   "ci_id": "CI-54767",
+   "ci_name": "profile_wishlist_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-28116",
+    "CI-40502"
+   ]
+  },
+  {
+   "ci_id": "CI-04051",
+   "ci_name": "search_reviews_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-47825",
+    "CI-43705",
+    "CI-73687"
+   ]
+  },
+  {
+   "ci_id": "CI-72712",
+   "ci_name": "loyalty_reporting_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-11151",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-05318",
+   "ci_name": "reporting_metrics_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-03283"
+   ]
+  },
+  {
+   "ci_id": "CI-61350",
+   "ci_name": "gateway_auth_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-50959",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-32831",
+   "ci_name": "ratings_payments_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-32256"
+   ]
+  },
+  {
+   "ci_id": "CI-17746",
+   "ci_name": "media_feeds_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-58128",
+   "ci_name": "catalog_wishlist_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-51782"
+   ]
+  },
+  {
+   "ci_id": "CI-92013",
+   "ci_name": "warehouse_billing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-77705",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-50959",
+   "ci_name": "gateway_auth_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-72158",
+   "ci_name": "routing_session_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46106",
+   "ci_name": "coupons_tax_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-10670",
+   "ci_name": "quotes_pricing_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-98182",
+   "ci_name": "coupons_reporting_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730",
+    "CI-50300",
+    "CI-71764"
+   ]
+  },
+  {
+   "ci_id": "CI-01317",
+   "ci_name": "inventory_metrics_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-82278",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-73788",
+   "ci_name": "warehouse_consent_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-10578",
+   "ci_name": "auth_wishlist_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-57992",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82186",
+   "ci_name": "warehouse_identity_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-36242",
+   "ci_name": "feeds_ratings_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-46005",
+   "ci_name": "warehouse_routing_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-96510",
+   "ci_name": "payments_profile_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-98118",
+   "ci_name": "ledger_search_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-98182"
+   ]
+  },
+  {
+   "ci_id": "CI-99774",
+   "ci_name": "ratings_pricing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-15503",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-03115",
+   "ci_name": "ledger_address_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-21420",
+   "ci_name": "checkout_catalog_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-63170",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-44837",
+   "ci_name": "export_coupons_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-18102",
+   "ci_name": "address_pricing_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-98329",
+    "CI-95032"
+   ]
+  },
+  {
+   "ci_id": "CI-40488",
+   "ci_name": "ingest_export_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72369",
+    "CI-15503"
+   ]
+  },
+  {
+   "ci_id": "CI-16722",
+   "ci_name": "auth_returns_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-91958",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-32602",
+   "ci_name": "session_media_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-46748",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-36159",
+   "ci_name": "identity_refunds_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-31215",
+   "ci_name": "payments_routing_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-45622",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-94477",
+   "ci_name": "ledger_ingest_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-58270",
+   "ci_name": "address_checkout_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-37481",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-99285",
+   "ci_name": "metrics_returns_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-11151",
+   "ci_name": "metrics_export_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-23614"
+   ]
+  },
+  {
+   "ci_id": "CI-63268",
+   "ci_name": "media_reviews_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-81507",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-06238",
+   "ci_name": "inventory_search_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-83612"
+   ]
+  },
+  {
+   "ci_id": "CI-29884",
+   "ci_name": "cart_invoices_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-11104",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-33731",
+   "ci_name": "feeds_ledger_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-38020",
+   "ci_name": "tax_orders_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-15838",
+   "ci_name": "routing_identity_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-73742",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87289",
+   "ci_name": "orders_warehouse_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-15503",
+    "CI-46106",
+    "CI-71285"
+   ]
+  },
+  {
+   "ci_id": "CI-40490",
+   "ci_name": "orders_catalog_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-87406"
+   ]
+  },
+  {
+   "ci_id": "CI-83955",
+   "ci_name": "reporting_ingest_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-01328",
+   "ci_name": "shipping_billing_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-69514",
+   "ci_name": "payments_invoices_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-28494",
+   "ci_name": "returns_refunds_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-16549",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-30268",
+   "ci_name": "ingest_export_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-40488",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-72702",
+   "ci_name": "reviews_warehouse_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-10346",
+    "CI-02730",
+    "CI-35020"
+   ]
+  },
+  {
+   "ci_id": "CI-46936",
+   "ci_name": "wishlist_search_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-96412"
+   ]
+  },
+  {
+   "ci_id": "CI-29011",
+   "ci_name": "refunds_tax_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-94165",
+   "ci_name": "payments_audit_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502"
+   ]
+  },
+  {
+   "ci_id": "CI-02590",
+   "ci_name": "cart_coupons_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-61832"
+   ]
+  },
+  {
+   "ci_id": "CI-16192",
+   "ci_name": "fraud_audit_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-59763",
+   "ci_name": "warehouse_payments_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-57992",
+   "ci_name": "auth_wishlist_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-46106"
+   ]
+  },
+  {
+   "ci_id": "CI-32088",
+   "ci_name": "shipping_refunds_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-81421",
+   "ci_name": "ingest_media_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-28784",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-26037",
+   "ci_name": "invoices_ratings_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-58128",
+    "CI-81600",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-83509",
+   "ci_name": "pricing_ingest_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-48222",
+   "ci_name": "returns_orders_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40488",
+    "CI-14425",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-20449",
+   "ci_name": "identity_notify_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-35118",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-43820",
+   "ci_name": "catalog_session_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-21930",
+   "ci_name": "refunds_pricing_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-22627",
+   "ci_name": "quotes_media_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-08735",
+   "ci_name": "orders_warehouse_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-87289",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-36829",
+   "ci_name": "orders_session_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-02730",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-10342",
+   "ci_name": "coupons_wishlist_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-71764",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-02388",
+   "ci_name": "returns_reviews_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-50300",
+    "CI-61832",
+    "CI-90330"
+   ]
+  },
+  {
+   "ci_id": "CI-75115",
+   "ci_name": "pricing_coupons_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-66784",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-18170",
+   "ci_name": "routing_profile_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-25060",
+   "ci_name": "gateway_wishlist_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-32256",
+   "ci_name": "refunds_loyalty_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-73636",
+    "CI-28537",
+    "CI-52910",
+    "CI-02257"
+   ]
+  },
+  {
+   "ci_id": "CI-52636",
+   "ci_name": "reviews_reporting_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-42831",
+   "ci_name": "catalog_search_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-72363",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-36059",
+   "ci_name": "catalog_checkout_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-58249",
+    "CI-59645"
+   ]
+  },
+  {
+   "ci_id": "CI-69460",
+   "ci_name": "feeds_identity_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-03283",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-54255",
+   "ci_name": "warehouse_metrics_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-99285",
+    "CI-84524"
+   ]
+  },
+  {
+   "ci_id": "CI-11077",
+   "ci_name": "gateway_ingest_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-90737",
+   "ci_name": "shipping_gateway_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-89088",
+    "CI-51782"
+   ]
+  },
+  {
+   "ci_id": "CI-76410",
+   "ci_name": "wishlist_coupons_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-87931",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-50457",
+   "ci_name": "inventory_export_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-15503"
+   ]
+  },
+  {
+   "ci_id": "CI-21587",
+   "ci_name": "inventory_coupons_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-09376",
+   "ci_name": "reporting_identity_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-03283",
+   "ci_name": "feeds_identity_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-10346",
+    "CI-32088",
+    "CI-06200"
+   ]
+  },
+  {
+   "ci_id": "CI-54812",
+   "ci_name": "pricing_profile_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-43690",
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-98329",
+   "ci_name": "ratings_session_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-48043"
+   ]
+  },
+  {
+   "ci_id": "CI-56137",
+   "ci_name": "invoices_gateway_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-56239",
+   "ci_name": "export_address_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-94427"
+   ]
+  },
+  {
+   "ci_id": "CI-43873",
+   "ci_name": "fraud_payments_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-58018",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-09241",
+   "ci_name": "ledger_refunds_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-09208",
+   "ci_name": "routing_reviews_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-34981",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-77705",
+   "ci_name": "warehouse_billing_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72363",
+    "CI-81600"
+   ]
+  },
+  {
+   "ci_id": "CI-70033",
+   "ci_name": "legacy_ingest_4_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "decommissioned",
+   "owner_group": "OG-11",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-41232",
+   "ci_name": "reporting_reviews_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-60484",
+   "ci_name": "refunds_auth_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-26467",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-26159",
+   "ci_name": "ledger_session_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-23614"
+   ]
+  },
+  {
+   "ci_id": "CI-01726",
+   "ci_name": "catalog_ratings_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02233",
+    "CI-38733",
+    "CI-61832"
+   ]
+  },
+  {
+   "ci_id": "CI-23489",
+   "ci_name": "loyalty_media_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-77162",
+   "ci_name": "quotes_media_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-22627",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87931",
+   "ci_name": "wishlist_coupons_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-24569",
+   "ci_name": "cart_shipping_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-41461",
+   "ci_name": "ratings_inventory_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-39915",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-27183",
+   "ci_name": "billing_profile_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-26159",
+    "CI-33985"
+   ]
+  },
+  {
+   "ci_id": "CI-08368",
+   "ci_name": "shipping_payments_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-92198",
+   "ci_name": "coupons_invoices_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-47642"
+   ]
+  },
+  {
+   "ci_id": "CI-63552",
+   "ci_name": "shipping_reviews_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-28116",
+   "ci_name": "pricing_catalog_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-32978",
+   "ci_name": "orders_tax_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-02730",
+   "ci_name": "reporting_returns_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-76284",
+   "ci_name": "refunds_catalog_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-65214",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93552",
+   "ci_name": "auth_fraud_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93933",
+   "ci_name": "notify_coupons_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-85367",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-09422",
+   "ci_name": "ledger_billing_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-41180",
+   "ci_name": "reporting_address_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-83529",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-23614",
+   "ci_name": "inventory_media_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-84524",
+    "CI-10670"
+   ]
+  },
+  {
+   "ci_id": "CI-64402",
+   "ci_name": "search_loyalty_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-53355",
+   "ci_name": "cart_metrics_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-87013",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-09452",
+   "ci_name": "orders_auth_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-78394",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-62824",
+   "ci_name": "orders_reviews_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-28537",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-51542",
+   "ci_name": "media_reporting_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-58040",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-40502",
+   "ci_name": "ratings_quotes_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-84482",
+   "ci_name": "coupons_checkout_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-46106"
+   ]
+  },
+  {
+   "ci_id": "CI-83430",
+   "ci_name": "ledger_gateway_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-70033"
+   ]
+  },
+  {
+   "ci_id": "CI-99262",
+   "ci_name": "auth_gateway_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-94841",
+   "ci_name": "shipping_auth_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87800",
+   "ci_name": "cart_shipping_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-24569",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-10082",
+   "ci_name": "export_audit_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-68943",
+    "CI-81600"
+   ]
+  },
+  {
+   "ci_id": "CI-71764",
+   "ci_name": "address_fraud_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-78394",
+   "ci_name": "orders_auth_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46668",
+   "ci_name": "search_warehouse_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-58128"
+   ]
+  },
+  {
+   "ci_id": "CI-44657",
+   "ci_name": "gateway_wishlist_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-25060",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-05090",
+   "ci_name": "refunds_metrics_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-91751",
+   "ci_name": "invoices_catalog_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-15503",
+    "CI-52910",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-73742",
+   "ci_name": "routing_identity_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-09120",
+   "ci_name": "export_refunds_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-81600",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-97877",
+   "ci_name": "fraud_reviews_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-76655",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-56268",
+   "ci_name": "audit_orders_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-37481",
+   "ci_name": "address_checkout_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-50300",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-10474",
+   "ci_name": "loyalty_coupons_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-89779",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-06062",
+   "ci_name": "warehouse_checkout_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-63170",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-06705",
+   "ci_name": "shipping_export_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-53733"
+   ]
+  },
+  {
+   "ci_id": "CI-89135",
+   "ci_name": "identity_ratings_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-75735",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-57123",
+   "ci_name": "payments_quotes_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-48106",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-47642",
+   "ci_name": "loyalty_shipping_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-47825",
+   "ci_name": "identity_metrics_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-19010"
+   ]
+  },
+  {
+   "ci_id": "CI-89153",
+   "ci_name": "identity_invoices_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-02233",
+   "ci_name": "reporting_audit_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-15503",
+    "CI-24439"
+   ]
+  },
+  {
+   "ci_id": "CI-34981",
+   "ci_name": "routing_reviews_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-79597",
+    "CI-63170",
+    "CI-59763",
+    "CI-02257"
+   ]
+  },
+  {
+   "ci_id": "CI-74538",
+   "ci_name": "cart_returns_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-24439",
+    "CI-70033"
+   ]
+  },
+  {
+   "ci_id": "CI-51750",
+   "ci_name": "media_shipping_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-43705",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-59949",
+   "ci_name": "identity_checkout_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-70469",
+   "ci_name": "gateway_audit_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-02730",
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-66428",
+   "ci_name": "notify_gateway_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032"
+   ]
+  },
+  {
+   "ci_id": "CI-15607",
+   "ci_name": "checkout_profile_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-53678",
+   "ci_name": "identity_invoices_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-89153",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-39158",
+   "ci_name": "payments_session_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-39272",
+   "ci_name": "metrics_auth_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-87013",
+    "CI-50518"
+   ]
+  },
+  {
+   "ci_id": "CI-33116",
+   "ci_name": "media_ledger_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-39060",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-72369",
+   "ci_name": "session_invoices_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-71285",
+   "ci_name": "legacy_gateway_3_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-63898",
+   "ci_name": "ratings_quotes_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-40502",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-04098",
+   "ci_name": "ingest_auth_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-57691",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-42584",
+   "ci_name": "orders_session_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-36829",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-60123",
+   "ci_name": "gateway_payments_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-06200",
+   "ci_name": "pricing_shipping_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-03270",
+   "ci_name": "pricing_warehouse_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-07170",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-05627",
+   "ci_name": "orders_tax_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-32978",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-19114",
+   "ci_name": "ledger_media_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02976",
+    "CI-19010",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-29286",
+   "ci_name": "address_payments_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-71285"
+   ]
+  },
+  {
+   "ci_id": "CI-48106",
+   "ci_name": "payments_quotes_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-30348",
+   "ci_name": "consent_routing_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-39060",
+   "ci_name": "media_ledger_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-34735",
+   "ci_name": "identity_cart_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-11719",
+   "ci_name": "invoices_inventory_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-69411",
+   "ci_name": "export_coupons_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-44837",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-15807",
+   "ci_name": "session_reporting_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-39243",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-84932",
+   "ci_name": "feeds_metrics_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-02976",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-86790",
+   "ci_name": "checkout_pricing_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-75423",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-39243",
+   "ci_name": "session_reporting_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-27069",
+   "ci_name": "checkout_invoices_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502"
+   ]
+  },
+  {
+   "ci_id": "CI-74313",
+   "ci_name": "warehouse_tax_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-95032",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-33042",
+   "ci_name": "catalog_warehouse_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-59645",
+   "ci_name": "address_profile_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-20151",
+   "ci_name": "tax_session_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-11938",
+   "ci_name": "tax_refunds_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-46318",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-86084",
+   "ci_name": "reviews_billing_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-82692",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-92000",
+   "ci_name": "identity_cart_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-34735",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-05634",
+   "ci_name": "identity_fraud_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-83071",
+   "ci_name": "orders_catalog_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-40490",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-89395",
+   "ci_name": "session_identity_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-19010",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-95396",
+   "ci_name": "auth_routing_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-99507"
+   ]
+  },
+  {
+   "ci_id": "CI-78472",
+   "ci_name": "ratings_session_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-98329",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46748",
+   "ci_name": "session_media_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-79755",
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-71105",
+   "ci_name": "warehouse_loyalty_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-43790",
+   "ci_name": "wishlist_tax_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-10346",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-51782",
+   "ci_name": "routing_address_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72369",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-89455",
+   "ci_name": "ingest_audit_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-32462",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-62426",
+   "ci_name": "audit_catalog_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-12447",
+   "ci_name": "auth_identity_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-98118",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-81369",
+   "ci_name": "shipping_export_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-06705",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-60399",
+   "ci_name": "fraud_inventory_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-36464",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-17406",
+   "ci_name": "reporting_coupons_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-63568",
+   "ci_name": "catalog_tax_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-85782",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-36531",
+   "ci_name": "media_metrics_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-60248",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-42886",
+   "ci_name": "invoices_profile_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-97618",
+    "CI-02730",
+    "CI-54767"
+   ]
+  },
+  {
+   "ci_id": "CI-74867",
+   "ci_name": "payments_refunds_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-38733",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-73855",
+   "ci_name": "address_cart_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-13513",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-25636",
+   "ci_name": "ingest_orders_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-65005",
+   "ci_name": "audit_warehouse_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-73669",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-79613",
+   "ci_name": "address_auth_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-17746"
+   ]
+  },
+  {
+   "ci_id": "CI-04985",
+   "ci_name": "orders_ratings_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-65623",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-34246",
+   "ci_name": "coupons_checkout_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-84482",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-62096",
+   "ci_name": "coupons_gateway_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-25449",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-91057",
+   "ci_name": "feeds_ratings_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-36242",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-22353",
+   "ci_name": "feeds_media_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-73636",
+   "ci_name": "cart_ingest_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-52947"
+   ]
+  },
+  {
+   "ci_id": "CI-88158",
+   "ci_name": "reviews_ratings_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-63170",
+   "ci_name": "checkout_catalog_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-45191",
+   "ci_name": "address_invoices_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-63073",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-99812",
+   "ci_name": "billing_invoices_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-79597",
+    "CI-41921"
+   ]
+  },
+  {
+   "ci_id": "CI-47607",
+   "ci_name": "ratings_export_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-21499",
+   "ci_name": "auth_routing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-95396",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-13014",
+   "ci_name": "inventory_coupons_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-21587",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-99507",
+   "ci_name": "invoices_ledger_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-35020",
+    "CI-90330"
+   ]
+  },
+  {
+   "ci_id": "CI-65623",
+   "ci_name": "orders_ratings_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-19010",
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-57634",
+   "ci_name": "quotes_identity_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-94427",
+   "ci_name": "ingest_feeds_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-80192"
+   ]
+  },
+  {
+   "ci_id": "CI-10346",
+   "ci_name": "wishlist_tax_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-13513",
+   "ci_name": "address_cart_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-49299",
+   "ci_name": "profile_invoices_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-15503"
+   ]
+  },
+  {
+   "ci_id": "CI-13714",
+   "ci_name": "wishlist_address_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-66712",
+   "ci_name": "reporting_identity_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-09376",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46318",
+   "ci_name": "tax_refunds_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-10670"
+   ]
+  },
+  {
+   "ci_id": "CI-78141",
+   "ci_name": "consent_cart_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-18273",
+   "ci_name": "shipping_inventory_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46157",
+   "ci_name": "reporting_returns_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-02730",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-19010",
+   "ci_name": "session_identity_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-02976",
+   "ci_name": "feeds_metrics_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-58249",
+   "ci_name": "session_loyalty_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-77071",
+    "CI-11104"
+   ]
+  },
+  {
+   "ci_id": "CI-02257",
+   "ci_name": "legacy_metrics_2_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "decommissioned",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-17730",
+   "ci_name": "session_loyalty_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-58249",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-72363",
+   "ci_name": "catalog_search_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730",
+    "CI-66784"
+   ]
+  },
+  {
+   "ci_id": "CI-02174",
+   "ci_name": "refunds_feeds_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-52960",
+   "ci_name": "catalog_session_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-43820",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-30946",
+   "ci_name": "identity_media_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-35118",
+   "ci_name": "identity_notify_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-04757",
+   "ci_name": "billing_invoices_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-99812",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-14425",
+   "ci_name": "reviews_invoices_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02976",
+    "CI-01683",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-50518",
+   "ci_name": "audit_consent_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-81600",
+    "CI-96346"
+   ]
+  },
+  {
+   "ci_id": "CI-58447",
+   "ci_name": "orders_consent_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-82186",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-86341",
+   "ci_name": "catalog_invoices_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-97828",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-24439",
+   "ci_name": "auth_cart_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-02140",
+   "ci_name": "refunds_invoices_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-87967",
+    "CI-38733",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-79765",
+   "ci_name": "invoices_ratings_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-26037",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-19629",
+   "ci_name": "identity_address_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-65859"
+   ]
+  },
+  {
+   "ci_id": "CI-26467",
+   "ci_name": "refunds_auth_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-15503",
+    "CI-28537",
+    "CI-73687"
+   ]
+  },
+  {
+   "ci_id": "CI-81045",
+   "ci_name": "inventory_search_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-06238",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-04579",
+   "ci_name": "auth_fraud_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-93552",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-70472",
+   "ci_name": "returns_orders_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-48222",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-34016",
+   "ci_name": "profile_media_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-98329",
+    "CI-95952"
+   ]
+  },
+  {
+   "ci_id": "CI-78797",
+   "ci_name": "payments_coupons_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-26725",
+    "CI-14425"
+   ]
+  },
+  {
+   "ci_id": "CI-13897",
+   "ci_name": "auth_session_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-80192",
+   "ci_name": "feeds_inventory_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72363",
+    "CI-02730",
+    "CI-15503",
+    "CI-33985"
+   ]
+  },
+  {
+   "ci_id": "CI-34510",
+   "ci_name": "audit_coupons_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87673",
+   "ci_name": "reporting_shipping_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-73687",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-44560",
+   "ci_name": "payments_refunds_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-74867",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-13580",
+   "ci_name": "wishlist_ratings_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-61649",
+   "ci_name": "export_gateway_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-08699",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-75174",
+   "ci_name": "orders_loyalty_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-08709",
+   "ci_name": "shipping_session_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-54457",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-61658",
+   "ci_name": "gateway_identity_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-63215",
+   "ci_name": "session_returns_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-91024"
+   ]
+  },
+  {
+   "ci_id": "CI-48302",
+   "ci_name": "quotes_payments_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-53733",
+   "ci_name": "fraud_ratings_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-54047",
+   "ci_name": "shipping_auth_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-94841",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-01329",
+   "ci_name": "gateway_payments_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-60123",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-74460",
+   "ci_name": "reviews_metrics_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-32088",
+    "CI-95396",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-46690",
+   "ci_name": "media_auth_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-45486",
+   "ci_name": "warehouse_reviews_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-99285",
+    "CI-82278"
+   ]
+  },
+  {
+   "ci_id": "CI-84524",
+   "ci_name": "reviews_payments_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-01683",
+    "CI-19010",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-35231",
+   "ci_name": "warehouse_consent_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-73788",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-74955",
+   "ci_name": "ratings_notify_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-59358",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-68943",
+   "ci_name": "ingest_profile_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-81600",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-08940",
+   "ci_name": "invoices_gateway_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-56137",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-81600",
+   "ci_name": "export_refunds_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-84524",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-25449",
+   "ci_name": "coupons_gateway_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-69400",
+   "ci_name": "catalog_ledger_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-58128",
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-83207",
+   "ci_name": "payments_session_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-39158",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-83529",
+   "ci_name": "reporting_address_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-14425",
+    "CI-14879"
+   ]
+  },
+  {
+   "ci_id": "CI-28784",
+   "ci_name": "ingest_media_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733",
+    "CI-45957",
+    "CI-61832"
+   ]
+  },
+  {
+   "ci_id": "CI-39889",
+   "ci_name": "checkout_search_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-71712",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-95952",
+   "ci_name": "metrics_address_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032"
+   ]
+  },
+  {
+   "ci_id": "CI-33659",
+   "ci_name": "metrics_auth_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-39272",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-55021",
+   "ci_name": "ledger_gateway_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-83430",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-75529",
+   "ci_name": "identity_session_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02233",
+    "CI-11104",
+    "CI-29286"
+   ]
+  },
+  {
+   "ci_id": "CI-79755",
+   "ci_name": "fraud_orders_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733",
+    "CI-15503",
+    "CI-41284",
+    "CI-65859"
+   ]
+  },
+  {
+   "ci_id": "CI-09725",
+   "ci_name": "quotes_payments_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-48302",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-19266",
+   "ci_name": "warehouse_reviews_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-45486",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-08725",
+   "ci_name": "tax_invoices_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-61576",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-75318",
+   "ci_name": "orders_notify_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-78394"
+   ]
+  },
+  {
+   "ci_id": "CI-31022",
+   "ci_name": "identity_checkout_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-59949",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87610",
+   "ci_name": "export_audit_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-10082",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-63761",
+   "ci_name": "wishlist_routing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-51975",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-26458",
+   "ci_name": "quotes_pricing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-10670",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-24282",
+   "ci_name": "address_fraud_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-71764",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-38435",
+   "ci_name": "cart_ingest_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-73636",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-55805",
+   "ci_name": "ledger_address_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-03115",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-64163",
+   "ci_name": "consent_session_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-02689",
+   "ci_name": "consent_pricing_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-01208",
+    "CI-40502",
+    "CI-77769",
+    "CI-53733"
+   ]
+  },
+  {
+   "ci_id": "CI-04942",
+   "ci_name": "search_profile_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-07715",
+   "ci_name": "profile_media_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-34016",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-69173",
+   "ci_name": "routing_profile_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-18170",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93408",
+   "ci_name": "search_address_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-54457",
+   "ci_name": "shipping_session_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82483",
+   "ci_name": "session_invoices_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-72369",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-58040",
+   "ci_name": "media_reporting_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95032",
+    "CI-15503",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-35002",
+   "ci_name": "audit_coupons_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-34510",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87013",
+   "ci_name": "cart_metrics_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-71376",
+   "ci_name": "cart_coupons_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-02590",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-74735",
+   "ci_name": "shipping_fraud_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-16549",
+   "ci_name": "returns_refunds_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600"
+   ]
+  },
+  {
+   "ci_id": "CI-01208",
+   "ci_name": "catalog_export_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-32256",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-05127",
+   "ci_name": "inventory_reporting_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-11104",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-18228",
+   "ci_name": "payments_auth_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-43690",
+   "ci_name": "notify_ingest_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-26725",
+   "ci_name": "wishlist_auth_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72369",
+    "CI-02730",
+    "CI-90330"
+   ]
+  },
+  {
+   "ci_id": "CI-45622",
+   "ci_name": "payments_routing_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-01208",
+    "CI-46936",
+    "CI-18102"
+   ]
+  },
+  {
+   "ci_id": "CI-22510",
+   "ci_name": "reviews_checkout_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-21778",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-91958",
+   "ci_name": "auth_returns_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-79152",
+   "ci_name": "feeds_session_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-54255",
+    "CI-62044",
+    "CI-57691"
+   ]
+  },
+  {
+   "ci_id": "CI-58018",
+   "ci_name": "fraud_payments_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-71668",
+   "ci_name": "auth_consent_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-95486",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-99980",
+   "ci_name": "export_auth_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-43705",
+   "ci_name": "billing_gateway_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-29286"
+   ]
+  },
+  {
+   "ci_id": "CI-57691",
+   "ci_name": "gateway_invoices_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-05090",
+    "CI-51782"
+   ]
+  },
+  {
+   "ci_id": "CI-32717",
+   "ci_name": "reviews_export_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-61832"
+   ]
+  },
+  {
+   "ci_id": "CI-01948",
+   "ci_name": "identity_address_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-19629",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82692",
+   "ci_name": "reviews_billing_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-12703",
+   "ci_name": "session_fraud_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-83224",
+   "ci_name": "invoices_reviews_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82278",
+   "ci_name": "inventory_metrics_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733",
+    "CI-41284"
+   ]
+  },
+  {
+   "ci_id": "CI-04124",
+   "ci_name": "wishlist_feeds_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-44306",
+   "ci_name": "payments_profile_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-96510",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-60248",
+   "ci_name": "media_metrics_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-35020",
+   "ci_name": "orders_profile_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-53045",
+   "ci_name": "billing_routing_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-76655",
+   "ci_name": "fraud_reviews_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-01683"
+   ]
+  },
+  {
+   "ci_id": "CI-77586",
+   "ci_name": "catalog_ingest_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-38733",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-96346",
+   "ci_name": "loyalty_profile_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-85782",
+   "ci_name": "catalog_tax_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-30296",
+   "ci_name": "loyalty_refunds_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-60725",
+   "ci_name": "loyalty_media_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-23489",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-57868",
+   "ci_name": "catalog_address_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-52947",
+   "ci_name": "quotes_ingest_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-99980",
+    "CI-72369",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-10136",
+   "ci_name": "feeds_export_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-28537",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-50754",
+   "ci_name": "refunds_invoices_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-02140",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-11275",
+   "ci_name": "inventory_tax_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-52910",
+    "CI-32462"
+   ]
+  },
+  {
+   "ci_id": "CI-85405",
+   "ci_name": "fraud_orders_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-79755",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-41284",
+   "ci_name": "billing_session_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-50300"
+   ]
+  },
+  {
+   "ci_id": "CI-80452",
+   "ci_name": "gateway_ingest_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-11077",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-81507",
+   "ci_name": "media_reviews_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-78227",
+   "ci_name": "ratings_payments_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-32831",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46833",
+   "ci_name": "address_billing_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-06536",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-21570",
+   "ci_name": "ingest_auth_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-04098",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-28234",
+   "ci_name": "invoices_ledger_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-99507",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-89779",
+   "ci_name": "loyalty_coupons_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-39091",
+   "ci_name": "payments_feeds_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-85645",
+   "ci_name": "metrics_identity_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-58249",
+    "CI-35440",
+    "CI-15607"
+   ]
+  },
+  {
+   "ci_id": "CI-77769",
+   "ci_name": "wishlist_profile_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-35440",
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-20060",
+   "ci_name": "inventory_checkout_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-41065",
+   "ci_name": "shipping_identity_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-57728",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-90501",
+   "ci_name": "metrics_returns_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-99285",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-73782",
+   "ci_name": "fraud_checkout_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-41921",
+   "ci_name": "inventory_pricing_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460"
+   ]
+  },
+  {
+   "ci_id": "CI-87782",
+   "ci_name": "consent_loyalty_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-29884",
+    "CI-28537",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-66027",
+   "ci_name": "checkout_cart_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-90330",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-97618",
+   "ci_name": "orders_ingest_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-95952",
+    "CI-52910"
+   ]
+  },
+  {
+   "ci_id": "CI-18821",
+   "ci_name": "ingest_warehouse_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-68418",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-45263",
+   "ci_name": "quotes_cart_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-01683",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-36408",
+   "ci_name": "payments_shipping_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-80975",
+   "ci_name": "export_ledger_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-08673",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-89370",
+   "ci_name": "reporting_audit_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-02233",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93336",
+   "ci_name": "consent_ingest_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-37147",
+   "ci_name": "reporting_metrics_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-05318",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-71712",
+   "ci_name": "checkout_search_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-97828",
+   "ci_name": "catalog_invoices_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-90982",
+   "ci_name": "media_auth_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-46690",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-42028",
+   "ci_name": "wishlist_consent_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-14661",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-88623",
+   "ci_name": "reviews_metrics_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-74460",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-51975",
+   "ci_name": "wishlist_routing_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-26725"
+   ]
+  },
+  {
+   "ci_id": "CI-19981",
+   "ci_name": "auth_reporting_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-40502"
+   ]
+  },
+  {
+   "ci_id": "CI-11480",
+   "ci_name": "cart_ledger_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74538"
+   ]
+  },
+  {
+   "ci_id": "CI-37383",
+   "ci_name": "pricing_auth_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-18857",
+   "ci_name": "tax_session_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-20151",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-89661",
+   "ci_name": "audit_inventory_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-34338",
+   "ci_name": "coupons_wishlist_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-10342",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-77071",
+   "ci_name": "session_quotes_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-79597",
+   "ci_name": "cart_identity_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-30296",
+    "CI-35118",
+    "CI-41284"
+   ]
+  },
+  {
+   "ci_id": "CI-14879",
+   "ci_name": "payments_address_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-75423",
+   "ci_name": "checkout_pricing_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-52910",
+    "CI-76973"
+   ]
+  },
+  {
+   "ci_id": "CI-47128",
+   "ci_name": "ingest_coupons_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-15503"
+   ]
+  },
+  {
+   "ci_id": "CI-41262",
+   "ci_name": "pricing_profile_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-54812",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-21778",
+   "ci_name": "reviews_checkout_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-37457",
+   "ci_name": "inventory_identity_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-44674",
+   "ci_name": "returns_address_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-63170"
+   ]
+  },
+  {
+   "ci_id": "CI-22372",
+   "ci_name": "cart_returns_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-74538",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87808",
+   "ci_name": "shipping_refunds_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-32088",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-42689",
+   "ci_name": "refunds_tax_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-29011",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93694",
+   "ci_name": "checkout_metrics_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-47108",
+   "ci_name": "quotes_search_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87406",
+   "ci_name": "metrics_search_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-17746",
+    "CI-38733"
+   ]
+  },
+  {
+   "ci_id": "CI-97855",
+   "ci_name": "payments_address_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-14879",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-08673",
+   "ci_name": "export_ledger_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-28537",
+   "ci_name": "feeds_export_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02976",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-33011",
+   "ci_name": "profile_shipping_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-52910",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-15503",
+   "ci_name": "ratings_pricing_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72363",
+    "CI-81600",
+    "CI-71764"
+   ]
+  },
+  {
+   "ci_id": "CI-22993",
+   "ci_name": "metrics_catalog_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-91024",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-46803",
+   "ci_name": "cart_session_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-26529",
+   "ci_name": "returns_auth_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-54767"
+   ]
+  },
+  {
+   "ci_id": "CI-08699",
+   "ci_name": "export_gateway_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-12160",
+   "ci_name": "ingest_profile_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-68943",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-38733",
+   "ci_name": "catalog_ingest_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600",
+    "CI-25060"
+   ]
+  },
+  {
+   "ci_id": "CI-39915",
+   "ci_name": "ratings_inventory_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82179",
+   "ci_name": "metrics_export_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-11151",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-74212",
+   "ci_name": "search_address_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-93408",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-40452",
+   "ci_name": "pricing_billing_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-44019",
+   "ci_name": "coupons_refunds_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-68418",
+   "ci_name": "ingest_warehouse_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-75735",
+   "ci_name": "identity_ratings_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-22862",
+   "ci_name": "consent_refunds_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-65859",
+   "ci_name": "legacy_pricing_5_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-15843",
+   "ci_name": "ingest_feeds_replica_1_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-94427",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-61832",
+   "ci_name": "export_warehouse_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-83612",
+    "CI-50300",
+    "CI-35118"
+   ]
+  },
+  {
+   "ci_id": "CI-95486",
+   "ci_name": "auth_consent_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-28537",
+    "CI-35118",
+    "CI-94165"
+   ]
+  },
+  {
+   "ci_id": "CI-95426",
+   "ci_name": "address_auth_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-79613",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-64141",
+   "ci_name": "wishlist_auth_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-26725",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-86762",
+   "ci_name": "billing_cart_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-91024",
+   "ci_name": "metrics_catalog_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600"
+   ]
+  },
+  {
+   "ci_id": "CI-57728",
+   "ci_name": "shipping_identity_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-35440",
+   "ci_name": "refunds_profile_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-07170",
+   "ci_name": "pricing_warehouse_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-71127",
+   "ci_name": "invoices_warehouse_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-56201",
+   "ci_name": "auth_billing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-62044",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-30486",
+   "ci_name": "orders_profile_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-35020",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-83148",
+   "ci_name": "catalog_metrics_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-22",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730",
+    "CI-10670",
+    "CI-52947"
+   ]
+  },
+  {
+   "ci_id": "CI-14661",
+   "ci_name": "wishlist_consent_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40502"
+   ]
+  },
+  {
+   "ci_id": "CI-27369",
+   "ci_name": "refunds_pricing_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-16",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-21930",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-45957",
+   "ci_name": "returns_shipping_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-73669",
+   "ci_name": "audit_warehouse_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-70394",
+   "ci_name": "consent_feeds_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72369",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-85041",
+   "ci_name": "cart_ledger_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-11480",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-96232",
+   "ci_name": "media_shipping_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-13",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-51750",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-56921",
+   "ci_name": "gateway_refunds_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-62044",
+   "ci_name": "auth_billing_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-06200",
+    "CI-95032",
+    "CI-95952"
+   ]
+  },
+  {
+   "ci_id": "CI-77414",
+   "ci_name": "coupons_auth_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-74460",
+    "CI-95032"
+   ]
+  },
+  {
+   "ci_id": "CI-01683",
+   "ci_name": "quotes_cart_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-55333",
+   "ci_name": "ratings_reviews_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": "CI-21976",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-06536",
+   "ci_name": "address_billing_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-76848",
+   "ci_name": "quotes_inventory_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-21",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-50300",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-59358",
+   "ci_name": "ratings_notify_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-14",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87967",
+   "ci_name": "ledger_pricing_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-96346"
+   ]
+  },
+  {
+   "ci_id": "CI-77766",
+   "ci_name": "payments_coupons_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-25",
+   "datacenter": "dc-sin",
+   "replica_of_ci": "CI-78797",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-83612",
+   "ci_name": "coupons_session_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-81600"
+   ]
+  },
+  {
+   "ci_id": "CI-90330",
+   "ci_name": "checkout_cart_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72369",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-38139",
+   "ci_name": "shipping_fraud_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-iad",
+   "replica_of_ci": "CI-74735",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-52910",
+   "ci_name": "profile_shipping_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-36464",
+   "ci_name": "fraud_inventory_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-23",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-66784",
+   "ci_name": "pricing_coupons_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-72369",
+    "CI-02730"
+   ]
+  },
+  {
+   "ci_id": "CI-57725",
+   "ci_name": "payments_media_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-85367",
+   "ci_name": "notify_coupons_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-ams",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-87967",
+    "CI-63073",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-97177",
+   "ci_name": "orders_search_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-17",
+   "datacenter": "dc-ams",
+   "replica_of_ci": "CI-76973",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-87845",
+   "ci_name": "reviews_orders_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-20",
+   "datacenter": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82061",
+   "ci_name": "consent_loyalty_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-19",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-87782",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-18988",
+   "ci_name": "catalog_warehouse_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-18",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-33042",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-44740",
+   "ci_name": "notify_refunds_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-19629"
+   ]
+  },
+  {
+   "ci_id": "CI-62763",
+   "ci_name": "gateway_invoices_replica_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "datacenter": "dc-fra",
+   "replica_of_ci": "CI-57691",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-32462",
+   "ci_name": "ingest_audit_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-24",
+   "datacenter": "dc-sfo",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-01683",
+    "CI-81600",
+    "CI-28537"
+   ]
+  },
+  {
+   "ci_id": "CI-96412",
+   "ci_name": "audit_notify_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-15",
+   "datacenter": "dc-sin",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  }
+ ]
+}

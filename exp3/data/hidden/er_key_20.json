@@ -1,0 +1,209 @@
+{
+ "entities": {
+  "db-444": {
+   "cmdb": "CI-45834",
+   "cmdb_name": "address_pricing_db",
+   "monitoring": "mon:address-pricing",
+   "display": "Address Pricing DB",
+   "aliases": [
+    "add-pri-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-459": {
+   "cmdb": "CI-55434",
+   "cmdb_name": "shipping_profile_db",
+   "monitoring": "mon:shipping-profile",
+   "display": "Shipping Profile DB",
+   "aliases": [
+    "shi-pro-db-v2"
+   ],
+   "class": "database"
+  },
+  "db-760": {
+   "cmdb": "CI-04613",
+   "cmdb_name": "catalog_reporting_replica_1_db",
+   "monitoring": "mon:catalog-reporting-replica-1",
+   "display": "Catalog Reporting Replica 1 DB",
+   "aliases": [
+    "cat-rep-db-v2-r1"
+   ],
+   "class": "database"
+  },
+  "db-937": {
+   "cmdb": "CI-83853",
+   "cmdb_name": "catalog_reporting_db",
+   "monitoring": "mon:catalog-reporting",
+   "display": "Catalog Reporting DB",
+   "aliases": [
+    "cat-rep-db-v2"
+   ],
+   "class": "database"
+  },
+  "q-001": {
+   "cmdb": "CI-02495",
+   "cmdb_name": "loyalty_search_q",
+   "monitoring": "mon:loyalty-search",
+   "display": "Loyalty Search Queue",
+   "aliases": [
+    "loy-sea-q-v2"
+   ],
+   "class": "queue"
+  },
+  "svc-003": {
+   "cmdb": "CI-40432",
+   "cmdb_name": "reviews_invoices_svc",
+   "monitoring": "mon:reviews-invoices",
+   "display": "Reviews Invoices Service",
+   "aliases": [
+    "rev-inv-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-017": {
+   "cmdb": "CI-29783",
+   "cmdb_name": "shipping_returns_svc",
+   "monitoring": "mon:shipping-returns",
+   "display": "Shipping Returns Service",
+   "aliases": [
+    "shi-ret-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-032": {
+   "cmdb": "CI-66889",
+   "cmdb_name": "warehouse_feeds_replica_1_svc",
+   "monitoring": "mon:warehouse-feeds-replica-1",
+   "display": "Warehouse Feeds Replica 1 Service",
+   "aliases": [
+    "war-fee-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-124": {
+   "cmdb": "CI-72312",
+   "cmdb_name": "ledger_quotes_svc",
+   "monitoring": "mon:ledger-quotes",
+   "display": "Ledger Quotes Service",
+   "aliases": [
+    "led-quo-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-261": {
+   "cmdb": "CI-85747",
+   "cmdb_name": "loyalty_fraud_replica_1_svc",
+   "monitoring": "mon:loyalty-fraud-replica-1",
+   "display": "Loyalty Fraud Replica 1 Service",
+   "aliases": [
+    "loy-fra-svc-v2-r1"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-271": {
+   "cmdb": "CI-28634",
+   "cmdb_name": "coupons_gateway_svc",
+   "monitoring": "mon:coupons-gateway",
+   "display": "Coupons Gateway Service",
+   "aliases": [
+    "cou-gat-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-286": {
+   "cmdb": "CI-93906",
+   "cmdb_name": "billing_notify_replica_1_svc",
+   "monitoring": "mon:billing-notify-replica-1",
+   "display": "Billing Notify Replica 1 Service",
+   "aliases": [
+    "bil-not-svc-v2-r1"
+   ],
+   "class": "service"
+  },
+  "svc-622": {
+   "cmdb": "CI-64574",
+   "cmdb_name": "loyalty_fraud_svc",
+   "monitoring": "mon:loyalty-fraud",
+   "display": "Loyalty Fraud Service",
+   "aliases": [
+    "loy-fra-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  },
+  "svc-669": {
+   "cmdb": "CI-54909",
+   "cmdb_name": "billing_notify_svc",
+   "monitoring": "mon:billing-notify",
+   "display": "Billing Notify Service",
+   "aliases": [
+    "bil-not-svc-v2"
+   ],
+   "class": "service"
+  },
+  "svc-924": {
+   "cmdb": "CI-82259",
+   "cmdb_name": "warehouse_feeds_svc",
+   "monitoring": "mon:warehouse-feeds",
+   "display": "Warehouse Feeds Service",
+   "aliases": [
+    "war-fee-svc-v2"
+   ],
+   "class": "customer_facing_service"
+  }
+ },
+ "teams": {
+  "team-01": {
+   "cmdb": "OG-11",
+   "monitoring": "team-platform"
+  },
+  "team-02": {
+   "cmdb": "OG-12",
+   "monitoring": "team-identity"
+  }
+ },
+ "regions": {
+  "reg-1": {
+   "cmdb": "dc-fra",
+   "monitoring": "eu-central-1"
+  },
+  "reg-2": {
+   "cmdb": "dc-iad",
+   "monitoring": "us-east-1"
+  }
+ },
+ "slas": {
+  "sla-19": "SLA-PLATINUM-01",
+  "sla-39": "SLA-BRONZE-02",
+  "sla-52": "SLA-BRONZE-03"
+ },
+ "stale": [
+  {
+   "cmdb": "CI-93057",
+   "monitoring": "mon:legacy-metrics-1",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-28634",
+    "CI-40432"
+   ]
+  },
+  {
+   "cmdb": "CI-92021",
+   "monitoring": "mon:legacy-reviews-2",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-28634",
+    "CI-72312"
+   ]
+  }
+ ],
+ "planted": {
+  "region_conflicts": [
+   "svc-261",
+   "svc-622"
+  ],
+  "team_conflicts": [
+   "svc-003",
+   "svc-261"
+  ]
+ }
+}
