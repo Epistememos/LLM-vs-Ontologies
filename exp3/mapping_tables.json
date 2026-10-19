@@ -1,0 +1,52 @@
+{
+ "20": {
+  "owner_group_to_team": {
+   "OG-11": "team-platform",
+   "OG-12": "team-identity"
+  },
+  "datacenter_to_zone": {
+   "dc-fra": "eu-central-1",
+   "dc-iad": "us-east-1"
+  }
+ },
+ "100": {
+  "owner_group_to_team": {
+   "OG-11": "team-edge",
+   "OG-12": "team-finance",
+   "OG-13": "team-infra",
+   "OG-14": "team-growth",
+   "OG-15": "team-core"
+  },
+  "datacenter_to_zone": {
+   "dc-fra": "eu-central-1",
+   "dc-iad": "us-east-1",
+   "dc-sin": "ap-southeast-1"
+  }
+ },
+ "500": {
+  "owner_group_to_team": {
+   "OG-11": "team-mobile",
+   "OG-12": "team-platform",
+   "OG-13": "team-core",
+   "OG-14": "team-ops",
+   "OG-15": "team-finance",
+   "OG-16": "team-web",
+   "OG-17": "team-content",
+   "OG-18": "team-partner",
+   "OG-19": "team-search",
+   "OG-20": "team-risk",
+   "OG-21": "team-fulfil",
+   "OG-22": "team-insights",
+   "OG-23": "team-commerce",
+   "OG-24": "team-trust",
+   "OG-25": "team-infra"
+  },
+  "datacenter_to_zone": {
+   "dc-ams": "eu-west-1",
+   "dc-fra": "eu-central-1",
+   "dc-iad": "us-east-1",
+   "dc-sfo": "us-west-2",
+   "dc-sin": "ap-southeast-1"
+  }
+ }
+}

@@ -22,7 +22,9 @@ DEV_FRAC = 0.3
 QUOTAS = {"is_down": 8, "down_by_team": 5, "breached_slas": 3, "sla_breached": 4, "count_down": 2,  # cross-source
           "cmdb_deps": 2, "mon_owner": 2}                                                         # single-source
 CROSS = {"is_down", "down_by_team", "breached_slas", "sla_breached", "count_down"}
-VARIANTS = ("cmdb_only", "keep_stale", "wrong_authority")
+VARIANTS = ("cmdb_only", "keep_stale", "wrong_authority", "name_similarity")
+LABEL = {"cmdb_only": "ignores the monitoring export", "keep_stale": "keeps stale records",
+         "wrong_authority": "trusts the wrong source", "name_similarity": "matches entities by name similarity"}
 
 
 def answers(t, key, kind, region, x):
@@ -113,6 +115,6 @@ if __name__ == "__main__":
     cross = df[df.scope == "cross"]
     print(f"\ncross-source questions with >= 1 active trap: {(cross.traps > 0).mean():.0%}")
     for v in VARIANTS:
-        print(f"  answer changes if a model {'ignores the monitoring export' if v == 'cmdb_only' else 'keeps stale records' if v == 'keep_stale' else 'trusts the wrong source'}: "
+        print(f"  answer changes if a model {LABEL[v]}: "
               f"{sum(v in ans[q]['traps'] for q in cross.qid)}/{len(cross)}")
     print("distinct texts:", df.text.nunique(), "of", len(df))

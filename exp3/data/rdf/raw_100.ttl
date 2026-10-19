@@ -1,0 +1,2016 @@
+@prefix ex: <http://example.org/br#> .
+@prefix src: <http://example.org/src#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SLA-BRONZE-10 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:SLA-BRONZE-12 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-GOLD-03 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-GOLD-04 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:SLA-GOLD-06 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-GOLD-08 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:SLA-GOLD-09 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-PLATINUM-02 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:SLA-PLATINUM-11 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-PLATINUM-13 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-PLATINUM-14 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:SLA-SILVER-01 a ex:SLA ;
+    ex:availability 99.99 .
+
+ex:SLA-SILVER-05 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:SLA-SILVER-07 a ex:SLA ;
+    ex:availability 99.9 .
+
+ex:dc-fra ex:monitoringZone "eu-central-1" .
+
+ex:dc-iad ex:monitoringZone "us-east-1" .
+
+ex:dc-sin ex:monitoringZone "ap-southeast-1" .
+
+ex:team-core ex:cmdbOwnerGroup "OG-15" .
+
+ex:team-edge ex:cmdbOwnerGroup "OG-11" .
+
+ex:team-finance ex:cmdbOwnerGroup "OG-12" .
+
+ex:team-growth ex:cmdbOwnerGroup "OG-14" .
+
+ex:team-infra ex:cmdbOwnerGroup "OG-13" .
+
+src:cmdb-CI-01869 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-01869" ;
+    src:ciName "wishlist_routing_replica_1_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-13" ;
+    src:replicaOfCi "CI-68861" ;
+    src:status "operational" .
+
+src:cmdb-CI-01921 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-01921" ;
+    src:ciName "identity_fraud_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-31868",
+        "CI-47631",
+        "CI-99853" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-02116 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-02116" ;
+    src:ciName "session_routing_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" .
+
+src:cmdb-CI-02724 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-02724" ;
+    src:ciName "inventory_quotes_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-12" ;
+    src:replicaOfCi "CI-45711" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-05767 a src:CmdbRecord ;
+    src:ciClass "queue" ;
+    src:ciId "CI-05767" ;
+    src:ciName "coupons_wishlist_q" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" .
+
+src:cmdb-CI-08039 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-08039" ;
+    src:ciName "ingest_refunds_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-25809",
+        "CI-31868",
+        "CI-67473",
+        "CI-70766" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-08673 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-08673" ;
+    src:ciName "metrics_ingest_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-33276",
+        "CI-67473",
+        "CI-76898" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-09832 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-09832" ;
+    src:ciName "pricing_coupons_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-24138",
+        "CI-31868",
+        "CI-67473" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-10771 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-10771" ;
+    src:ciName "checkout_payments_replica_1_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-61802" ;
+    src:status "operational" .
+
+src:cmdb-CI-10957 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-10957" ;
+    src:ciName "session_reviews_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-33276",
+        "CI-67473",
+        "CI-76898" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-11062 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-11062" ;
+    src:ciName "refunds_orders_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-11817 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-11817" ;
+    src:ciName "session_media_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-13105 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-13105" ;
+    src:ciName "coupons_search_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-66476" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-15097 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-15097" ;
+    src:ciName "pricing_ratings_replica_1_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:replicaOfCi "CI-98273" ;
+    src:status "operational" .
+
+src:cmdb-CI-16620 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-16620" ;
+    src:ciName "reviews_address_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" .
+
+src:cmdb-CI-17595 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-17595" ;
+    src:ciName "shipping_payments_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-32099",
+        "CI-55767",
+        "CI-85513",
+        "CI-99853" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-17700 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-17700" ;
+    src:ciName "quotes_feeds_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-27517" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-19250 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-19250" ;
+    src:ciName "shipping_billing_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" .
+
+src:cmdb-CI-23662 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-23662" ;
+    src:ciName "loyalty_quotes_replica_1_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-79611" ;
+    src:status "operational" .
+
+src:cmdb-CI-24138 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-24138" ;
+    src:ciName "identity_ingest_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-10957",
+        "CI-85513" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-25809 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-25809" ;
+    src:ciName "session_feeds_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-26366 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-26366" ;
+    src:ciName "ledger_search_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-55767",
+        "CI-67473",
+        "CI-99853" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-27517 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-27517" ;
+    src:ciName "quotes_feeds_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-59967" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-28436 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-28436" ;
+    src:ciName "notify_session_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-25809",
+        "CI-31868",
+        "CI-67473" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-28626 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-28626" ;
+    src:ciName "loyalty_pricing_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-25809",
+        "CI-31868",
+        "CI-67473" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-29266 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-29266" ;
+    src:ciName "warehouse_cart_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-85513" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-30396 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-30396" ;
+    src:ciName "payments_ingest_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-32099",
+        "CI-67473" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-30434 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-30434" ;
+    src:ciName "wishlist_orders_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-14" ;
+    src:replicaOfCi "CI-79562" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-31868 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-31868" ;
+    src:ciName "routing_auth_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-27517" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-32099 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-32099" ;
+    src:ciName "warehouse_reviews_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-27517",
+        "CI-31868" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-33276 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-33276" ;
+    src:ciName "coupons_auth_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-35189 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-35189" ;
+    src:ciName "invoices_media_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-79391" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-37698 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-37698" ;
+    src:ciName "payments_catalog_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-66476" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-38923 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-38923" ;
+    src:ciName "gateway_media_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:replicaOfCi "CI-83795" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-43346 a src:CmdbRecord ;
+    src:ciClass "queue" ;
+    src:ciId "CI-43346" ;
+    src:ciName "orders_checkout_q" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" .
+
+src:cmdb-CI-43380 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-43380" ;
+    src:ciName "reviews_address_replica_1_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-16620" ;
+    src:status "operational" .
+
+src:cmdb-CI-43623 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-43623" ;
+    src:ciName "routing_auth_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-31868" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-43992 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-43992" ;
+    src:ciName "session_loyalty_replica_1_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-98363" ;
+    src:status "operational" .
+
+src:cmdb-CI-44080 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-44080" ;
+    src:ciName "identity_fraud_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-01921" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-44329 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-44329" ;
+    src:ciName "notify_session_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-14" ;
+    src:replicaOfCi "CI-28436" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-44558 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-44558" ;
+    src:ciName "profile_gateway_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-27517",
+        "CI-31868",
+        "CI-33276",
+        "CI-86913" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-45388 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-45388" ;
+    src:ciName "session_ratings_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-98214" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-45711 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-45711" ;
+    src:ciName "inventory_quotes_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-46096 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-46096" ;
+    src:ciName "tax_quotes_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-25809",
+        "CI-31868",
+        "CI-32099" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-47047 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-47047" ;
+    src:ciName "wishlist_gateway_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-25809",
+        "CI-31868" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-47631 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-47631" ;
+    src:ciName "fraud_export_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-31868",
+        "CI-47047",
+        "CI-85513" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-47810 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-47810" ;
+    src:ciName "warehouse_auth_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868",
+        "CI-77122" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-47811 a src:CmdbRecord ;
+    src:ciClass "queue" ;
+    src:ciId "CI-47811" ;
+    src:ciName "ratings_orders_q" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" .
+
+src:cmdb-CI-48073 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-48073" ;
+    src:ciName "cart_address_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-48803 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-48803" ;
+    src:ciName "loyalty_pricing_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-28626" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-48880 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-48880" ;
+    src:ciName "fraud_loyalty_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" .
+
+src:cmdb-CI-52293 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-52293" ;
+    src:ciName "session_routing_replica_1_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-02116" ;
+    src:status "operational" .
+
+src:cmdb-CI-55767 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-55767" ;
+    src:ciName "legacy_quotes_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-58668 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-58668" ;
+    src:ciName "ingest_wishlist_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-24138",
+        "CI-44558",
+        "CI-67473" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-58763 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-58763" ;
+    src:ciName "reviews_refunds_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-58824 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-58824" ;
+    src:ciName "routing_profile_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868",
+        "CI-33276",
+        "CI-70766",
+        "CI-98214" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-59797 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-59797" ;
+    src:ciName "shipping_tax_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-47810" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-59967 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-59967" ;
+    src:ciName "legacy_metrics_2_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:status "decommissioned" ;
+    src:tier 3 .
+
+src:cmdb-CI-61802 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-61802" ;
+    src:ciName "checkout_payments_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" .
+
+src:cmdb-CI-62151 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-62151" ;
+    src:ciName "search_inventory_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-59967" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-63256 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-63256" ;
+    src:ciName "ledger_wishlist_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-67473" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-64429 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-64429" ;
+    src:ciName "ingest_wishlist_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-58668" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-66476 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-66476" ;
+    src:ciName "payments_catalog_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-66803 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-66803" ;
+    src:ciName "reviews_pricing_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-14" ;
+    src:replicaOfCi "CI-76898" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-67473 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-67473" ;
+    src:ciName "ledger_wishlist_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868",
+        "CI-98214" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-67902 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-67902" ;
+    src:ciName "session_pricing_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-99853" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-68515 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-68515" ;
+    src:ciName "orders_ingest_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" .
+
+src:cmdb-CI-68861 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-68861" ;
+    src:ciName "wishlist_routing_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-69093 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-69093" ;
+    src:ciName "ratings_wishlist_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-24138" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-69937 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-69937" ;
+    src:ciName "ratings_wishlist_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-69093" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-70766 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-70766" ;
+    src:ciName "legacy_address_3_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-71758 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-71758" ;
+    src:ciName "ratings_refunds_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-67473" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-75030 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-75030" ;
+    src:ciName "gateway_ingest_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868",
+        "CI-67473",
+        "CI-77122" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-76123 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-76123" ;
+    src:ciName "ledger_search_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-26366" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-76898 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-76898" ;
+    src:ciName "reviews_pricing_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-31868",
+        "CI-79391" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-77122 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-77122" ;
+    src:ciName "identity_payments_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-58824",
+        "CI-67473",
+        "CI-86913" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-77307 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-77307" ;
+    src:ciName "shipping_billing_replica_1_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-19250" ;
+    src:status "operational" .
+
+src:cmdb-CI-79391 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-79391" ;
+    src:ciName "invoices_media_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-27517",
+        "CI-31868" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-79562 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-79562" ;
+    src:ciName "wishlist_orders_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-67473" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-79611 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-79611" ;
+    src:ciName "loyalty_quotes_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" .
+
+src:cmdb-CI-79725 a src:CmdbRecord ;
+    src:ciClass "queue" ;
+    src:ciId "CI-79725" ;
+    src:ciName "routing_pricing_q" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-81250 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-81250" ;
+    src:ciName "warehouse_auth_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-12" ;
+    src:replicaOfCi "CI-47810" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-81568 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-81568" ;
+    src:ciName "orders_ingest_replica_1_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-15" ;
+    src:replicaOfCi "CI-68515" ;
+    src:status "operational" .
+
+src:cmdb-CI-83795 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-83795" ;
+    src:ciName "gateway_media_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-67473" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-85513 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-85513" ;
+    src:ciName "returns_checkout_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868",
+        "CI-58824" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-86045 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-86045" ;
+    src:ciName "gateway_ingest_replica_1_svc" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-75030" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-86913 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-86913" ;
+    src:ciName "audit_auth_svc" ;
+    src:datacenter "dc-sin" ;
+    src:dependsOnCi "CI-31868" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-88006 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-88006" ;
+    src:ciName "address_catalog_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-90347 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-90347" ;
+    src:ciName "routing_fraud_replica_1_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-13" ;
+    src:replicaOfCi "CI-96319" ;
+    src:status "operational" .
+
+src:cmdb-CI-91009 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-91009" ;
+    src:ciName "quotes_billing_replica_1_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-13" ;
+    src:replicaOfCi "CI-98177" ;
+    src:status "operational" .
+
+src:cmdb-CI-92524 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-92524" ;
+    src:ciName "payments_search_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868",
+        "CI-98214" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-93099 a src:CmdbRecord ;
+    src:ciClass "queue" ;
+    src:ciId "CI-93099" ;
+    src:ciName "session_warehouse_q" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-93152 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-93152" ;
+    src:ciName "session_media_replica_1_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-13" ;
+    src:replicaOfCi "CI-11817" ;
+    src:status "operational" .
+
+src:cmdb-CI-93628 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-93628" ;
+    src:ciName "coupons_search_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-14" ;
+    src:replicaOfCi "CI-13105" ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-93939 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-93939" ;
+    src:ciName "warehouse_cart_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-14" ;
+    src:replicaOfCi "CI-29266" ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-96319 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-96319" ;
+    src:ciName "routing_fraud_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-98177 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-98177" ;
+    src:ciName "quotes_billing_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-13" ;
+    src:status "operational" .
+
+src:cmdb-CI-98214 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-98214" ;
+    src:ciName "session_ratings_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-31868" ;
+    src:ownerGroup "OG-15" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-98273 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-98273" ;
+    src:ciName "pricing_ratings_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" .
+
+src:cmdb-CI-98363 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-98363" ;
+    src:ciName "session_loyalty_db" ;
+    src:datacenter "dc-sin" ;
+    src:ownerGroup "OG-11" ;
+    src:status "operational" .
+
+src:cmdb-CI-99853 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-99853" ;
+    src:ciName "session_pricing_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-25809",
+        "CI-31868" ;
+    src:ownerGroup "OG-14" ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:mon-address-catalog a src:MonRecord ;
+    src:alias "add-cat-db-v2" ;
+    src:component "mon:address-catalog" ;
+    src:displayName "Address Catalog DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "eu-central-1" .
+
+src:mon-audit-auth a src:MonRecord ;
+    src:alias "aud-aut-svc-v2" ;
+    src:component "mon:audit-auth" ;
+    src:displayName "Audit Auth Service" ;
+    src:kind "service" ;
+    src:sla "SLA-SILVER-07" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-cart-address a src:MonRecord ;
+    src:alias "car-add-db-v2" ;
+    src:component "mon:cart-address" ;
+    src:displayName "Cart Address DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "eu-central-1" .
+
+src:mon-checkout-payments a src:MonRecord ;
+    src:alias "che-pay-db-v2" ;
+    src:component "mon:checkout-payments" ;
+    src:displayName "Checkout Payments DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-checkout-payments-replica-1 a src:MonRecord ;
+    src:alias "che-pay-db-v2-r1" ;
+    src:component "mon:checkout-payments-replica-1" ;
+    src:displayName "Checkout Payments Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-coupons-auth a src:MonRecord ;
+    src:alias "cou-aut-svc-v2" ;
+    src:component "mon:coupons-auth" ;
+    src:displayName "Coupons Auth Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "ses-med-db-v2" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-coupons-search a src:MonRecord ;
+    src:alias "cou-sea-svc-v2" ;
+    src:component "mon:coupons-search" ;
+    src:displayName "Coupons Search Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-coupons-search-replica-1 a src:MonRecord ;
+    src:alias "cou-sea-svc-v2-r1" ;
+    src:component "mon:coupons-search-replica-1" ;
+    src:displayName "Coupons Search Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "eu-central-1" .
+
+src:mon-coupons-wishlist a src:MonRecord ;
+    src:alias "cou-wis-q-v2" ;
+    src:component "mon:coupons-wishlist" ;
+    src:displayName "Coupons Wishlist Queue" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-fraud-export a src:MonRecord ;
+    src:alias "fra-exp-svc-v2" ;
+    src:component "mon:fraud-export" ;
+    src:displayName "Fraud Export Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "eu-central-1" .
+
+src:mon-fraud-loyalty a src:MonRecord ;
+    src:alias "fra-loy-db-v2" ;
+    src:component "mon:fraud-loyalty" ;
+    src:displayName "Fraud Loyalty DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-gateway-ingest a src:MonRecord ;
+    src:alias "gat-ing-svc-v2" ;
+    src:component "mon:gateway-ingest" ;
+    src:displayName "Gateway Ingest Service" ;
+    src:kind "service" ;
+    src:sla "SLA-PLATINUM-02" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-gateway-ingest-replica-1 a src:MonRecord ;
+    src:alias "gat-ing-svc-v2-r1" ;
+    src:component "mon:gateway-ingest-replica-1" ;
+    src:displayName "Gateway Ingest Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-gateway-media a src:MonRecord ;
+    src:alias "gat-med-svc-v2" ;
+    src:component "mon:gateway-media" ;
+    src:displayName "Gateway Media Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:upstream "Fraud Loyalty DB" ;
+    src:zone "eu-central-1" .
+
+src:mon-gateway-media-replica-1 a src:MonRecord ;
+    src:alias "gat-med-svc-v2-r1" ;
+    src:component "mon:gateway-media-replica-1" ;
+    src:displayName "Gateway Media Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "eu-central-1" .
+
+src:mon-identity-fraud a src:MonRecord ;
+    src:alias "ide-fra-svc-v2" ;
+    src:component "mon:identity-fraud" ;
+    src:displayName "Identity Fraud Service" ;
+    src:kind "service" ;
+    src:sla "SLA-GOLD-08" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-identity-fraud-replica-1 a src:MonRecord ;
+    src:alias "ide-fra-svc-v2-r1" ;
+    src:component "mon:identity-fraud-replica-1" ;
+    src:displayName "Identity Fraud Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-identity-ingest a src:MonRecord ;
+    src:alias "ide-ing-svc-v2" ;
+    src:component "mon:identity-ingest" ;
+    src:displayName "Identity Ingest Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:upstream "car-add-db-v2" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-identity-payments a src:MonRecord ;
+    src:alias "ide-pay-svc-v2" ;
+    src:component "mon:identity-payments" ;
+    src:displayName "Identity Payments Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+
+src:mon-ingest-refunds a src:MonRecord ;
+    src:alias "ing-ref-svc-v2" ;
+    src:component "mon:ingest-refunds" ;
+    src:displayName "Ingest Refunds Service" ;
+    src:kind "service" ;
+    src:sla "SLA-GOLD-09" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:upstream "loy-quo-db-v2" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-ingest-wishlist a src:MonRecord ;
+    src:alias "ing-wis-svc-v2" ;
+    src:component "mon:ingest-wishlist" ;
+    src:displayName "Ingest Wishlist Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:upstream "mon:pricing-ratings",
+        "shi-bil-db-v2" ;
+    src:zone "us-east-1" .
+
+src:mon-ingest-wishlist-replica-1 a src:MonRecord ;
+    src:alias "ing-wis-svc-v2-r1" ;
+    src:component "mon:ingest-wishlist-replica-1" ;
+    src:displayName "Ingest Wishlist Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-inventory-quotes a src:MonRecord ;
+    src:alias "inv-quo-svc-v2" ;
+    src:component "mon:inventory-quotes" ;
+    src:displayName "Inventory Quotes Service" ;
+    src:kind "service" ;
+    src:sla "SLA-PLATINUM-11" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "us-east-1" .
+
+src:mon-inventory-quotes-replica-1 a src:MonRecord ;
+    src:alias "inv-quo-svc-v2-r1" ;
+    src:component "mon:inventory-quotes-replica-1" ;
+    src:displayName "Inventory Quotes Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-invoices-media a src:MonRecord ;
+    src:alias "inv-med-svc-v2" ;
+    src:component "mon:invoices-media" ;
+    src:displayName "Invoices Media Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "eu-central-1" .
+
+src:mon-invoices-media-replica-1 a src:MonRecord ;
+    src:alias "inv-med-svc-v2-r1" ;
+    src:component "mon:invoices-media-replica-1" ;
+    src:displayName "Invoices Media Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-ledger-search a src:MonRecord ;
+    src:alias "led-sea-svc-v2" ;
+    src:component "mon:ledger-search" ;
+    src:displayName "Ledger Search Service" ;
+    src:kind "service" ;
+    src:sla "SLA-GOLD-03" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-ledger-search-replica-1 a src:MonRecord ;
+    src:alias "led-sea-svc-v2-r1" ;
+    src:component "mon:ledger-search-replica-1" ;
+    src:displayName "Ledger Search Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "us-east-1" .
+
+src:mon-ledger-wishlist a src:MonRecord ;
+    src:alias "led-wis-svc-v2" ;
+    src:component "mon:ledger-wishlist" ;
+    src:displayName "Ledger Wishlist Service" ;
+    src:kind "service" ;
+    src:sla "SLA-BRONZE-10" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "mon:shipping-billing" ;
+    src:zone "us-east-1" .
+
+src:mon-ledger-wishlist-replica-1 a src:MonRecord ;
+    src:alias "led-wis-svc-v2-r1" ;
+    src:component "mon:ledger-wishlist-replica-1" ;
+    src:displayName "Ledger Wishlist Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-legacy-address-3 a src:MonRecord ;
+    src:component "mon:legacy-address-3" ;
+    src:displayName "Legacy Address 3 Service" ;
+    src:kind "service" ;
+    src:status "retired" ;
+    src:team "team-finance" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-legacy-metrics-2 a src:MonRecord ;
+    src:component "mon:legacy-metrics-2" ;
+    src:displayName "Legacy Metrics 2 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "eu-central-1" .
+
+src:mon-legacy-quotes-1 a src:MonRecord ;
+    src:component "mon:legacy-quotes-1" ;
+    src:displayName "Legacy Quotes 1 Service" ;
+    src:kind "service" ;
+    src:status "retired" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+
+src:mon-loyalty-pricing a src:MonRecord ;
+    src:alias "loy-pri-svc-v2" ;
+    src:component "mon:loyalty-pricing" ;
+    src:displayName "Loyalty Pricing Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "eu-central-1" .
+
+src:mon-loyalty-pricing-replica-1 a src:MonRecord ;
+    src:alias "loy-pri-svc-v2-r1" ;
+    src:component "mon:loyalty-pricing-replica-1" ;
+    src:displayName "Loyalty Pricing Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "eu-central-1" .
+
+src:mon-loyalty-quotes a src:MonRecord ;
+    src:alias "loy-quo-db-v2" ;
+    src:component "mon:loyalty-quotes" ;
+    src:displayName "Loyalty Quotes DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-loyalty-quotes-replica-1 a src:MonRecord ;
+    src:alias "loy-quo-db-v2-r1" ;
+    src:component "mon:loyalty-quotes-replica-1" ;
+    src:displayName "Loyalty Quotes Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "us-east-1" .
+
+src:mon-metrics-ingest a src:MonRecord ;
+    src:alias "met-ing-svc-v2" ;
+    src:component "mon:metrics-ingest" ;
+    src:displayName "Metrics Ingest Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "mon:session-routing",
+        "mon:shipping-billing" ;
+    src:zone "us-east-1" .
+
+src:mon-notify-session a src:MonRecord ;
+    src:alias "not-ses-svc-v2" ;
+    src:component "mon:notify-session" ;
+    src:displayName "Notify Session Service" ;
+    src:kind "service" ;
+    src:sla "SLA-BRONZE-12" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:upstream "mon:fraud-loyalty" ;
+    src:zone "eu-central-1" .
+
+src:mon-notify-session-replica-1 a src:MonRecord ;
+    src:alias "not-ses-svc-v2-r1" ;
+    src:component "mon:notify-session-replica-1" ;
+    src:displayName "Notify Session Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-orders-checkout a src:MonRecord ;
+    src:alias "ord-che-q-v2" ;
+    src:component "mon:orders-checkout" ;
+    src:displayName "Orders Checkout Queue" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-orders-ingest a src:MonRecord ;
+    src:alias "ord-ing-db-v2" ;
+    src:component "mon:orders-ingest" ;
+    src:displayName "Orders Ingest DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-orders-ingest-replica-1 a src:MonRecord ;
+    src:alias "ord-ing-db-v2-r1" ;
+    src:component "mon:orders-ingest-replica-1" ;
+    src:displayName "Orders Ingest Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-payments-catalog a src:MonRecord ;
+    src:alias "pay-cat-svc-v2" ;
+    src:component "mon:payments-catalog" ;
+    src:displayName "Payments Catalog Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "Cart Address DB",
+        "mon:session-warehouse" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-payments-catalog-replica-1 a src:MonRecord ;
+    src:alias "pay-cat-svc-v2-r1" ;
+    src:component "mon:payments-catalog-replica-1" ;
+    src:displayName "Payments Catalog Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-payments-ingest a src:MonRecord ;
+    src:alias "pay-ing-svc-v2" ;
+    src:component "mon:payments-ingest" ;
+    src:displayName "Payments Ingest Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "Fraud Loyalty DB",
+        "mon:shipping-billing" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-payments-search a src:MonRecord ;
+    src:alias "pay-sea-svc-v2" ;
+    src:component "mon:payments-search" ;
+    src:displayName "Payments Search Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "us-east-1" .
+
+src:mon-pricing-coupons a src:MonRecord ;
+    src:alias "pri-cou-svc-v2" ;
+    src:component "mon:pricing-coupons" ;
+    src:displayName "Pricing Coupons Service" ;
+    src:kind "service" ;
+    src:sla "SLA-GOLD-06" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+
+src:mon-pricing-ratings a src:MonRecord ;
+    src:alias "pri-rat-db-v2" ;
+    src:component "mon:pricing-ratings" ;
+    src:displayName "Pricing Ratings DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-pricing-ratings-replica-1 a src:MonRecord ;
+    src:alias "pri-rat-db-v2-r1" ;
+    src:component "mon:pricing-ratings-replica-1" ;
+    src:displayName "Pricing Ratings Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "eu-central-1" .
+
+src:mon-profile-gateway a src:MonRecord ;
+    src:alias "pro-gat-svc-v2" ;
+    src:component "mon:profile-gateway" ;
+    src:displayName "Profile Gateway Service" ;
+    src:kind "service" ;
+    src:sla "SLA-SILVER-01" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "Ratings Orders Queue" ;
+    src:zone "us-east-1" .
+
+src:mon-quotes-billing a src:MonRecord ;
+    src:alias "quo-bil-db-v2" ;
+    src:component "mon:quotes-billing" ;
+    src:displayName "Quotes Billing DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-quotes-billing-replica-1 a src:MonRecord ;
+    src:alias "quo-bil-db-v2-r1" ;
+    src:component "mon:quotes-billing-replica-1" ;
+    src:displayName "Quotes Billing Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-quotes-feeds a src:MonRecord ;
+    src:alias "quo-fee-svc-v2" ;
+    src:component "mon:quotes-feeds" ;
+    src:displayName "Quotes Feeds Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "mon:orders-ingest",
+        "pri-rat-db-v2" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-quotes-feeds-replica-1 a src:MonRecord ;
+    src:alias "quo-fee-svc-v2-r1" ;
+    src:component "mon:quotes-feeds-replica-1" ;
+    src:displayName "Quotes Feeds Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-ratings-orders a src:MonRecord ;
+    src:alias "rat-ord-q-v2" ;
+    src:component "mon:ratings-orders" ;
+    src:displayName "Ratings Orders Queue" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "eu-central-1" .
+
+src:mon-ratings-refunds a src:MonRecord ;
+    src:alias "rat-ref-svc-v2" ;
+    src:component "mon:ratings-refunds" ;
+    src:displayName "Ratings Refunds Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:upstream "mon:shipping-billing" ;
+    src:zone "us-east-1" .
+
+src:mon-ratings-wishlist a src:MonRecord ;
+    src:alias "rat-wis-svc-v2" ;
+    src:component "mon:ratings-wishlist" ;
+    src:displayName "Ratings Wishlist Service" ;
+    src:kind "service" ;
+    src:sla "SLA-SILVER-05" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-ratings-wishlist-replica-1 a src:MonRecord ;
+    src:alias "rat-wis-svc-v2-r1" ;
+    src:component "mon:ratings-wishlist-replica-1" ;
+    src:displayName "Ratings Wishlist Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-refunds-orders a src:MonRecord ;
+    src:alias "ref-ord-svc-v2" ;
+    src:component "mon:refunds-orders" ;
+    src:displayName "Refunds Orders Service" ;
+    src:kind "service" ;
+    src:sla "SLA-SILVER-07" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:upstream "car-add-db-v2",
+        "che-pay-db-v2" ;
+    src:zone "us-east-1" .
+
+src:mon-returns-checkout a src:MonRecord ;
+    src:alias "ret-che-svc-v2" ;
+    src:component "mon:returns-checkout" ;
+    src:displayName "Returns Checkout Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+
+src:mon-reviews-address a src:MonRecord ;
+    src:alias "rev-add-db-v2" ;
+    src:component "mon:reviews-address" ;
+    src:displayName "Reviews Address DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-reviews-address-replica-1 a src:MonRecord ;
+    src:alias "rev-add-db-v2-r1" ;
+    src:component "mon:reviews-address-replica-1" ;
+    src:displayName "Reviews Address Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-reviews-pricing a src:MonRecord ;
+    src:alias "rev-pri-svc-v2" ;
+    src:component "mon:reviews-pricing" ;
+    src:displayName "Reviews Pricing Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-reviews-pricing-replica-1 a src:MonRecord ;
+    src:alias "rev-pri-svc-v2-r1" ;
+    src:component "mon:reviews-pricing-replica-1" ;
+    src:displayName "Reviews Pricing Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-reviews-refunds a src:MonRecord ;
+    src:alias "rev-ref-svc-v2" ;
+    src:component "mon:reviews-refunds" ;
+    src:displayName "Reviews Refunds Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:upstream "mon:wishlist-routing" ;
+    src:zone "eu-central-1" .
+
+src:mon-routing-auth a src:MonRecord ;
+    src:alias "rou-aut-svc-v2" ;
+    src:component "mon:routing-auth" ;
+    src:displayName "Routing Auth Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-routing-auth-replica-1 a src:MonRecord ;
+    src:alias "rou-aut-svc-v2-r1" ;
+    src:component "mon:routing-auth-replica-1" ;
+    src:displayName "Routing Auth Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-routing-fraud a src:MonRecord ;
+    src:alias "rou-fra-db-v2" ;
+    src:component "mon:routing-fraud" ;
+    src:displayName "Routing Fraud DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+
+src:mon-routing-fraud-replica-1 a src:MonRecord ;
+    src:alias "rou-fra-db-v2-r1" ;
+    src:component "mon:routing-fraud-replica-1" ;
+    src:displayName "Routing Fraud Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "eu-central-1" .
+
+src:mon-routing-pricing a src:MonRecord ;
+    src:alias "rou-pri-q-v2" ;
+    src:component "mon:routing-pricing" ;
+    src:displayName "Routing Pricing Queue" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+
+src:mon-routing-profile a src:MonRecord ;
+    src:alias "rou-pro-svc-v2" ;
+    src:component "mon:routing-profile" ;
+    src:displayName "Routing Profile Service" ;
+    src:kind "service" ;
+    src:sla "SLA-SILVER-07" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:upstream "pri-rat-db-v2" ;
+    src:zone "us-east-1" .
+
+src:mon-search-inventory a src:MonRecord ;
+    src:alias "sea-inv-svc-v2" ;
+    src:component "mon:search-inventory" ;
+    src:displayName "Search Inventory Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "Session Routing DB" ;
+    src:zone "us-east-1" .
+
+src:mon-session-feeds a src:MonRecord ;
+    src:alias "ses-fee-svc-v2" ;
+    src:component "mon:session-feeds" ;
+    src:displayName "Session Feeds Service" ;
+    src:kind "service" ;
+    src:sla "SLA-GOLD-04" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:upstream "cou-wis-q-v2",
+        "shi-bil-db-v2" ;
+    src:zone "eu-central-1" .
+
+src:mon-session-loyalty a src:MonRecord ;
+    src:alias "ses-loy-db-v2" ;
+    src:component "mon:session-loyalty" ;
+    src:displayName "Session Loyalty DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-session-loyalty-replica-1 a src:MonRecord ;
+    src:alias "ses-loy-db-v2-r1" ;
+    src:component "mon:session-loyalty-replica-1" ;
+    src:displayName "Session Loyalty Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-session-media a src:MonRecord ;
+    src:alias "ses-med-db-v2" ;
+    src:component "mon:session-media" ;
+    src:displayName "Session Media DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-session-media-replica-1 a src:MonRecord ;
+    src:alias "ses-med-db-v2-r1" ;
+    src:component "mon:session-media-replica-1" ;
+    src:displayName "Session Media Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "eu-central-1" .
+
+src:mon-session-pricing a src:MonRecord ;
+    src:alias "ses-pri-svc-v2" ;
+    src:component "mon:session-pricing" ;
+    src:displayName "Session Pricing Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:upstream "mon:orders-ingest",
+        "shi-bil-db-v2" ;
+    src:zone "eu-central-1" .
+
+src:mon-session-pricing-replica-1 a src:MonRecord ;
+    src:alias "ses-pri-svc-v2-r1" ;
+    src:component "mon:session-pricing-replica-1" ;
+    src:displayName "Session Pricing Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-session-ratings a src:MonRecord ;
+    src:alias "ses-rat-svc-v2" ;
+    src:component "mon:session-ratings" ;
+    src:displayName "Session Ratings Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "us-east-1" .
+
+src:mon-session-ratings-replica-1 a src:MonRecord ;
+    src:alias "ses-rat-svc-v2-r1" ;
+    src:component "mon:session-ratings-replica-1" ;
+    src:displayName "Session Ratings Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-session-reviews a src:MonRecord ;
+    src:alias "ses-rev-svc-v2" ;
+    src:component "mon:session-reviews" ;
+    src:displayName "Session Reviews Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:upstream "Address Catalog DB",
+        "mon:checkout-payments" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-session-routing a src:MonRecord ;
+    src:alias "ses-rou-db-v2" ;
+    src:component "mon:session-routing" ;
+    src:displayName "Session Routing DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "us-east-1" .
+
+src:mon-session-routing-replica-1 a src:MonRecord ;
+    src:alias "ses-rou-db-v2-r1" ;
+    src:component "mon:session-routing-replica-1" ;
+    src:displayName "Session Routing Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-core" ;
+    src:zone "eu-central-1" .
+
+src:mon-session-warehouse a src:MonRecord ;
+    src:alias "ses-war-q-v2" ;
+    src:component "mon:session-warehouse" ;
+    src:displayName "Session Warehouse Queue" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "eu-central-1" .
+
+src:mon-shipping-billing a src:MonRecord ;
+    src:alias "shi-bil-db-v2" ;
+    src:component "mon:shipping-billing" ;
+    src:displayName "Shipping Billing DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "eu-central-1" .
+
+src:mon-shipping-billing-replica-1 a src:MonRecord ;
+    src:alias "shi-bil-db-v2-r1" ;
+    src:component "mon:shipping-billing-replica-1" ;
+    src:displayName "Shipping Billing Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "us-east-1" .
+
+src:mon-shipping-payments a src:MonRecord ;
+    src:alias "shi-pay-svc-v2" ;
+    src:component "mon:shipping-payments" ;
+    src:displayName "Shipping Payments Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-shipping-tax a src:MonRecord ;
+    src:alias "shi-tax-svc-v2" ;
+    src:component "mon:shipping-tax" ;
+    src:displayName "Shipping Tax Service" ;
+    src:kind "service" ;
+    src:sla "SLA-PLATINUM-13" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "us-east-1" .
+
+src:mon-tax-quotes a src:MonRecord ;
+    src:alias "tax-quo-svc-v2" ;
+    src:component "mon:tax-quotes" ;
+    src:displayName "Tax Quotes Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:upstream "add-cat-db-v2",
+        "mon:shipping-billing" ;
+    src:zone "eu-central-1" .
+
+src:mon-warehouse-auth a src:MonRecord ;
+    src:alias "war-aut-svc-v2" ;
+    src:component "mon:warehouse-auth" ;
+    src:displayName "Warehouse Auth Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "us-east-1" .
+
+src:mon-warehouse-auth-replica-1 a src:MonRecord ;
+    src:alias "war-aut-svc-v2-r1" ;
+    src:component "mon:warehouse-auth-replica-1" ;
+    src:displayName "Warehouse Auth Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-finance" ;
+    src:zone "us-east-1" .
+
+src:mon-warehouse-cart a src:MonRecord ;
+    src:alias "war-car-svc-v2" ;
+    src:component "mon:warehouse-cart" ;
+    src:displayName "Warehouse Cart Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:upstream "mon:cart-address" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-warehouse-cart-replica-1 a src:MonRecord ;
+    src:alias "war-car-svc-v2-r1" ;
+    src:component "mon:warehouse-cart-replica-1" ;
+    src:displayName "Warehouse Cart Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "eu-central-1" .
+
+src:mon-warehouse-reviews a src:MonRecord ;
+    src:alias "war-rev-svc-v2" ;
+    src:component "mon:warehouse-reviews" ;
+    src:displayName "Warehouse Reviews Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:upstream "mon:pricing-ratings",
+        "mon:shipping-billing" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-wishlist-gateway a src:MonRecord ;
+    src:alias "wis-gat-svc-v2" ;
+    src:component "mon:wishlist-gateway" ;
+    src:displayName "Wishlist Gateway Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-edge" ;
+    src:upstream "Session Warehouse Queue" ;
+    src:zone "eu-central-1" .
+
+src:mon-wishlist-orders a src:MonRecord ;
+    src:alias "wis-ord-svc-v2" ;
+    src:component "mon:wishlist-orders" ;
+    src:displayName "Wishlist Orders Service" ;
+    src:kind "service" ;
+    src:sla "SLA-PLATINUM-14" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "ap-southeast-1" .
+
+src:mon-wishlist-orders-replica-1 a src:MonRecord ;
+    src:alias "wis-ord-svc-v2-r1" ;
+    src:component "mon:wishlist-orders-replica-1" ;
+    src:displayName "Wishlist Orders Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-growth" ;
+    src:zone "eu-central-1" .
+
+src:mon-wishlist-routing a src:MonRecord ;
+    src:alias "wis-rou-db-v2" ;
+    src:component "mon:wishlist-routing" ;
+    src:displayName "Wishlist Routing DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "eu-central-1" .
+
+src:mon-wishlist-routing-replica-1 a src:MonRecord ;
+    src:alias "wis-rou-db-v2-r1" ;
+    src:component "mon:wishlist-routing-replica-1" ;
+    src:displayName "Wishlist Routing Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-infra" ;
+    src:zone "us-east-1" .
+

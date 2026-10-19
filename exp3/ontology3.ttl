@@ -1,0 +1,56 @@
+@prefix ex:   <http://example.org/br#> .
+@prefix src:  <http://example.org/src#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:comment """Blast Radius ontology, Experiment 3. The two exports are loaded as raw records (src:), and the rules in
+rules3.py resolve them into one canonical graph (ex:) before any query: entity identity across the exports, the
+authority rules, stale-record removal, and the definitions below. Everything marked 'Derived' is materialized and can
+be queried like an asserted fact. rdf:type is closed under rdfs:subClassOf.""" .
+
+# ---- Raw export records (asserted; format-only conversion of the two exports) -------
+src:CmdbRecord a owl:Class ; rdfs:comment "One record of the CMDB export (fields: ciId, ciName, ciClass, tier, status, ownerGroup, datacenter, replicaOfCi, dependsOnCi)." .
+src:MonRecord a owl:Class ; rdfs:comment "One record of the monitoring export (fields: component, displayName, alias, kind, status, team, zone, sla, upstream)." .
+src:sameAs a owl:ObjectProperty ; rdfs:comment "Derived. Links a CMDB record to the monitoring record of the same component." .
+src:Stale a owl:Class ; rdfs:comment "Derived. A record of a stale component (either export flags it decommissioned or retired)." .
+
+# ---- Canonical classes ---------------------------------------------------------------
+ex:Component a owl:Class ; rdfs:comment "An infrastructure component: a Service, Database or Queue. Its IRI is ex:<CMDB CI ID>, e.g. ex:CI-12345." .
+ex:Service a owl:Class ; rdfs:subClassOf ex:Component .
+ex:CustomerFacingService a owl:Class ; rdfs:subClassOf ex:Service .
+ex:Database a owl:Class ; rdfs:subClassOf ex:Component .
+ex:Queue a owl:Class ; rdfs:subClassOf ex:Component .
+ex:Team a owl:Class ; rdfs:comment "A team; its IRI is ex:<monitoring team name>, e.g. ex:team-platform." .
+ex:Region a owl:Class ; rdfs:comment "A region; its IRI is ex:<CMDB datacenter>, e.g. ex:dc-fra." .
+ex:SLA a owl:Class ; rdfs:comment "An SLA; its IRI is ex:<monitoring SLA ID>, e.g. ex:SLA-GOLD-01." .
+
+# ---- Canonical properties (Derived from the exports by the resolution rules) -----------
+ex:name a owl:DatatypeProperty ; rdfs:comment "Derived. Every identifier either export uses for the component: CI ID, CMDB name, monitoring component ID, display name, aliases." .
+ex:tier a owl:DatatypeProperty ; rdfs:domain ex:Service ; rdfs:comment "Derived (CMDB). Criticality 1-3; 1 is the most critical." .
+ex:deployedIn a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Region ; rdfs:comment "Derived (CMDB datacenter)." .
+ex:replicaOf a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Component ; rdfs:comment "Derived (CMDB). 'X replicaOf Y' means X is a replica of Y." .
+ex:dependsOn a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Component ; rdfs:comment "Derived. Direct dependency: service-to-service from the CMDB, service-to-datastore from monitoring." .
+ex:ownedBy a owl:ObjectProperty ; rdfs:domain ex:Component ; rdfs:range ex:Team ; rdfs:comment "Derived (monitoring team)." .
+ex:hasSLA a owl:ObjectProperty ; rdfs:domain ex:Service ; rdfs:range ex:SLA ; rdfs:comment "Derived (monitoring SLA)." .
+ex:availability a owl:DatatypeProperty ; rdfs:domain ex:SLA .
+ex:cmdbOwnerGroup a owl:DatatypeProperty ; rdfs:domain ex:Team ; rdfs:comment "Crosswalk: the CMDB owner group that corresponds to this team." .
+ex:monitoringZone a owl:DatatypeProperty ; rdfs:domain ex:Region ; rdfs:comment "Crosswalk: the monitoring zone that corresponds to this datacenter." .
+
+# ---- Definitions (Derived, materialized by the rules) ---------------------------------
+ex:dependsOnTransitively a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:comment "Derived. Transitive dependency: X dependsOnTransitively Y if Y is reachable from X directly or through a chain of dependsOn links." .
+ex:inReplicaGroupWith a owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty, owl:ReflexiveProperty ;
+    rdfs:comment "Derived. Replica group: a node plus every node connected to it through replicaOf links in either direction, transitively." .
+ex:hasFootprintRegion a owl:ObjectProperty ; rdfs:range ex:Region ;
+    rdfs:comment "Derived. Footprint: the set of regions where members of a node's replica group are deployed; each such region is a hasFootprintRegion value." .
+ex:Primary a owl:Class ; rdfs:subClassOf ex:Component ;
+    rdfs:comment "Derived. Primary: a Service, Database or Queue X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node." .
+ex:lostIn a owl:ObjectProperty ; rdfs:range ex:Region ;
+    rdfs:comment "Derived. Lost: when a region fails, a node is lost if its footprint contains only the failed region. 'X lostIn R' means X is lost if region R fails." .
+ex:downIn a owl:ObjectProperty ; rdfs:range ex:Region ;
+    rdfs:comment "Derived. Down: a service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost. 'S downIn R' means S is down if region R fails." .
+ex:breachedIn a owl:ObjectProperty ; rdfs:range ex:Region ;
+    rdfs:comment "Derived. Breached SLA: an SLA is breached if any service that has it is down. 'L breachedIn R' means SLA L is breached if region R fails." .

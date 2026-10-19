@@ -1,0 +1,786 @@
+@prefix ex: <http://example.org/br#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix src: <http://example.org/src#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    rdfs:comment """Blast Radius ontology, Experiment 3. The two exports are loaded as raw records (src:), and the rules in
+rules3.py resolve them into one canonical graph (ex:) before any query: entity identity across the exports, the
+authority rules, stale-record removal, and the definitions below. Everything marked 'Derived' is materialized and can
+be queried like an asserted fact. rdf:type is closed under rdfs:subClassOf.""" .
+
+ex:availability a owl:DatatypeProperty ;
+    rdfs:domain ex:SLA .
+
+ex:breachedIn a owl:ObjectProperty ;
+    rdfs:comment "Derived. Breached SLA: an SLA is breached if any service that has it is down. 'L breachedIn R' means SLA L is breached if region R fails." ;
+    rdfs:range ex:Region .
+
+ex:cmdbOwnerGroup a owl:DatatypeProperty ;
+    rdfs:comment "Crosswalk: the CMDB owner group that corresponds to this team." ;
+    rdfs:domain ex:Team .
+
+ex:dependsOn a owl:ObjectProperty ;
+    rdfs:comment "Derived. Direct dependency: service-to-service from the CMDB, service-to-datastore from monitoring." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:dependsOnTransitively a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Derived. Transitive dependency: X dependsOnTransitively Y if Y is reachable from X directly or through a chain of dependsOn links." .
+
+ex:deployedIn a owl:ObjectProperty ;
+    rdfs:comment "Derived (CMDB datacenter)." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Region .
+
+ex:downIn a owl:ObjectProperty ;
+    rdfs:comment "Derived. Down: a service is down if it is lost or if any node it transitively depends on (via dependsOn) is lost. 'S downIn R' means S is down if region R fails." ;
+    rdfs:range ex:Region .
+
+ex:hasFootprintRegion a owl:ObjectProperty ;
+    rdfs:comment "Derived. Footprint: the set of regions where members of a node's replica group are deployed; each such region is a hasFootprintRegion value." ;
+    rdfs:range ex:Region .
+
+ex:hasSLA a owl:ObjectProperty ;
+    rdfs:comment "Derived (monitoring SLA)." ;
+    rdfs:domain ex:Service ;
+    rdfs:range ex:SLA .
+
+ex:inReplicaGroupWith a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Derived. Replica group: a node plus every node connected to it through replicaOf links in either direction, transitively." .
+
+ex:lostIn a owl:ObjectProperty ;
+    rdfs:comment "Derived. Lost: when a region fails, a node is lost if its footprint contains only the failed region. 'X lostIn R' means X is lost if region R fails." ;
+    rdfs:range ex:Region .
+
+ex:monitoringZone a owl:DatatypeProperty ;
+    rdfs:comment "Crosswalk: the monitoring zone that corresponds to this datacenter." ;
+    rdfs:domain ex:Region .
+
+ex:name a owl:DatatypeProperty ;
+    rdfs:comment "Derived. Every identifier either export uses for the component: CI ID, CMDB name, monitoring component ID, display name, aliases." .
+
+ex:ownedBy a owl:ObjectProperty ;
+    rdfs:comment "Derived (monitoring team)." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Team .
+
+ex:replicaOf a owl:ObjectProperty ;
+    rdfs:comment "Derived (CMDB). 'X replicaOf Y' means X is a replica of Y." ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:tier a owl:DatatypeProperty ;
+    rdfs:comment "Derived (CMDB). Criticality 1-3; 1 is the most critical." ;
+    rdfs:domain ex:Service .
+
+src:cmdb-CI-92021 a src:CmdbRecord,
+        src:Stale ;
+    src:ciClass "service" ;
+    src:ciId "CI-92021" ;
+    src:ciName "legacy_reviews_2_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:sameAs src:mon-legacy-reviews-2 ;
+    src:status "decommissioned" ;
+    src:tier 3 .
+
+src:cmdb-CI-93057 a src:CmdbRecord,
+        src:Stale ;
+    src:ciClass "service" ;
+    src:ciId "CI-93057" ;
+    src:ciName "legacy_metrics_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-legacy-metrics-1 ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:sameAs a owl:ObjectProperty ;
+    rdfs:comment "Derived. Links a CMDB record to the monitoring record of the same component." .
+
+ex:CI-28634 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-02495,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:dependsOnTransitively ex:CI-02495,
+        ex:CI-45834,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-fra ;
+    ex:downIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-28634 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:inReplicaGroupWith ex:CI-28634 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "CI-28634",
+        "Coupons Gateway Service",
+        "cou-gat-svc-v2",
+        "coupons_gateway_svc",
+        "mon:coupons-gateway" ;
+    ex:ownedBy ex:team-identity ;
+    ex:tier 1 .
+
+ex:CI-29783 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-40432,
+        ex:CI-54909 ;
+    ex:dependsOnTransitively ex:CI-40432,
+        ex:CI-45834,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-fra ;
+    ex:downIn ex:dc-fra,
+        ex:dc-iad ;
+    ex:fromRecord src:cmdb-CI-29783 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:inReplicaGroupWith ex:CI-29783 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "CI-29783",
+        "Shipping Returns Service",
+        "mon:shipping-returns",
+        "shi-ret-svc-v2",
+        "shipping_returns_svc" ;
+    ex:ownedBy ex:team-platform ;
+    ex:tier 2 .
+
+ex:CI-72312 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-40432,
+        ex:CI-54909 ;
+    ex:dependsOnTransitively ex:CI-40432,
+        ex:CI-45834,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-iad ;
+    ex:downIn ex:dc-fra,
+        ex:dc-iad ;
+    ex:fromRecord src:cmdb-CI-72312 ;
+    ex:hasFootprintRegion ex:dc-iad ;
+    ex:hasSLA ex:SLA-BRONZE-03 ;
+    ex:inReplicaGroupWith ex:CI-72312 ;
+    ex:lostIn ex:dc-iad ;
+    ex:name "CI-72312",
+        "Ledger Quotes Service",
+        "led-quo-svc-v2",
+        "ledger_quotes_svc",
+        "mon:ledger-quotes" ;
+    ex:ownedBy ex:team-identity ;
+    ex:tier 1 .
+
+ex:Queue a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:SLA-BRONZE-02 a ex:SLA ;
+    ex:availability 99.99 ;
+    ex:breachedIn ex:dc-fra .
+
+ex:SLA-BRONZE-03 a ex:SLA ;
+    ex:availability 99.99 ;
+    ex:breachedIn ex:dc-fra,
+        ex:dc-iad .
+
+ex:SLA-PLATINUM-01 a ex:SLA ;
+    ex:availability 99.99 ;
+    ex:breachedIn ex:dc-fra .
+
+src:cmdb-CI-02495 a src:CmdbRecord ;
+    src:ciClass "queue" ;
+    src:ciId "CI-02495" ;
+    src:ciName "loyalty_search_q" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:sameAs src:mon-loyalty-search ;
+    src:status "operational" .
+
+src:cmdb-CI-04613 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-04613" ;
+    src:ciName "catalog_reporting_replica_1_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-83853" ;
+    src:sameAs src:mon-catalog-reporting-replica-1 ;
+    src:status "operational" .
+
+src:cmdb-CI-28634 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-28634" ;
+    src:ciName "coupons_gateway_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-54909",
+        "CI-92021",
+        "CI-93057" ;
+    src:ownerGroup "OG-12" ;
+    src:sameAs src:mon-coupons-gateway ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-29783 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-29783" ;
+    src:ciName "shipping_returns_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-40432",
+        "CI-54909" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-shipping-returns ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-40432 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-40432" ;
+    src:ciName "reviews_invoices_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-54909",
+        "CI-93057" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-reviews-invoices ;
+    src:status "operational" ;
+    src:tier 3 .
+
+src:cmdb-CI-45834 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-45834" ;
+    src:ciName "address_pricing_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:sameAs src:mon-address-pricing ;
+    src:status "operational" .
+
+src:cmdb-CI-54909 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-54909" ;
+    src:ciName "billing_notify_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-billing-notify ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:cmdb-CI-55434 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-55434" ;
+    src:ciName "shipping_profile_db" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-shipping-profile ;
+    src:status "operational" .
+
+src:cmdb-CI-64574 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-64574" ;
+    src:ciName "loyalty_fraud_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-54909" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-loyalty-fraud ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-66889 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-66889" ;
+    src:ciName "warehouse_feeds_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-12" ;
+    src:replicaOfCi "CI-82259" ;
+    src:sameAs src:mon-warehouse-feeds-replica-1 ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-72312 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-72312" ;
+    src:ciName "ledger_quotes_svc" ;
+    src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-40432",
+        "CI-54909",
+        "CI-92021" ;
+    src:ownerGroup "OG-12" ;
+    src:sameAs src:mon-ledger-quotes ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-82259 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-82259" ;
+    src:ciName "warehouse_feeds_svc" ;
+    src:datacenter "dc-fra" ;
+    src:dependsOnCi "CI-54909" ;
+    src:ownerGroup "OG-12" ;
+    src:sameAs src:mon-warehouse-feeds ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-83853 a src:CmdbRecord ;
+    src:ciClass "database" ;
+    src:ciId "CI-83853" ;
+    src:ciName "catalog_reporting_db" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:sameAs src:mon-catalog-reporting ;
+    src:status "operational" .
+
+src:cmdb-CI-85747 a src:CmdbRecord ;
+    src:ciClass "customer_facing_service" ;
+    src:ciId "CI-85747" ;
+    src:ciName "loyalty_fraud_replica_1_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-12" ;
+    src:replicaOfCi "CI-64574" ;
+    src:sameAs src:mon-loyalty-fraud-replica-1 ;
+    src:status "operational" ;
+    src:tier 1 .
+
+src:cmdb-CI-93906 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-93906" ;
+    src:ciName "billing_notify_replica_1_svc" ;
+    src:datacenter "dc-fra" ;
+    src:ownerGroup "OG-11" ;
+    src:replicaOfCi "CI-54909" ;
+    src:sameAs src:mon-billing-notify-replica-1 ;
+    src:status "operational" ;
+    src:tier 2 .
+
+src:mon-address-pricing a src:MonRecord ;
+    src:alias "add-pri-db-v2" ;
+    src:component "mon:address-pricing" ;
+    src:displayName "Address Pricing DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "eu-central-1" .
+
+src:mon-billing-notify a src:MonRecord ;
+    src:alias "bil-not-svc-v2" ;
+    src:component "mon:billing-notify" ;
+    src:displayName "Billing Notify Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:upstream "Address Pricing DB",
+        "mon:shipping-profile" ;
+    src:zone "us-east-1" .
+
+src:mon-billing-notify-replica-1 a src:MonRecord ;
+    src:alias "bil-not-svc-v2-r1" ;
+    src:component "mon:billing-notify-replica-1" ;
+    src:displayName "Billing Notify Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "eu-central-1" .
+
+src:mon-catalog-reporting a src:MonRecord ;
+    src:alias "cat-rep-db-v2" ;
+    src:component "mon:catalog-reporting" ;
+    src:displayName "Catalog Reporting DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "us-east-1" .
+
+src:mon-catalog-reporting-replica-1 a src:MonRecord ;
+    src:alias "cat-rep-db-v2-r1" ;
+    src:component "mon:catalog-reporting-replica-1" ;
+    src:displayName "Catalog Reporting Replica 1 DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "eu-central-1" .
+
+src:mon-coupons-gateway a src:MonRecord ;
+    src:alias "cou-gat-svc-v2" ;
+    src:component "mon:coupons-gateway" ;
+    src:displayName "Coupons Gateway Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:upstream "Shipping Profile DB",
+        "loy-sea-q-v2" ;
+    src:zone "eu-central-1" .
+
+src:mon-ledger-quotes a src:MonRecord ;
+    src:alias "led-quo-svc-v2" ;
+    src:component "mon:ledger-quotes" ;
+    src:displayName "Ledger Quotes Service" ;
+    src:kind "service" ;
+    src:sla "SLA-BRONZE-03" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "us-east-1" .
+
+src:mon-legacy-metrics-1 a src:MonRecord ;
+    src:component "mon:legacy-metrics-1" ;
+    src:displayName "Legacy Metrics 1 Service" ;
+    src:kind "service" ;
+    src:status "retired" ;
+    src:team "team-identity" ;
+    src:zone "eu-central-1" .
+
+src:mon-legacy-reviews-2 a src:MonRecord ;
+    src:component "mon:legacy-reviews-2" ;
+    src:displayName "Legacy Reviews 2 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "eu-central-1" .
+
+src:mon-loyalty-fraud a src:MonRecord ;
+    src:alias "loy-fra-svc-v2" ;
+    src:component "mon:loyalty-fraud" ;
+    src:displayName "Loyalty Fraud Service" ;
+    src:kind "service" ;
+    src:sla "SLA-PLATINUM-01" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "us-east-1" .
+
+src:mon-loyalty-fraud-replica-1 a src:MonRecord ;
+    src:alias "loy-fra-svc-v2-r1" ;
+    src:component "mon:loyalty-fraud-replica-1" ;
+    src:displayName "Loyalty Fraud Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "eu-central-1" .
+
+src:mon-loyalty-search a src:MonRecord ;
+    src:alias "loy-sea-q-v2" ;
+    src:component "mon:loyalty-search" ;
+    src:displayName "Loyalty Search Queue" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "eu-central-1" .
+
+src:mon-reviews-invoices a src:MonRecord ;
+    src:alias "rev-inv-svc-v2" ;
+    src:component "mon:reviews-invoices" ;
+    src:displayName "Reviews Invoices Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:upstream "mon:shipping-profile" ;
+    src:zone "us-east-1" .
+
+src:mon-shipping-profile a src:MonRecord ;
+    src:alias "shi-pro-db-v2" ;
+    src:component "mon:shipping-profile" ;
+    src:displayName "Shipping Profile DB" ;
+    src:kind "datastore" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "eu-central-1" .
+
+src:mon-shipping-returns a src:MonRecord ;
+    src:alias "shi-ret-svc-v2" ;
+    src:component "mon:shipping-returns" ;
+    src:displayName "Shipping Returns Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "eu-central-1" .
+
+src:mon-warehouse-feeds a src:MonRecord ;
+    src:alias "war-fee-svc-v2" ;
+    src:component "mon:warehouse-feeds" ;
+    src:displayName "Warehouse Feeds Service" ;
+    src:kind "service" ;
+    src:sla "SLA-BRONZE-02" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "eu-central-1" .
+
+src:mon-warehouse-feeds-replica-1 a src:MonRecord ;
+    src:alias "war-fee-svc-v2-r1" ;
+    src:component "mon:warehouse-feeds-replica-1" ;
+    src:displayName "Warehouse Feeds Replica 1 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "eu-central-1" .
+
+ex:CI-04613 a ex:Component,
+        ex:Database ;
+    ex:deployedIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-04613 ;
+    ex:hasFootprintRegion ex:dc-fra,
+        ex:dc-iad ;
+    ex:inReplicaGroupWith ex:CI-04613,
+        ex:CI-83853 ;
+    ex:name "CI-04613",
+        "Catalog Reporting Replica 1 DB",
+        "cat-rep-db-v2-r1",
+        "catalog_reporting_replica_1_db",
+        "mon:catalog-reporting-replica-1" ;
+    ex:ownedBy ex:team-platform ;
+    ex:replicaOf ex:CI-83853 .
+
+ex:CI-66889 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Service ;
+    ex:deployedIn ex:dc-fra ;
+    ex:downIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-66889 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:inReplicaGroupWith ex:CI-66889,
+        ex:CI-82259 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "CI-66889",
+        "Warehouse Feeds Replica 1 Service",
+        "mon:warehouse-feeds-replica-1",
+        "war-fee-svc-v2-r1",
+        "warehouse_feeds_replica_1_svc" ;
+    ex:ownedBy ex:team-identity ;
+    ex:replicaOf ex:CI-82259 ;
+    ex:tier 1 .
+
+ex:CI-85747 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Service ;
+    ex:deployedIn ex:dc-iad ;
+    ex:fromRecord src:cmdb-CI-85747 ;
+    ex:hasFootprintRegion ex:dc-fra,
+        ex:dc-iad ;
+    ex:inReplicaGroupWith ex:CI-64574,
+        ex:CI-85747 ;
+    ex:name "CI-85747",
+        "Loyalty Fraud Replica 1 Service",
+        "loy-fra-svc-v2-r1",
+        "loyalty_fraud_replica_1_svc",
+        "mon:loyalty-fraud-replica-1" ;
+    ex:ownedBy ex:team-platform ;
+    ex:replicaOf ex:CI-64574 ;
+    ex:tier 1 .
+
+ex:CI-93906 a ex:Component,
+        ex:Service ;
+    ex:deployedIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-93906 ;
+    ex:hasFootprintRegion ex:dc-fra,
+        ex:dc-iad ;
+    ex:inReplicaGroupWith ex:CI-54909,
+        ex:CI-93906 ;
+    ex:name "Billing Notify Replica 1 Service",
+        "CI-93906",
+        "bil-not-svc-v2-r1",
+        "billing_notify_replica_1_svc",
+        "mon:billing-notify-replica-1" ;
+    ex:ownedBy ex:team-platform ;
+    ex:replicaOf ex:CI-54909 ;
+    ex:tier 2 .
+
+src:Stale a owl:Class ;
+    rdfs:comment "Derived. A record of a stale component (either export flags it decommissioned or retired)." .
+
+ex:CI-02495 a ex:Component,
+        ex:Primary,
+        ex:Queue ;
+    ex:deployedIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-02495 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:inReplicaGroupWith ex:CI-02495 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "CI-02495",
+        "Loyalty Search Queue",
+        "loy-sea-q-v2",
+        "loyalty_search_q",
+        "mon:loyalty-search" ;
+    ex:ownedBy ex:team-identity .
+
+ex:CI-64574 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-54909 ;
+    ex:dependsOnTransitively ex:CI-45834,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-fra ;
+    ex:downIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-64574 ;
+    ex:hasFootprintRegion ex:dc-fra,
+        ex:dc-iad ;
+    ex:hasSLA ex:SLA-PLATINUM-01 ;
+    ex:inReplicaGroupWith ex:CI-64574,
+        ex:CI-85747 ;
+    ex:name "CI-64574",
+        "Loyalty Fraud Service",
+        "loy-fra-svc-v2",
+        "loyalty_fraud_svc",
+        "mon:loyalty-fraud" ;
+    ex:ownedBy ex:team-platform ;
+    ex:tier 1 .
+
+ex:CI-82259 a ex:Component,
+        ex:CustomerFacingService,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-54909 ;
+    ex:dependsOnTransitively ex:CI-45834,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-fra ;
+    ex:downIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-82259 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:hasSLA ex:SLA-BRONZE-02 ;
+    ex:inReplicaGroupWith ex:CI-66889,
+        ex:CI-82259 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "CI-82259",
+        "Warehouse Feeds Service",
+        "mon:warehouse-feeds",
+        "war-fee-svc-v2",
+        "warehouse_feeds_svc" ;
+    ex:ownedBy ex:team-identity ;
+    ex:tier 1 .
+
+ex:CI-83853 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:dc-iad ;
+    ex:fromRecord src:cmdb-CI-83853 ;
+    ex:hasFootprintRegion ex:dc-fra,
+        ex:dc-iad ;
+    ex:inReplicaGroupWith ex:CI-04613,
+        ex:CI-83853 ;
+    ex:name "CI-83853",
+        "Catalog Reporting DB",
+        "cat-rep-db-v2",
+        "catalog_reporting_db",
+        "mon:catalog-reporting" ;
+    ex:ownedBy ex:team-platform .
+
+ex:Database a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:Team a owl:Class ;
+    rdfs:comment "A team; its IRI is ex:<monitoring team name>, e.g. ex:team-platform." .
+
+ex:CI-40432 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-54909,
+        ex:CI-55434 ;
+    ex:dependsOnTransitively ex:CI-45834,
+        ex:CI-54909,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-iad ;
+    ex:downIn ex:dc-fra,
+        ex:dc-iad ;
+    ex:fromRecord src:cmdb-CI-40432 ;
+    ex:hasFootprintRegion ex:dc-iad ;
+    ex:inReplicaGroupWith ex:CI-40432 ;
+    ex:lostIn ex:dc-iad ;
+    ex:name "CI-40432",
+        "Reviews Invoices Service",
+        "mon:reviews-invoices",
+        "rev-inv-svc-v2",
+        "reviews_invoices_svc" ;
+    ex:ownedBy ex:team-identity ;
+    ex:tier 3 .
+
+ex:CustomerFacingService a owl:Class ;
+    rdfs:subClassOf ex:Service .
+
+ex:SLA a owl:Class ;
+    rdfs:comment "An SLA; its IRI is ex:<monitoring SLA ID>, e.g. ex:SLA-GOLD-01." .
+
+ex:team-identity a ex:Team ;
+    ex:cmdbOwnerGroup "OG-12" .
+
+ex:Region a owl:Class ;
+    rdfs:comment "A region; its IRI is ex:<CMDB datacenter>, e.g. ex:dc-fra." .
+
+ex:team-platform a ex:Team ;
+    ex:cmdbOwnerGroup "OG-11" .
+
+ex:CI-45834 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-45834 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:inReplicaGroupWith ex:CI-45834 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "Address Pricing DB",
+        "CI-45834",
+        "add-pri-db-v2",
+        "address_pricing_db",
+        "mon:address-pricing" ;
+    ex:ownedBy ex:team-identity .
+
+ex:CI-55434 a ex:Component,
+        ex:Database,
+        ex:Primary ;
+    ex:deployedIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-55434 ;
+    ex:hasFootprintRegion ex:dc-fra ;
+    ex:inReplicaGroupWith ex:CI-55434 ;
+    ex:lostIn ex:dc-fra ;
+    ex:name "CI-55434",
+        "Shipping Profile DB",
+        "mon:shipping-profile",
+        "shi-pro-db-v2",
+        "shipping_profile_db" ;
+    ex:ownedBy ex:team-platform .
+
+ex:Primary a owl:Class ;
+    rdfs:comment "Derived. Primary: a Service, Database or Queue X is primary if the data has no edge 'X replicaOf Y', i.e. X is not itself a replica of another node." ;
+    rdfs:subClassOf ex:Component .
+
+ex:Service a owl:Class ;
+    rdfs:subClassOf ex:Component .
+
+ex:CI-54909 a ex:Component,
+        ex:Primary,
+        ex:Service ;
+    ex:dependsOn ex:CI-45834,
+        ex:CI-55434 ;
+    ex:dependsOnTransitively ex:CI-45834,
+        ex:CI-55434 ;
+    ex:deployedIn ex:dc-iad ;
+    ex:downIn ex:dc-fra ;
+    ex:fromRecord src:cmdb-CI-54909 ;
+    ex:hasFootprintRegion ex:dc-fra,
+        ex:dc-iad ;
+    ex:inReplicaGroupWith ex:CI-54909,
+        ex:CI-93906 ;
+    ex:name "Billing Notify Service",
+        "CI-54909",
+        "bil-not-svc-v2",
+        "billing_notify_svc",
+        "mon:billing-notify" ;
+    ex:ownedBy ex:team-platform ;
+    ex:tier 2 .
+
+src:CmdbRecord a owl:Class ;
+    rdfs:comment "One record of the CMDB export (fields: ciId, ciName, ciClass, tier, status, ownerGroup, datacenter, replicaOfCi, dependsOnCi)." .
+
+src:MonRecord a owl:Class ;
+    rdfs:comment "One record of the monitoring export (fields: component, displayName, alias, kind, status, team, zone, sla, upstream)." .
+
+ex:dc-iad a ex:Region ;
+    ex:monitoringZone "us-east-1" .
+
+ex:Component a owl:Class ;
+    rdfs:comment "An infrastructure component: a Service, Database or Queue. Its IRI is ex:<CMDB CI ID>, e.g. ex:CI-12345." .
+
+ex:dc-fra a ex:Region ;
+    ex:monitoringZone "eu-central-1" .
+

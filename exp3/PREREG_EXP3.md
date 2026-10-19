@@ -65,7 +65,9 @@ The definitions (replica group, footprint, primary, lost, down, SLA breach) carr
 - **DEV/TEST split by seed** (seeded shuffle per graph, first 30% DEV), made before any run and never moved:
   76 questions, 23 DEV and 53 TEST. TEST holds **44 cross-source** and 9 control questions.
 - **Trap audit** (no model involved): 53% of cross-source questions change answer under at least one wrong reading:
-  ignoring the monitoring export 27/64, keeping stale records 14/64, trusting the non-authoritative source 8/64.
+  ignoring the monitoring export 27/64, keeping stale records 14/64, trusting the non-authoritative source 8/64,
+  matching entities by name similarity instead of the mappings 6/64 (a diagnostic: monitoring identifiers matched
+  to the CMDB record with the most similar normalized name).
 
 ## Conditions (same model, temperature 0, 8192 output tokens, 60 s timeout, one retry on errors only, as in Exp 2)
 
@@ -75,7 +77,13 @@ The definitions (replica group, footprint, primary, lost, down, SLA breach) carr
 | **B3** | export schemas + docs + a glue library (entity resolution, field mapping, footprint/lost/down) | Python sandbox over both exports |
 | **C3** | ontology + rules with the mappings and definitions, materialized before querying; class and property names | one SPARQL query |
 
-- Artifacts resolve entities completely, with equal mappings in B3 and C3 (diffed against the key).
+- Artifacts resolve entities completely, with equal mappings in B3 and C3 (diffed against the key). The team and
+  region crosswalks are derived from the exports by majority vote over non-stale records and shared by both.
+- Failure is region-parametric: C3 materializes `lostIn`, `downIn` and `breachedIn` for every region before
+  querying; B3's glue takes the datacenter as an argument. Neither artifact or harness learns the failed region from
+  the hidden answer key.
+- Hidden-data guard: an audit hook refusing any open or listing under `data/hidden/` runs in the harness process
+  and at the top of every sandbox program and SPARQL runner.
 - B3 and C3 get the same information. I author both artifacts and review both. Line counts, fix
   counts and my review hours are logged for each.
 - Prompt iterations: at most 3 per condition, clarity fixes only, each logged with its evidence. No tuning toward a
@@ -84,7 +92,8 @@ The definitions (replica group, footprint, primary, lost, down, SLA breach) carr
 ## Repeats
 
 Every TEST question runs **3 times per condition** at temperature 0, bypassing the response cache for repeats 2 and
-3. Repeats are stored separately. Answer variation across repeats is reported per condition.
+3. Each repeat after the first uses its own cache namespace, so the cache is bypassed without changing the model
+settings. Repeats are stored separately. Answer variation across repeats is reported per condition.
 
 ## Primary analysis (H1)
 
@@ -97,6 +106,11 @@ Every TEST question runs **3 times per condition** at temperature 0, bypassing t
   0; **contradicted** if the upper bound is below 0.
 - **Secondary CI:** per-question bootstrap (as in Experiments 1 and 2). If the two disagree, the decision follows the
   cluster CI; both are reported and the result is described as sensitive to the correlation assumption.
+- **Weight of each scale:** the cross-source TEST questions are 15 / 15 / 14 on the 22- / 120- / 567-node graphs,
+  one cluster each, so 29 of 44 (two thirds of the clusters) come from the two larger scales and the primary CI is
+  dominated by them. Per-seed results are reported descriptively only, with no per-seed test.
+- **Control questions** are reported per seed and size: TEST 2 / 3 / 4 and DEV 2 / 1 / 0 on the 22- / 120- /
+  567-node graphs (12 in total).
 
 ## Secondary and descriptive analyses
 
@@ -113,6 +127,10 @@ Both changes are fixed now, before any run, and applied only after the baseline 
 1. **Schema change:** the CMDB export renames the field `datacenter` to `site` (values unchanged).
 2. **Definition change ("lost"):** a non-database component is lost if its footprint contains only the failed region
    (unchanged); **a database is lost if fewer than two of its footprint regions lie outside the failed region**.
+
+Impact, computed from ground truth before any run: the "lost" change alters **29 of 53 TEST answers** (29 of 44
+cross-source, 0 of 9 controls; 9 / 10 / 10 on the three graphs). The field rename changes no answer by construction:
+it is a format change that can only break artifacts, not alter the truth.
 
 Procedure: (a) re-run TEST with the **unchanged** artifacts and docs against the changed export and the changed answer
 key, and classify each question that breaks as **loud** (error, failed retry or no answer) or **silent** (runs, wrong

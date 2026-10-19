@@ -28,4 +28,5 @@
 
 ## Current status
 
-Experiment 3 step 1 done (generator, truth3, questions, PREREG draft); step 2 not started.
+Experiment 3 step 2 done (B3 glue, C3 ontology and rules, docs, hidden-data guard, verification, offline tests);
+next: Haiku DEV pilot with the ceiling rule (first API calls; estimate first).

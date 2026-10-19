@@ -6,7 +6,9 @@ resolution rules (RULES below), and requires an exact match. Variants of the reb
 (drop monitoring data, keep stale records, trust the wrong source) measure how much each difficulty knob bites.
 Run (from the repo root): python exp3/truth3.py
 """
+import difflib
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -61,8 +63,27 @@ def resolvers(key):
     return ids, team, region, sla
 
 
+def norm_name(x):
+    """Name normalization used by the 'name_similarity' wrong reading (a naive merger, not the real mapping)."""
+    x = re.sub(r"^mon:", "", x.lower())
+    x = re.sub(r"_(svc|db|q)$", "", x)
+    words = [w for w in re.split(r"[-_ ]+", x) if w and w not in ("service", "db", "queue", "svc", "q", "v2")
+             and not re.fullmatch(r"r\d+", w)]
+    return " ".join(words)
+
+
+def fuzzy_matcher(cmdb):
+    """Map any monitoring identifier to the CMDB ci_id with the most similar normalized name."""
+    names = sorted((norm_name(r["ci_name"]), r["ci_id"]) for r in cmdb["records"])
+    def match(x):
+        nx_ = norm_name(x)
+        return max(names, key=lambda nc: (difflib.SequenceMatcher(None, nx_, nc[0]).ratio(), nc[1]))[1]
+    return match
+
+
 def rebuild(n, variant=None):
-    """Canonical graph rebuilt from the exports. variant: None | 'cmdb_only' | 'keep_stale' | 'wrong_authority'."""
+    """Canonical graph rebuilt from the exports.
+    variant: None | 'cmdb_only' | 'keep_stale' | 'wrong_authority' | 'name_similarity'."""
     canon, key, cmdb, mon = load(n)
     ids, team, region, sla = resolvers(key)
     stale_ids = {g["cmdb"] for g in key["stale"]} | {g["monitoring"] for g in key["stale"]}
@@ -77,22 +98,31 @@ def rebuild(n, variant=None):
     nodes = {v["id"]: v for v in canon["nodes"] if v["type"] not in TYPE.values()}  # teams, regions, SLAs
     edges = set()
     mon_by = {r["component"]: r for r in mon["records"]}
+    if variant == "name_similarity":  # monitoring records and references matched to CMDB records by name only
+        match = fuzzy_matcher(cmdb)
+        mon_of = {match(m["component"]): m for m in mon["records"]}
     for r in cmdb["records"]:
         if not keep(r["ci_id"]):
             continue
         x = resolve(r["ci_id"])
         nodes[x] = {"id": x, "type": TYPE[r["ci_class"]]} | ({"tier": r["tier"]} if r["tier"] else {})
-        m = mon_by[key["entities"][x]["monitoring"] if x in key["entities"] else
-                   next(g["monitoring"] for g in key["stale"] if g["cmdb"] == r["ci_id"])]
+        if variant == "name_similarity":
+            m = mon_of.get(r["ci_id"], {"team": None, "sla": None, "upstream": [], "zone": None})
+        else:
+            m = mon_by[key["entities"][x]["monitoring"] if x in key["entities"] else
+                       next(g["monitoring"] for g in key["stale"] if g["cmdb"] == r["ci_id"])]
         reg = region[m["zone"]] if variant == "wrong_authority" else region[r["datacenter"]]
-        own = team[r["owner_group"]] if variant == "wrong_authority" else team[m["team"]]
+        own = team[r["owner_group"]] if variant == "wrong_authority" or m["team"] is None else team[m["team"]]
         edges |= {(x, "deployedIn", reg), (x, "ownedBy", own)}
         if r["replica_of_ci"]:
             edges.add((x, "replicaOf", resolve(r["replica_of_ci"])))
         edges |= {(x, "dependsOn", resolve(d)) for d in r["depends_on_ci"] if keep(d)}
         if m["sla"]:
             edges.add((x, "hasSLA", sla[m["sla"]]))
-        if variant != "cmdb_only":
+        if variant == "name_similarity":
+            targets = {match(u) for u in m["upstream"]}
+            edges |= {(x, "dependsOn", resolve(t)) for t in targets if keep(t)}
+        elif variant != "cmdb_only":
             edges |= {(x, "dependsOn", resolve(u)) for u in m["upstream"]}
     return {"nodes": sorted(nodes.values(), key=lambda v: v["id"]), "edges": sorted(list(e) for e in edges)}, flagged, stale_ids
 
