@@ -18,8 +18,10 @@ SPARQL plus a schema description against Python plus the same description, not o
 
 ## Follow-up
 
-[Experiment 2](exp2/README.md) addresses this directly. It moves the definitions out of the questions and into each
+[Experiment 2](../exp2/README.md) addresses this directly. It moves the definitions out of the questions and into each
 condition, and gives the ontology executable structure: rule-defined classes (`Primary`, `Lost`, `Down`,
 `BreachedSLA`, ...) materialized to a fixpoint before querying, compared with the same definitions as prose (B+) and as
 Python helpers (B++). Its pre-registered result: C2 − B+ = +0.026 [0.000, +0.071], not supported, and C2 − B++ = 0.000,
 the predicted tie.
+
+*Moved from the repo root to `exp1/ADDENDUM.md` on 2026-10-19 when Experiment 1 was gathered into `exp1/`; only this note and the Experiment 2 link path changed.*

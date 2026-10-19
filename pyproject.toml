@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blast-radius"
+version = "0.3.0"
+description = "Pre-registered benchmarks: do ontologies help LLMs reason about system topology?"
+requires-python = ">=3.11"
+dependencies = ["rdflib", "networkx", "pandas", "matplotlib", "scipy", "numpy", "anthropic"]
+
+[project.optional-dependencies]
+notebook = ["nbformat", "nbclient", "ipykernel"]
+
+# Experiment 1's modules live in exp1/ and are imported by Experiments 2 and 3 (e.g. `import truth`).
+# `pip install -e .` puts exp1/ on the import path, so frozen code needs no edits after the move.
+[tool.setuptools]
+package-dir = { "" = "exp1" }
+py-modules = ["common", "gen", "llm", "plots", "questions", "run_A", "run_B", "run_Bplus", "run_C",
+              "sandbox", "score", "truth"]
