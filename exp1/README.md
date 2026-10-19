@@ -110,7 +110,7 @@ For comparison, on the same 12 region-failure questions plain **B scores 1.00** 
 ## Limitations
 
 - **Synthetic data.** One generator with fixed seeds, three graphs. Real infrastructure graphs are messier (partial data, inconsistent naming, multiple regions per service).
-- **Circularity risk.** The generator, the question templates, the ground truth and the ontology were all written by the same author, so the ontology fits the questions by construction. Real ontologies rarely fit the questions this well, which if anything should favour C.
+- **Circularity risk.** The generator, the question templates, the ground truth and the ontology were all written by me, so the ontology fits the questions by construction. Real ontologies rarely fit the questions this well, which if anything should favour C.
 - **One model.** Haiku 4.5 only, one run at temperature 0, no variance across seeds or models. A stronger model may write the double-negation SPARQL reliably.
 - **No reasoner enabled.** C ran plain SPARQL over asserted triples: subclass membership and transitivity were handled through property paths (`rdf:type/rdfs:subClassOf*`, `ex:dependsOn+`), not by an OWL/RDFS reasoner. A reasoner, or rules that materialise "lost" and "down", could change C's L4 results.
 - **Ontology construction cost not measured.** Writing `schema.ttl` and converting the data to RDF took effort that the benchmark does not count; B+ only needed the prose documentation.

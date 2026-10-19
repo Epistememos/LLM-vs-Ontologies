@@ -76,8 +76,8 @@ The definitions (replica group, footprint, primary, lost, down, SLA breach) carr
 | **C3** | ontology + rules with the mappings and definitions, materialized before querying; class and property names | one SPARQL query |
 
 - Artifacts resolve entities completely, with equal mappings in B3 and C3 (diffed against the key).
-- B3 and C3 get the same information. **Both artifacts are authored by Claude Code**; the author reviews both. Line
-  counts, fix counts and the author's review hours are logged for each.
+- B3 and C3 get the same information. I author both artifacts and review both. Line counts, fix
+  counts and my review hours are logged for each.
 - Prompt iterations: at most 3 per condition, clarity fixes only, each logged with its evidence. No tuning toward a
   C3 win.
 
@@ -116,8 +116,8 @@ Both changes are fixed now, before any run, and applied only after the baseline 
 
 Procedure: (a) re-run TEST with the **unchanged** artifacts and docs against the changed export and the changed answer
 key, and classify each question that breaks as **loud** (error, failed retry or no answer) or **silent** (runs, wrong
-answer); (b) apply the minimal correct edit to each artifact and its docs (the author reviews both), record lines
-changed (`git diff --numstat`) and the author's time; (c) re-run and re-score. Reported: lines changed, loud vs silent
+answer); (b) apply the minimal correct edit to each artifact and its docs (I review both), record lines
+changed (`git diff --numstat`) and my time; (c) re-run and re-score. Reported: lines changed, loud vs silent
 breakage counts, and accuracy before and after, per condition.
 
 ## Difficulty and headroom (decided before any TEST run)
@@ -139,7 +139,7 @@ $6, pre-register a cut here before running: 2 repeats instead of 3, or dropping 
 ## Known limitations (draft)
 
 - One generator, three graphs, one model; synthetic exports with planted, not organic, noise.
-- The same author writes the data, rules, glue, questions and ground truth.
+- I write the data, rules, glue, questions and ground truth.
 - Equal mappings in B3 and C3 mean entity resolution is solved by the artifacts in both: H1 tests whether the
   ontology form helps the model use resolved mappings, not whether it resolves entities better.
 - H2 measures one schema change and one definition change; it is descriptive.

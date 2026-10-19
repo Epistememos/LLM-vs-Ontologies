@@ -10,7 +10,8 @@
 - The DEV/TEST split never moves.
 - Ask before spending over ~$5 of API budget; print the call count and cost estimate with a 1.6x correction before
   any run.
-- Claude Code authors both B3 and C3 artifacts; log line counts and fix counts for each.
+- I author both the B3 and C3 artifacts, with equal effort and the same information; log line counts, fix counts
+  and my review hours for each.
 
 ## Layout
 

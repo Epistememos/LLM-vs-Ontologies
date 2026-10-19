@@ -18,7 +18,7 @@ they support the thesis.
 | B+ | B + prose schema documentation (`SCHEMA_DOC`) | Python sandbox over raw JSON | 1, on error only |
 | C | prose schema documentation + `schema.ttl`; never the data | one SPARQL query, executed by rdflib | 1, on error only |
 
-- Model `claude-haiku-4-5-20251001`, temperature 0, `max_tokens` 8192 for every call.
+- Model: Anthropic's Haiku 4.5 (2025-10-01 snapshot; model ID set in `llm.py`), temperature 0, `max_tokens` 8192 for every call.
 - Retry trigger, identical for B, B+ and C: exception, timeout, missing code block, parse failure, or no
   parseable/mappable answer. A legitimately empty result is never retried.
 - Sandbox and query timeout: 60 s.
@@ -89,8 +89,8 @@ was written; the decision rule above was set by the project brief before any run
 
 ## Known limitations (to be repeated in the README)
 
-- Synthetic graphs from one generator; the question templates and the ontology were written by the same
-  author, so there is a circularity risk (the ontology fits the questions by construction).
+- Synthetic graphs from one generator; I wrote both the question templates and the ontology, so there is a
+  circularity risk (the ontology fits the questions by construction).
 - One model (Haiku 4.5), one run at temperature 0; no variance across seeds or models.
 - The cost of building the ontology is not measured.
 - C cannot post-process awkwardly shaped results; A and B can.

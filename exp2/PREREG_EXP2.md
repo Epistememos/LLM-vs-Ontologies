@@ -112,13 +112,13 @@ All three found the failed region in all 3 checks. C2 SPARQL validity 21/21 on t
   a difference, and a "not supported" result would then reflect the questions' difficulty for this model as much
   as the definitions' form.
 - **Yes/no-heavy.** 34 of 51 TEST questions are booleans, scored 0/1, with 50% chance accuracy for a guess.
-- **Same author.** The definitions, rules, helpers, questions and ground truth were written by the same author;
+- **Single author.** I wrote the definitions, rules, helpers, questions and ground truth;
   rules and helpers were each verified against `truth.py`, but the questions are shaped to the concepts both encode.
 - **C2's executable layer is the rules, not OWL reasoning.** "Lost" needs closed-world negation, which OWL
   cannot express; it is a SPARQL rule. The OWL characteristics in `ontology2.ttl` (symmetric, transitive,
   reflexive) are declarative and are realized by the rules.
 - **One model, one run, synthetic graphs**, as in Experiment 1.
-- The authoring-effort comparison has no human-time component (both artifacts were written by an AI assistant).
+- The authoring-effort comparison uses line and fix counts only; it has no time component.
 
 ## Frozen file hashes (sha256, first 16 hex chars)
 

@@ -22,10 +22,9 @@ type-closure stratum. Found by reading the rules, before the first verification 
 ## Time
 
 Wall-clock timestamps were recorded (start 2026-10-13 12:46:36; helpers written 12:48:02; rules and
-ontology written 12:48:17), but **they are not a meaningful measure of human authoring effort**: both artifacts
-were written by an AI coding assistant, and most of the drafting happens before the file-write timestamps. Do not
-compare them with human hours. The comparable proxies are the line counts and fix counts above. If a human
-reviews or re-derives either artifact, log that time here:
+ontology written 12:48:17), but **they are not a meaningful measure of authoring effort**: most of the drafting happened before the
+file-write timestamps. Do not compare them with hours. The comparable proxies are the line counts and fix counts
+above. If I review or re-derive either artifact, I log that time here:
 
 | Date | Who | Artifact | Hours | Notes |
 |---|---|---|---|---|

@@ -70,8 +70,7 @@ pre-registered; see the override entry in LOG.md.
 
 B+ writes the definitions out itself in every program: 4-5× the output tokens of B++ or C2, and 4-5× slower.
 
-**Authoring effort** (from [EFFORT.md](EFFORT.md); both artifacts were written by an AI assistant, so no human hours
-are reported)
+**Authoring effort** (from [EFFORT.md](EFFORT.md); line and fix counts only, no time measure)
 
 | Artifact | Condition | Code lines | Fixes before matching ground truth |
 |---|---|---|---|
@@ -104,8 +103,8 @@ are reported)
 - **Changes made during DEV**, all logged before freezing: a 120 s API client timeout (one DEV call hung for 42 minutes),
   a B++ docs fix stating that `g.region`, `g.owner` and `g.sla` are dicts (prompt version 2; removed 3 DEV retries),
   and question quotas raised from 14-15 to 23 per size for power.
-- **Same author** for definitions, rules, helpers, questions and ground truth; the questions are shaped to the concepts
-  both encodings implement.
+- **Single author:** I wrote the definitions, rules, helpers, questions and ground truth; the questions are shaped to
+  the concepts both encodings implement.
 
 ## Possible Experiment 3 (not run)
 

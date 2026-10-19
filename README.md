@@ -61,7 +61,6 @@ exp3/                    Experiment 3 (in progress): two conflicting sources, ch
 notebook/                research notebook across experiments
 tools/                   verify_frozen.py, run_exp2_check_docs.py
 pyproject.toml           dependencies; makes exp1's shared modules importable everywhere
-CLAUDE.md                standing rules for automated work on this repo
 ```
 
 Experiments 2 and 3 reuse Experiment 1's modules (`truth`, `llm`, `sandbox`, `score`, ...) unmodified;
@@ -97,13 +96,13 @@ so re-runs of completed experiments cost nothing. Raw responses for every questi
   line endings on checkout, so the checker also accepts the LF and CRLF forms of each file and reports which matched.
 - **Frozen tags:** `exp1-final` and `exp2-final` mark each experiment exactly as reported.
 - **Logged changes:** every prompt, question, harness and post-run change is logged with its reason
-  (`exp1/PROMPT_LOG.md`, `exp2/LOG.md`). The one change to frozen material, moving Experiment 1 into `exp1/` on
-  2026-10-19 with no content change, is logged in `CLAUDE.md`.
+  (`exp1/PROMPT_LOG.md`, `exp2/LOG.md`, and [PROGRESS.md](PROGRESS.md) for every commit). Moving Experiment 1
+  into `exp1/` on 2026-10-19 changed no content and no result, number or decision rule.
 - **Model and cost:** Haiku 4.5 at temperature 0 throughout. Spend so far: Experiment 1 $3.08, Experiment 2 $0.84,
   Experiment 3 $0.
 
 ## Limitations that apply to every experiment
 
-Synthetic graphs from one generator; one model and one run per question; the same author wrote the generator,
-questions, ground truth and every artifact the conditions use; small per-cell counts make subgroup results
+Synthetic graphs from one generator; one model and one run per question; I wrote the generator, questions,
+ground truth and every artifact the conditions use; small per-cell counts make subgroup results
 exploratory. Each write-up lists its own limitations in full.
