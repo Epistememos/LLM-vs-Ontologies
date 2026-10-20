@@ -16,8 +16,8 @@ This repository is a series of small, carefully controlled experiments that test
 Short answer so far: **giving the AI well-organized, pre-processed knowledge helps a lot, but the formal ontology
 format itself made no measurable difference.** What mattered was the work an ontology is supposed to do (deciding
 what things are and computing what they mean), not the technology it is written in. The rest of this page explains
-how I tested that, what I found, and what I think it means for the future of ontologies, including why I see
-Palantir's approach as the best fit for these results.
+how I tested that, what I found, and what I think it means for the future of ontologies, including what it suggests
+about operational ontologies such as Palantir's, both where that approach is right and where it falls short.
 
 ---
 
@@ -27,7 +27,7 @@ Palantir's approach as the best fit for these results.
 2. [How the experiments work](#how-the-experiments-work)
 3. [What I found, experiment by experiment](#what-i-found-experiment-by-experiment)
 4. [What this means for ontologies](#what-this-means-for-ontologies)
-5. [Where ontologies are heading: why Palantir's approach fits](#where-ontologies-are-heading-why-palantirs-approach-fits)
+5. [Where ontologies are heading: what this says about Palantir's approach](#where-ontologies-are-heading-what-this-says-about-palantirs-approach)
 6. [What these experiments cannot tell you](#what-these-experiments-cannot-tell-you)
 7. [Glossary](#glossary)
 8. [For technical readers](#for-technical-readers)
@@ -263,47 +263,73 @@ operational layer well.
 
 ---
 
-## Where ontologies are heading: why Palantir's approach fits
+## Where ontologies are heading: what this says about Palantir's approach
 
 ### What Palantir's Ontology is
 
 Palantir is a data and AI software company whose platforms (Foundry, and AIP for AI applications) are built around
 what it calls the **Ontology**. Despite the name, it is not a formal RDF/OWL ontology of the kind tested in
-Experiment 1. It is an operational layer that sits between a company's raw data and the people and AI systems that use
-it:
+Experiment 1. It is an operational layer between a company's raw data and the people and AI systems that use it:
 
-- **Objects.** Data from many source systems (databases, spreadsheets, inventories, sensors) is mapped into business
-  objects: a *Service*, a *Datacenter*, a *Customer contract*. One object can combine records from several systems that
-  describe the same real-world thing.
-- **Links.** Objects are connected by named relationships: a service *depends on* a database, a contract *covers* a
-  service.
-- **Logic.** Calculations (functions) compute derived facts, and actions let users and AI make governed changes, such
-  as opening an incident or rerouting traffic, with permissions and an audit trail.
-- **AI on top.** AI assistants and agents work with these objects, links, functions and actions, instead of with raw
-  tables or raw database dumps.
+- **Objects.** Data from many source systems is mapped into business objects, such as a *Service*, a *Datacenter* or a
+  *Customer contract*. One object can combine records from several systems that describe the same real-world thing.
+- **Links.** Objects are connected by named relationships: a service *depends on* a database.
+- **Logic.** Functions compute derived facts, and actions let users and AI make governed changes, with permissions and
+  an audit trail.
+- **AI on top.** AI assistants and agents work with these objects, links, functions and actions rather than with raw
+  tables.
 
-### Why that design fits what I found
+It is the best-known example of the "operational" kind of ontology that the previous section describes, so it is
+worth asking what these experiments say about it: where they support the approach, and where they cut against it.
 
-Each part of that design lines up with something these experiments found useful:
+### Where the findings support it
 
-| What the experiments found | How the Palantir-style design addresses it |
-|---|---|
-| The AI did poorly reconciling conflicting sources itself (0.64), and almost perfectly once conflicts were resolved first (0.95-1.00) | Data from different systems is merged into one object per real-world thing **before** any application or AI touches it |
-| Mistakes came from re-deriving definitions like "down" from written explanations; computing them once removed the mistakes | Derived facts and business logic live in shared functions, **defined once and reused** by every application and agent |
-| Simple lookups ("which services are down?") were far more reliable than complex queries | The AI is given a **small, typed vocabulary** of objects and actions rather than a raw schema it must reason over |
-| The formal ontology format added nothing over equivalent code | The design does **not depend on formal logic standards**; logic is written in ordinary code where that is simplest |
-| When the business changes, every copy of a definition has to change (what Experiment 3's H2 measures) | Definitions live **in one central place**, so a change is made once and every consumer picks it up |
+- **Resolving data before the AI sees it is the right priority.** The biggest effect in this project came from
+  reconciling conflicting sources up front (0.64 to 0.95-1.00 in Experiment 3's practice round). A layer whose main job
+  is to merge many systems into one object per real-world thing targets exactly that.
+- **Executable, shared definitions beat written explanations.** Computing "down" or "breached" once and exposing it as a
+  lookup removed the errors that came from the AI re-deriving those ideas each time. Functions attached to objects do
+  the same.
+- **Not betting on formal logic is consistent with the evidence.** The formal RDF/OWL machinery added nothing
+  measurable here, and Palantir's Ontology does not depend on it.
+
+### Where the findings cut against it, or leave it unproven
+
+- **The benefit is not specific to an "ontology" product.** In every comparison, ordinary, well-organized code carrying
+  the same resolved data and the same definitions did as well as the ontology version, and it was cheaper to build (83
+  lines of Python against 201 lines of conversion, rules and schema in Experiment 3). What helped was engineering
+  discipline: resolve entities, define things once, expose simple lookups. A shared code library, a typed internal
+  API or a well-maintained metrics layer can provide that too. On this evidence, the value lies in doing the
+  integration work, not in the ontology as a category, and claims that the Ontology itself is what makes AI reliable
+  go further than these results support.
+- **Constraining the AI to predefined objects has a cost.** The pre-built vocabulary made anticipated questions easy,
+  but questions the vocabulary did not cover got harder. In Experiment 1, on questions that needed calculations the
+  ontology could not express (path lengths, path counts), the ontology setup scored 0.44 while the code setups scored
+  0.89-1.00. An AI that can only act through predefined objects and actions is more reliable inside that boundary
+  and less capable outside it.
+- **Centralization also centralizes mistakes.** My experiments verified every resolution and every definition against a
+  known answer key before any AI saw them. Real entity resolution is never perfect. In a single shared layer, one wrong
+  merge or one wrong definition reaches every application and every AI agent at once, and the AI has no way to notice,
+  because it trusts the layer. These experiments did not test imperfect resolution, so they cannot say how well any
+  layer, Palantir's included, holds up when its own data is wrong.
+- **Change is a double-edged sword.** Defining something in one place means a change only has to be made once. It also
+  means one change can silently alter the answers of every consumer. Whether a central layer reduces or increases
+  silent breakage is exactly what Experiment 3's maintenance test (H2) measures, and it has not been run yet.
+- **Building and owning the layer is expensive, and it locks logic in.** The ontology versions here cost more to build
+  than the code versions, even at small scale. In a commercial platform, modelling the business, mapping every source
+  and keeping it current is substantial ongoing work, and business logic written inside one vendor's platform is
+  harder to move than logic in open code or open standards.
 
 ### My conclusion
 
-I think this operational style of ontology is the best-placed design for making AI reliable on enterprise data,
-because it keeps exactly what these experiments found valuable (resolved entities, executable shared definitions, a
-simple vocabulary for the AI) and drops what they found unnecessary (formal logic as the core mechanism).
+Palantir's approach aims at the right problem. These experiments suggest that grounding AI reliably is mostly a data
+integration and definition problem, not a formal-logic problem, and an operational layer of resolved objects and
+executable logic addresses that more directly than classic ontologies do. But the evidence also suggests the benefit
+comes from engineering practices that are not unique to that product, that constraining AI to a predefined vocabulary
+trades flexibility for reliability, and that centralizing definitions concentrates both their value and their errors.
 
-To be precise about the strength of that claim: it is my interpretation, not a measured result. I did not test
-Palantir's software, and my experiments compare different encodings of the same knowledge on synthetic data with a
-single AI model. What the experiments do show is *where the benefit comes from*. That benefit lies in the parts of the
-ontology idea that Palantir's design is built around.
+These are inferences, not tests: I did not evaluate Palantir's software, and every experiment here uses synthetic data
+and one AI model.
 
 ---
 
