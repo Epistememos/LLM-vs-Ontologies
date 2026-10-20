@@ -21,6 +21,12 @@ Counts are code lines (non-blank, excluding comments and docstrings), measured a
 - C3 needed about 2.4 times the code of B3 for the same behaviour: the conversion to RDF and the rule strata have no
   counterpart in the Python glue, which reads the JSON directly.
 
+## Documentation fixes
+
+One clarity iteration each for C3 and B3 (prompt version 2), both in `docs3.py`, logged with the exact text and evidence
+in `LOG3.md`. They are documentation changes, not artifact fixes: `glue.py`, `to_rdf3.py`, `rules3.py` and
+`ontology3.ttl` were frozen with 0 fixes each.
+
 ## Review time
 
 | Date | Artifact | Hours | Notes |

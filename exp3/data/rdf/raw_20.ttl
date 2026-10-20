@@ -36,13 +36,21 @@ src:cmdb-CI-04613 a src:CmdbRecord ;
     src:replicaOfCi "CI-83853" ;
     src:status "operational" .
 
+src:cmdb-CI-25862 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-25862" ;
+    src:ciName "legacy_loyalty_3_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-12" ;
+    src:status "operational" ;
+    src:tier 1 .
+
 src:cmdb-CI-28634 a src:CmdbRecord ;
     src:ciClass "service" ;
     src:ciId "CI-28634" ;
     src:ciName "coupons_gateway_svc" ;
     src:datacenter "dc-fra" ;
     src:dependsOnCi "CI-54909",
-        "CI-92021",
         "CI-93057" ;
     src:ownerGroup "OG-12" ;
     src:status "operational" ;
@@ -59,14 +67,22 @@ src:cmdb-CI-29783 a src:CmdbRecord ;
     src:status "operational" ;
     src:tier 2 .
 
+src:cmdb-CI-30939 a src:CmdbRecord ;
+    src:ciClass "service" ;
+    src:ciId "CI-30939" ;
+    src:ciName "legacy_coupons_4_svc" ;
+    src:datacenter "dc-iad" ;
+    src:ownerGroup "OG-11" ;
+    src:status "decommissioned" ;
+    src:tier 3 .
+
 src:cmdb-CI-40432 a src:CmdbRecord ;
     src:ciClass "service" ;
     src:ciId "CI-40432" ;
     src:ciName "reviews_invoices_svc" ;
     src:datacenter "dc-iad" ;
-    src:dependsOnCi "CI-54909",
-        "CI-93057" ;
-    src:ownerGroup "OG-11" ;
+    src:dependsOnCi "CI-54909" ;
+    src:ownerGroup "OG-12" ;
     src:status "operational" ;
     src:tier 3 .
 
@@ -83,6 +99,8 @@ src:cmdb-CI-54909 a src:CmdbRecord ;
     src:ciId "CI-54909" ;
     src:ciName "billing_notify_svc" ;
     src:datacenter "dc-iad" ;
+    src:dependsOnCi "CI-25862",
+        "CI-92021" ;
     src:ownerGroup "OG-11" ;
     src:status "operational" ;
     src:tier 2 .
@@ -100,7 +118,8 @@ src:cmdb-CI-64574 a src:CmdbRecord ;
     src:ciId "CI-64574" ;
     src:ciName "loyalty_fraud_svc" ;
     src:datacenter "dc-fra" ;
-    src:dependsOnCi "CI-54909" ;
+    src:dependsOnCi "CI-25862",
+        "CI-54909" ;
     src:ownerGroup "OG-11" ;
     src:status "operational" ;
     src:tier 1 .
@@ -120,10 +139,11 @@ src:cmdb-CI-72312 a src:CmdbRecord ;
     src:ciId "CI-72312" ;
     src:ciName "ledger_quotes_svc" ;
     src:datacenter "dc-iad" ;
-    src:dependsOnCi "CI-40432",
+    src:dependsOnCi "CI-30939",
+        "CI-40432",
         "CI-54909",
-        "CI-92021" ;
-    src:ownerGroup "OG-12" ;
+        "CI-93057" ;
+    src:ownerGroup "OG-11" ;
     src:status "operational" ;
     src:tier 1 .
 
@@ -132,8 +152,10 @@ src:cmdb-CI-82259 a src:CmdbRecord ;
     src:ciId "CI-82259" ;
     src:ciName "warehouse_feeds_svc" ;
     src:datacenter "dc-fra" ;
-    src:dependsOnCi "CI-54909" ;
-    src:ownerGroup "OG-12" ;
+    src:dependsOnCi "CI-30939",
+        "CI-54909",
+        "CI-92021" ;
+    src:ownerGroup "OG-11" ;
     src:status "operational" ;
     src:tier 1 .
 
@@ -142,7 +164,7 @@ src:cmdb-CI-83853 a src:CmdbRecord ;
     src:ciId "CI-83853" ;
     src:ciName "catalog_reporting_db" ;
     src:datacenter "dc-iad" ;
-    src:ownerGroup "OG-11" ;
+    src:ownerGroup "OG-12" ;
     src:status "operational" .
 
 src:cmdb-CI-85747 a src:CmdbRecord ;
@@ -150,7 +172,7 @@ src:cmdb-CI-85747 a src:CmdbRecord ;
     src:ciId "CI-85747" ;
     src:ciName "loyalty_fraud_replica_1_svc" ;
     src:datacenter "dc-iad" ;
-    src:ownerGroup "OG-12" ;
+    src:ownerGroup "OG-11" ;
     src:replicaOfCi "CI-64574" ;
     src:status "operational" ;
     src:tier 1 .
@@ -158,27 +180,27 @@ src:cmdb-CI-85747 a src:CmdbRecord ;
 src:cmdb-CI-92021 a src:CmdbRecord ;
     src:ciClass "service" ;
     src:ciId "CI-92021" ;
-    src:ciName "legacy_reviews_2_svc" ;
+    src:ciName "legacy_export_2_svc" ;
     src:datacenter "dc-fra" ;
-    src:ownerGroup "OG-12" ;
+    src:ownerGroup "OG-11" ;
     src:status "decommissioned" ;
-    src:tier 3 .
+    src:tier 1 .
 
 src:cmdb-CI-93057 a src:CmdbRecord ;
     src:ciClass "service" ;
     src:ciId "CI-93057" ;
-    src:ciName "legacy_metrics_1_svc" ;
+    src:ciName "legacy_reviews_1_svc" ;
     src:datacenter "dc-fra" ;
-    src:ownerGroup "OG-11" ;
+    src:ownerGroup "OG-12" ;
     src:status "operational" ;
-    src:tier 1 .
+    src:tier 3 .
 
 src:cmdb-CI-93906 a src:CmdbRecord ;
     src:ciClass "service" ;
     src:ciId "CI-93906" ;
     src:ciName "billing_notify_replica_1_svc" ;
     src:datacenter "dc-fra" ;
-    src:ownerGroup "OG-11" ;
+    src:ownerGroup "OG-12" ;
     src:replicaOfCi "CI-54909" ;
     src:status "operational" ;
     src:tier 2 .
@@ -199,8 +221,8 @@ src:mon-billing-notify a src:MonRecord ;
     src:kind "service" ;
     src:status "active" ;
     src:team "team-platform" ;
-    src:upstream "Address Pricing DB",
-        "mon:shipping-profile" ;
+    src:upstream "Shipping Profile DB",
+        "mon:address-pricing" ;
     src:zone "us-east-1" .
 
 src:mon-billing-notify-replica-1 a src:MonRecord ;
@@ -210,7 +232,7 @@ src:mon-billing-notify-replica-1 a src:MonRecord ;
     src:kind "service" ;
     src:status "active" ;
     src:team "team-platform" ;
-    src:zone "eu-central-1" .
+    src:zone "us-east-1" .
 
 src:mon-catalog-reporting a src:MonRecord ;
     src:alias "cat-rep-db-v2" ;
@@ -237,9 +259,9 @@ src:mon-coupons-gateway a src:MonRecord ;
     src:kind "service" ;
     src:status "active" ;
     src:team "team-identity" ;
-    src:upstream "Shipping Profile DB",
-        "loy-sea-q-v2" ;
-    src:zone "eu-central-1" .
+    src:upstream "Loyalty Search Queue",
+        "Shipping Profile DB" ;
+    src:zone "us-east-1" .
 
 src:mon-ledger-quotes a src:MonRecord ;
     src:alias "led-quo-svc-v2" ;
@@ -251,19 +273,35 @@ src:mon-ledger-quotes a src:MonRecord ;
     src:team "team-identity" ;
     src:zone "us-east-1" .
 
-src:mon-legacy-metrics-1 a src:MonRecord ;
-    src:component "mon:legacy-metrics-1" ;
-    src:displayName "Legacy Metrics 1 Service" ;
-    src:kind "service" ;
-    src:status "retired" ;
-    src:team "team-identity" ;
-    src:zone "eu-central-1" .
-
-src:mon-legacy-reviews-2 a src:MonRecord ;
-    src:component "mon:legacy-reviews-2" ;
-    src:displayName "Legacy Reviews 2 Service" ;
+src:mon-legacy-coupons-4 a src:MonRecord ;
+    src:component "mon:legacy-coupons-4" ;
+    src:displayName "Legacy Coupons 4 Service" ;
     src:kind "service" ;
     src:status "active" ;
+    src:team "team-identity" ;
+    src:zone "us-east-1" .
+
+src:mon-legacy-export-2 a src:MonRecord ;
+    src:component "mon:legacy-export-2" ;
+    src:displayName "Legacy Export 2 Service" ;
+    src:kind "service" ;
+    src:status "active" ;
+    src:team "team-platform" ;
+    src:zone "eu-central-1" .
+
+src:mon-legacy-loyalty-3 a src:MonRecord ;
+    src:component "mon:legacy-loyalty-3" ;
+    src:displayName "Legacy Loyalty 3 Service" ;
+    src:kind "service" ;
+    src:status "retired" ;
+    src:team "team-platform" ;
+    src:zone "us-east-1" .
+
+src:mon-legacy-reviews-1 a src:MonRecord ;
+    src:component "mon:legacy-reviews-1" ;
+    src:displayName "Legacy Reviews 1 Service" ;
+    src:kind "service" ;
+    src:status "retired" ;
     src:team "team-identity" ;
     src:zone "eu-central-1" .
 
@@ -302,7 +340,7 @@ src:mon-reviews-invoices a src:MonRecord ;
     src:kind "service" ;
     src:status "active" ;
     src:team "team-identity" ;
-    src:upstream "mon:shipping-profile" ;
+    src:upstream "Shipping Profile DB" ;
     src:zone "us-east-1" .
 
 src:mon-shipping-profile a src:MonRecord ;

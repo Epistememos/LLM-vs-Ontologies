@@ -28,5 +28,5 @@
 
 ## Current status
 
-Experiment 3 step 2 done (B3 glue, C3 ontology and rules, docs, hidden-data guard, verification, offline tests);
-next: Haiku DEV pilot with the ceiling rule (first API calls; estimate first).
+Experiment 3 frozen for TEST (pilot done, ceiling accepted, clarity fix 1 of 3 for B3 and C3);
+next: TEST run, 3 repeats, after an explicit go.

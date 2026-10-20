@@ -1,4 +1,5 @@
-"""verify_frozen.py - check every file hash pre-registered in exp1/PREREG.md and exp2/PREREG_EXP2.md.
+"""verify_frozen.py - check every file hash pre-registered in exp1/PREREG.md, exp2/PREREG_EXP2.md and
+exp3/PREREG_EXP3.md.
 
 The PREREG hashes were taken on Windows working-tree bytes, where Git (core.autocrlf=true) may write a file with
 CRLF or LF line endings depending on how it was last checked out. A file counts as unchanged if its bytes, its
@@ -11,7 +12,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PREREGS = {"exp1": ROOT / "exp1" / "PREREG.md", "exp2": ROOT / "exp2" / "PREREG_EXP2.md"}
+PREREGS = {"exp1": ROOT / "exp1" / "PREREG.md", "exp2": ROOT / "exp2" / "PREREG_EXP2.md",
+           "exp3": ROOT / "exp3" / "PREREG_EXP3.md"}
 LINE = re.compile(r"^([0-9a-f]{16}) (\S+)$")
 
 

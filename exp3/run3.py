@@ -40,7 +40,7 @@ DATA3 = HERE / "data"
 GLUE, TABLES, ONTOLOGY = HERE / "glue.py", HERE / "mapping_tables.json", HERE / "ontology3.ttl"
 CONDITIONS = ("A3", "B3", "C3")
 A3_SIZES = (20, 100)                    # pre-registered: A3 on the two smaller graphs only
-PROMPT_VERSION = {"A3": 1, "B3": 1, "C3": 1}
+PROMPT_VERSION = {"A3": 1, "B3": 2, "C3": 2}  # v2: clarity fix 1 of 3, see LOG3.md
 PATH_FIX = "import sys as _s; _s.path.insert(0, '.'); del _s\n"
 llm._client = anthropic.Anthropic(timeout=120.0)   # as in Experiment 2
 

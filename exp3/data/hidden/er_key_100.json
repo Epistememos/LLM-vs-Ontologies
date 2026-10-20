@@ -1036,44 +1036,79 @@
  "stale": [
   {
    "cmdb": "CI-55767",
-   "monitoring": "mon:legacy-quotes-1",
+   "monitoring": "mon:legacy-routing-1",
    "flagged_in": "monitoring",
    "dependents": [
-    "CI-17595",
-    "CI-26366"
+    "CI-76898",
+    "CI-77122"
    ]
   },
   {
    "cmdb": "CI-59967",
-   "monitoring": "mon:legacy-metrics-2",
+   "monitoring": "mon:legacy-notify-2",
    "flagged_in": "cmdb",
    "dependents": [
-    "CI-27517",
-    "CI-62151"
+    "CI-29266",
+    "CI-79562"
    ]
   },
   {
    "cmdb": "CI-70766",
-   "monitoring": "mon:legacy-address-3",
+   "monitoring": "mon:legacy-notify-3",
    "flagged_in": "monitoring",
    "dependents": [
-    "CI-08039",
+    "CI-01921",
+    "CI-99853"
+   ]
+  },
+  {
+   "cmdb": "CI-61145",
+   "monitoring": "mon:legacy-fraud-4",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-26366",
+    "CI-69093"
+   ]
+  },
+  {
+   "cmdb": "CI-23043",
+   "monitoring": "mon:legacy-ingest-5",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-44558",
     "CI-58824"
+   ]
+  },
+  {
+   "cmdb": "CI-44464",
+   "monitoring": "mon:legacy-reviews-6",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-30396",
+    "CI-46096"
    ]
   }
  ],
  "planted": {
   "region_conflicts": [
    "svc-172",
+   "svc-328",
+   "svc-461",
+   "svc-501",
+   "svc-602",
    "svc-655",
    "svc-840",
-   "svc-939"
+   "svc-941"
   ],
   "team_conflicts": [
-   "svc-129",
-   "svc-424",
-   "svc-656",
-   "svc-816"
+   "db-238",
+   "db-241",
+   "db-341",
+   "svc-019",
+   "svc-087",
+   "svc-407",
+   "svc-697",
+   "svc-806"
   ]
  }
 }

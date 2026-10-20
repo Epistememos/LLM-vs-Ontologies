@@ -46,12 +46,16 @@ import it instead of re-implementing them:
     g.down_services(datacenter, primary_only=False), g.breached_slas(datacenter)
     g.stale                               # set of CI IDs of stale components (already excluded everywhere)
     g.team_of_owner_group, g.zone_of_datacenter                  # crosswalk dicts
-Classes are the ci_class strings above. Each method implements the definition of the same name."""
+Classes are the ci_class strings above. Each method implements the definition of the same name.
+Teams and SLAs are not resolved by g.resolve, which covers components only: compare them as plain strings
+(e.g. g.team[ci] == "team-platform", g.sla[ci] == "SLA-GOLD-01")."""
 
 C3_NOTE = """The graph has been built from both exports by the rules: entities are ex:<CI ID> (e.g. ex:CI-12345), every
 identifier of an entity is an ex:name literal (so a service named "Payments Search Service" is
 ?x ex:name "Payments Search Service"), teams are ex:<team name>, regions ex:<datacenter>, SLAs ex:<SLA ID>.
-Failure is region-parametric: ?x ex:lostIn ex:dc-fra, ?s ex:downIn ex:dc-fra, ?l ex:breachedIn ex:dc-fra."""
+Failure is region-parametric: ?x ex:lostIn ex:dc-fra, ?s ex:downIn ex:dc-fra, ?l ex:breachedIn ex:dc-fra.
+Teams and SLAs have no ex:name: refer to them by IRI only (e.g. ex:team-platform, ex:SLA-GOLD-01); their
+answer IDs are the IRI local names (team-platform, SLA-GOLD-01)."""
 
 
 def common():

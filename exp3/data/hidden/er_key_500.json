@@ -5065,70 +5065,131 @@
  "stale": [
   {
    "cmdb": "CI-33985",
-   "monitoring": "mon:legacy-quotes-1",
+   "monitoring": "mon:legacy-wishlist-1",
    "flagged_in": "monitoring",
    "dependents": [
-    "CI-27183",
-    "CI-80192"
+    "CI-75529",
+    "CI-83529"
    ]
   },
   {
    "cmdb": "CI-02257",
-   "monitoring": "mon:legacy-metrics-2",
+   "monitoring": "mon:legacy-tax-2",
    "flagged_in": "cmdb",
    "dependents": [
-    "CI-32256",
-    "CI-34981"
+    "CI-32462",
+    "CI-58128"
    ]
   },
   {
    "cmdb": "CI-71285",
-   "monitoring": "mon:legacy-gateway-3",
+   "monitoring": "mon:legacy-routing-3",
    "flagged_in": "monitoring",
    "dependents": [
-    "CI-29286",
-    "CI-87289"
+    "CI-63552",
+    "CI-91024"
    ]
   },
   {
    "cmdb": "CI-70033",
-   "monitoring": "mon:legacy-ingest-4",
+   "monitoring": "mon:legacy-returns-4",
    "flagged_in": "cmdb",
    "dependents": [
-    "CI-74538",
-    "CI-83430"
+    "CI-45622",
+    "CI-63215"
    ]
   },
   {
    "cmdb": "CI-65859",
-   "monitoring": "mon:legacy-pricing-5",
+   "monitoring": "mon:legacy-catalog-5",
    "flagged_in": "monitoring",
    "dependents": [
-    "CI-19629",
-    "CI-79755"
+    "CI-02174",
+    "CI-86762"
+   ]
+  },
+  {
+   "cmdb": "CI-19516",
+   "monitoring": "mon:legacy-warehouse-6",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-30296",
+    "CI-88158"
+   ]
+  },
+  {
+   "cmdb": "CI-33951",
+   "monitoring": "mon:legacy-ingest-7",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-25060",
+    "CI-86762"
+   ]
+  },
+  {
+   "cmdb": "CI-13827",
+   "monitoring": "mon:legacy-identity-8",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-23614",
+    "CI-61832"
+   ]
+  },
+  {
+   "cmdb": "CI-20055",
+   "monitoring": "mon:legacy-feeds-9",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-28537",
+    "CI-44740"
+   ]
+  },
+  {
+   "cmdb": "CI-78699",
+   "monitoring": "mon:legacy-search-10",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-26725",
+    "CI-95032"
    ]
   }
  ],
  "planted": {
   "region_conflicts": [
+   "svc-084",
    "svc-106",
+   "svc-202",
+   "svc-227",
+   "svc-231",
+   "svc-242",
    "svc-265",
+   "svc-392",
    "svc-400",
    "svc-402",
    "svc-416",
    "svc-616",
    "svc-782",
+   "svc-804",
+   "svc-884",
    "svc-921"
   ],
   "team_conflicts": [
-   "db-256",
-   "db-637",
-   "db-654",
-   "db-677",
-   "q-012",
-   "q-015",
-   "svc-378",
-   "svc-938"
+   "db-015",
+   "db-393",
+   "db-425",
+   "db-444",
+   "q-020",
+   "svc-033",
+   "svc-037",
+   "svc-163",
+   "svc-184",
+   "svc-302",
+   "svc-317",
+   "svc-519",
+   "svc-560",
+   "svc-620",
+   "svc-897",
+   "svc-931"
   ]
  }
 }

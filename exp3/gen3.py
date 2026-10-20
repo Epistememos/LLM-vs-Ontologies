@@ -25,10 +25,10 @@ SEEDS = {20: 3021, 100: 3100, 500: 3500}
 
 # Difficulty knobs, fixed before any run and recorded in PREREG_EXP3.md. Changed only by the pre-registered
 # pilot rule (raise, re-pilot, at most 2 rounds, each logged).
-DIFFICULTY = {
-    "alias_rate": 0.5,                          # share of monitoring cross-references written as an alias
-    "stale": {20: 2, 100: 3, 500: 5},           # ghost services flagged stale in one source, with live dependents
-    "conflicts": {20: 2, 100: 4, 500: 8},       # planted region conflicts and, separately, team conflicts
+DIFFICULTY = {  # pilot round 1 (2026-10-19): raised by the pre-registered rule; round 0 was 0.5 / 2,3,5 / 2,4,8
+    "alias_rate": 0.7,                          # share of monitoring cross-references written as an alias
+    "stale": {20: 4, 100: 6, 500: 10},          # ghost services flagged stale in one source, with live dependents
+    "conflicts": {20: 4, 100: 8, 500: 16},      # planted region conflicts and, separately, team conflicts
 }
 
 COMP = {"CustomerFacingService": "customer_facing_service", "Service": "service", "Database": "database",
@@ -61,9 +61,21 @@ def names_for(comps, nodes, edges, rng):
     return base
 
 
+def canonical(n):
+    """The canonical topology. Generated once with exp1's generator and then frozen in hidden/graph_{n}.json:
+    exp1's generator iterates Python sets, whose order changes between processes, so re-running it is not
+    reproducible. Exports are always derived from the frozen file."""
+    path = HIDDEN / f"graph_{n}.json"
+    if path.exists():
+        g = json.loads(path.read_text())
+        return {v["id"]: v for v in g["nodes"]}, {tuple(e) for e in g["edges"]}
+    nodes, edges, _ = gen.build(gen.SIZES[n] | {"seed": SEEDS[n]})
+    return nodes, edges
+
+
 def build(n):
     rng = random.Random(SEEDS[n] + 1)
-    nodes, edges, planted = gen.build(gen.SIZES[n] | {"seed": SEEDS[n]})
+    nodes, edges = canonical(n)
     edges = sorted(edges)
     comps = sorted(k for k, v in nodes.items() if v["type"] in COMP)
     rel = lambda r: {s: o for s, rr, o in edges if rr == r}

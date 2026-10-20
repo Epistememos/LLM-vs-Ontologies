@@ -1,8 +1,8 @@
 # Pre-registration: Experiment 3 (DRAFT, step 1)
 
-**Status: draft.** Design, decision rules and difficulty plan only; no results. This file is finalized, hashed and
-committed before any TEST question is sent; sections marked *(to finalize)* are filled in after DEV and the pilot,
-before TEST. Experiments 1 and 2 are frozen at tags `exp1-final` and `exp2-final` and are not modified.
+**Status: frozen 2026-10-20, before any TEST question was sent.** Design, decision rules, the DEV pilot and the
+difficulty decision are below; TEST results are not. Experiments 1 and 2 are frozen at tags `exp1-final` and
+`exp2-final` and are not modified.
 
 ## Motivation
 
@@ -86,6 +86,8 @@ The definitions (replica group, footprint, primary, lost, down, SLA breach) carr
   and at the top of every sandbox program and SPARQL runner.
 - B3 and C3 get the same information. I author both artifacts and review both. Line counts, fix
   counts and my review hours are logged for each.
+- Prompt versions at freeze: A3 1, B3 2, C3 2 (one clarity iteration each for B3 and C3, logged with its exact text
+  and evidence in `LOG3.md`).
 - Prompt iterations: at most 3 per condition, clarity fixes only, each logged with its evidence. No tuning toward a
   C3 win.
 
@@ -140,7 +142,8 @@ breakage counts, and accuracy before and after, per condition.
 
 ## Difficulty and headroom (decided before any TEST run)
 
-- **Knobs** (`gen3.DIFFICULTY`): alias_rate 0.5; stale ghosts 2 / 3 / 5; region and team conflicts 2 / 4 / 8 each.
+- **Knobs** (`gen3.DIFFICULTY`) at the start: alias_rate 0.5; stale ghosts 2 / 3 / 5; region and team conflicts
+  2 / 4 / 8 each.
   The knobs change only the exports, never the canonical graph, so questions, answers and the DEV/TEST split stay
   fixed if they are raised.
 - **Pilot on Haiku 4.5, DEV only, pre-registered ceiling rule:** if any condition's mean F1 on DEV cross-source
@@ -148,13 +151,46 @@ breakage counts, and accuracy before and after, per condition.
   re-pilot. At most 2 rounds, each logged. The final knob values are recorded here before TEST.
 - A smaller model is piloted as a bonus only, if one is still served.
 
+### Pilot results (DEV, Haiku 4.5, one repeat)
+
+| Mean F1, DEV cross-source questions | A3 (22 / 120 nodes) | B3 | C3 |
+|---|---|---|---|
+| Round 0 (alias 0.5; stale 2/3/5; conflicts 2/4/8) | 0.644 | **1.000** | **0.950** |
+| Round 1 (alias 0.7; stale 4/6/10; conflicts 4/8/16) | 0.620 | **1.000** | **0.950** |
+
+- Both rounds triggered the ceiling rule (B3 and C3 above 0.90). Round 1 raised the knobs as pre-registered and moved
+  only A3. **The difficulty rule ended after round 1; round 2 was not used.** Reason: B3's glue and C3's rules
+  resolve all knob-controlled noise (aliases, stale records, contradictions) before the model sees it, so the knobs
+  cannot move B3 or C3, and round 1 confirmed no movement.
+- **Final knob values: round 1** (alias_rate 0.7; stale 4 / 6 / 10; conflicts 4 / 8 / 16). With them, 64% of
+  cross-source questions change answer under at least one wrong reading: ignoring the monitoring export 27/64,
+  keeping stale records 24/64, trusting the non-authoritative source 22/64, matching names by similarity 2/64.
+- In both rounds C3's only misses (2 of 23) were query-shape errors: an SLA and a team looked up by `ex:name`,
+  which only components have. This led to the clarity fix below; with it, C3 scored 1.000 on DEV (23/23 valid
+  queries, no retries).
+- Pilot cost: round 0 $0.34, round 1 $0.25, C3 clarity check $0.09.
+
+### Consequences for the analysis, fixed before TEST
+
+- **H1 is expected to be null on ceiling grounds.** B3 and C3 are at or near the ceiling on DEV, so the primary test
+  is unlikely to separate them. H1, its decision rule and its CIs are unchanged and are reported as planned.
+- **The informative parts are A3 vs B3 and C3** (the LLM alone against either form of resolved, encoded knowledge
+  on conflicting sources) **and H2** (maintenance under a schema and definition change).
+- **Canonical data is fixed.** Experiment 1's generator iterates Python sets, whose order changes between
+  processes, so re-running it is not reproducible. The canonical graphs in `data/hidden/` are frozen as generated
+  in step 1 (hashes below), and `gen3.py` derives the exports from them; the frozen data files, not the generator,
+  are the source of truth.
+
 ## Budget
 
 After DEV, print the measured TEST estimate (call count and cost, × 1.6) and ask before TEST. If it is above about
 $6, pre-register a cut here before running: 2 repeats instead of 3, or dropping the 567-node graph for A3/B3.
-*(to finalize)*
 
-## Known limitations (draft)
+**Measured estimate:** 3 repeats, A3 on the two smaller graphs (35 questions), B3 and C3 on all 53 TEST questions:
+about 489 calls, $1.84 by the dry-run estimator, **$2.94 with the 1.6× correction**, $2.32 when scaled from DEV's
+actual per-question cost. Below $6, so **no cut**: 3 repeats and all sizes as planned.
+
+## Known limitations
 
 - One generator, three graphs, one model; synthetic exports with planted, not organic, noise.
 - I write the data, rules, glue, questions and ground truth.
@@ -162,4 +198,42 @@ $6, pre-register a cut here before running: 2 repeats instead of 3, or dropping 
   ontology form helps the model use resolved mappings, not whether it resolves entities better.
 - H2 measures one schema change and one definition change; it is descriptive.
 
-## Frozen file hashes *(to finalize before TEST)*
+## Frozen file hashes (sha256, first 16 hex chars)
+
+Checked by `python tools/verify_frozen.py`, which accepts the raw, LF or CRLF form of each file (Git on Windows
+may rewrite line endings on checkout). The hidden files are listed by hash only.
+
+```
+da9e8217f34c4543 gen3.py
+a6912786a3861130 truth3.py
+f02c629f207aa117 questions3.py
+c49838b133fbace0 derive_tables.py
+cd592d75c3cdb8a3 glue.py
+bf2af301031a16a1 to_rdf3.py
+d6c263e8cf5967e3 rules3.py
+382f8aa2f165b2d9 ontology3.ttl
+ec6a7829e79a3d7d docs3.py
+d05b2e50bd7c1dfe run3.py
+1f0a9d040a01ae9c score3.py
+5e83506222cfed58 pilot3.py
+5d13a9c430c46191 verify3.py
+9ae8756fa2f406d5 test_run3.py
+aec408748304a195 mapping_tables.json
+5fd19421ce0d31b2 data/questions.json
+e2ecb880b74abb82 data/cmdb_20.json
+cca5501f4b77abae data/cmdb_100.json
+01ff44de7c3b9a77 data/cmdb_500.json
+47c0bd354e715cbf data/monitoring_20.json
+49eb11e1eb915a2d data/monitoring_100.json
+b5ab1e29b12b92f3 data/monitoring_500.json
+2970fb9c6ae7b7fd data/rdf/materialized_20.ttl
+107eeee693adafde data/rdf/materialized_100.ttl
+cce710de90e6cf10 data/rdf/materialized_500.ttl
+7e2de1042a6b4747 data/hidden/graph_20.json
+d3392d3e800d1ebc data/hidden/graph_100.json
+20bbda1571519393 data/hidden/graph_500.json
+314577155a137fdb data/hidden/er_key_20.json
+a7fd7ffff624a19d data/hidden/er_key_100.json
+0d0d4e0191cd6f4b data/hidden/er_key_500.json
+ee5d50cbc45689f5 data/hidden/answers.json
+```

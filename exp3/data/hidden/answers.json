@@ -21,7 +21,10 @@
   "answer": false,
   "region": "reg-2",
   "entity": "svc-271",
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-04": {
   "answer": [
@@ -33,6 +36,7 @@
   "entity": "team-01",
   "traps": [
    "cmdb_only",
+   "keep_stale",
    "wrong_authority"
   ]
  },
@@ -83,19 +87,28 @@
   ],
   "region": "reg-2",
   "entity": null,
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-10": {
   "answer": false,
   "region": "reg-2",
   "entity": "sla-19",
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-11": {
   "answer": false,
   "region": "reg-2",
   "entity": "svc-669",
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-12": {
   "answer": [
@@ -103,13 +116,18 @@
   ],
   "region": null,
   "entity": "svc-924",
-  "traps": []
+  "traps": [
+   "wrong_authority"
+  ]
  },
  "e3-20-13": {
   "answer": false,
   "region": "reg-2",
   "entity": "svc-924",
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-14": {
   "answer": [
@@ -127,7 +145,10 @@
   "answer": 3,
   "region": "reg-2",
   "entity": null,
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-16": {
   "answer": [
@@ -137,6 +158,7 @@
   "region": "reg-2",
   "entity": "team-02",
   "traps": [
+   "keep_stale",
    "wrong_authority"
   ]
  },
@@ -152,7 +174,10 @@
   "answer": false,
   "region": "reg-2",
   "entity": "svc-622",
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-19": {
   "answer": [
@@ -161,6 +186,7 @@
   "region": "reg-2",
   "entity": "team-01",
   "traps": [
+   "keep_stale",
    "wrong_authority"
   ]
  },
@@ -183,7 +209,10 @@
   "answer": false,
   "region": "reg-2",
   "entity": "sla-39",
-  "traps": []
+  "traps": [
+   "keep_stale",
+   "wrong_authority"
+  ]
  },
  "e3-20-23": {
   "answer": [
@@ -204,7 +233,9 @@
   ],
   "region": "reg-2",
   "entity": "team-05",
-  "traps": []
+  "traps": [
+   "wrong_authority"
+  ]
  },
  "e3-100-01": {
   "answer": [
@@ -241,9 +272,7 @@
   ],
   "region": "reg-2",
   "entity": "team-03",
-  "traps": [
-   "keep_stale"
-  ]
+  "traps": []
  },
  "e3-100-04": {
   "answer": [
@@ -259,7 +288,8 @@
   "entity": "team-04",
   "traps": [
    "cmdb_only",
-   "keep_stale"
+   "keep_stale",
+   "wrong_authority"
   ]
  },
  "e3-100-05": {
@@ -291,17 +321,13 @@
   ],
   "region": null,
   "entity": "svc-424",
-  "traps": [
-   "keep_stale"
-  ]
+  "traps": []
  },
  "e3-100-09": {
   "answer": false,
   "region": "reg-1",
   "entity": "sla-62",
-  "traps": [
-   "keep_stale"
-  ]
+  "traps": []
  },
  "e3-100-10": {
   "answer": false,
@@ -374,7 +400,7 @@
   "entity": "team-05",
   "traps": [
    "cmdb_only",
-   "keep_stale"
+   "wrong_authority"
   ]
  },
  "e3-100-17": {
@@ -467,6 +493,7 @@
   "entity": null,
   "traps": [
    "cmdb_only",
+   "keep_stale",
    "wrong_authority",
    "name_similarity"
   ]
@@ -491,7 +518,8 @@
   "region": "reg-5",
   "entity": "team-05",
   "traps": [
-   "cmdb_only"
+   "cmdb_only",
+   "wrong_authority"
   ]
  },
  "e3-500-03": {
@@ -513,6 +541,8 @@
   "entity": "team-10",
   "traps": [
    "cmdb_only",
+   "keep_stale",
+   "wrong_authority",
    "name_similarity"
   ]
  },
@@ -531,8 +561,7 @@
   "entity": "team-08",
   "traps": [
    "cmdb_only",
-   "keep_stale",
-   "name_similarity"
+   "wrong_authority"
   ]
  },
  "e3-500-07": {
@@ -632,7 +661,7 @@
   "entity": null,
   "traps": [
    "cmdb_only",
-   "name_similarity"
+   "keep_stale"
   ]
  },
  "e3-500-12": {
@@ -649,7 +678,9 @@
   ],
   "region": null,
   "entity": "svc-250",
-  "traps": []
+  "traps": [
+   "keep_stale"
+  ]
  },
  "e3-500-13": {
   "answer": false,
@@ -694,7 +725,7 @@
   "traps": [
    "cmdb_only",
    "keep_stale",
-   "name_similarity"
+   "wrong_authority"
   ]
  },
  "e3-500-15": {
@@ -776,9 +807,7 @@
   "entity": null,
   "traps": [
    "cmdb_only",
-   "keep_stale",
-   "wrong_authority",
-   "name_similarity"
+   "keep_stale"
   ]
  },
  "e3-500-23": {

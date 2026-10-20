@@ -179,31 +179,53 @@
  "stale": [
   {
    "cmdb": "CI-93057",
-   "monitoring": "mon:legacy-metrics-1",
+   "monitoring": "mon:legacy-reviews-1",
    "flagged_in": "monitoring",
    "dependents": [
     "CI-28634",
-    "CI-40432"
+    "CI-72312"
    ]
   },
   {
    "cmdb": "CI-92021",
-   "monitoring": "mon:legacy-reviews-2",
+   "monitoring": "mon:legacy-export-2",
    "flagged_in": "cmdb",
    "dependents": [
-    "CI-28634",
-    "CI-72312"
+    "CI-54909",
+    "CI-82259"
+   ]
+  },
+  {
+   "cmdb": "CI-25862",
+   "monitoring": "mon:legacy-loyalty-3",
+   "flagged_in": "monitoring",
+   "dependents": [
+    "CI-54909",
+    "CI-64574"
+   ]
+  },
+  {
+   "cmdb": "CI-30939",
+   "monitoring": "mon:legacy-coupons-4",
+   "flagged_in": "cmdb",
+   "dependents": [
+    "CI-72312",
+    "CI-82259"
    ]
   }
  ],
  "planted": {
   "region_conflicts": [
    "svc-261",
+   "svc-271",
+   "svc-286",
    "svc-622"
   ],
   "team_conflicts": [
-   "svc-003",
-   "svc-261"
+   "db-937",
+   "svc-124",
+   "svc-286",
+   "svc-924"
   ]
  }
 }
