@@ -28,5 +28,5 @@
 
 ## Current status
 
-Experiment 3 frozen for TEST (pilot done, ceiling accepted, clarity fix 1 of 3 for B3 and C3);
-next: TEST run, 3 repeats, after an explicit go.
+Experiment 3 TEST done (H1 not supported, C3 - B3 = 0.000) and H2 change test done (exploratory; see `exp3/LOG3.md`);
+next: Experiment 3 write-up, after an explicit go.

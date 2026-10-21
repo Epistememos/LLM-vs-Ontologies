@@ -1,0 +1,237 @@
+{
+ "export": "cmdb",
+ "records": [
+  {
+   "ci_id": "CI-02495",
+   "ci_name": "loyalty_search_q",
+   "ci_class": "queue",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-04613",
+   "ci_name": "catalog_reporting_replica_1_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-fra",
+   "replica_of_ci": "CI-83853",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-45834",
+   "ci_name": "address_pricing_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-72312",
+   "ci_name": "ledger_quotes_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40432",
+    "CI-54909",
+    "CI-93057",
+    "CI-30939"
+   ]
+  },
+  {
+   "ci_id": "CI-64574",
+   "ci_name": "loyalty_fraud_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-54909",
+    "CI-25862"
+   ]
+  },
+  {
+   "ci_id": "CI-54909",
+   "ci_name": "billing_notify_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-92021",
+    "CI-25862"
+   ]
+  },
+  {
+   "ci_id": "CI-25862",
+   "ci_name": "legacy_loyalty_3_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93057",
+   "ci_name": "legacy_reviews_1_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-66889",
+   "ci_name": "warehouse_feeds_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-fra",
+   "replica_of_ci": "CI-82259",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-29783",
+   "ci_name": "shipping_returns_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-40432",
+    "CI-54909"
+   ]
+  },
+  {
+   "ci_id": "CI-92021",
+   "ci_name": "legacy_export_2_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "decommissioned",
+   "owner_group": "OG-11",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-40432",
+   "ci_name": "reviews_invoices_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-54909"
+   ]
+  },
+  {
+   "ci_id": "CI-85747",
+   "ci_name": "loyalty_fraud_replica_1_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-iad",
+   "replica_of_ci": "CI-64574",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-55434",
+   "ci_name": "shipping_profile_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-83853",
+   "ci_name": "catalog_reporting_db",
+   "ci_class": "database",
+   "tier": null,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-93906",
+   "ci_name": "billing_notify_replica_1_svc",
+   "ci_class": "service",
+   "tier": 2,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-fra",
+   "replica_of_ci": "CI-54909",
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-28634",
+   "ci_name": "coupons_gateway_svc",
+   "ci_class": "service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-12",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-54909",
+    "CI-93057"
+   ]
+  },
+  {
+   "ci_id": "CI-30939",
+   "ci_name": "legacy_coupons_4_svc",
+   "ci_class": "service",
+   "tier": 3,
+   "status": "decommissioned",
+   "owner_group": "OG-11",
+   "site": "dc-iad",
+   "replica_of_ci": null,
+   "depends_on_ci": []
+  },
+  {
+   "ci_id": "CI-82259",
+   "ci_name": "warehouse_feeds_svc",
+   "ci_class": "customer_facing_service",
+   "tier": 1,
+   "status": "operational",
+   "owner_group": "OG-11",
+   "site": "dc-fra",
+   "replica_of_ci": null,
+   "depends_on_ci": [
+    "CI-54909",
+    "CI-92021",
+    "CI-30939"
+   ]
+  }
+ ]
+}
