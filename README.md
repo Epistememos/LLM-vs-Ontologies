@@ -13,7 +13,7 @@ This repository is a series of small, carefully controlled experiments that test
 
 > "AI models grounded in an ontology are better at reasoning about how systems depend on each other than AI models alone."
 
-Short answer so far: **giving the AI well-organized, pre-processed knowledge helps a lot, but the formal ontology
+Short answer: **giving the AI well-organized, pre-processed knowledge helps a lot, but the formal ontology
 format itself made no measurable difference.** What mattered was the work an ontology is supposed to do (deciding
 what things are and computing what they mean), not the technology it is written in. The rest of this page explains
 how I tested that, what I found, and what I think it means for the future of ontologies, including what it suggests
@@ -169,7 +169,7 @@ same definitions: written as a manual (prose), and written as ready-made Python 
 - **The test hit a ceiling.** I predicted this beforehand: when even the weakest setup scores 0.97, there is little
   room left to show a difference. Details: [Experiment 2 write-up](exp2/README.md).
 
-### Experiment 3: the situation ontologies are made for (in progress)
+### Experiment 3: the situation ontologies are made for
 
 **Setup.** Real companies rarely have one clean list of their systems. They have several systems that each keep
 their own records and disagree. Experiment 3 recreates that with two sources describing the same infrastructure:
@@ -180,27 +180,46 @@ their own records and disagree. Experiment 3 recreates that with two sources des
 
 The two sources also contain deliberate problems: some records describe systems that were shut down long ago, and
 some facts contradict each other (one source says a service runs in Frankfurt, the other says Singapore). A fixed
-rulebook says which source to trust for which kind of fact.
+rulebook says which source to trust for which kind of fact. Three setups answered the questions: the AI alone reading
+both raw sources, the AI with Python glue code that resolves the conflicts, and the AI with an ontology that resolves
+the same conflicts. Each exam question was asked three times.
 
-Two hypotheses are tested separately:
+Two hypotheses were tested separately:
 
 - **H1 (accuracy):** with two disagreeing sources, does an ontology that resolves the conflicts beat Python code that
   resolves the same conflicts?
 - **H2 (maintenance):** when the business changes (a field is renamed in one source, and the definition of "lost" is
   changed), does the ontology need fewer edits and cause fewer silent errors than the code?
 
-**What the practice round showed** (practice questions only; the exam has not been run yet):
+**Results** (exam set, questions that need both sources):
 
 | AI alone, reading both raw sources | AI + Python glue that resolves the conflicts | AI + ontology that resolves the conflicts |
 |---|---|---|
-| 0.64 | 1.00 | 0.95, then 1.00 after one documented wording fix |
+| 0.47 (two smaller companies only) | 1.00 | 1.00 |
 
-- Reading two messy, conflicting sources directly is hard for the AI alone. Once the conflicts are resolved before
-  the AI sees anything, it answers almost perfectly, whether the resolving was done by Python or by the ontology.
-- Making the sources messier did not change that, because the resolving happens before the AI is involved.
-- So H1 is expected to come out as a tie. The informative parts of Experiment 3 are the AI-alone comparison and H2,
-  which tests whether ontologies pay off when things change. The exam set has been locked and is ready to run.
-  Details: [Experiment 3](exp3/README.md), [pre-registration](exp3/PREREG_EXP3.md).
+- **The ontology tied with the Python glue: both were perfect.** The difference was 0.000, with a confidence range of
+  0.000 to 0.000, so by the rules I wrote in advance H1 was **not supported**. I expected this before the exam: in the
+  practice round both setups were already near perfect, and making the sources messier could not change that, because
+  the resolving happens before the AI is involved.
+- **Resolving the sources first is what made the difference.** On the two smaller companies, either form of resolved
+  knowledge beat the AI alone by +0.53 (confidence range +0.38 to +0.69). Half of the AI's own mistakes matched a
+  specific integration error, such as ignoring the monitoring system or trusting the wrong source.
+- **The ontology took more code to build:** 201 lines of conversion, rules and schema against 83 lines of Python, for
+  the same behaviour.
+
+**What happened when things changed (H2, exploratory: two changes, tried once each).**
+
+- **Before any fix, the two setups broke differently.** The ontology could not even be built from the renamed data, so
+  it failed loudly on every question. The Python setup also crashed at first, but on its retry the AI often patched
+  the data itself and carried on, using the old definition of "lost": 18 of the 53 answers came back looking normal
+  but wrong. A silent wrong answer is worse than a crash, because nobody knows to fix it.
+- **That difference comes from where the check runs, not from the ontology.** The ontology was built before the AI saw
+  anything, so the AI had no chance to work around the failure. A one-line check of the data in the Python setup,
+  run at the same point, would do the same. I did not test this.
+- **The fixes were equally small.** Each setup needed 4 changed lines of code, and both then scored almost perfectly
+  again (Python 0.98, ontology 1.00).
+
+Details: [Experiment 3 write-up](exp3/README.md), [pre-registration](exp3/PREREG_EXP3.md).
 
 ### All results at a glance
 
@@ -208,14 +227,14 @@ Two hypotheses are tested separately:
 |---|---|---|---|
 | **[Experiment 1](exp1/README.md)** | Does an ontology (RDF + RDFS/OWL schema, queried with SPARQL) beat an LLM alone, and beat Python code given the same schema documentation? | C − B+ = **−0.005** [−0.055, +0.055]: **not supported**. Ontology and documented code tie; both beat the LLM alone (C − A = +0.163 [+0.083, +0.250]) | complete, tag `exp1-final` |
 | **[Experiment 2](exp2/README.md)** | Do *executable* definitions encoded in an ontology (rule-defined classes, materialized before querying) beat the same definitions written as prose? | C2 − B+ = **+0.026** [0.000, +0.071]: **not supported**. Ontology rules and equivalent Python helpers tie exactly (C2 − B++ = 0.000, as predicted) | complete, tag `exp2-final` |
-| **[Experiment 3](exp3/README.md)** | Do ontologies pay off with two sources that name the same entities differently (H1), and when definitions change over time (H2)? | TEST not run yet. DEV pilot: B3 1.00, C3 0.95 (1.00 after one clarity fix), LLM alone 0.64; H1 pre-registered as expected null on ceiling grounds | pre-registered and frozen |
+| **[Experiment 3](exp3/README.md)** | Do ontologies pay off with two sources that name the same entities differently (H1), and when definitions change over time (H2)? | C3 − B3 = **0.000** [0.000, 0.000]: **not supported**, both perfect, as expected on ceiling grounds. Both beat the LLM alone (B3 − A3 = C3 − A3 = +0.532 [+0.377, +0.687], two smaller graphs). H2 (exploratory): unchanged C3 broke loudly on all 53 questions, unchanged B3 silently on 18; after 4 changed code lines each, B3 0.981, C3 1.000 | complete |
 
 All differences are mean paired F1 differences on the pre-registered exam questions, with 95% bootstrap confidence
 intervals.
 
 ![Experiment 1: paired F1 differences with 95% confidence intervals](exp1/results/ci_differences.png)
 
-The [research notebook](notebook/blast_radius.ipynb) walks through Experiments 1 and 2 with all figures, computed
+The [research notebook](notebook/blast_radius.ipynb) walks through all three experiments with their figures, computed
 directly from the committed results.
 
 ---
@@ -231,8 +250,8 @@ But three things clearly did matter, and they are all things an ontology is *sup
 ### 1. Sorting out what things are, before the AI sees anything
 
 When two systems call the same service by different names, and some of their records are stale or contradictory, the
-AI reading both raw sources scored 0.64 in Experiment 3's practice round. When the identities and conflicts were
-resolved first, by a program applying a clear rulebook, it scored 0.95 to 1.00. The lesson: **an AI model is a poor
+AI reading both raw sources scored 0.47 on Experiment 3's exam questions. When the identities and conflicts were
+resolved first, by a program applying a clear rulebook, it scored 1.00. The lesson: **an AI model is a poor
 place to do data cleaning and matching. A layer in front of it that has already done that work is a very good one.**
 
 ### 2. Defining important ideas once, in a form a computer can execute
@@ -247,7 +266,10 @@ that are only described.**
 
 Python code and an RDF/OWL ontology carrying the same resolved facts and the same executable definitions performed
 identically. The ontology version also took more effort to build: in Experiment 3, 201 lines of conversion, rules and
-schema against 83 lines of Python for exactly the same behaviour.
+schema against 83 lines of Python for exactly the same behaviour. When the data and a definition changed, both needed
+the same small fix (4 lines of code each). The one real difference was how they broke before the fix: the ontology
+failed loudly, while the AI patched around the Python failure and gave silently wrong answers. That came from where the
+failure was caught, not from the ontology format.
 
 ### The bottom line
 
@@ -285,7 +307,7 @@ worth asking what these experiments say about it: where they support the approac
 ### Where the findings support it
 
 - **Resolving data before the AI sees it is the right priority.** The biggest effect in this project came from
-  reconciling conflicting sources up front (0.64 to 0.95-1.00 in Experiment 3's practice round). A layer whose main job
+  reconciling conflicting sources up front (0.47 to 1.00 on Experiment 3's exam questions). A layer whose main job
   is to merge many systems into one object per real-world thing targets exactly that.
 - **Executable, shared definitions beat written explanations.** Computing "down" or "breached" once and exposing it as a
   lookup removed the errors that came from the AI re-deriving those ideas each time. Functions attached to objects do
@@ -313,8 +335,12 @@ worth asking what these experiments say about it: where they support the approac
   because it trusts the layer. These experiments did not test imperfect resolution, so they cannot say how well any
   layer, Palantir's included, holds up when its own data is wrong.
 - **Change is a double-edged sword.** Defining something in one place means a change only has to be made once. It also
-  means one change can silently alter the answers of every consumer. Whether a central layer reduces or increases
-  silent breakage is exactly what Experiment 3's maintenance test (H2) measures, and it has not been run yet.
+  means one change can silently alter the answers of every consumer. Experiment 3's maintenance test (H2, two changes,
+  tried once each) points both ways. The ontology, built before the AI was involved, failed loudly when a field was
+  renamed, while the AI patched around the same failure in the code version and gave 18 silently wrong answers. But a
+  changed definition raised no error in either setup: both kept computing the old meaning until they were edited. A
+  central layer makes breakage visible only if it checks its inputs before anyone uses it, and nothing catches a
+  definition that is wrong but valid.
 - **Building and owning the layer is expensive, and it locks logic in.** The ontology versions here cost more to build
   than the code versions, even at small scale. In a commercial platform, modelling the business, mapping every source
   and keeping it current is substantial ongoing work, and business logic written inside one vendor's platform is
@@ -338,7 +364,7 @@ and one AI model.
 - **The data is synthetic.** The companies are generated by a program. Real infrastructure is messier in ways a
   generator cannot fully imitate.
 - **One AI model.** All results come from Haiku 4.5. A stronger or weaker model might behave differently.
-- **One run per question** (Experiment 3 will use three). Small differences could be noise.
+- **One run per question** in Experiments 1 and 2, three in Experiment 3. Small differences could be noise.
 - **I built everything.** I wrote the generator, the questions, the answer key and every tool the AI setups used.
   That makes it easier to keep the comparisons fair, but it also means the questions fit the tools by construction.
 - **Small numbers.** Each experiment has a few dozen exam questions, so breakdowns by size or question type are
@@ -396,11 +422,12 @@ exp2/                    Experiment 2 (frozen): executable definitions, ontology
   README.md PREREG_EXP2.md LOG.md EFFORT.md
   gen2.py helpers.py rules.py ontology2.ttl docs.py questions2.py run2.py score2.py + checks
   data/ results/
-exp3/                    Experiment 3 (frozen for TEST): two conflicting sources, changing definitions
+exp3/                    Experiment 3 (complete): two conflicting sources, changing definitions
   README.md PREREG_EXP3.md LOG3.md EFFORT3.md
-  gen3.py truth3.py questions3.py glue.py to_rdf3.py rules3.py ontology3.ttl docs3.py run3.py score3.py + checks
-  data/                  cmdb_*.json, monitoring_*.json, questions.json, rdf/
-  data/hidden/           canonical graphs, entity-resolution keys, answer key (never shown to any condition)
+  gen3.py truth3.py questions3.py glue.py to_rdf3.py rules3.py ontology3.ttl docs3.py run3.py score3.py analyze3.py
+  data/ results/         cmdb_*.json, monitoring_*.json, questions.json, rdf/, h2/; raw responses
+  data/hidden/           canonical graphs, entity-resolution keys, answer keys (never shown to any condition)
+  h2/                    H2 change test: make_h2.py run_h2.py verify_h2.py, edited artifacts, results
 notebook/                research notebook across experiments
 tools/                   verify_frozen.py, run_exp2_check_docs.py
 pyproject.toml           dependencies; makes exp1's shared modules importable everywhere
@@ -426,8 +453,11 @@ python exp3/truth3.py                            # exp3 exports consistent with 
 python exp3/verify3.py                           # exp3 glue and rules match the key and ground truth
 python exp3/test_run3.py                         # exp3 docs check, hidden-data guard, offline reproduction
 
+python exp3/h2/verify_h2.py                      # exp3 H2 edited artifacts reproduce the new ground truth
+
 python exp1/score.py test                        # exp1 tables and the paired bootstrap
 python exp2/score2.py test                       # exp2 cluster and per-question bootstraps
+python exp3/analyze3.py                          # exp3 pre-registered TEST analysis
 ```
 
 Every model call is cached on disk (`exp1/cache/`, git-ignored), keyed by condition, model, prompt and token limit,
@@ -440,9 +470,10 @@ so re-runs of completed experiments cost nothing. Raw responses for every questi
   before their TEST runs and list file hashes; `tools/verify_frozen.py` checks them. The hashes were taken on
   Windows, where Git may rewrite line endings on checkout, so the checker also accepts the LF and CRLF forms of each
   file and reports which matched.
-- **Frozen tags:** `exp1-final` and `exp2-final` mark each experiment exactly as reported.
+- **Frozen tags:** `exp1-final` and `exp2-final` mark Experiments 1 and 2 exactly as reported; Experiment 3's
+  frozen files are hashed in `exp3/PREREG_EXP3.md`.
 - **Logged changes:** every prompt, question, harness and post-run change is logged with its reason
   (`exp1/PROMPT_LOG.md`, `exp2/LOG.md`, `exp3/LOG3.md`, and [PROGRESS.md](PROGRESS.md) for every commit). Moving
   Experiment 1 into `exp1/` on 2026-10-19 changed no content and no result, number or decision rule.
-- **Model and cost:** Haiku 4.5 at temperature 0 throughout. Spend so far: Experiment 1 $3.08, Experiment 2 $0.84,
-  Experiment 3 $0.68 (DEV pilot).
+- **Model and cost:** Haiku 4.5 at temperature 0 throughout. Spend: Experiment 1 $3.08, Experiment 2 $0.84,
+  Experiment 3 $4.07 (DEV pilot $0.68, TEST $2.22, H2 $1.17); $7.99 in total.

@@ -1,7 +1,8 @@
 # Progress log
 
 Every commit and tag in this repository, in order (the latest entry is the commit that adds it, so it is listed by message: a commit cannot contain its own hash), with the decisions behind it and why I made them. Times are
-commit times (local). Each experiment's own log (`exp1/PROMPT_LOG.md`, `exp2/LOG.md`) has the line-level detail.
+commit times (local). Each experiment's own log (`exp1/PROMPT_LOG.md`, `exp2/LOG.md`, `exp3/LOG3.md`) has the
+line-level detail.
 
 ## Summary
 
@@ -20,7 +21,14 @@ commit times (local). Each experiment's own log (`exp1/PROMPT_LOG.md`, `exp2/LOG
 | – | 2026-10-17 13:40 | tag `exp2-final` | Experiment 2 frozen |
 | 10 | 2026-10-17 17:26 | `b8e36a7` | Experiment 3 step 1: data, ground truth, questions, pre-registration draft |
 | 11 | 2026-10-19 11:16 | `7ec1ef6` | Repository restructure and project README |
-| 12 | 2026-10-19 | "Add progress log and documentation updates" | Progress log |
+| 12 | 2026-10-19 11:36 | `a8c4cd6` | Progress log |
+| 13 | 2026-10-19 15:41 | `4ed7fd4` | Experiment 3 step 2: B3 glue, C3 ontology and rules, guard, verification |
+| 14 | 2026-10-20 10:25 | `a756e25` | Experiment 3: DEV pilot, clarity fix, freeze for TEST |
+| 15 | 2026-10-20 11:18 | `ce06e5f` | Project README: plain language, Palantir section |
+| 16 | 2026-10-20 12:21 | `f7cab91` | Project README: a critical Palantir section |
+| 17 | 2026-10-21 11:40 | `1c24a5e` | Experiment 3: TEST results |
+| 18 | 2026-10-21 16:53 | `7062d91` | Experiment 3: H2 change test |
+| 19 | 2026-10-21 | "Exp3 write-up" | Experiment 3 write-up, notebook, project README |
 
 ---
 
@@ -230,7 +238,7 @@ and `tools/`.
   Windows rewrites them on checkout), all offline test suites pass, and both experiments re-score to exactly their
   committed numbers. I logged the move as the one exception to the freeze rule.
 
-### 12. Add progress log and documentation updates (2026-10-19)
+### 12. `a8c4cd6` Add progress log and documentation updates (2026-10-19 11:36)
 
 **What changed:** this file, plus small documentation edits.
 
@@ -238,7 +246,81 @@ and `tools/`.
 
 ---
 
+### 13. `4ed7fd4` Exp3 step 2: B3 glue, C3 ontology and rules, guard, verification (2026-10-19 15:41)
+
+**What changed:** B3's glue library (`glue.py`), C3's conversion, rules and ontology (`to_rdf3.py`, `rules3.py`,
+`ontology3.ttl`), the shared crosswalks and docs, the harness with the hidden-data guard, verification and offline
+tests.
+
+**Decisions and why:**
+- **Failure is region-parametric in both artifacts:** C3 materializes lost, down and breached for every region, and
+  B3's methods take the datacenter as an argument, so neither harness has to learn the failed region from the hidden
+  answer key.
+- **One shared crosswalk file**, derived from the exports by majority vote over non-stale records, so B3 and C3 use the
+  same mappings by construction.
+- **A hidden-data guard** (an audit hook refusing any read of `data/hidden/`) in the harness, every sandbox program and
+  every SPARQL runner.
+- Both artifacts matched the key and the ground truth on the first verification run: 0 fixes each. B3 is 83 code
+  lines, C3 201.
+
+### 14. `a756e25` Exp3: DEV pilot, clarity fix, freeze for TEST (2026-10-20 10:25)
+
+**What changed:** the DEV pilot (two rounds), a generator reproducibility fix, one clarity fix each for B3 and C3, and
+the freeze of every Experiment 3 file.
+
+**Decisions and why:**
+- **Ceiling accepted.** B3 and C3 were above the pre-registered 0.90 ceiling in both rounds; raising the knobs could not
+  move them, because both artifacts resolve the noise before the model sees it. I ended the difficulty rule after
+  round 1 and recorded H1 as an expected null on ceiling grounds before TEST.
+- **Frozen canonical graphs.** Re-running the generator changed one graph (Python set order), so I restored the step-1
+  graphs byte for byte and made the frozen files the source of truth.
+- **Clarity fix 1 of 3 for C3 and B3:** C3's only two DEV misses looked up teams and SLAs by name; I added the same
+  information to both conditions' docs.
+- **No cut needed:** the measured TEST estimate was $2.94 with the 1.6× correction.
+
+### 15-16. `ce06e5f`, `f7cab91` Project README (2026-10-20 11:18 and 12:21)
+
+**What changed:** the root README, rewritten for readers with little technical background, with a section on what the
+findings suggest about operational ontologies such as Palantir's (`ce06e5f`); then that section rewritten to be
+critical rather than flattering (`f7cab91`).
+
+**Why:** I wanted the project readable without a technical background, and the Palantir section critical where the
+evidence cuts against the approach, not only where it supports it.
+
+### 17. `1c24a5e` Exp3 TEST results (2026-10-21 11:40)
+
+**What changed:** TEST results for A3, B3 and C3 (3 repeats), and `analyze3.py`, written after the freeze and before
+any TEST result existed.
+
+**Decisions and why:** TEST ran once with no changes. The budget cap for Experiments 1-3 was raised to about $11
+beforehand (approved 2026-10-20). Result: C3 − B3 = 0.000 [0.000, 0.000], **not supported**, both perfect; B3 − A3 =
+C3 − A3 = +0.532 [+0.377, +0.687] on the two smaller graphs. TEST spend $2.22.
+
+### 18. `7062d91` Exp3 H2 change test (2026-10-21 16:53)
+
+**What changed:** the two pre-registered changes (a renamed CMDB field and a new "lost" definition), the H2 harness,
+the edited artifacts, and the results of both phases.
+
+**Decisions and why:**
+- **Phase (a), unchanged artifacts:** B3 loud 28, silent 18, unaffected 7; C3 loud 53 (its graph build failed). The
+  model's retries in B3 worked around the rename and kept the old definition, turning loud failures into silent ones.
+- **Minimal edits, smaller than the ones I approved.** Before the re-run I found smaller edits with identical output on
+  all three graphs (B3 +2/−2 instead of +3/−1; C3 `rules3.py` +2/−0 instead of +3/−1). The pre-registration measures
+  the minimal edit, so I kept them and logged the deviation; the approved versions are kept as the alternative.
+- **Phase (b):** B3 0.981, C3 1.000, with 4 changed code lines each. H2 spend $1.17.
+
+### 19. Exp3 write-up (2026-10-21)
+
+**What changed:** `exp3/README.md`, `exp3/EFFORT3.md`, the research notebook (Experiment 3 added), the project README
+and this file, plus one corrected total in `exp3/LOG3.md` (C3's H2 code lines are 4, not 5).
+
+**Decisions and why:** I wanted the write-up to lead with the pre-registered H1 result, then the A3 contrast, then H2
+labelled exploratory, with the deviation to the minimal edits and every limitation stated, including that the
+artifacts were authored by Claude Code under my direction.
+
+---
+
 ## Current status
 
-Experiment 3 step 1 is done. Step 2 is next: the B3 glue library and the C3 ontology and rules, the mapping and
-runtime-guard checks, and offline tests, before any model call.
+All three experiments are complete. Total API spend: $7.99 (Experiment 1 $3.08, Experiment 2 $0.84, Experiment 3
+$4.07).

@@ -27,9 +27,26 @@ One clarity iteration each for C3 and B3 (prompt version 2), both in `docs3.py`,
 in `LOG3.md`. They are documentation changes, not artifact fixes: `glue.py`, `to_rdf3.py`, `rules3.py` and
 `ontology3.ttl` were frozen with 0 fixes each.
 
+## H2 edits (change test)
+
+Minimal correct edits after the schema change (`datacenter` renamed to `site`) and the definition change ("lost"),
+counted with `git diff --numstat` against the frozen artifacts (added / removed lines):
+
+| Artifact | Condition | Lines changed | Fixes |
+|---|---|---|---|
+| `glue.py` | B3 | +2/−2 | 0 |
+| `to_rdf3.py`, `rules3.py` | C3 | +1/−1, +2/−0 | 0 |
+| `ontology3.ttl` (the `lostIn` comment) | C3 | +1/−1 | 0 |
+| `docs3.py` | shared / B3 only | +6/−2 / +1/−1 | 1 (a line break inside a string literal, caught in review before any run) |
+| `derive_tables.py` | shared, run by neither harness | +1/−1 | 0 |
+
+The approved, larger versions of the B3 and C3 edits (`glue.py` +3/−1, `rules3.py` +3/−1) are kept in `h2/approved/`;
+the deviation to the smaller edits is logged in `LOG3.md`.
+
 ## Review time
 
-| Date | Artifact | Hours | Notes |
-|---|---|---|---|
-| | `glue.py` | | |
-| | `to_rdf3.py`, `rules3.py`, `ontology3.ttl` | | |
+| Artifact | Hours |
+|---|---|
+| `glue.py` | not recorded |
+| `to_rdf3.py`, `rules3.py`, `ontology3.ttl` | not recorded |
+| H2 diffs, both conditions | not recorded (omitted by choice) |
