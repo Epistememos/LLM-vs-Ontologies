@@ -8,8 +8,8 @@
 - The H2 changes are fixed in `exp3/PREREG_EXP3.md` and may not be altered after any run.
 - Max 3 prompt iterations per condition, clarity fixes only, each logged with evidence.
 - The DEV/TEST split never moves.
-- Ask before spending over ~$5 of API budget; print the call count and cost estimate with a 1.6x correction before
-  any run.
+- Total API budget cap for Experiments 1-3: ~$11 (raised from ~$5, approved by me on 2026-10-20). Ask before going
+  over it; print the call count and cost estimate with a 1.6x correction before any run.
 - I author both the B3 and C3 artifacts, with equal effort and the same information; log line counts, fix counts
   and my review hours for each.
 

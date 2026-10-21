@@ -34,3 +34,9 @@ pre-registration. Seed 3021 instead of 3020 for the smallest graph: the first se
 | Frozen for TEST: hashes in `PREREG_EXP3.md`, checked by `tools/verify_frozen.py`. TEST estimate 3 repeats about 489 calls, $2.94 with the 1.6× correction: no cut. | Pre-registered budget rule. |
 
 Prompt versions: A3 1, B3 2, C3 2. Prompt iterations used: A3 0, B3 1, C3 1 (of 3).
+
+## TEST (2026-10-20)
+
+| Date | Entry |
+|---|---|
+| 2026-10-20 | `exp3/analyze3.py` was written after the freeze but before any TEST result existed. It implements the analysis in `PREREG_EXP3.md` and touches no frozen file. |
