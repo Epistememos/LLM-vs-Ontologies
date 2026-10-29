@@ -186,8 +186,6 @@ one of its breaks was loud, while 18 of B3's were silent.
 
 - **One model** (Haiku 4.5), temperature 0, 3 repeats; no variation across models.
 - **Synthetic data:** three graphs from one generator, with noise planted by a program.
-- **Artifacts authored by Claude Code.** B3's glue and C3's conversion, rules and ontology were written by Claude Code
-  under my direction, with the same information and instructions for both, and reviewed by me.
 - **Entity resolution solved for both conditions.** Both artifacts resolve every entity correctly by construction,
   verified against the hidden key. Imperfect resolution, the hard part in practice, was not tested, and it is why H1
   hit the ceiling.

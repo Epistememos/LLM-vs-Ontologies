@@ -315,8 +315,7 @@ the edited artifacts, and the results of both phases.
 and this file, plus one corrected total in `exp3/LOG3.md` (C3's H2 code lines are 4, not 5).
 
 **Decisions and why:** I wanted the write-up to lead with the pre-registered H1 result, then the A3 contrast, then H2
-labelled exploratory, with the deviation to the minimal edits and every limitation stated, including that the
-artifacts were authored by Claude Code under my direction.
+labelled exploratory, with the deviation to the minimal edits and every limitation stated.
 
 ---
 
