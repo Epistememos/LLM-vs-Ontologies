@@ -1,23 +1,62 @@
 # Blast Radius: do ontologies help AI reason about how systems depend on each other?
 
+## TL;DR
+
+Three pre-registered experiments tested whether an AI model answers infrastructure questions better when it works
+from an ontology than from the same knowledge in other forms. In every head-to-head test, the ontology tied with
+ordinary code carrying the same knowledge. What made the difference was the work done before the AI saw anything:
+
+1. **Resolving entities across sources.** With two conflicting sources, the AI alone scored 0.47; once the sources were
+   resolved for it, by Python or by an ontology, it scored 1.00 (Experiment 3).
+2. **Precomputing definitions.** Turning definitions like "down" and "lost" into ready-made lookups removed the
+   remaining errors: 0.97 → 1.00, using about a fifth of the text and a quarter of the time (Experiment 2).
+3. **Where failures get caught.** When a data field was renamed, the ontology failed loudly, while the AI patched
+   around the same failure in the Python setup and gave 18 of 53 answers that looked normal but were wrong
+   (Experiment 3, exploratory).
+
+Read more: [research notebook](notebook/blast_radius.ipynb) ·
+[Experiment 1](exp1/README.md) · [Experiment 2](exp2/README.md) · [Experiment 3](exp3/README.md) ·
+[consolidated report](REPORT.md)
+
+![Every pre-registered comparison with its 95% confidence interval](notebook/summary_ci.png)
+
+*Each experiment's comparisons, recomputed from the committed results by `tools/summary_figure.py`. Bold rows are
+the pre-registered primary tests.*
+
+### All results at a glance
+
+| | Question | Pre-registered result | Caveat | Status |
+|---|---|---|---|---|
+| **[Experiment 1](exp1/README.md)** | Does an ontology (RDF + RDFS/OWL schema, queried with SPARQL) beat an LLM alone, and beat Python code given the same schema documentation? | C − B+ = **−0.005** [−0.055, +0.055]: **not supported**. Ontology and documented code tie; both beat the LLM alone (C − A = +0.163 [+0.083, +0.250]) | The ontology arm's failures may partly reflect lower model fluency in SPARQL than in Python (see below) | complete, tag `exp1-final` |
+| **[Experiment 2](exp2/README.md)** | Do *executable* definitions encoded in an ontology (rule-defined classes, materialized before querying) beat the same definitions written as prose? | C2 − B+ = **+0.026** [0.000, +0.071]: **not supported**. Ontology rules and equivalent Python helpers tie exactly (C2 − B++ = 0.000, as predicted) | Ceiling: prose scored 0.97 and both encoded forms 1.00, so little room was left to show a difference | complete, tag `exp2-final` |
+| **[Experiment 3](exp3/README.md)** | Do ontologies pay off with two sources that name the same entities differently (H1), and when definitions change over time (H2)? | C3 − B3 = **0.000** [0.000, 0.000]: **not supported**, both perfect, as expected on ceiling grounds. Both beat the LLM alone (B3 − A3 = C3 − A3 = +0.532 [+0.377, +0.687], two smaller graphs). H2 (exploratory): unchanged C3 broke loudly on all 53 questions, unchanged B3 silently on 18; after 4 changed code lines each, B3 0.981, C3 1.000 | Ceiling: both resolving setups were perfect, so the test could not have shown a difference either way. H2 is two changes, tried once each | complete |
+
+All differences are mean paired F1 differences on the pre-registered exam questions, with 95% bootstrap confidence
+intervals. The condition codes (A, B, B+, C, ...) are explained in the [legend](#condition-codes).
+
+---
+
+## Why this question
+
 When a datacenter goes down at a large company, someone has to answer a hard question fast: *what else breaks?*
 Which services stop working, which customers are affected, which contracts are breached? This is called the
 **blast radius** of a failure, and answering it means following chains of dependencies across hundreds of systems.
 
-Companies increasingly want AI assistants, built on large language models like the one behind ChatGPT, to answer
-questions like this. A popular claim is that these assistants work much better if they are given an **ontology**: a
-formal, machine-readable description of what exists in the business and how it all connects. Ontologies are
-expensive to build, so it matters whether the claim is true.
+Companies increasingly want AI assistants, built on large language models (the kind of AI behind assistants like
+ChatGPT or Claude), to answer questions like this. A popular claim is that these assistants work much better if they
+are given an **ontology**: a formal, machine-readable description of what exists in the business and how it all
+connects. <!-- TODO: add 2-3 citations to sources making this claim (vendor, practitioner or research). --> Ontologies
+are expensive to build, so it matters whether the claim is true.
 
 This repository is a series of small, carefully controlled experiments that test it:
 
 > "AI models grounded in an ontology are better at reasoning about how systems depend on each other than AI models alone."
 
-Short answer: **giving the AI well-organized, pre-processed knowledge helps a lot, but the formal ontology
-format itself made no measurable difference.** What mattered was the work an ontology is supposed to do (deciding
-what things are and computing what they mean), not the technology it is written in. The rest of this page explains
-how I tested that, what I found, and what I think it means for the future of ontologies, including what it suggests
-about operational ontologies such as Palantir's, both where that approach is right and where it falls short.
+Short answer: **when the ontology and Python code carried the same resolved facts and the same definitions, they
+performed identically.** In Experiments 2 and 3 both reached near-ceiling scores, so those tests could not have shown a
+difference either way. What clearly helped was the work an ontology is supposed to do, resolving what things are and
+computing what they mean before the AI is asked, whichever technology does it. The rest of this page explains how I
+tested that, what I found, and what I think it means.
 
 ---
 
@@ -27,10 +66,12 @@ about operational ontologies such as Palantir's, both where that approach is rig
 2. [How the experiments work](#how-the-experiments-work)
 3. [What I found, experiment by experiment](#what-i-found-experiment-by-experiment)
 4. [What this means for ontologies](#what-this-means-for-ontologies)
-5. [Where ontologies are heading: what this says about Palantir's approach](#where-ontologies-are-heading-what-this-says-about-palantirs-approach)
-6. [What these experiments cannot tell you](#what-these-experiments-cannot-tell-you)
-7. [Glossary](#glossary)
-8. [For technical readers](#for-technical-readers)
+5. [What these experiments cannot tell you](#what-these-experiments-cannot-tell-you)
+6. [Related work](#related-work)
+7. [Future work](#future-work)
+8. [Glossary](#glossary)
+9. [For technical readers](#for-technical-readers)
+10. [Authorship and AI assistance](#authorship-and-ai-assistance)
 
 ---
 
@@ -38,8 +79,9 @@ about operational ontologies such as Palantir's, both where that approach is rig
 
 **Large language model (LLM).** The kind of AI behind chat assistants. It reads text and writes text. It is very
 good with language, but it can make mistakes when it has to keep track of many precise facts at once, such as a long
-list of which system depends on which. All experiments here use one model, Anthropic's Haiku 4.5, set to give the same
-answer every time it sees the same question.
+list of which system depends on which. All experiments here use one model, Anthropic's Haiku 4.5
+(`claude-haiku-4-5-20251001`), run at temperature 0, which makes answers nearly deterministic; every response is also
+cached.
 
 **Infrastructure as a map.** A company's technology looks like a map of connected points: *services* (the software
 that does the work, like a checkout service), *databases* (where data is stored), *teams* that own them, *regions*
@@ -89,11 +131,25 @@ Each experiment gives the same AI the same questions about the same company, but
 
 | Setup | What the AI gets | Everyday comparison |
 |---|---|---|
-| **AI alone** | the whole map pasted into its instructions | memorizing a city map and answering from memory |
-| **AI + code** | the data files and the ability to write and run a small program | being handed the map and a calculator |
-| **AI + code + manual** | the same, plus a written description of what everything means | the map, a calculator and a guidebook |
-| **AI + ready-made tools** | the same, plus pre-written functions that already compute things like "what is down" | a navigation app that already knows the routes |
-| **AI + ontology** | a formal ontology describing everything, which it questions with SPARQL | a professionally built atlas with an index and rules |
+| **AI alone** (A, A3) | the whole map pasted into its instructions | memorizing a city map and answering from memory |
+| **AI + code** (B) | the data files and the ability to write and run a small program | being handed the map and a calculator |
+| **AI + code + manual** (B+) | the same, plus a written description of what everything means | the map, a calculator and a guidebook |
+| **AI + ready-made tools** (B++, B3) | the same, plus pre-written functions that already compute things like "what is down" | a navigation app that already knows the routes |
+| **AI + ontology** (C, C2, C3) | a formal ontology describing everything, which it questions with SPARQL | a professionally built atlas with an index and rules |
+
+#### Condition codes
+
+| Code | Experiment | Description |
+|---|---|---|
+| **A** | 1 | AI alone: the whole graph in the prompt |
+| **B** | 1 | AI + code: Python over the raw data |
+| **B+** | 1, 2 | AI + code + manual: Python plus a prose description (in Experiment 2, the prose carries the definitions) |
+| **C** | 1 | AI + ontology: one SPARQL query against an RDF graph with an RDFS/OWL schema |
+| **B++** | 2 | AI + ready-made tools: B+ plus Python helper functions implementing every definition |
+| **C2** | 2 | AI + ontology with rules: definitions computed in advance by SPARQL rules, then one SPARQL query |
+| **A3** | 3 | AI alone, reading both raw, conflicting sources |
+| **B3** | 3 | AI + ready-made tools: Python glue that resolves both sources and implements every definition |
+| **C3** | 3 | AI + ontology: both sources resolved into one RDF graph with rules, then one SPARQL query |
 
 ### How answers are scored
 
@@ -123,24 +179,31 @@ that, every experiment follows the same discipline, borrowed from clinical resea
 
 ## What I found, experiment by experiment
 
+The pre-registered numbers are in the [table above](#all-results-at-a-glance); this section explains them.
+
 ### Experiment 1: does an ontology beat plain data and code?
 
-**Setup.** Four setups: AI alone, AI + code, AI + code + manual, and AI + ontology. The key comparison was the
-ontology against *code + manual*, because both had the same knowledge; only the form differed.
+**Setup.** Four setups: AI alone (A), AI + code (B), AI + code + manual (B+), and AI + ontology (C). The key
+comparison was the ontology (C) against code + manual (B+), because both had the same knowledge; only the form
+differed.
 
 **Results** (exam set, average score on the reasoning questions):
 
-| AI alone | AI + code | AI + code + manual | AI + ontology |
+| AI alone (A) | AI + code (B) | AI + code + manual (B+) | AI + ontology (C) |
 |---|---|---|---|
 | 0.77 | 0.88 | 0.94 | 0.94 |
 
 - **Organized data plus a tool beat memory, by a lot, and more so as the company grew.** On the largest company,
-  the AI alone scored 0.54 while the ontology setup scored 0.89.
-- **The ontology tied with code plus a manual.** The difference was −0.005, with a confidence range of −0.055 to
-  +0.055: essentially zero. By the rules I wrote in advance, the claim was **not supported**.
+  the AI alone (A) scored 0.54 while the ontology setup (C) scored 0.89.
+- **The ontology (C) tied with code plus a manual (B+)**: essentially zero difference, so by the rules I wrote in
+  advance the claim was **not supported**.
 - **Where the ontology setup struggled:** failure questions. To answer "is this database lost if Frankfurt fails?",
   the AI had to write a query meaning "*every* backup copy of it is in Frankfurt". It wrote that logic wrong in 9 of
-  12 such questions, most often checking one copy instead of all of them.
+  12 such questions, most often checking one copy instead of all of them. On questions that needed path lengths or
+  path counts, it scored 0.44 while the code setups scored 0.89-1.00.
+- **Caveat:** these SPARQL failures may reflect the model being less fluent in SPARQL than in Python, and SPARQL
+  property paths cannot count hops. That is a query-language and training-data confound, not necessarily a property
+  of ontologies.
 
 **My diagnosis afterwards.** The ontology in Experiment 1 was thin. It described what kinds of things existed, but
 the hard ideas, like "lost" and "down", were only explained in words inside each question. So the experiment really
@@ -151,23 +214,23 @@ the job that ontologies are meant to do. That shaped Experiment 2. Details: [Exp
 ### Experiment 2: what if the ontology does the reasoning in advance?
 
 **Setup.** This time the ontology came with **rules** that work out "lost", "down", "breached" and "primary" for
-every item in advance, so the AI only had to look the answers up. It was compared with two setups holding the exact
-same definitions: written as a manual (prose), and written as ready-made Python functions.
+every item in advance, so the AI only had to look the answers up (C2). It was compared with two setups holding the
+exact same definitions: written as a manual (B+), and written as ready-made Python functions (B++).
 
 **Results** (exam set, failure and rule-checking questions):
 
-| Definitions as a manual | Definitions as Python functions | Definitions as ontology rules |
+| Definitions as a manual (B+) | Definitions as Python functions (B++) | Definitions as ontology rules (C2) |
 |---|---|---|
 | 0.97 | 1.00 | 1.00 |
 
-- **Doing the reasoning in advance removed the remaining mistakes.** The manual-only setup got 2 of 51 questions
+- **Doing the reasoning in advance removed the remaining mistakes.** The manual-only setup (B+) got 2 of 51 questions
   wrong, both from misreading what "primary" means. Both pre-computed setups got everything right, and they answered
   with about a fifth of the text and in about a quarter of the time.
-- **But the ontology was no better than the equivalent Python.** Both scored a perfect 1.00. The ontology's advantage
-  over the manual (+0.026, range 0.000 to +0.071) was too small to rule out zero, so the claim was again **not
-  supported**.
-- **The test hit a ceiling.** I predicted this beforehand: when even the weakest setup scores 0.97, there is little
-  room left to show a difference. Details: [Experiment 2 write-up](exp2/README.md).
+- **But the ontology (C2) was no better than the equivalent Python (B++).** Both scored a perfect 1.00. The ontology's
+  advantage over the manual was too small to rule out zero, so the claim was again **not supported**.
+- **Caveat: the test hit a ceiling.** I predicted this beforehand: when even the weakest setup scores 0.97 and the
+  other two score 1.00, there is little room left to show a difference, so this tie says nothing about harder
+  questions. Details: [Experiment 2 write-up](exp2/README.md).
 
 ### Experiment 3: the situation ontologies are made for
 
@@ -181,8 +244,8 @@ their own records and disagree. Experiment 3 recreates that with two sources des
 The two sources also contain deliberate problems: some records describe systems that were shut down long ago, and
 some facts contradict each other (one source says a service runs in Frankfurt, the other says Singapore). A fixed
 rulebook says which source to trust for which kind of fact. Three setups answered the questions: the AI alone reading
-both raw sources, the AI with Python glue code that resolves the conflicts, and the AI with an ontology that resolves
-the same conflicts. Each exam question was asked three times.
+both raw sources (A3), the AI with Python glue code that resolves the conflicts (B3), and the AI with an ontology
+that resolves the same conflicts (C3). Each exam question was asked three times.
 
 Two hypotheses were tested separately:
 
@@ -193,14 +256,18 @@ Two hypotheses were tested separately:
 
 **Results** (exam set, questions that need both sources):
 
-| AI alone, reading both raw sources | AI + Python glue that resolves the conflicts | AI + ontology that resolves the conflicts |
+| AI alone, reading both raw sources (A3) | AI + Python glue that resolves the conflicts (B3) | AI + ontology that resolves the conflicts (C3) |
 |---|---|---|
 | 0.47 (two smaller companies only) | 1.00 | 1.00 |
 
-- **The ontology tied with the Python glue: both were perfect.** The difference was 0.000, with a confidence range of
-  0.000 to 0.000, so by the rules I wrote in advance H1 was **not supported**. I expected this before the exam: in the
-  practice round both setups were already near perfect, and making the sources messier could not change that, because
-  the resolving happens before the AI is involved.
+The AI alone (A3) was run on the two smaller companies only, as pre-registered.
+<!-- TODO: state why A3 was limited to the two smaller graphs. No reason is recorded in exp3/PREREG_EXP3.md,
+exp3/LOG3.md or exp3/README.md; do not assume context length without checking. -->
+
+- **The ontology (C3) tied with the Python glue (B3): both were perfect**, so by the rules I wrote in advance H1 was
+  **not supported**. **Caveat: this is a ceiling**, and I expected it before the exam: in the practice round both
+  setups were already near perfect, and making the sources messier could not change that, because the resolving
+  happens before the AI is involved. The test could not have shown a difference either way.
 - **Resolving the sources first is what made the difference.** On the two smaller companies, either form of resolved
   knowledge beat the AI alone by +0.53 (confidence range +0.38 to +0.69). Half of the AI's own mistakes matched a
   specific integration error, such as ignoring the monitoring system or trusting the wrong source.
@@ -209,10 +276,11 @@ Two hypotheses were tested separately:
 
 **What happened when things changed (H2, exploratory: two changes, tried once each).**
 
-- **Before any fix, the two setups broke differently.** The ontology could not even be built from the renamed data, so
-  it failed loudly on every question. The Python setup also crashed at first, but on its retry the AI often patched
-  the data itself and carried on, using the old definition of "lost": 18 of the 53 answers came back looking normal
-  but wrong. A silent wrong answer is worse than a crash, because nobody knows to fix it.
+- **Before any fix, the two setups broke differently.** The ontology (C3) could not even be built from the renamed
+  data, so it failed loudly on every question. The Python setup (B3) also crashed at first, but on its retry the AI
+  often patched the data itself and carried on, using the old definition of "lost": 18 of the 53 answers came back
+  looking normal but wrong. Of the other 35, 28 still crashed and gave no answer, and 7 were correct. A silent wrong
+  answer is worse than a crash, because nobody knows to fix it.
 - **That difference comes from where the check runs, not from the ontology.** The ontology was built before the AI saw
   anything, so the AI had no chance to work around the failure. A one-line check of the data in the Python setup,
   run at the same point, would do the same. I did not test this.
@@ -220,22 +288,6 @@ Two hypotheses were tested separately:
   again (Python 0.98, ontology 1.00).
 
 Details: [Experiment 3 write-up](exp3/README.md), [pre-registration](exp3/PREREG_EXP3.md).
-
-### All results at a glance
-
-| | Question | Pre-registered result | Status |
-|---|---|---|---|
-| **[Experiment 1](exp1/README.md)** | Does an ontology (RDF + RDFS/OWL schema, queried with SPARQL) beat an LLM alone, and beat Python code given the same schema documentation? | C − B+ = **−0.005** [−0.055, +0.055]: **not supported**. Ontology and documented code tie; both beat the LLM alone (C − A = +0.163 [+0.083, +0.250]) | complete, tag `exp1-final` |
-| **[Experiment 2](exp2/README.md)** | Do *executable* definitions encoded in an ontology (rule-defined classes, materialized before querying) beat the same definitions written as prose? | C2 − B+ = **+0.026** [0.000, +0.071]: **not supported**. Ontology rules and equivalent Python helpers tie exactly (C2 − B++ = 0.000, as predicted) | complete, tag `exp2-final` |
-| **[Experiment 3](exp3/README.md)** | Do ontologies pay off with two sources that name the same entities differently (H1), and when definitions change over time (H2)? | C3 − B3 = **0.000** [0.000, 0.000]: **not supported**, both perfect, as expected on ceiling grounds. Both beat the LLM alone (B3 − A3 = C3 − A3 = +0.532 [+0.377, +0.687], two smaller graphs). H2 (exploratory): unchanged C3 broke loudly on all 53 questions, unchanged B3 silently on 18; after 4 changed code lines each, B3 0.981, C3 1.000 | complete |
-
-All differences are mean paired F1 differences on the pre-registered exam questions, with 95% bootstrap confidence
-intervals.
-
-![Experiment 1: paired F1 differences with 95% confidence intervals](exp1/results/ci_differences.png)
-
-The [research notebook](notebook/blast_radius.ipynb) walks through all three experiments with their figures, computed
-directly from the committed results.
 
 ---
 
@@ -283,79 +335,9 @@ Formal standards like RDF and OWL are one way to build that layer. On these task
 than ordinary code. The future of ontologies, on this evidence, is less about formal logic and more about building that
 operational layer well.
 
----
-
-## Where ontologies are heading: what this says about Palantir's approach
-
-### What Palantir's Ontology is
-
-Palantir is a data and AI software company whose platforms (Foundry, and AIP for AI applications) are built around
-what it calls the **Ontology**. Despite the name, it is not a formal RDF/OWL ontology of the kind tested in
-Experiment 1. It is an operational layer between a company's raw data and the people and AI systems that use it:
-
-- **Objects.** Data from many source systems is mapped into business objects, such as a *Service*, a *Datacenter* or a
-  *Customer contract*. One object can combine records from several systems that describe the same real-world thing.
-- **Links.** Objects are connected by named relationships: a service *depends on* a database.
-- **Logic.** Functions compute derived facts, and actions let users and AI make governed changes, with permissions and
-  an audit trail.
-- **AI on top.** AI assistants and agents work with these objects, links, functions and actions rather than with raw
-  tables.
-
-It is the best-known example of the "operational" kind of ontology that the previous section describes, so it is
-worth asking what these experiments say about it: where they support the approach, and where they cut against it.
-
-### Where the findings support it
-
-- **Resolving data before the AI sees it is the right priority.** The biggest effect in this project came from
-  reconciling conflicting sources up front (0.47 to 1.00 on Experiment 3's exam questions). A layer whose main job
-  is to merge many systems into one object per real-world thing targets exactly that.
-- **Executable, shared definitions beat written explanations.** Computing "down" or "breached" once and exposing it as a
-  lookup removed the errors that came from the AI re-deriving those ideas each time. Functions attached to objects do
-  the same.
-- **Not betting on formal logic is consistent with the evidence.** The formal RDF/OWL machinery added nothing
-  measurable here, and Palantir's Ontology does not depend on it.
-
-### Where the findings cut against it, or leave it unproven
-
-- **The benefit is not specific to an "ontology" product.** In every comparison, ordinary, well-organized code carrying
-  the same resolved data and the same definitions did as well as the ontology version, and it was cheaper to build (83
-  lines of Python against 201 lines of conversion, rules and schema in Experiment 3). What helped was engineering
-  discipline: resolve entities, define things once, expose simple lookups. A shared code library, a typed internal
-  API or a well-maintained metrics layer can provide that too. On this evidence, the value lies in doing the
-  integration work, not in the ontology as a category, and claims that the Ontology itself is what makes AI reliable
-  go further than these results support.
-- **Constraining the AI to predefined objects has a cost.** The pre-built vocabulary made anticipated questions easy,
-  but questions the vocabulary did not cover got harder. In Experiment 1, on questions that needed calculations the
-  ontology could not express (path lengths, path counts), the ontology setup scored 0.44 while the code setups scored
-  0.89-1.00. An AI that can only act through predefined objects and actions is more reliable inside that boundary
-  and less capable outside it.
-- **Centralization also centralizes mistakes.** My experiments verified every resolution and every definition against a
-  known answer key before any AI saw them. Real entity resolution is never perfect. In a single shared layer, one wrong
-  merge or one wrong definition reaches every application and every AI agent at once, and the AI has no way to notice,
-  because it trusts the layer. These experiments did not test imperfect resolution, so they cannot say how well any
-  layer, Palantir's included, holds up when its own data is wrong.
-- **Change is a double-edged sword.** Defining something in one place means a change only has to be made once. It also
-  means one change can silently alter the answers of every consumer. Experiment 3's maintenance test (H2, two changes,
-  tried once each) points both ways. The ontology, built before the AI was involved, failed loudly when a field was
-  renamed, while the AI patched around the same failure in the code version and gave 18 silently wrong answers. But a
-  changed definition raised no error in either setup: both kept computing the old meaning until they were edited. A
-  central layer makes breakage visible only if it checks its inputs before anyone uses it, and nothing catches a
-  definition that is wrong but valid.
-- **Building and owning the layer is expensive, and it locks logic in.** The ontology versions here cost more to build
-  than the code versions, even at small scale. In a commercial platform, modelling the business, mapping every source
-  and keeping it current is substantial ongoing work, and business logic written inside one vendor's platform is
-  harder to move than logic in open code or open standards.
-
-### My conclusion
-
-Palantir's approach aims at the right problem. These experiments suggest that grounding AI reliably is mostly a data
-integration and definition problem, not a formal-logic problem, and an operational layer of resolved objects and
-executable logic addresses that more directly than classic ontologies do. But the evidence also suggests the benefit
-comes from engineering practices that are not unique to that product, that constraining AI to a predefined vocabulary
-trades flexibility for reliability, and that centralizing definitions concentrates both their value and their errors.
-
-These are inferences, not tests: I did not evaluate Palantir's software, and every experiment here uses synthetic data
-and one AI model.
+I wrote a separate essay on what these results suggest about operational ontologies such as Palantir's, where they
+support that approach and where they cut against it. It is commentary and inference, not a tested result:
+[ESSAY.md](ESSAY.md).
 
 ---
 
@@ -372,6 +354,35 @@ and one AI model.
 - **The cost of building an ontology is only partly measured** (lines of code, not people's time).
 
 Each experiment's write-up lists its own limitations in full.
+
+---
+
+## Related work
+
+<!-- TODO: add 3-5 references, verified, covering (1) LLMs combined with knowledge graphs or ontologies,
+(2) text-to-SPARQL / LLM query generation, (3) evaluation methodology (pre-registration, benchmark contamination,
+bootstrap CIs for model comparisons). Do not add unverified references. -->
+
+*To be added.*
+
+---
+
+## Future work
+
+The three experiments could not separate the conditions, mostly because both arms were given perfect knowledge and hit
+a ceiling. A possible Experiment 4 that could separate them:
+
+- **Imperfect, noisy entity resolution.** Give both arms a resolution layer that is wrong some of the time, and measure
+  how resolution errors propagate into answers and whether either arm can detect them.
+- **Several models of different strengths, with repeated runs**, so the result does not hinge on one model's fluency
+  and the ceiling can be moved by model choice rather than by tuning the questions.
+- **Questions outside the precomputed vocabulary**, where neither the helpers nor the rules already hold the answer.
+- **An ontology arm with Python + rdflib** instead of SPARQL only, to remove the SPARQL-fluency confound seen in
+  Experiment 1.
+- **A larger maintenance test (H2)**, with more changes, made by someone other than the person who built the
+  artifacts.
+
+As with the earlier experiments, any of this would be pre-registered before a single exam question is run.
 
 ---
 
@@ -428,8 +439,10 @@ exp3/                    Experiment 3 (complete): two conflicting sources, chang
   data/ results/         cmdb_*.json, monitoring_*.json, questions.json, rdf/, h2/; raw responses
   data/hidden/           canonical graphs, entity-resolution keys, answer keys (never shown to any condition)
   h2/                    H2 change test: make_h2.py run_h2.py verify_h2.py, edited artifacts, results
-notebook/                research notebook across experiments
-tools/                   verify_frozen.py, run_exp2_check_docs.py
+notebook/                research notebook across experiments; summary_ci.png
+tools/                   verify_frozen.py, run_exp2_check_docs.py, summary_figure.py
+REPORT.md                consolidated technical report on all three experiments
+ESSAY.md                 commentary: what the results suggest about operational ontologies
 pyproject.toml           dependencies; makes exp1's shared modules importable everywhere
 ```
 
@@ -438,26 +451,43 @@ Experiments 2 and 3 reuse Experiment 1's modules (`truth`, `llm`, `sandbox`, `sc
 
 ### Setup and reproduce
 
-```
-python -m venv .venv
-.venv/Scripts/pip install -e ".[notebook]"      # Windows; use .venv/bin on Unix
-export ANTHROPIC_API_KEY=...                     # only needed for new model calls
+Requires Python 3.11 or later (`requires-python = ">=3.11"` in `pyproject.toml`).
 
+**Verify the results without any API calls.** Every check and analysis below runs offline, from the committed data
+and results:
+
+```
 python tools/verify_frozen.py                    # every pre-registered file hash, exp1, exp2 and exp3
 python exp1/test_score.py                        # exp1 scorer tests
-python exp1/test_harness.py                      # exp1 offline harness tests (no API calls)
+python exp1/test_harness.py                      # exp1 offline harness tests
 python exp2/verify_defs.py                       # exp2 helpers and rules reproduce ground truth
 python tools/run_exp2_check_docs.py              # exp2 definitions present in every condition's docs
 python exp2/test_run2.py                         # exp2 offline harness tests
 python exp3/truth3.py                            # exp3 exports consistent with the hidden canonical graph
 python exp3/verify3.py                           # exp3 glue and rules match the key and ground truth
 python exp3/test_run3.py                         # exp3 docs check, hidden-data guard, offline reproduction
-
 python exp3/h2/verify_h2.py                      # exp3 H2 edited artifacts reproduce the new ground truth
 
 python exp1/score.py test                        # exp1 tables and the paired bootstrap
 python exp2/score2.py test                       # exp2 cluster and per-question bootstraps
 python exp3/analyze3.py                          # exp3 pre-registered TEST analysis
+python tools/summary_figure.py                   # the summary figure; checks every CI against the write-ups
+```
+
+**Setup on macOS / Linux:**
+
+```
+python -m venv .venv
+.venv/bin/pip install -e ".[notebook]"
+export ANTHROPIC_API_KEY=...                     # only needed for new model calls
+```
+
+**Setup on Windows (PowerShell):**
+
+```
+python -m venv .venv
+.venv\Scripts\pip install -e ".[notebook]"
+$env:ANTHROPIC_API_KEY="..."                     # only needed for new model calls
 ```
 
 Every model call is cached on disk (`exp1/cache/`, git-ignored), keyed by condition, model, prompt and token limit,
@@ -475,5 +505,20 @@ so re-runs of completed experiments cost nothing. Raw responses for every questi
 - **Logged changes:** every prompt, question, harness and post-run change is logged with its reason
   (`exp1/PROMPT_LOG.md`, `exp2/LOG.md`, `exp3/LOG3.md`, and [PROGRESS.md](PROGRESS.md) for every commit). Moving
   Experiment 1 into `exp1/` on 2026-10-19 changed no content and no result, number or decision rule.
-- **Model and cost:** Haiku 4.5 at temperature 0 throughout. Spend: Experiment 1 $3.08, Experiment 2 $0.84,
-  Experiment 3 $4.07 (DEV pilot $0.68, TEST $2.22, H2 $1.17); $7.99 in total.
+- **Model and run dates:** `claude-haiku-4-5-20251001` (set in `exp1/llm.py`) at temperature 0 throughout. TEST
+  results were committed on 2026-10-08 (Experiment 1), 2026-10-16 (Experiment 2) and 2026-10-21 (Experiment 3, TEST
+  run from 2026-10-20; H2 from 2026-10-20 to 2026-10-21, per `exp3/LOG3.md`), per [PROGRESS.md](PROGRESS.md).
+- **Cost:** Experiment 1 $3.08, Experiment 2 $0.84, Experiment 3 $4.07 (DEV pilot $0.68, TEST $2.22, H2 $1.17); $7.99 in
+  total.
+
+---
+
+## Authorship and AI assistance
+
+<!-- TODO: who did what. There are two contributors; name each and their role (design, implementation, review,
+writing). Note: "What these experiments cannot tell you" currently says "I built everything" - reconcile it. -->
+
+<!-- TODO: one line on how an AI coding assistant was used (a CLAUDE.md file exists in the repo) and that the results
+were verified independently (frozen hashes, ground truth computed separately, offline checks above). -->
+
+*To be added.*
