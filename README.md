@@ -511,14 +511,3 @@ so re-runs of completed experiments cost nothing. Raw responses for every questi
 - **Cost:** Experiment 1 $3.08, Experiment 2 $0.84, Experiment 3 $4.07 (DEV pilot $0.68, TEST $2.22, H2 $1.17); $7.99 in
   total.
 
----
-
-## Authorship and AI assistance
-
-<!-- TODO: who did what. There are two contributors; name each and their role (design, implementation, review,
-writing). Note: "What these experiments cannot tell you" currently says "I built everything" - reconcile it. -->
-
-<!-- TODO: one line on how an AI coding assistant was used (a CLAUDE.md file exists in the repo) and that the results
-were verified independently (frozen hashes, ground truth computed separately, offline checks above). -->
-
-*To be added.*
