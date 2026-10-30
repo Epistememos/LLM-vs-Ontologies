@@ -71,7 +71,6 @@ tested that, what I found, and what I think it means.
 7. [Future work](#future-work)
 8. [Glossary](#glossary)
 9. [For technical readers](#for-technical-readers)
-10. [Authorship and AI assistance](#authorship-and-ai-assistance)
 
 ---
 
